@@ -6,9 +6,15 @@ body{
 	font-family: "source-sans-pro",sans-serif;
 }
 
+.circular{
+    border-radius: 50%;
+    height: 150px;
+    width: auto;
+}
+
 .container {
 	justify-content: center;
-	-webkit-justify-content: center;
+	-webkit-justify-co/ntent: center;
   display: flex;
   justify-content: flex-center;
   flex-direction: column;
