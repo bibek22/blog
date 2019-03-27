@@ -9,8 +9,8 @@ Slug: first
 Static site generators (SSG) are these nice little frame work that help you manage your website with humble needs using static pages only. Blog fits the bill nicely. You publish your articles and they are unchanged till you make further edits. Your sites doesn't have to be dynamic to host that. This is where SSGs have gained popularity since they make sense and make your life easier. Once you set up and going that is !
 
 ### Why Pelican ?
-*Short Answer:* Because, Python !
-*Long Answer:* Well, I don't really have a long answer to this. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to learn ruby just to run my blog. So, Pelican is the perfect fit for me. 
+**Short Answer:** Because, Python !   
+**Long Answer:** Well, I don't really have a long answer to this. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to learn ruby just to run my blog. So, Pelican is the perfect fit for me. 
 
 ### What do I need ?
 You'll need `python3`, `virtualenv`, `pip3` and a little bit of patience. Also Unix terminal helps !

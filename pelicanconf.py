@@ -41,7 +41,9 @@ HOME_HIDE_TAGS = True
 LINKS = (('Portfolio', 'portfolio.html'),)
 
 SOCIAL = (('github', 'https://github.com/bibek22'),
-          ('twitter', 'https://twitter.com/truelostdreamer'))
+          ('twitter', 'https://twitter.com/truelostdreamer'),
+          ('envelope', 'mailto://forgot.bg@gmail.com'),
+          ('instagram', 'https://instagram.com/masterprocastinator'))
 
 MENUITEMS = (('Archives', '/archives.html'),
              ('Categories', '/categories.html'),
