@@ -9,7 +9,7 @@ SITETITLE = 'Thoughts from /dev/random !'
 SITESUBTITLE = 'Aspiring Physicist and programmer'
 SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
 
-SITELOGO = '//s.gravatar.com/avatar/5dc5ba59a94eeab2106ad9d397361b2c?s=120'
+SITELOGO = 'http://i63.tinypic.com/9aqu60.jpg'
 FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
@@ -18,7 +18,7 @@ PATH = 'posts'
 
 ROBOTS = 'index, follow'
 
-TIMEZONE = 'America/New_York'
+TIMEZONE = 'Asia/Kathmandu'
 
 I18N_TEMPLATES_LANG = 'en'
 DEFAULT_LANG = 'en'
