@@ -4,7 +4,7 @@
 AUTHOR = 'Bibek Gautam'
 SITENAME = 'Bibek Gautam - Blog'
 SITEURL = ''
-THEME = '/Flex'
+THEME = 'Flex'
 SITETITLE = 'Thoughts from /dev/random !'
 SITESUBTITLE = 'Aspiring Physicist and programmer'
 SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
@@ -58,7 +58,7 @@ COPYRIGHT_YEAR = 2019
 DEFAULT_PAGINATION = 10
 
 PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['sitemap', 'post_stats', 'i18n_subsites']
+PLUGINS = ['sitemap', 'i18n_subsites']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
