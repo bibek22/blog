@@ -76,15 +76,8 @@ SITEMAP = {
     }
 }
 
-DISQUS_SITENAME = "alexandrevicenziblog"
-ADD_THIS_ID = 'ra-55adbb025d4f7e55'
-
-STATUSCAKE = {
-    'trackid': 'SL0UAgrsYP',
-    'days': 7,
-    'rumid': 6852,
-    'design': 6,
-}
+DISQUS_SITENAME = "bibekg"
+ADD_THIS_ID = 'ra-5c9aeaba42301cb9'
 
 STATIC_PATHS = ['images', 'extra']
 
