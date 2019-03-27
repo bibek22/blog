@@ -9,7 +9,7 @@ SITETITLE = 'Thoughts from /dev/random !'
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
 SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
 
-SITELOGO = 'http://i63.tinypic.com/9aqu60.jpg'
+SITELOGO = '/images/me.jpg'
 FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'monokai'
