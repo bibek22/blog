@@ -57,8 +57,8 @@ COPYRIGHT_YEAR = 2019
 
 DEFAULT_PAGINATION = 10
 
-PLUGIN_PATHS = ['./../pelican-addon-clones/pelican-plugins']
-PLUGINS = ['sitemap', 'post_stats', 'i18n_subsites']
+PLUGIN_PATHS = ['./pelican-plugins']
+PLUGINS = ['sitemap', 'i18n_subsites']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
