@@ -6,7 +6,7 @@ SITENAME = 'Bibek Gautam - Blog'
 SITEURL = ''
 THEME = 'Flex'
 SITETITLE = 'Thoughts from /dev/random !'
-SITESUBTITLE = 'Aspiring Physicist and programmer'
+SITESUBTITLE = 'Aspiring Physicist and Programmer'
 SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
 
 SITELOGO = 'http://i63.tinypic.com/9aqu60.jpg'
