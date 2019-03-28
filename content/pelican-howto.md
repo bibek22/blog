@@ -6,17 +6,17 @@ Slug: first
 
 
 ### First thing first !
-Static site generators (SSG) are these nice little frame work that help you manage your website with humble needs using static pages only. Blog fits the bill nicely. You publish your articles and they are unchanged till you make further edits. Your sites doesn't have to be dynamic to host that. This is where SSGs have gained popularity since they make sense and make your life easier. Once you set up and going that is !
+Static site generators (SSG) are these nice little framework that help you manage your website with humble needs using static pages only. Blogs are perfect fit to use SSGs. You publish your articles and they are unchanged till you make further edits. Your sites doesn't need to be dynamic to accomodate that. This is why SSGs have gained popularity since they just make more sense and also make your life much easier. Once you set up and get going that is. We are going to use Pelican which is one such SSG based on `python`
 
 ### Why Pelican ?
 **Short Answer:** Because, Python !   
-**Long Answer:** Well, I don't really have a long answer to this. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to learn ruby just to run my blog. So, Pelican is the perfect fit for me. 
+**Long Answer:** Well, I don't really have a long answer to this. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to learn ruby(jekyll) just to run my blog. So, Pelican is the perfect fit for me. 
 
 ### What do I need ?
-You'll need `python3`, `virtualenv`, `pip3` and a little bit of patience. Also Unix terminal helps !
+You'll need `python3`, `virtualenv`, `pip3` and a little bit of patience. And a Unix terminal helps !
 
 ### Setting up Virtualenv
-Once you have installed `python3`, `virtualenv` and `pip3` on your system. Go ahead and create a directory to keep the sources for your blog.
+Install `python3`, `virtualenv` and `pip3` on your system from your distribution if you haven't already. Then, go ahead and create a directory to keep the sources for your blog.
 
 ```console
 $ mkdir /path/to/your/project
@@ -62,6 +62,7 @@ A http server will be run at port `8000`. Point your browser at that port on you
 ### Creating posts !
 To keep your posts sources organized, create a directory `content` inside `blog` directory. Add `.md` or `.rst` files inside this directory, one for each post.
 
+### Further...
+You can pick one among several themes available for pelican from this [repo](https://github.com/getpelican/pelican-themes). Another awesome thing about Static site is that you can host it for free using github [pages](https://pages.github.com/), [netlify](https://www.netlify.com/) etc. Comment below if you are interested. I'll write about how to host your blog for free and with continuous deployment.
 
 The End.
-
