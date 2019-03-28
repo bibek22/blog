@@ -25,21 +25,20 @@ Python is an interpreted language. I am going to assume you have access to a `py
 
 Programming, especially in science, is used for manipulation of data in some ways. Therefore, it is necessary that the language that we use have some ways of representing different types of  data that we might want to work with eg. integers, real numbers, complex numbers etc.  
   
-
+Python understands numbers automatically.
 
 
 ```python3
-1
+>>> 1
 ```
 
 
     1
 
-
-
-
+* Integers  
+When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the python prompt. This is where you Enter your line of code. I might avoid showing the prompt a bit later. But you know it's there.
 ```python3
-10     # simple integer
+>>> 10     # simple integer
 ```
 
 
@@ -47,53 +46,33 @@ Programming, especially in science, is used for manipulation of data in some way
 
     10
 
+Note that: Everything after `#`  is considered as comment in python. Comments are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
 
-
-Code vs. comments
-
-And when i use some **word that you are not familiar** with.  
-Just **stop me and ask**. Because everyone else is also  
-asking the same question in their head and i didn't realize.
-
-
+* Real numbers 
 ```python3
-1.23e-3  # floating points in scientific notation
+>>> 1.23e-3  # floating points in scientific notation
 ```
-
-
-
-
     0.00123
 
+Real numbers are called floating points, or just `floats` in programming term.
 
 
-
+* Complex Numbers
 ```python3
-2+3j   # complex numbers
+>>> 2+3j   
 ```
-
-
-
 
     (2+3j)
 
-
-
-
+#### Basic Arithmetic with numbers
 ```python3
-7*2 - 25/5    # basic arithmetic
+>>> 7*2 - 25/5    
 ```
-
-
-
 
     9.0
 
+As you can see, python is a built-in calculator. It does all the number arithmetic.
 
-
-can't I store them or something?
-
-yes. we store them. We can give them names which are called variables.
 
 ### Variables 
 
