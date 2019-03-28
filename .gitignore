@@ -1,0 +1,6 @@
+_site/
+.sass-cache/
+.jekyll-metadata
+/.build
+output
+__pycache__

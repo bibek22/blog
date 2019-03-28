@@ -20,8 +20,8 @@ TIMEZONE = 'Asia/Kathmandu'
 
 I18N_TEMPLATES_LANG = 'en'
 DEFAULT_LANG = 'en'
-OG_LOCALE = 'en_US'
-LOCALE = 'en_US'
+OG_LOCALE = 'en_US.utf8'
+LOCALE = 'en_US.utf8'
 
 DATE_FORMATS = {
     'en': '%B %d, %Y',
@@ -57,6 +57,7 @@ CC_LICENSE = {
 }
 
 COPYRIGHT_YEAR = 2019
+COPYRIGHT_NAME = AUTHOR 
 
 DEFAULT_PAGINATION = 5
 
