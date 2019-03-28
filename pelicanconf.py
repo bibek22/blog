@@ -4,6 +4,7 @@
 AUTHOR = 'Bibek Gautam'
 SITENAME = 'Bibek Gautam - Blog'
 SITEURL = ''
+SITEHOME = 'https://www.bibekgautm.com.np'
 THEME = 'Flex'
 SITETITLE = 'Thoughts from /dev/random !'
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
