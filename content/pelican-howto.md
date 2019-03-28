@@ -3,7 +3,7 @@ Date: 2019-03-27
 Category: Tutorial, Tech, Website
 Tags: blog
 Slug: pelican-how-to
-
+Summary: Here I talk about a static site generator called Pelican based on python and `jinja2` framework.
 
 ### First thing first !
 Static site generators (SSG) are these nice little framework that help you manage your website with humble needs using static pages only. Blogs are perfect fit to use SSGs. You publish your articles and they are unchanged till you make further edits. Your sites doesn't need to be dynamic to accomodate that. This is why SSGs have gained popularity since they just make more sense and also make your life much easier. Once you set up and get going that is. We are going to use Pelican which is one such SSG based on `python`

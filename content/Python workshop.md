@@ -3,7 +3,7 @@ Date: 2019-03-28
 Category: Programming, Python
 Tags: tutorial,python,programming
 Slug: learn-python-for-beginners
-
+Summary: Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about `python` before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
 
 # Introduction to Programming in Python
 
@@ -28,14 +28,12 @@ Programming, especially in science, is used for manipulation of data in some way
 Python understands numbers automatically.
 
 
+* **Integers**  
 ```python3
 >>> 1
 ```
-
-
     1
 
-* Integers  
 When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the python prompt. This is where you Enter your line of code. I might avoid showing the prompt a bit later. But you know it's there.
 ```python3
 >>> 10     # simple integer
@@ -48,7 +46,7 @@ When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the pyth
 
 Note that: Everything after `#`  is considered as comment in python. Comments are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
 
-* Real numbers 
+* **Real numbers** 
 ```python3
 >>> 1.23e-3  # floating points in scientific notation
 ```
@@ -57,7 +55,7 @@ Note that: Everything after `#`  is considered as comment in python. Comments ar
 Real numbers are called floating points, or just `floats` in programming term.
 
 
-* Complex Numbers
+* **Complex Numbers**
 ```python3
 >>> 2+3j   
 ```
@@ -869,127 +867,126 @@ Let's do this with while loop
 ```python3
 i = 1000             # think of i as saying 'index' or just a
                     # running variable that we are used to in Summation notation.
-while (i <= 2000):
+>>> while (i <= 2000):
     if (i%7 == 0) and (i%5 != 0):
         print(i, ", ")
     i += 1
+
+1001 , 
+1008 , 
+1022 , 
+1029 , 
+1036 , 
+1043 , 
+1057 , 
+1064 , 
+1071 , 
+1078 , 
+1092 , 
+1099 , 
+1106 , 
+1113 , 
+1127 , 
+1134 , 
+1141 , 
+1148 , 
+1162 , 
+1169 , 
+1176 , 
+1183 , 
+1197 , 
+1204 , 
+1211 , 
+1218 , 
+1232 , 
+1239 , 
+1246 , 
+1253 , 
+1267 , 
+1274 , 
+1281 , 
+1288 , 
+1302 , 
+1309 , 
+1316 , 
+1323 , 
+1337 , 
+1344 , 
+1351 , 
+1358 , 
+1372 , 
+1379 , 
+1386 , 
+1393 , 
+1407 , 
+1414 , 
+1421 , 
+1428 , 
+1442 , 
+1449 , 
+1456 , 
+1463 , 
+1477 , 
+1484 , 
+1491 , 
+1498 , 
+1512 , 
+1519 , 
+1526 , 
+1533 , 
+1547 , 
+1554 , 
+1561 , 
+1568 , 
+1582 , 
+1589 , 
+1596 , 
+1603 , 
+1617 , 
+1624 , 
+1631 , 
+1638 , 
+1652 , 
+1659 , 
+1666 , 
+1673 , 
+1687 , 
+1694 , 
+1701 , 
+1708 , 
+1722 , 
+1729 , 
+1736 , 
+1743 , 
+1757 , 
+1764 , 
+1771 , 
+1778 , 
+1792 , 
+1799 , 
+1806 , 
+1813 , 
+1827 , 
+1834 , 
+1841 , 
+1848 , 
+1862 , 
+1869 , 
+1876 , 
+1883 , 
+1897 , 
+1904 , 
+1911 , 
+1918 , 
+1932 , 
+1939 , 
+1946 , 
+1953 , 
+1967 , 
+1974 , 
+1981 , 
+1988 , 
 ```
-
-    1001 , 
-    1008 , 
-    1022 , 
-    1029 , 
-    1036 , 
-    1043 , 
-    1057 , 
-    1064 , 
-    1071 , 
-    1078 , 
-    1092 , 
-    1099 , 
-    1106 , 
-    1113 , 
-    1127 , 
-    1134 , 
-    1141 , 
-    1148 , 
-    1162 , 
-    1169 , 
-    1176 , 
-    1183 , 
-    1197 , 
-    1204 , 
-    1211 , 
-    1218 , 
-    1232 , 
-    1239 , 
-    1246 , 
-    1253 , 
-    1267 , 
-    1274 , 
-    1281 , 
-    1288 , 
-    1302 , 
-    1309 , 
-    1316 , 
-    1323 , 
-    1337 , 
-    1344 , 
-    1351 , 
-    1358 , 
-    1372 , 
-    1379 , 
-    1386 , 
-    1393 , 
-    1407 , 
-    1414 , 
-    1421 , 
-    1428 , 
-    1442 , 
-    1449 , 
-    1456 , 
-    1463 , 
-    1477 , 
-    1484 , 
-    1491 , 
-    1498 , 
-    1512 , 
-    1519 , 
-    1526 , 
-    1533 , 
-    1547 , 
-    1554 , 
-    1561 , 
-    1568 , 
-    1582 , 
-    1589 , 
-    1596 , 
-    1603 , 
-    1617 , 
-    1624 , 
-    1631 , 
-    1638 , 
-    1652 , 
-    1659 , 
-    1666 , 
-    1673 , 
-    1687 , 
-    1694 , 
-    1701 , 
-    1708 , 
-    1722 , 
-    1729 , 
-    1736 , 
-    1743 , 
-    1757 , 
-    1764 , 
-    1771 , 
-    1778 , 
-    1792 , 
-    1799 , 
-    1806 , 
-    1813 , 
-    1827 , 
-    1834 , 
-    1841 , 
-    1848 , 
-    1862 , 
-    1869 , 
-    1876 , 
-    1883 , 
-    1897 , 
-    1904 , 
-    1911 , 
-    1918 , 
-    1932 , 
-    1939 , 
-    1946 , 
-    1953 , 
-    1967 , 
-    1974 , 
-    1981 , 
-    1988 , 
-
 
 This just prints the numbers and exits.  
 Wouldn't it be nice if there was a way  
