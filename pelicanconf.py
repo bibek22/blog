@@ -3,7 +3,7 @@
 
 AUTHOR = 'Bibek Gautam'
 SITENAME = 'Bibek Gautam - Blog'
-SITEURL = ''
+SITEURL = '/'
 SITEHOME = 'https://www.bibekgautm.com.np'
 THEME = 'Flex'
 SITETITLE = 'Thoughts from /dev/random !'
