@@ -29,6 +29,9 @@ DATE_FORMATS = {
     'en': '%B %d, %Y',
 }
 
+# Max post preview
+SUMMARY_MAX_LENGTH = 50
+
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
@@ -42,7 +45,7 @@ LINKS = (('Portfolio', 'portfolio.html'),)
 
 SOCIAL = (('github', 'https://github.com/bibek22'),
           ('twitter', 'https://twitter.com/truelostdreamer'),
-          ('envelope', 'mailto://forgot.bg@gmail.com'),
+          ('envelope', 'mailto:forgot.bg@gmail.com'),
           ('instagram', 'https://instagram.com/masterprocastinator'))
 
 MENUITEMS = (('Archives', '/archives.html'),
@@ -57,7 +60,7 @@ CC_LICENSE = {
 
 COPYRIGHT_YEAR = 2019
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 5
 
 PLUGIN_PATHS = ['./pelican-plugins']
 PLUGINS = ['sitemap', 'i18n_subsites']
