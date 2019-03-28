@@ -63,8 +63,11 @@ COPYRIGHT_YEAR = 2019
 
 DEFAULT_PAGINATION = 5
 
-PLUGIN_PATHS = ['./pelican-plugins']
-PLUGINS = ['sitemap', 'i18n_subsites']
+
+# for ipynb plugin thing from danielfrg/pelican-ipynb
+MARKUP = ('md',)
+PLUGIN_PATHS = ['./pelican-plugins', './plugins']
+PLUGINS = ['sitemap', 'i18n_subsites', 'ipynb.liquid','render_math']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
