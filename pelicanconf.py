@@ -2,23 +2,20 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Bibek Gautam'
+SITEURL = 'https://www.bibekgautm.com.np'
 SITENAME = 'Bibek Gautam - Blog'
-SITEURL = 'http://localhost:8000'
-SITEHOME = 'https://www.bibekgautm.com.np'
-THEME = './Flex'
-SITETITLE = 'Thoughts from /dev/random !'
+SITETITLE = AUTHOR
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
 SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
-
 SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120'
 FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'friendly'
 
-PATH = 'posts'
-
 ROBOTS = 'index, follow'
 
+THEME = './Flex'
+PATH = 'content'
 TIMEZONE = 'Asia/Kathmandu'
 
 I18N_TEMPLATES_LANG = 'en'

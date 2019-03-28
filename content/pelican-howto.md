@@ -1,7 +1,7 @@
 Title: How to build your blog with Pelican !
 Date: 2019-03-27
-Category: Tutorial, Tech, Website
-Tags: blog
+Category: Tutorial
+Tags: blog, website, tech
 Slug: pelican-how-to
 Summary: Here I talk about a static site generator called Pelican based on python and `jinja2` framework.
 
