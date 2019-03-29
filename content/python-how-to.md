@@ -1,4 +1,4 @@
-Title: Python for beginners !
+Title: Python <wbr>for beginners !
 Date: 2019-03-28
 Category: Programming
 Tags: tutorial,python,programming
@@ -40,8 +40,6 @@ When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the pyth
 ```
 
 
-
-
     10
 
 Note that: Everything after `#`  is considered as comment in python. Comments are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
@@ -69,12 +67,12 @@ Real numbers are called floating points, or just `floats` in programming term.
 
     9.0
 
-As you can see, python is a built-in calculator. It does all the number arithmetic.
+As you can see, python is a built-in calculator. It does all the number arithmetic. Try it for yourself.
 
 
 ### Variables 
 
-variables in python are:
+Variables is something that can refer to the data that you store in memory. 
 1. implicitly declared.
 2. dynamically typed.
 
@@ -88,36 +86,35 @@ print(c)
 
     5.2
 
-
-
+As you can see, you can do arithmetic with variables just fine. In above, `a` is a `integer` variable, and `b` is a `float`. The sum of these two, `c` is a `float` as you'd expect. 
+Let me show you a way to check the type of a variable: 
 ```python3
 type(a)
-
-# type() function gives the type of a variable
-# or data.
 ```
-
-
 
 
     int
 
+It confirms that `a` is indeed an `int`. Now, try for `b` and `c` yourself.
 
+#### Functions
+What we just used above to check the type of a variable is a `function`. 
+Functions in computer programs are like those in mathematics.
+A function takes some inputs, do something to them and (usually) 
+return some output.  
+`type()` function as we saw took one input, i.e. name of the variable and returned it's type. You'll see
+functions that take many more inputs and return multiple or complex kind of data as you learn more.
 
-#### But, wait!  What are functions?
+The line of code we saw above is called a **function call**  
+but you can also think of it as running a machine that performs
+a specific task.
+Inputs to a functions are called `arguments`. This is the way to call any function:  
 
-Functions in computer programs are like those in mathematics.  
-They take some inputs, do something to them and (usually)   
-return some output.
-
-The Line we saw above is called a **function call**  
-but you can also think of it as running a machine that performs  
-a specific task.  
-Inputs to a functions are called **arguments**.  
 `functionName(argument1, argument2, ..)`  
 
-And the result is called **return value**.
+And the result is called `return value` which again if you want to save into a variable, you can do so:
 
+`returnVal = functionName(argument1, argument2, ..)`  
 
 ```python3
 type("hi everyone!")
@@ -130,10 +127,10 @@ type("hi everyone!")
 
 
 
-#### What's str ??
+##### What's str ??
 
-What we generally call "text" in normal talk is called string 
-in programming.
+What we generally call "text" in normal talk is called `string` 
+in programming. 
 
 
 ```python3

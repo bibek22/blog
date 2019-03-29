@@ -6,7 +6,7 @@ SITEURL = 'https://www.bibekgautm.com.np'
 SITENAME = 'Bibek Gautam - Blog'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
-SITEDESCRIPTION = 'Bibek Gautam\'s Thoughts and Writings'
+SITEDESCRIPTION = AUTHOR + '\'s Thoughts and Writings'
 SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120'
 FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
