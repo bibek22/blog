@@ -3,7 +3,7 @@ Date: 2019-03-28
 Category: Programming
 Tags: tutorial,python,programming
 Slug: learn-python-for-beginners
-Summary: Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about `python` before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
+Summary: [to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about `python` before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
 
 # Introduction to Programming in Python
 
