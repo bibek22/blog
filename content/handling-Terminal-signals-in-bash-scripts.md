@@ -21,7 +21,7 @@ Now you tell `trap` to listen for interrupts and run this function in case of su
 
 ```bash
 trap user_interrupt SIGINT
-trap user_interrupt SIGSTP
+trap user_interrupt SIGSTOP
 ```
 
-With something like this at the beginning of your script, `user_interrupt` function is run if `SIGINT` or `SIGSTP` signal is received.
+With something like this at the beginning of your script, `user_interrupt` function is run if `SIGINT` or `SIGSTOP` signal is received.

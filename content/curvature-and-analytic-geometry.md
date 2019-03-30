@@ -4,7 +4,7 @@ Title: Curvature and Second Derivative
 Category: Maths
 Tags: graphs, functions,analytic-geometry
 slog:xmodx -and-curvature
-Summary: This is like a mental filter that makes graphical analysis easy. I found I wasn't thinking like this even though this is pretty elementary.
+Summary: This is like a mental filter that makes function analysis easy. I found I wasn't thinking like this even though this is pretty elementary.
 
 You know the function $y = \mid x \mid$ does not have a derivative at $x = 0$.
 But what about the following function ?
