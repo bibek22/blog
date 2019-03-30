@@ -1,6 +1,6 @@
 Author: Bibek Gautam
 Date: 2019-03-30 08:46
-Title: Handling Terminal signals in bash scripts
+Title: Handling terminal signals in bash scripts
 Slug: handling-terminal-signals-in-bash-scripts
 Category: Linux
 Tags: linux, bash, command-line
@@ -14,7 +14,8 @@ Let's first define a function that we want to run before exiting:
 user_interrupt(){
     echo "Received Keyboard Interrupt from User"
     echo "Exiting..."
-}```
+}
+```
 
 Now you tell `trap` to listen for interrupts and run this function in case of such events:
 

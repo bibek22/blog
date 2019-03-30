@@ -4,17 +4,16 @@ Title: Xargs - piping the STDOUT to argument of next command
 Slug: xargs-piping-the-STDOUT-to-argument-of-next-command
 Category: Linux
 Tags: Linux, command-line
-
 Summary: This allows you to take the output of some program and use it as an argument for some other program easily. Read on to see what it does...
 
 Coming across these little unix tools that do small but particular things and do them well and as expected is a joy. This adds for me a sense of reverence to all the unix developers of early days. And this feels like a welcome gift.
 
-Say, you have a command that takes a screenshot and places it in `~/pictures/screenshots`. Then that folder is going have a lot of images. Say you want to find the last screenshot you took. You could do that with `ls` command with sort by time. 
+Your screenshot folder probably has a lot of images. Say you want to find the last screenshot you took. You could do that with `ls` sorting by time. 
 ```bash
 $ ls -t
 ```
 
-That gives you the files in reverse chronological order they they were last modified. But I like to see the last one at the buttom as the first one alwys gets scrolled up from the screen. You put an extra `-r` flag for reversing the order.
+That lists you the files in reverse chronological order. But, I like to see the last one at the buttom as the first one alwys gets scrolled up from the screen. You put an extra `-r` flag for reversing the order.
 
 Since you want the last one, you can select that by using `tail` command. As such:
 ```bash
