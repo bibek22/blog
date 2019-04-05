@@ -1,5 +1,5 @@
 Author: Bibek Gautam
-Date: 2019-04-04 22:41
+Date: 2019-04-05 07:51
 Title: Lazy Evaluation in Python
 Slug: lazy-evaluation-in-python
 Category: Programming
@@ -19,15 +19,15 @@ while (True):
     print(next)
 ```
 
-This gives a 'infinite' list of fibonacci numbers. But the problem is this essentially useless as it is.
+This gives a 'infinite' list of fibonacci numbers. But the problem is this is essentially useless as it is.
 I'd like it to stop after the evaluation of each fibonacci number so that I can do some other complicated thing in some other
 function.  
-The answer to this is lazy evaluation. Generating the next number only when we *need* it
+The answer to this is **lazy evaluation**. Generating the next number only when we *need* it
 and yet maintaining this kind of loop structure.
 
 ### Prime Generator
-Let's do it the less efficient way first. We use the definition of prime. A number must have only
-$1$ and $n$ itself as a factor to be a prime. To that extent, we define a function that returns
+Let's use the definition of prime. A number is prime if it has only
+$1$ and $n$ itself as a factors. To that extent, we first define a function that returns
 factors:
 ```python3
 def fact(n):
@@ -40,7 +40,7 @@ def prime(n):
     return fact(n) == [1,n]
 ```
 
-With this definition, you can see, `prime(2)` should return `True` and `prime(14)` should return `False`. Now, we can use lazy evaluation to check all the integers $n \in Z ^+$ for primality as the following:
+With this definition, as you can see, `prime(2)` should return `True` and `prime(14)` should return `False`. Now, we can use lazy evaluation to check all the integers $n \in Z ^+$ for primality as the following:
 
 ```python3
 def nextprime():
@@ -64,7 +64,7 @@ following:
 >>> next(a)
 7
 ```
-and so on. This is exactly what we were looking for. Generate next prime only when we need it.
+and so on. This is exactly what we were looking for. Generate the next prime *only* when we need it.
 
 ### Twin primes
 Let's go a little further and generate twin primes. First, let's define what twin numbers are:
@@ -86,7 +86,7 @@ def listTwinPrimes():
 ```
 
 Admittedly, this performs terribly. Prime generation algorithm can do much better, and also every
-prime is generated twice: once from `a` and `b` each. But it does the job. Gives you an 'infinite'
-list of twin primes. ;)
+prime is generated twice: once from `a` and `b` each. But it does the job i.e. gives you an 'infinite'
+list of [twin primes](https://en.wikipedia.org/wiki/Twin_prime). ;)
 
 The End
