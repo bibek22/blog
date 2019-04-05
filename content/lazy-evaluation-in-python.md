@@ -87,6 +87,6 @@ def listTwinPrimes():
 
 Admittedly, this performs terribly. Prime generation algorithm can do much better, and also every
 prime is generated twice: once from `a` and `b` each. But it does the job i.e. gives you an 'infinite'
-list of [twin primes](https://en.wikipedia.org/wiki/Twin_prime). ;)
+list of [twin primes](https://en.wikipedia.org/wiki/Twin_prime#History).  ;)
 
 The End
