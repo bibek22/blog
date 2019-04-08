@@ -12,17 +12,17 @@ $$  y  = x \mid x \mid $$
 
 Does it have first derivative ? What about second derivative ?
 
-As you might have noticed, it does have a first derivative, as the slope from
-the both sides as you approach $ x = 0$ is $0$. But, the second derivative is
-not the same. You could wonder about the definition of derivative and left and
+As you might noticed, it does have a first derivative. In fact, the slope from
+both sides approaches $0$ as $x\to 0$. But, the second derivative is
+not the same. You could wonder about the definition of derivative, left and
 right limits and so on. But there's a quicker way to be sure that second derivative
-doesn't exit at $ x = 0$. Notice that the function is essentially this:
+doesn't exist at $ x = 0$. Notice that the function is essentially this:
 
-$$ y = \left\{ 
+$$ y = \left\{
   \begin{array}{cc}
     - x^2 & x <  0, \\
     x^2 & x \geq 0
-  \end{array}\right\} 
+  \end{array}\right\}
 $$
 
 which looks something like below: 
@@ -30,6 +30,9 @@ which looks something like below:
 ![x mod x plot](images/xmodx.png)
 </div>
 
-And just realize that those are portions of two parabolas, one facing up and
+And just realize that those are portions of two parabola, one facing up and
 another facing downwards. They have opposite curvature as they approach $x=0$.
-so, they can't have equal second derivatives from the both sides.
+So, they can't have equal second derivatives. And hence, the second derivative doesn't exit at
+$x=0$.
+
+The End.

@@ -115,7 +115,7 @@ You see a new file `output.txt` has been created. You can `cat output.txt` to ch
 has indeed been written to that file.
 
 ### Selecting columns
-A column in awk is represented by $n where $n$ is $1$ for first column, and $8$ for eighth
+A column in awk is represented by &dollar;n where n is $1$ for first column, and $8$ for eighth
 column. So, $3 would be the third column. For example purpose, copy the following into the `list.txt` file we created earlier.
 ```
 Apples  1Kg
@@ -178,7 +178,7 @@ also put space or comma `,`(for csv files for example) or semicolon `;` or any o
 Variables are easy to declare and use. If you are familiar with C, the syntax is similar. Let's add
 a new column `S.N` for serial number into our list above. Since we want `awk` to put the value
 $1,2,3$ and so on automatically, we need a variable that counts the line and writes the value of
-`S.N` for each row. Let's see what I mean:
+`S.N` for each row. Let me show you what I mean:
 
 ```awk
 BEGIN{
