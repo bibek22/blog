@@ -1,7 +1,7 @@
 Author: Bibek Gautam
 Date: 2019-04-07 13:25
-Title: Awk Tutorial for data manipulation
-Slug: awk-tutorial-for-data-manipulation
+Title: Awk Tutorial and Introduction
+Slug: awk-tutorial
 Category: Linux
 Tags: linux, programming
 Summary: If you deal with a large data files with multiple rows and columns and you would like to make some quick edits, selection or manipulation right from the terminal, awk is the tool to look for.
@@ -45,11 +45,11 @@ END {
     ...
 }
 ```
-This is the basic structure of a awk code. It has three block as you see. Sometimes you need to do
+It has three blocks as you can see. Sometimes you need to do
 something before you even begin editing lines, for eg. write the header, or initialize some variables
 etc. That is what goes inside the `BEGIN{}` block. Similary, you have `END{}` block which runs after
 the lines are finished processing. This may be used to write footer, for example. The code that runs
-for each line of input is on the middle block.
+for each line of input is on the middle, also called the main block.
 
 ### Running the script
 Let me show you how to run the awk script. First of all, create a script file using your text
@@ -91,8 +91,9 @@ If you get the output that looks like above, everything is working correctly. No
 what the program did.  
 
 `BEGIN` block has a line that says `print "###First Line###"`. Since this block runs before dealing
-with any line in the file `list.txt` itself, We see the line in the first line of the output.
-You also see that `print` is the command to write something to the screen/file.
+with any line in the file `list.txt` itself, we see the line in the first line of the output.
+You also see that `print` is the command to write something to the screen/file.  
+
 Similarly, the `END` block writes to the last line i.e. after every line in the given file is
 evaluated. The line in the main block is a little different. It just says `print`. When the argument
 to print is missing, it just prints the line in the input file as it is as we see above.  
@@ -111,11 +112,11 @@ list.txt  output.txt  script.awk
 ```
 
 You see a new file `output.txt` has been created. You can `cat output.txt` to check that the output
-has been written to that file.
+has indeed been written to that file.
 
 ### Selecting columns
-A column in awk is represented by `$n` where $n$ is $1$ for first column, and $8$ for eighth
-column. For example purpose, copy the following into the `list.txt` file we created earlier.
+A column in awk is represented by $n where $n$ is $1$ for first column, and $8$ for eighth
+column. So, $3 would be the third column. For example purpose, copy the following into the `list.txt` file we created earlier.
 ```
 Apples  1Kg
 Potato  5Kg
@@ -204,7 +205,7 @@ S.N.	Price	Items
 So, we made a variable called 'i' which has a value $1$ to start. Note that since we only make a variable
 once, we do this in `BEGIN` block. Then, we print the value of `i` in the main block, which is
 executed once for every line of input, so it writes Serial Number for each line in the file given.
-Also notice that we increase the value of i by 1 for each line.
+Also notice that we increase the value of `i` by 1 for each line in the second line of main block.
 
 
 ### Conditionals
