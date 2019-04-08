@@ -24,4 +24,6 @@ trap user_interrupt SIGINT
 trap user_interrupt SIGSTOP
 ```
 
-With something like this at the beginning of your script, `user_interrupt` function is run if `SIGINT` or `SIGSTOP` signal is received.
+With something like this at the beginning of your script, `user_interrupt` function is run if `SIGINT` or `SIGSTOP` signal is received.  
+
+The End.

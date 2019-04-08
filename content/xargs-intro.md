@@ -13,9 +13,9 @@ Your screenshot folder probably has a lot of images. Say you want to find the la
 $ ls -t
 ```
 
-That lists you the files in reverse chronological order. But, I like to see the last one at the buttom as the first one alwys gets scrolled up from the screen. You put an extra `-r` flag for reversing the order.
+This lists the files in reverse chronological order. But, I like to see the most recent one at the buttom as the first line always gets scrolled up from the screen. You put an extra `-r` flag for reversing the order.
 
-Since you want the last one, you can select that by using `tail` command. As such:
+Since you want the only want the most recent one, you can select that by using `tail` command. As such:
 ```bash
 $ ls -tr | tail -n 1
 ```

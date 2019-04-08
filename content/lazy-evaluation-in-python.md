@@ -20,8 +20,7 @@ while (True):
 ```
 
 This gives a 'infinite' list of fibonacci numbers. But the problem is this is essentially useless as it is.
-I'd like it to stop after the evaluation of each fibonacci number so that I can do some other complicated thing in some other
-function.  
+I'd like it to stop after the evaluation of each fibonacci number so that I can do some other complicated thing elsewhere.  
 The answer to this is **lazy evaluation**. Generating the next number only when we *need* it
 and yet maintaining this kind of loop structure.
 
@@ -86,7 +85,7 @@ def listTwinPrimes():
 ```
 
 Admittedly, this performs terribly. Prime generation algorithm can do much better, and also every
-prime is generated twice: once from `a` and `b` each. But it does the job i.e. gives you an 'infinite'
+prime is generated twice: once from `a` and `b` each. But it serves the purpose of illustration and gives you an 'infinite'
 list of [twin primes](https://en.wikipedia.org/wiki/Twin_prime#History).  ;)
 
 The End
