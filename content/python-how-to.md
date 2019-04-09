@@ -5,6 +5,8 @@ Tags: tutorial,python,programming
 Slug: learn-python-for-beginners
 Summary: [to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about `python` before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
 
+*Note: This is a direct export of jupyter notebook I made for a one day workshop on python I did. This needs editing. I might come back to it at some point in the future.*
+
 # Introduction to Programming in Python
 
 Let's skip the part where I talk about what programming is and why it is important. Python is a right programming language to pick as a beginner for a lot of reasons which you will understand for yourselves a bit later.
@@ -42,32 +44,75 @@ When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the pyth
 
     10
 
-Note that: Everything after `#`  is considered as comment in python. Comments are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
+Note that: Everything after `#`  is considered as *comment* in python.  
+
+*Comments* are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
 
 * **Real numbers** 
+Real numbers are called floating points, or just `floats` in programming term.
+
 ```python3
 >>> 1.23e-3  # floating points in scientific notation
+0.00123
 ```
-    0.00123
-
-Real numbers are called floating points, or just `floats` in programming term.
 
 
 * **Complex Numbers**
+Python also has a way to represent complex numbers by default.
 ```python3
->>> 2+3j   
+>>> 2+3j
+(2+3j)
 ```
-
-    (2+3j)
 
 #### Basic Arithmetic with numbers
 ```python3
->>> 7*2 - 25/5    
+>>> 7*2 - 25/5
+9.0
 ```
 
-    9.0
-
-As you can see, python is a built-in calculator. It does all the number arithmetic. Try it for yourself.
+As you can see, python is a built-in calculator. It does all the number arithmetic out of the box. Try it for yourself. All the basic operations are supported:
+<table border=2>
+<tbody><tr>
+<th style="text-align:center;width:10%">Operator</th>
+<th style="text-align:center;width:45%">Description</th>
+<th style="text-align:center;">Example</th>
+</tr>
+<tr>
+<td >+ </td>
+<td>Aditions</td>
+<td >5 + 15 = 30</td>
+</tr>
+<tr>
+<td >- </td>
+<td>Subtraction </td>
+<td >5 – 15 = -10</td>
+</tr>
+<tr>
+<td >\* </td>
+<td>Multiplication</td>
+<td >5 * 15 = 75</td>
+</tr>
+<tr>
+<td >/ </td>
+<td>Division</td>
+<td >15 / 5 = 3</td>
+</tr>
+<tr>
+<td >% </td>
+<td>Modulus Operator</td>
+<td >9 % 5 = 4</td>
+</tr>
+<tr>
+<td >\*\* </td>
+<td>Exponential (power) operator</td>
+<td >10**20 = $10^{20}$</td>
+</tr>
+<tr>
+<td >//</td>
+<td>Integer Division</td>
+<td >7//2 = 3</td>
+</tr>
+</tbody></table>
 
 
 ### Variables 
