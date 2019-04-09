@@ -150,7 +150,7 @@ block.
 You can also very simply change the order of the columns:
 ```awk
 BEGIN{
-    print "Price" "\t" "Items"
+    print "Qty." "\t" "Items"
 }
 {
     print $2 "\t" $1
@@ -161,7 +161,7 @@ END {
 
 Save and run just like above, you'll get something like this:
 ```
-Price	Items
+Qty.	Items
 1Kg	    Apples
 5Kg	    Potato
 1Kg	    Onion
@@ -210,4 +210,45 @@ of the input file `i` increases by $1$ so that next line is given a new serial n
 
 
 ### Conditionals
+
+Suppose I don't have much money and I only intend to buy first two items from our shopping list. We
+want to reduce the list to just two items. In other words we want only those columns which have `S.N` $1$ and $2$. Another way to say the same thing is serial number less than $3$. This is where we need conditionals.
+So, we update the main block of our last script putting in the conditional as follows:
+```awk
+{
+    if (i < 3){
+        print i "\t" $2 "\t" $1
+    }
+
+    i = i + 1
+}
+```
+
+We added an `if` conditional in the main block. Therefore, the `print` line only gets evaluated if
+the conditional is true namely if the value of `i` is less than $3$. Save and run the script with
+`list.txt` as input and verity that it runs as expected.
+
+All of the following relational operators can be used in a conditional:
+
+<table border=2>
+<tbody>
+<tr><th>Operator</th><th>Meaning</th></tr>
+<tr><td>==</td><td>Is equal</td></tr>
+<tr><td>!=</td><td>Is not equal to</td></tr>
+<tr><td>&gt;</td><td>Is greater than</td></tr>
+<tr><td>&gt;=</td><td>Is greater than or equal to</td></tr>
+<tr><td>&lt;</td><td>Is less than</td></tr>
+<tr><td>&lt;=</td><td>Is less than or equal to</td></tr>
+</tbody>
+</table>
+
+##### Regular expression
+If you're familiar with regular expressions, you can use `~` to mean matches a certain pattern
+and `!~` to mean doesn't match. If you're unfamiliar with RegEx, comment
+below and I will write another short intro about them.  
+
+Besides, you also have boolean operators 'and' `&&` and 'or' `||` if you want to combine two or more
+conditions.
+
+### Loops
 To be continued...
