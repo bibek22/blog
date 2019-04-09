@@ -182,7 +182,7 @@ $1,2,3$ and so on automatically, we need a variable that counts the line and wri
 
 ```awk
 BEGIN{
-    print "S.N." "\t" "Price" "\t" "Items"
+    print "S.N." "\t" "Qty." "\t" "Items"
     i = 1
 }
 {
@@ -195,7 +195,7 @@ END {
 
 Now if you save and run the program, you'll get the following:
 ```
-S.N.	Price	Items
+S.N.	Qty.	Items
 1	    1Kg	    Apples
 2	    5Kg	    Potato
 3	    1Kg	    Onion
@@ -205,7 +205,8 @@ S.N.	Price	Items
 So, we made a variable called 'i' which has a value $1$ to start. Note that since we only make a variable
 once, we do this in `BEGIN` block. Then, we print the value of `i` in the main block, which is
 executed once for every line of input, so it writes Serial Number for each line in the file given.
-Also notice that we increase the value of `i` by 1 for each line in the second line of main block.
+Also note that we increase the value of `i` by 1 in the main block which means when evaluating each line
+of the input file `i` increases by $1$ so that next line is given a new serial number.
 
 
 ### Conditionals
