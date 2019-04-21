@@ -1391,12 +1391,6 @@ while True:
 
 ##### Put this ^^ on a file 
 
-
-```python3
-
-```
-
-
 ```python3
 from datetime import date 
 ```
@@ -1409,23 +1403,15 @@ today = date.today()
 
 ```python3
 print(today)
+2019-03-28
 ```
-
-    2019-03-28
 
 
 
 ```python3
 today.year
+2019
 ```
-
-
-
-
-    2019
-
-
-
 
 ```python3
 tomorow = date(2020, 12, 22) # read date
@@ -1434,32 +1420,23 @@ tomorow = date(2020, 12, 22) # read date
 
 ```python3
 type(tomorow)
+datetime.date
 ```
-
-
-
-
-    datetime.date
 
 
 
 
 ```python3
 print(tomorow)
+2020-12-22
 ```
-
-    2020-12-22
 
 
 
 ```python3
 [x for x in range(20) if x%2 == 0]
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```
-
-
-
-
-    [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
 
 
@@ -1473,36 +1450,24 @@ matrix = [[2,3], [3,4]]
 
 ```python3
 matrix
+[[2, 3], [3, 4]]
 ```
-
-
-
-
-    [[2, 3], [3, 4]]
 
 
 
 
 ```python3
 matrix[1]
+[3, 4]
 ```
-
-
-
-
-    [3, 4]
 
 
 
 
 ```python3
 matrix[1][0]
+3
 ```
-
-
-
-
-    3
 
 
 

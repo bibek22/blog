@@ -47,13 +47,19 @@ END {
 ```
 It has three blocks as you can see. Sometimes you need to do
 something before you even begin editing lines, for eg. write the header, or initialize some variables
-etc. That is what goes inside the `BEGIN{}` block. Similary, you have `END{}` block which runs after
-the lines are finished processing. This may be used to write footer, for example. The code that runs
+etc. That is what goes inside the `BEGIN{}` block.  
+
+Similary, you have `END{}` block which runs after
+the lines are finished processing. This may be used to write footer, for example.  
+
+The code that runs
 for each line of input is on the middle, also called the main block.
 
 ### Running the script
 Let me show you how to run the awk script. First of all, create a script file using your text
-editor, eg. `gedit`, `vim`, etc. I recommend creating a new directory to save the file so that it is
+editor, eg. `gedit`, `vim`, etc.  
+
+I recommend creating a new directory to save the file so that it is
 cleaner. Put the following into the file and name it `script.awk`:
 ```awk
 BEGIN{
@@ -103,7 +109,9 @@ to save the output to a new file.
 
 ### Saving output to a file
 Unix/Linux has this concept of pipe/redirection, which basically is a way to link output of one
-program to the input of some other program or to a file, etc. Pipe symbols `|` are used to pipe data
+program to the input of some other program or to a file, etc.  
+
+Pipe symbols `|` are used to pipe data
 between two programs and `<`, `>` for redirection to/from a file. As such:
 ```console
 $ awk -f script.awk list.txt > output.txt
@@ -116,7 +124,9 @@ has indeed been written to that file.
 
 ### Selecting columns
 A column in awk is represented by &dollar;n where n is $1$ for first column, and $8$ for eighth
-column. So, $3 would be the third column. For example purpose, copy the following into the `list.txt` file we created earlier.
+column. So, $3 would be the third column.   
+
+For example purpose, copy the following into the `list.txt` file we created earlier.
 ```
 Apples  1Kg
 Potato  5Kg
@@ -168,7 +178,9 @@ Qty.	Items
 .5Kg	Garlic
 ```
 
-So, you see the order has been reversed and the heading has been added. So, you can change the order
+So, you see the order has been reversed and the heading has been added.  
+
+And, you can change the order
 of columns into anything you like just by specifying them in the main block as we did above.   
 
 Also note that the `\t` is a tab character which puts a tabspace in between two columns. You could
@@ -178,7 +190,9 @@ also put space or comma `,`(for csv files for example) or semicolon `;` or any o
 Variables are easy to declare and use. If you are familiar with C, the syntax is similar. Let's add
 a new column `S.N` for serial number into our list above. Since we want `awk` to put the value
 $1,2,3$ and so on automatically, we need a variable that counts the line and writes the value of
-`S.N` for each row. Let me show you what I mean:
+`S.N` for each row.  
+
+Let me show you what I mean:
 
 ```awk
 BEGIN{
@@ -204,7 +218,8 @@ S.N.	Qty.	Items
 
 So, we made a variable called 'i' which has a value $1$ to start. Note that since we only make a variable
 once, we do this in `BEGIN` block. Then, we print the value of `i` in the main block, which is
-executed once for every line of input, so it writes Serial Number for each line in the file given.
+executed once for every line of input, so it writes Serial Number for each line in the file given.  
+
 Also note that we increase the value of `i` by 1 in the main block which means when evaluating each line
 of the input file `i` increases by $1$ so that next line is given a new serial number.
 
@@ -212,7 +227,9 @@ of the input file `i` increases by $1$ so that next line is given a new serial n
 ### Conditionals
 
 Suppose I don't have much money and I only intend to buy first two items from our shopping list. We
-want to reduce the list to just two items. In other words we want only those columns which have `S.N` $1$ and $2$. Another way to say the same thing is serial number less than $3$. This is where we need conditionals.
+want to reduce the list to just two items. In other words we want only those columns which have `S.N` $1$ and $2$. Another way to say the same thing is serial number less than $3$.  
+
+This is where we need conditionals.
 So, we update the main block of our last script putting in the conditional as follows:
 ```awk
 {
@@ -225,7 +242,9 @@ So, we update the main block of our last script putting in the conditional as fo
 ```
 
 We added an `if` conditional in the main block. Therefore, the `print` line only gets evaluated if
-the conditional is true namely if the value of `i` is less than $3$. Save and run the script with
+the conditional is true namely if the value of `i` is less than $3$.  
+
+Save and run the script with
 `list.txt` as input and verity that it runs as expected.
 
 All of the following relational operators can be used in a conditional:
