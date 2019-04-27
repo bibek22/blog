@@ -83,8 +83,8 @@ SITEMAP = {
     }
 }
 
-DISQUS_SITENAME = "bibekg"
-ADD_THIS_ID = 'ra-5c9aeaba42301cb9'
+# DISQUS_SITENAME = "bibekg"
+# ADD_THIS_ID = 'ra-5c9aeaba42301cb9'
 
 STATIC_PATHS = ['images', 'extra']
 
