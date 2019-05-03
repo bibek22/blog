@@ -57,7 +57,7 @@ CC_LICENSE = {
 }
 
 COPYRIGHT_YEAR = 2019
-COPYRIGHT_NAME = AUTHOR 
+COPYRIGHT_NAME = AUTHOR
 
 DEFAULT_PAGINATION = 5
 
@@ -65,7 +65,7 @@ DEFAULT_PAGINATION = 5
 # for ipynb plugin thing from danielfrg/pelican-ipynb
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
-PLUGINS = ['sitemap', 'i18n_subsites', 'ipynb.liquid', 'render_math', 'pelican_javascript']
+PLUGINS = ['sitemap', 'pelican_javascript', 'i18n_subsites', 'ipynb.liquid', 'render_math']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 

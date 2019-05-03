@@ -2,13 +2,14 @@ let clack;
 let block1;
 let block2;
 let blockImg;
-let timestep = 0.1;
+let dt = 0.1;
 let collision = 0;
 let digits = 2;
 let countDiv;
 let play;
 let pause;
 let slider;
+const initialVelocity = -10;
 //let node = document.getElementByid('counter');
 
 function preload(){
@@ -20,10 +21,10 @@ function setup(){
     var cnv = createCanvas(520, 500);
     cnv.position(500, 200);
 
-    frameRate(30);
+    frameRate(3/dt);
 
     block1 = new Block(100, 258, 0, 0, 1, 100);
-    block2 = new Block(250, 158, -1/timestep, 0, Math.pow(10, digits), 200);
+    block2 = new Block(250, 158, initialVelocity, 0, Math.pow(100, digits-1), 200);
 
     countDiv = createDiv(collision);
     countDiv.style('font-size', '32pt', 'color', 'gray');
@@ -50,8 +51,8 @@ function setup(){
 
 function draw(){
     resetSketch(slider);
-    block1.update(timestep);
-    block2.update(timestep);
+    block1.update(dt);
+    block2.update(dt);
 
     interact(block1, block2);
 
@@ -102,6 +103,8 @@ function interact(one, other){
 
 function resetSketch(){
     digits   = slider.value();
+    dt = 10/Math.pow(10, digits);
+    frameRate(3/dt);
     block2.m = Math.pow(10, digits);
     clear();
 }
@@ -109,7 +112,7 @@ function resetSketch(){
 function restartAnim(){
     collision = 0;
     block1.x = 100;
-    block1.y = 258;
     block1.vx = 0;
-    block2.vx = -1/timestep;
+    block2.vx = initialVelocity/30 * 3/dt;
+    block2.x = block1.x + 140;
 }

@@ -1,4 +1,3 @@
-
 class Block{
     constructor(x, y, vx, vy, m, s){
         this.x  = x;
@@ -9,13 +8,13 @@ class Block{
         this.s  = s;    // size
     }
 
-    update(t){
-        var x = this.x + this.vx*t;
-        var y = this.y + this.vy*t;
+    update(dt){
+        var x = this.x + this.vx*dt;
+        var y = this.y + this.vy*dt;
 
         if (x < 10){ // collision with the wall on the left
             collision += 1;
-            this.x = 10 + (10 - x)/2;
+            this.x = 10;//10 + (10 - x)/2;
             this.vx = - this.vx;
             clack.play();
         } else{
