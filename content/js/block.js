@@ -12,7 +12,7 @@ class Block{
         var x = this.x + this.vx*dt;
         var y = this.y + this.vy*dt;
 
-        if (x < 10){ // collision with the wall on the left
+        if (x < 6){ // collision with the wall on the left
             collision += 1;
             this.x = 10;//10 + (10 - x)/2;
             this.vx = - this.vx;

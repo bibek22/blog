@@ -9,6 +9,7 @@ let countDiv;
 let play;
 let pause;
 let slider;
+let canvasSize;
 const initialVelocity = -10;
 //let node = document.getElementByid('counter');
 
@@ -18,32 +19,33 @@ function preload(){
 }
 
 function setup(){
-    var cnv = createCanvas(520, 500);
-    cnv.position(500, 200);
+    canvasSize = getCanvasSize();
+    var cnv = createCanvas(canvasSize,canvasSize);
+    cnv.position((windowWidth - canvasSize)/2, (windowHeight - canvasSize)/2);
 
     frameRate(3/dt);
 
-    block1 = new Block(100, 258, 0, 0, 1, 100);
-    block2 = new Block(250, 158, initialVelocity, 0, Math.pow(100, digits-1), 200);
+    block1 = new Block(canvasSize/5, canvasSize/1.31, 0, 0, 1, canvasSize/7);
+    block2 = new Block(canvasSize/1.3, canvasSize/1.53, initialVelocity, 0, Math.pow(100, digits-1), canvasSize/4);
 
     countDiv = createDiv(collision);
-    countDiv.style('font-size', '32pt', 'color', 'gray');
-    countDiv.position(windowWidth/2, windowHeight/1.2);
+    countDiv.style('font-size', '24pt', 'color', 'brown');
+    countDiv.position(windowWidth/3, windowHeight/1.2);
 
     slider = createSlider(1, 5, 2, 1);
     slider.position(windowWidth/1.5, windowHeight/3);
 
     play = createButton("Play");
     play.mousePressed(loop);
-    play.position(windowWidth/2.1, windowHeight/1.2 +  40);
+    play.position(windowWidth/2.1, windowHeight/1.1);
 
     pause = createButton("Pause");
     pause.mousePressed(noLoop);
-    pause.position(windowWidth/2.1 + 80, windowHeight/1.2 + 40);
+    pause.position(windowWidth/2.1 + 80, windowHeight/1.1);
 
     restart = createButton("restart");
     restart.mousePressed(restartAnim);
-    restart.position(windowWidth/2.1 + 180, windowHeight/1.2 +  40);
+    restart.position(windowWidth/2.1 - 100, windowHeight/1.1);
 
 
     resetSketch(slider);
@@ -56,10 +58,9 @@ function draw(){
 
     interact(block1, block2);
 
-    strokeWeight(4);
-    line(0, 360, 920, 360);
     strokeWeight(6);
-    var wall = line(10, 0, 10, 360);
+    line(6, canvasSize/1.1, canvasSize, canvasSize/1.1); //6 for stroke width of wall
+    var wall = line(6, canvasSize/8, 6, canvasSize/1.1);
 
     block1.draw();
     block2.draw();
@@ -115,4 +116,13 @@ function restartAnim(){
     block1.vx = 0;
     block2.vx = initialVelocity/30 * 3/dt;
     block2.x = block1.x + 140;
+    loop();
+}
+
+function getCanvasSize(){
+    if (windowWidth > windowHeight){
+        return(6*windowHeight/8);
+    }else{
+        return(6*windowWidth/8);
+    }
 }
