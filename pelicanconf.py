@@ -65,7 +65,7 @@ DEFAULT_PAGINATION = 5
 # for ipynb plugin thing from danielfrg/pelican-ipynb
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
-PLUGINS = ['sitemap', 'pelican_javascript', 'i18n_subsites', 'ipynb.liquid', 'render_math']
+PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'ipynb.liquid', 'render_math']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 
