@@ -2,15 +2,20 @@ let clack;
 let block1;
 let block2;
 let blockImg;
-let dt = 0.1;
+
+let wallPos = 6;
+
+let framerate = 30;
+let timeGone = 0.0;
+let dt = 0.01;
 let collision = 0;
-let digits = 2;
+let digits = 1; // after decimal
 let countDiv;
 let play;
 let pause;
 let slider;
 let canvasSize;
-const initialVelocity = -10;
+const initialVelocity = -30;
 //let node = document.getElementByid('counter');
 
 function preload(){
@@ -23,16 +28,29 @@ function setup(){
     var cnv = createCanvas(canvasSize,canvasSize);
     cnv.position((windowWidth - canvasSize)/2, (windowHeight - canvasSize)/2);
 
-    frameRate(3/dt);
+    frameRate(framerate);
 
-    block1 = new Block(canvasSize/5, canvasSize/1.31, 0, 0, 1, canvasSize/7);
-    block2 = new Block(canvasSize/1.3, canvasSize/1.53, initialVelocity, 0, Math.pow(100, digits-1), canvasSize/4);
+    block1 = new Block(
+        canvasSize/5,
+        canvasSize/1.31,
+        0,
+        1,
+        canvasSize/7,
+        wallPos);
+
+    block2 = new Block(
+        canvasSize/1.3,
+        canvasSize/1.53,
+        initialVelocity,
+        Math.pow(100, digits),
+        canvasSize/4,
+        wallPos + block1.s);
 
     countDiv = createDiv(collision);
     countDiv.style('font-size', '24pt', 'color', 'brown');
     countDiv.position(windowWidth/3, windowHeight/1.2);
 
-    slider = createSlider(1, 5, 2, 1);
+    slider = createSlider(0, 5, 1, 1); // start, end, default, step
     slider.position(windowWidth/1.5, windowHeight/3);
 
     play = createButton("Play");
@@ -52,11 +70,14 @@ function setup(){
 }
 
 function draw(){
+    timeGone += 1/framerate;
     resetSketch(slider);
-    block1.update(dt);
-    block2.update(dt);
-
-    interact(block1, block2);
+    while (timeGone > dt){
+        timeGone -= dt;
+        block1.update(dt);
+        block2.update(dt);
+        interact(block1, block2);
+    }
 
     strokeWeight(6);
     line(6, canvasSize/1.1, canvasSize, canvasSize/1.1); //6 for stroke width of wall
@@ -64,62 +85,52 @@ function draw(){
 
     block1.draw();
     block2.draw();
-    scale(0.5)
 
     countDiv.html("Collisions: "+ collision);
 }
-//
-// function mousePressed(){
-//      noLoop();
-//  }
-//
-function collide(one, other){
-    // one and other both blocks object
-    //
-    let vx;   // tmp storage to avoid updating till next calculation
-    let vy;
-    vx = (one.m - other.m)/(one.m + other.m) * one.vx + 2 * other.m / (one.m + other.m) * other.vx;
-    vy = (one.m - other.m)/(one.m + other.m) * one.vy + 2 * other.m / (one.m + other.m) * other.vy;
-
-    // symmetric formula for the other one
-    other.vx = (other.m - one.m)/(other.m + one.m) * other.vx + 2 * one.m / (other.m + one.m) * one.vx;
-    other.vy = (other.m - one.m)/(other.m + one.m) * other.vy + 2 * one.m / (other.m + one.m) * one.vy;
-
-    one.vx = vx;
-    one.vy = vy;
-    clack.play();
-}
-
 
 function interact(one, other){
         // Along X first
-        if (one.vx - other.vx > 0){
-        // If other is on the right
-            if (Math.abs(one.x - other.x) < one.s){
-                collide(one, other);
-                collision += 1;
-            }
+    if (other.x < wallPos + one.s){
+        let i = 0;
+        while(other.vx < Math.abs(initialVelocity) - Math.pow(10, -digits)){
+            i++;
+            one.collide(other);
+            one.hitWall();
+            collision += 2; // for collision with the wall
         }
+        other.x = wallPos + one.s;
+        one.x = wallPos
+    }
+    if (other.x < one.x + one.s){
+        one.collide(other);
+        one.x = other.x - one.s;
+
+        clack.play();
+        collision += 1;
+    }
 }
+
 
 function resetSketch(){
     digits   = slider.value();
-    dt = 10/Math.pow(10, digits);
-    frameRate(3/dt);
-    block2.m = Math.pow(10, digits);
+    //dt = 10/Math.pow(10, digits);
+    block2.m = Math.pow(100, digits);
     clear();
 }
 
 function restartAnim(){
+    // handler for restart button
     collision = 0;
-    block1.x = 100;
+    block1.x = canvasSize/4;
     block1.vx = 0;
-    block2.vx = initialVelocity/30 * 3/dt;
-    block2.x = block1.x + 140;
+    block2.vx = initialVelocity;
+    block2.x = canvasSize/1.5;
     loop();
 }
 
 function getCanvasSize(){
+    // for different size devices
     if (windowWidth > windowHeight){
         return(6*windowHeight/8);
     }else{
