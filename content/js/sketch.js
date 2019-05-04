@@ -5,6 +5,8 @@ let blockImg;
 
 let wallPos = 6;
 
+var impList = [0, 0, 1, 0.01, 0.0001, 0.0000001, Math.pow(10, -8)]; // oh you'll need this !
+
 let framerate = 30;
 let timeGone = 0.0;
 let dt = 0.01;
@@ -47,11 +49,13 @@ function setup(){
         wallPos + block1.s);
 
     countDiv = createDiv(collision);
-    countDiv.style('font-size', '24pt', 'color', 'brown');
+    countDiv.style('font-size', '24pt');
+    countDiv.style('color', '#550000');
     countDiv.position(windowWidth/3, windowHeight/1.2);
 
-    slider = createSlider(0, 5, 1, 1); // start, end, default, step
-    slider.position(windowWidth/1.5, windowHeight/3);
+    slider = createSlider(0, 7, 1, 1); // start, end, default, step
+    slider.position(windowWidth/2, windowHeight/4);
+    slider.style('border','2px solid #550000' )
 
     play = createButton("Play");
     play.mousePressed(loop);
@@ -92,9 +96,7 @@ function draw(){
 function interact(one, other){
         // Along X first
     if (other.x < wallPos + one.s){
-        let i = 0;
-        while(other.vx < Math.abs(initialVelocity) - Math.pow(10, -digits)){
-            i++;
+        while(other.vx < Math.abs(initialVelocity) - impList[digits]){
             one.collide(other);
             one.hitWall();
             collision += 2; // for collision with the wall
