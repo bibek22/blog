@@ -100,11 +100,11 @@ GOOGLE_ADSENSE = {
     'ca_id': 'ca-pub-1726541799255911',    # Your AdSense ID
     'page_level_ads': True,          # Allow Page Level Ads (mobile)
     'ads': {
-        'aside': '1234561',          # Side bar banner (all pages)
-        'main_menu': '1234562',      # Banner before main menu (all pages)
-        'index_top': '1234563',      # Banner after main menu (index only)
-        'index_bottom': '1234564',   # Banner before footer (index only)
-        'article_top': '1234565',    # Banner after article title (article only)
-        'article_bottom': '1234566', # Banner after article content (article only)
+        'aside': '2376242243',          # Side bar banner (all pages)
+        'main_menu': '',      # Banner before main menu (all pages)
+        'index_top': '2575197573',      # Banner after main menu (index only)
+        'index_bottom': '',   # Banner before footer (index only)
+        'article_top': '',    # Banner after article title (article only)
+        'article_bottom': '2609134398', # Banner after article content (article only)
     }
 }

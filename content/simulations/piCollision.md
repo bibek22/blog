@@ -1,7 +1,7 @@
 title: Calculating Pi
 tags: maths
 date: 2019-04-27 22:28
-category: interactive
+category: physics
 authors: Bibek Gautam
 slug: calculate-pi-md
 Stylesheets: stylepi.css

@@ -1,7 +1,7 @@
 title: Simulating double pendulum
-tags: maths
+tags: physics, simulation, maths
 date: 2019-05-05 12:28
-category: interactive
+category: physics
 slug: double pendulum
 authors: Bibek Gautam
 Stylesheets: style_sim.css
@@ -20,7 +20,7 @@ systems. As seen in this one below
 
 <span id='slight_1' class='sketchContainer'></span> <span id='slight_2' class='sketchContainer'></span>
 
-<button id='playS'onclick='simPlay()'>play</button>
+<button id='playS'onclick='simPlay()'>play/pause</button>
 
 
 As you can see, even though the initial configurations are identical as far as we can tell, as the
