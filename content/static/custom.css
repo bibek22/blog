@@ -1,0 +1,8 @@
+.slider{
+    -webkit-appearance: none;
+    width:200px;
+    height:6px;
+    background: #d3d3d3;
+    border: 2px solid #AAAAAA;
+    border-radius: 5px;
+}
