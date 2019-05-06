@@ -13,11 +13,11 @@ class Block{
         let x = this.x + this.vx*dt;
         let y = this.y + this.vy*dt;
 
-        if (x <= wallPos){ // collision with the wall on the left
-            this.x = wallPos;  // right at the wall
+        if (x <= simulation.wallPos){ // collision with the wall on the left
+            this.x = simulation.wallPos;  // right at the wall
             this.vx = Math.abs(this.vx);
-            collision += 1;
-            clack.play();
+            simulation.collision += 1;
+            simulation.clack.play();
         }else{
             this.x = x;
         }
@@ -29,7 +29,7 @@ class Block{
     }
 
     draw(){
-        image(blockImg, this.x, this.y, this.s, this.s);
+        simulation.image(simulation.blockImg, this.x, this.y, this.s, this.s);
     }
 
     collide(other){

@@ -1,136 +1,132 @@
-let clack;
-let block1;
-let block2;
-let blockImg;
+var packaging = function(p){
+    p.wallPos = 6;
 
-let wallPos = 6;
+    p.impList = [0, 0, 1, 0.01, 0.0001, 0.0000001, Math.pow(10, -8)]; // oh you'll need this !
 
-var impList = [0, 0, 1, 0.01, 0.0001, 0.0000001, Math.pow(10, -8)]; // oh you'll need this !
+    p.framerate = 30;
+    p.timeGone = 0.0;
+    p.dt = 0.01;
+    p.collision = 0;
+    p.digits = 1; // after decimal
+    p.canvasSize = 300;
 
-let framerate = 30;
-let timeGone = 0.0;
-let dt = 0.01;
-let collision = 0;
-let digits = 1; // after decimal
-let countDiv;
-let play;
-let pause;
-let slider;
-let canvasSize = 300;
-const initialVelocity = -30;
+    p.initialVelocity = -30;
 
-var isLoop = 1;
+    p.isLoop = 1;
 
-function preload(){
-    clack = loadSound('/static/clack.wav');
-    blockImg = loadImage("/images/block.png");
-}
-
-function setup(){
-    var cnv = createCanvas(canvasSize,canvasSize);
-    cnv.parent("simulation"); // by id
-
-    // cnv.position((windowWidth - canvasSize)/2, (windowHeight - canvasSize)/2);
-
-    frameRate(framerate);
-
-    block1 = new Block(
-        canvasSize/5,
-        canvasSize/1.31,
-        0,
-        1,
-        canvasSize/7,
-        wallPos);
-
-    block2 = new Block(
-        canvasSize/1.3,
-        canvasSize/1.53,
-        initialVelocity,
-        Math.pow(100, digits),
-        canvasSize/4,
-        wallPos + block1.s);
-
-    countDiv = document.getElementById("counter");
-
-    slider = document.getElementById("digits");
-    slider.addEventListener("input", updateBigMass);
-
-    play = document.getElementById("play");
-    play.onclick = toggle;
-
-    restart = document.getElementById("restart");
-    restart.onclick = restartAnim;
-
-    resetSketch(slider);
-}
-
-function draw(){
-    timeGone += 1/framerate;
-    resetSketch(slider);
-    while (timeGone > dt){
-        timeGone -= dt;
-        block1.update(dt);
-        block2.update(dt);
-        interact(block1, block2);
+    p.preload = function (){
+        p.clack = p.loadSound('/static/clack.wav');
+        p.blockImg = p.loadImage("/images/block.png");
     }
 
-    strokeWeight(6);
-    line(6, canvasSize/1.1, canvasSize, canvasSize/1.1); //6 for stroke width of wall
-    var wall = line(6, canvasSize/8, 6, canvasSize/1.1);
+    p.setup = function (){
+        p.cnv = p.createCanvas(p.canvasSize,p.canvasSize);
+        p.cnv.parent("simulation"); // by id
 
-    block1.draw();
-    block2.draw();
+        // cnv.position((windowWidth - canvasSize)/2, (windowHeight - canvasSize)/2);
 
-    countDiv.innerHTML =  collision;
-}
+        p.frameRate(p.framerate);
 
-function updateBigMass(){
-    digits = slider.value;
-    block2.m = Math.pow(100, digits);
-    document.getElementById("big").innerHTML = block2.m;
-}
+        p.block1 = new Block(
+            p.canvasSize/5,
+            p.canvasSize/1.31,
+            0,
+            1,
+            p.canvasSize/7,
+            p.wallPos);
 
-function interact(one, other){
-        // Along X first
-    if (other.x < wallPos + one.s){
-        while(other.vx < Math.abs(initialVelocity) - impList[digits]){
-            one.collide(other);
-            one.hitWall();
-            collision += 2; // for collision with the wall
+        p.block2 = new Block(
+            p.canvasSize/1.3,
+            p.canvasSize/1.53,
+            p.initialVelocity,
+            Math.pow(100, digits),
+            p.canvasSize/4,
+            p.wallPos + p.block1.s);
+
+        p.countDiv = document.getElementById("counter");
+
+        p.slider = document.getElementById("digits");
+        p.slider.addEventListener("input", p.updateBigMass);
+
+        p.play = document.getElementById("play");
+        p.play.onclick = p.toggle;
+
+        p.restart = document.getElementById("restart");
+        p.restart.onclick = p.restartAnim;
+
+        p.resetSketch(p.slider);
+    }
+
+    p.draw = function (){
+        p.timeGone += 1/p.framerate;
+        p.resetSketch(p.slider);
+        while (p.timeGone > p.dt){
+            p.timeGone -= p.dt;
+            p.block1.update(p.dt);
+            p.block2.update(p.dt);
+            p.interact(p.block1, p.block2);
         }
-        other.x = wallPos + one.s;
-        one.x = wallPos
+
+        p.strokeWeight(6);
+        p.line(6, p.canvasSize/1.1, p.canvasSize, p.canvasSize/1.1); //6 for stroke width of wall
+        p.wall = p.line(6, p.canvasSize/8, 6, p.canvasSize/1.1);
+
+        p.block1.draw();
+        p.block2.draw();
+
+        p.countDiv.innerHTML =  p.collision;
     }
-    if (other.x < one.x + one.s){
-        one.collide(other);
-        one.x = other.x - one.s;
 
-        clack.play();
-        collision += 1;
+    p.updateBigMass = function (){
+        p.digits = p.slider.value;
+        p.block2.m = Math.pow(100, p.digits);
+        document.getElementById("big").innerHTML = p.block2.m;
+    }
+
+    p.interact = function (one, other){
+            // Along X first
+        if (other.x < p.wallPos + one.s){
+            while(other.vx < Math.abs(p.initialVelocity) - p.impList[p.digits]){
+                one.collide(other);
+                one.hitWall();
+                p.collision += 2; // for collision with the wall
+            }
+            other.x = p.wallPos + one.s;
+            one.x = p.wallPos;
+        }
+        if (other.x < one.x + one.s){
+            one.collide(other);
+            one.x = other.x - one.s;
+
+            p.clack.play();
+            p.collision += 1;
+        }
+    }
+
+    p.toggle = function (){
+        if (p.isLoop){
+            p.noLoop();
+            p.isLoop = 0;
+        }else{
+            p.loop();
+            p.isLoop = 1;
+        }
+    }
+
+    p.resetSketch = function (){
+        p.block2.m = Math.pow(100, p.digits);
+        p.clear();
+    }
+
+    p.restartAnim = function (){
+        // handler for restart button
+        p.collision = 0;
+        p.block1.x = p.canvasSize/4;
+        p.block1.vx = 0;
+        p.block2.vx = p.initialVelocity;
+        p.block2.x = p.canvasSize/1.5;
+        p.loop();
     }
 }
 
-function toggle(){
-    if (isLoop){
-        noLoop();
-        isLoop = 0;
-    }else{
-        loop();
-        isLoop = 1;
-    }
-}
-
-function resetSketch(){
-    block2.m = Math.pow(100, digits);
-    clear();
-}
-
-function restartAnim(){
-    // handler for restart button
-    collision = 0;
-    block1.x = canvasSize/4;
-    block1.vx = 0;
-    block2.vx = initialVelocity;
-    block2.x = canvasSize/1.5;
-    loop();
-}
+var simulation = new p5(packaging);
