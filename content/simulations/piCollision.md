@@ -29,5 +29,26 @@ Big mass: <data id="big">100</data> Kg<br>
 <input type="button" id="play" value="play/pause">
 <input type="button" id="restart" value="restart"> <br>
 
+### On conservation of Energy
+<span id='phasespace'></span>  
+
+It's clear that the total kinetic energy in the system is conserved. To put that in equations:
+
+$$\frac{1}{2}m_1v_2^2 + \frac{1}{2}m_2v_2^2 = E$$
+
+where, the symbols have the usual meaning. $E$ is some constant which isn't much relevant for our
+problem since the result is the same no matter what initial velocity we start the bigger block with.
+
+Since, only $v_1$ and $v_2$ are changing in the above equation, it makes sense to try to plot the
+equations with those as the coordinates.
+
+You can immediately see that equation $1$ is an ellipse. We could transform it to a circle if we
+redifine the coordinates in different scales - in particular if we took $\sqrt{m_1}v_1$ and
+$\sqrt{m_2}v_2$ as the coordinates.
+
+We've done that below as the collisions happen adding more points as time evolves.  
+
+Make sure you're working with $2$ digits to see the plot on phase space. Anything more than that
+would just cover up the entire circle and serve no value.
 
 

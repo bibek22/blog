@@ -16,8 +16,9 @@ class Block{
         if (x <= simulation.wallPos){ // collision with the wall on the left
             this.x = simulation.wallPos;  // right at the wall
             this.vx = Math.abs(this.vx);
-            simulation.collision += 1;
-            simulation.clack.play();
+            return 1;
+            // simulation.collision += 1;
+            // simulation.clack.play();
         }else{
             this.x = x;
         }

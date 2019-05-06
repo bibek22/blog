@@ -1,3 +1,6 @@
+var phaseState = [];
+var vect;
+
 var packaging = function(p){
     p.wallPos = 6;
 
@@ -62,8 +65,20 @@ var packaging = function(p){
         p.resetSketch(p.slider);
         while (p.timeGone > p.dt){
             p.timeGone -= p.dt;
-            p.block1.update(p.dt);
-            p.block2.update(p.dt);
+            p.tmp = p.block1.update(p.dt);
+            if (p.tmp){
+                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(vect.normalize());
+                p.collision += 1;
+                p.clack.play();
+            }
+            p.tmp = p.block2.update(p.dt);
+            if (p.tmp){
+                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(vect.normalize());
+                p.collision += 1;
+                p.clack.play();
+            }
             p.interact(p.block1, p.block2);
         }
 
@@ -88,7 +103,12 @@ var packaging = function(p){
         if (other.x < p.wallPos + one.s){
             while(other.vx < Math.abs(p.initialVelocity) - p.impList[p.digits]){
                 one.collide(other);
+                let vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx, Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(vect.normalize());
                 one.hitWall();
+
+                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx, Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(vect.normalize());
                 p.collision += 2; // for collision with the wall
             }
             other.x = p.wallPos + one.s;
@@ -100,6 +120,8 @@ var packaging = function(p){
 
             p.clack.play();
             p.collision += 1;
+            vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+            phaseState.push(vect.normalize());
         }
     }
 
@@ -121,6 +143,7 @@ var packaging = function(p){
     p.restartAnim = function (){
         // handler for restart button
         p.collision = 0;
+        phaseState = [];  // for phase diagram to reset
         p.block1.x = p.canvasSize/4;
         p.block1.vx = 0;
         p.block2.vx = p.initialVelocity;
@@ -129,4 +152,51 @@ var packaging = function(p){
     }
 }
 
+
 var simulation = new p5(packaging);
+
+
+var phaseSpacePackaging = function(p){
+    p.cansize = 300;
+    p.E = p.cansize/(2*1.1);
+    p.fps = 30;
+
+    p.setup = function(){
+        p.cnv = p.createCanvas(p.cansize, p.cansize);
+        p.cnv.parent("phasespace");
+    }
+
+    p.draw = function(){
+        p.background(255);
+        //
+        // for phase point dot
+        p.stroke(100);
+        p.strokeWeight(4);
+        p.ellipse(p.cansize/2, p.cansize/2, 2*p.E);
+        //
+        // for Coordinate Axes
+        p.blue = p.color(0, 40, 100);
+        p.stroke(p.blue);
+        p.strokeWeight(2);
+        p.line(p.cansize/2, 0, p.cansize/2, p.cansize);
+        p.line( 0, p.cansize/2, p.cansize, p.cansize/2);
+        //
+        // for the dots lines
+        p.stroke(50);
+        p.strokeWeight(6);
+        if (simulation.digits < 2){
+            for (let i=0; i < phaseState.length; i++){
+                p.stroke(50);
+                p.strokeWeight(6);
+                p.ellipse(p.E*phaseState[i].y+ p.cansize/2, p.E*phaseState[i].x + p.cansize/2, 2);
+                if (i){
+                    p.strokeWeight(2);
+                    p.stroke(150);
+                    p.line(p.E*phaseState[i-1].y + p.cansize/2, p.E*phaseState[i-1].x + p.cansize/2, p.E*phaseState[i].y+ p.cansize/2, p.E*phaseState[i].x + p.cansize/2);
+                }
+            }
+        }
+    }
+}
+
+var phaseDiagram = new p5(phaseSpacePackaging);
