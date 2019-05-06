@@ -38,8 +38,8 @@ It is also pretty simple, straightforward and goes like this:
 That is what I am trying to demonstrate in this post. Also, I want to get a sense of the number of
 iterations it takes for a satisfactory Sierpinski Triangle looking shape to emerge.  
 
-<span id="simulation"><span>
 <button id='queenBtn'>add Tracer</button> <button id='pointBtn'>add Vertices</button>
+<span id="simulation"><span>
 
 Iterations: <data id='iterations'>0</data>i
 
