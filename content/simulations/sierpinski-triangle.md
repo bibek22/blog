@@ -9,9 +9,21 @@ inbodyjs: /js/sierpinski.js
 JavaScripts: p5.min.js, p5.dom.min.js, p5.sound.min.js
 Summary: See how Sierpinski Triangle emerges as you go through this iterative algorithm...
 
+Fractals are the geometric figures that are made up of identical parts which are themselves
+identical to the whole figure. Snowflakes are one example. Even chaotic phenomenon like crystal
+formation tend to give rise to these self-similar structural patterns.
 
-This is a simple, straightforward algorithm which goes like this (if you allow me to quote
-from Wikipedia):
+[Sierpinski triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) is a fractal with a
+unit shape of a (equilateral) triangle. It's named after a polish mathematician Waclaw Sierpinski.
+
+There are copule straightforward algorithms to generate this structure. One is to start with a solid
+triangle and repeatedly remove a similar triangle from the center (i.e. one with the line joining
+mid-points as the sides).
+
+But, there is another, a bit more interesting algorithm which really isn't all that trivial to see
+how and why it generates Sierpinski triangle.
+
+It is also pretty simple, straightforward and goes like this:
 
 1. Take three points(vertices) in a plane to form a triangle.  
 2. Randomly select any point(tracer) inside the triangle and consider that your current position.  
