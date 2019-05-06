@@ -21,6 +21,8 @@ from Wikipedia):
 6. Repeat from step 3.  
 
 
+ ** Steps 4 - 6 is done automatically, just hit the play button below. **
+
 That is what I am trying to demonstrate in this post. Also, I want to get a sense of the number of
 iterations it takes for a satisfactory Sierpinski Triangle looking shape to emerge.  
 

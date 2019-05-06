@@ -98,6 +98,7 @@ var packaging = function(p){
         p.queen = [];
         p.animating = 0;
         p.iterations = 0;
+        document.getElementById('iterations').innerHTML = p.iterations;
     }
 }
 
