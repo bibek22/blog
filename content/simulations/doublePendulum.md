@@ -9,7 +9,7 @@ inbodyjs: /js/pendulum.js, /js/doublePendulum.js
 JavaScripts: p5.min.js, p5.dom.min.js, p5.sound.min.js, detectmobile.js
 Summary: Chaotic system with double pendulum...
 
-If you attach a single pendulum to another with it's fixed point being the mass of the later, you get a double pendulum. The strings are massless as usual. Point mass $m1$ and $m2$ are hooked at the ends of the two pendulum.
+If you attach a single pendulum to another with it's fixed point being at the mass of the later, you get a double pendulum. The strings are massless as usual. Point mass $m1$ and $m2$ are hooked at the ends of the two pendulum. I've taken $m_1 = 10\ Kg$ and $m_2 = 5\ Kg$ for all the examples below.
 <div id='trailer' class='sketchContainer'></div>
 
 #### Chaos
@@ -21,4 +21,4 @@ introduced in two otherwise identical systems, the time evolution happens to be 
 <button id='playS'onclick='simPlay()'>play/pause</button>
 
 
-This is awesome!
+Isn't that awesome!

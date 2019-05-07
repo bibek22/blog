@@ -7,9 +7,9 @@ slug: calculate-pi-md
 Stylesheets: stylepi.css
 inbodyjs: /js/piCollision.js, /js/block.js
 JavaScripts: p5.min.js, p5.dom.min.js, p5.sound.min.js
-Summary: An extremely computationally inefficient pi. Inspired from a 3Blue1Brown <a href='https://www.youtube.com/watch?v=HEfHFsfGXjs'>video </a>
+Summary: An extremely computationally inefficient way to calculate pi. Inspired from a 3Blue1Brown <a href='https://www.youtube.com/watch?v=HEfHFsfGXjs'>video</a>...
 
-If you're unsure what this is about, watch this awesome [video](https://www.youtube.com/watch?v=jsYwFizhncE) that explains everything. Code for this simulation is available on my github.  
+If you're unsure what this is about, watch this awesome [video](https://www.youtube.com/watch?v=jsYwFizhncE) that explains everything. Code for this simulation is available on my [github](https://github.com/bibek22/blog).  
 
 But let me explain the setup here anyway. So, you have two blocks on a frictionless surface free to
 move in one direction.  
@@ -42,13 +42,15 @@ problem since the result is the same no matter what initial velocity we start th
 Since, only $v_1$ and $v_2$ are changing in the above equation, it makes sense to try to plot the
 equations with those as the coordinates.
 
-You can immediately see that equation $1$ is an ellipse. We could transform it to a circle if we
-redifine the coordinates in different scales - in particular if we took $\sqrt{m_1}v_1$ and
-$\sqrt{m_2}v_2$ as the coordinates.
+You can immediately see that the equation is an ellipse. We could transform it to a circle if we
+redifined the coordinates in different scales - in particular if we took $x = \sqrt{m_1}v_1$ and
+$y = \sqrt{m_2}v_2$ as the coordinates.
 
-We've done that below as the collisions happen adding more points as time evolves.  
+That is what we've  done in the diagram above. State of the system on this phase diagram, which is
+represented by the position of black dots, changes on each collision. But it always remains *on* the
+circle. And we know conservation of the energy is the reason why!
 
 Make sure you're working with $2$ digits to see the plot on phase space. Anything more than that
-would just cover up the entire circle and serve no value.
+would just cover up the entire circle and serve no value. So, I've excluded those cases.
 
 

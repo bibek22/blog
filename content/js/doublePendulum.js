@@ -232,3 +232,9 @@ function simPlay(){
         simLoopOn = 1;
     }
 }
+
+
+// timeout for the first pendulum demo after some period.
+setTimeout(function() {
+    experiment.noLoop();
+}, 90000);

@@ -90,6 +90,11 @@ var packaging = function(p){
         p.block2.draw();
 
         p.countDiv.innerHTML =  p.collision;
+
+        // don't loop indefinitely !
+        if (p.block1.x > p.cansize && p.block2.x > p.cansize){
+            p.noLoop();
+        }
     }
 
     p.updateBigMass = function (){
@@ -158,8 +163,9 @@ var simulation = new p5(packaging);
 
 var phaseSpacePackaging = function(p){
     p.cansize = 300;
-    p.E = p.cansize/(2*1.1);
+    p.E = p.cansize*(17/40);
     p.fps = 30;
+    p.fontsize = 20;
 
     p.setup = function(){
         p.cnv = p.createCanvas(p.cansize, p.cansize);
@@ -181,18 +187,31 @@ var phaseSpacePackaging = function(p){
         p.line(p.cansize/2, 0, p.cansize/2, p.cansize);
         p.line( 0, p.cansize/2, p.cansize, p.cansize/2);
         //
+        //Coordinate labels
+        p.fill(20);
+        p.textSize(p.fontsize);
+        p.textAlign(p.LEFT, p.TOP);
+        p.text('y', p.cansize/2+5, 0);
+        p.textAlign(p.RIGHT, p.BOTTOM);
+        p.text('x', p.cansize-5, p.cansize/2);
+        p.noFill();
         // for the dots lines
         p.stroke(50);
         p.strokeWeight(6);
+        //
         if (simulation.digits < 2){
             for (let i=0; i < phaseState.length; i++){
                 p.stroke(50);
                 p.strokeWeight(6);
-                p.ellipse(p.E*phaseState[i].y+ p.cansize/2, p.E*phaseState[i].x + p.cansize/2, 2);
+                p.ellipse(p.E*phaseState[i].y+ p.cansize/2, -p.E*phaseState[i].x + p.cansize/2, 2);
+                //
                 if (i){
                     p.strokeWeight(2);
                     p.stroke(150);
-                    p.line(p.E*phaseState[i-1].y + p.cansize/2, p.E*phaseState[i-1].x + p.cansize/2, p.E*phaseState[i].y+ p.cansize/2, p.E*phaseState[i].x + p.cansize/2);
+                    //
+                    // this makes it plot like it should. but not sure how !
+                    p.line(p.E*phaseState[i-1].y + p.cansize/2, - p.E*phaseState[i-1].x + p.cansize/2,
+                        p.E*phaseState[i].y+ p.cansize/2, -p.E*phaseState[i].x + p.cansize/2);
                 }
             }
         }
