@@ -1,7 +1,9 @@
+//
+// Momentum States
 var phaseState = [];
-var vect;
 
 var packaging = function(p){
+    //===NAMESPACE FOR SKETCH===
     p.wallPos = 6;
 
     p.impList = [0, 0, 1, 0.01, 0.0001, 0.0000001, Math.pow(10, -8)]; // oh you'll need this !
@@ -26,10 +28,9 @@ var packaging = function(p){
         p.cnv = p.createCanvas(p.canvasSize,p.canvasSize);
         p.cnv.parent("simulation"); // by id
 
-        // cnv.position((windowWidth - canvasSize)/2, (windowHeight - canvasSize)/2);
-
         p.frameRate(p.framerate);
 
+        // ======BLOCK OBJECTS======= 
         p.block1 = new Block(
             p.canvasSize/5,
             p.canvasSize/1.31,
@@ -42,12 +43,19 @@ var packaging = function(p){
             p.canvasSize/1.3,
             p.canvasSize/1.53,
             p.initialVelocity,
-            Math.pow(100, digits),
+            Math.pow(100, p.digits),
             p.canvasSize/4,
             p.wallPos + p.block1.s);
 
+        // Initial momentum states filled right away
+        p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+        phaseState.push(p.vect.normalize());
+
+        // =======COLLISION COUNTER=======
+        //
         p.countDiv = document.getElementById("counter");
 
+        // =======SLIDER AND BOTTONS======
         p.slider = document.getElementById("digits");
         p.slider.addEventListener("input", p.updateBigMass);
 
@@ -61,27 +69,33 @@ var packaging = function(p){
     }
 
     p.draw = function (){
-        p.timeGone += 1/p.framerate;
         p.resetSketch(p.slider);
+
+        // To uncouple framerate from velocity
+        p.timeGone += 1/p.framerate;
+
         while (p.timeGone > p.dt){
+            // ACTUAL DYNAMICS LOGIC AND UPDATES
             p.timeGone -= p.dt;
             p.tmp = p.block1.update(p.dt);
             if (p.tmp){
-                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
-                phaseState.push(vect.normalize());
+                p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(p.vect.normalize());
                 p.collision += 1;
                 p.clack.play();
             }
             p.tmp = p.block2.update(p.dt);
             if (p.tmp){
-                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
-                phaseState.push(vect.normalize());
+                // TRUE IF YES COLLISION
+                p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(p.vect.normalize());
                 p.collision += 1;
                 p.clack.play();
             }
             p.interact(p.block1, p.block2);
         }
 
+        // ======DRAW OBJECTS=====
         p.strokeWeight(6);
         p.line(6, p.canvasSize/1.1, p.canvasSize, p.canvasSize/1.1); //6 for stroke width of wall
         p.wall = p.line(6, p.canvasSize/8, 6, p.canvasSize/1.1);
@@ -91,7 +105,8 @@ var packaging = function(p){
 
         p.countDiv.innerHTML =  p.collision;
 
-        // don't loop indefinitely !
+        //
+        // Stop looping when both blocks have gone off canvas
         if (p.block1.x > p.cansize && p.block2.x > p.cansize){
             p.noLoop();
         }
@@ -104,17 +119,20 @@ var packaging = function(p){
     }
 
     p.interact = function (one, other){
-            // Along X first
         if (other.x < p.wallPos + one.s){
             while(other.vx < Math.abs(p.initialVelocity) - p.impList[p.digits]){
+                // This loop runs till the bigger mass has exhausted it's momentum
+                // in negative direction.
                 one.collide(other);
-                let vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx, Math.sqrt(p.block2.m)*p.block2.vx);
-                phaseState.push(vect.normalize());
+                p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,
+                    Math.sqrt(p.block2.m)*p.block2.vx);
+                phaseState.push(p.vect.normalize());
                 one.hitWall();
 
-                vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx, Math.sqrt(p.block2.m)*p.block2.vx);
-                phaseState.push(vect.normalize());
-                p.collision += 2; // for collision with the wall
+                p.vect = p.createVector( Math.sqrt(p.block1.m) * p.block1.vx,
+                    Math.sqrt(p.block2.m) * p.block2.vx);
+                phaseState.push(p.vect.normalize());
+                p.collision += 2; // +1 for collision with the wall
             }
             other.x = p.wallPos + one.s;
             one.x = p.wallPos;
@@ -125,12 +143,13 @@ var packaging = function(p){
 
             p.clack.play();
             p.collision += 1;
-            vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
-            phaseState.push(vect.normalize());
+            p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+            phaseState.push(p.vect.normalize());
         }
     }
 
     p.toggle = function (){
+        // TOGGLE PLAY/PAUSE
         if (p.isLoop){
             p.noLoop();
             p.isLoop = 0;
@@ -162,10 +181,13 @@ var simulation = new p5(packaging);
 
 
 var phaseSpacePackaging = function(p){
+    // NAMESPACE FOR PHASE SPACE CIRCLE DIAGRAM
     p.cansize = 300;
-    p.E = p.cansize*(17/40);
     p.fps = 30;
     p.fontsize = 20;
+    //
+    // Fixes the radius of the circle
+    p.E = p.cansize*(17/40); 
 
     p.setup = function(){
         p.cnv = p.createCanvas(p.cansize, p.cansize);
@@ -195,7 +217,8 @@ var phaseSpacePackaging = function(p){
         p.textAlign(p.RIGHT, p.BOTTOM);
         p.text('x', p.cansize-5, p.cansize/2);
         p.noFill();
-        // for the dots lines
+        //
+        // For the dots and lines
         p.stroke(50);
         p.strokeWeight(6);
         //
@@ -209,7 +232,7 @@ var phaseSpacePackaging = function(p){
                     p.strokeWeight(2);
                     p.stroke(150);
                     //
-                    // this makes it plot like it should. but not sure how !
+                    // this makes the plot right. but not sure why !
                     p.line(p.E*phaseState[i-1].y + p.cansize/2, - p.E*phaseState[i-1].x + p.cansize/2,
                         p.E*phaseState[i].y+ p.cansize/2, -p.E*phaseState[i].x + p.cansize/2);
                 }
