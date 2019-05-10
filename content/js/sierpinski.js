@@ -67,6 +67,9 @@ var packaging = function(p){
         if (p.mouseX <= p.cansize && p.mouseY <= p.cansize && p.mouseX > 0 && p.mouseY > 0){
             if (p.reading){
                 p.points.push([p.mouseX, p.mouseY]);
+                if (p.points.length > 3){
+                    p.points.shift();
+                }
             }else{
                 p.queen = [p.mouseX, p.mouseY];
             }

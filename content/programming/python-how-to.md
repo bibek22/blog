@@ -3,7 +3,7 @@ Date: 2019-03-28
 Category: Programming
 Tags: tutorial,python,programming
 Slug: learn-python-for-beginners
-Summary: [to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about `python` before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
+Summary: [to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about *python* before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
 
 *Note: This is a direct export of jupyter notebook I made for a one day workshop on python I did. This needs editing. I might come back to it at some point in the future.*
 
@@ -16,12 +16,12 @@ Let's skip the part where I talk about what programming is and why it is importa
 Programming languages are of two kinds: interpreted and compiled.  
 
 - **Compiled languages:**  
-For compilled languages, you write the program, also known as *source code*, run the compiler against it, and finally run the executable program produced by the compiler. Compiler, here, means a piece of software that you install when you 'install' a programming language like `C` or `Fortran`, etc. to your computer.  
+For compilled languages, you write the program, also known as *source code*, run the compiler against it, and finally run the executable program produced by the compiler. Compiler, here, means a piece of software that you install when you 'install' a programming language like *C* or *Fortran*, etc. to your computer.  
 
 - **Interpreted languages:**   
-Using interpreted languages is more straightforward. You install a software called *interpreter*, for eg. `python` interpreter, when you install the program. You type the code directly on to this interpreter and it executes your code one line at a time.  
+Using interpreted languages is more straightforward. You install a software called *interpreter*, for eg. *python* interpreter, when you install the program. You type the code directly on to this interpreter and it executes your code one line at a time.  
 
-Python is an interpreted language. I am going to assume you have access to a `python interpreter` which is also called `python console`. And make sure the version of python you are using is python 3. You can check by running `python -V` at your terminal.
+Python is an interpreted language. I am going to assume you have access to a *python interpreter* which is also called *python console*. And make sure the version of python you are using is python 3. You can check by running `python -V` at your terminal.
 
 ###  Numbers
 

@@ -26,8 +26,8 @@ Big mass: <data id="big">100</data> Kg<br>
 
 
 <b><h4 color="#550000">Collisions: <data id="counter">0</data></h4></b>
-<input type="button" id="play" value="play/pause">
-<input type="button" id="restart" value="restart"> <br>
+<button id="play">play/pause</button>
+<button id="restart">restart</button><br>
 
 ### On conservation of Energy
 <span id='phasespace'></span>  
