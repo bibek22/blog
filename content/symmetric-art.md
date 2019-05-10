@@ -6,10 +6,11 @@ Category: Misc
 inbodyjs: /js/symmetricCanvas.js
 JavaScripts: p5.min.js, p5.dom.min.js
 Tags: art, programming
-Summary: 
+Summary: A symmetric canvas for your symmetric art pieces.
 
-status: draft
 
-<span id="canvas" class="noScroll"></span>
+<input class="slider" type="range" id="slider" min="3" max="7" step="1" value="5"> 
+<br><br>  
+<span id="canvas" style="touch-action: none;" class="noScroll" ontouchmove="noscroll"></span>
 
 <button id="reset">reset</button>

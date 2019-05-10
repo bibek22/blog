@@ -23,6 +23,6 @@ button:focus {
           box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
-.noScroll {
+.p5Canvas{
     touch-action: none;
 }
