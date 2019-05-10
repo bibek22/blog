@@ -41,6 +41,12 @@ var canvasPackaging = function(p){
     }
 
 
+    p.mousePressed = function(){
+        if (p.mouseX > 0 && p.mouseX < p.cansize && p.mouseY > 0 && p.mouseY < p.cansize){
+            p.symmetryDraw();
+        }
+    }
+
     p.mouseDragged = function(){
         if (p.mouseX > 0 && p.mouseX < p.cansize && p.mouseY > 0 && p.mouseY < p.cansize){
             p.symmetryDraw();
