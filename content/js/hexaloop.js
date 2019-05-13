@@ -17,8 +17,8 @@ var hexaPackaging = function(p){
         p.reset = document.getElementById("resetHexaLoop").onclick = p.reset;
 
         // These wont change
-        p.stroke(100);
-        p.strokeWeight(3);
+        p.stroke(80);
+        p.strokeWeight(2);
         p.noFill();
         p.noLoop();
     }

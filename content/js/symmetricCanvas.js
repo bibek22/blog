@@ -1,6 +1,6 @@
 var canvasPackaging = function(p){
     p.fps = 20;
-    p.cansize = 350;
+    p.cansize = 350; // (p.windowWidth > 550)? p.windowWidth/3: 350;
     p.symmetryAxis;
 
     p.centerFill = 150;

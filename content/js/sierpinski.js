@@ -38,7 +38,7 @@ var packaging = function(p){
             p.ellipse(p.points[i][0], p.points[i][1], p.vertexSize);
         }
         // Queen
-        p.fill(80);
+        p.fill(140);
         p.ellipse(p.queen[0], p.queen[1], p.queenSize);
 
         // history points
@@ -64,9 +64,17 @@ var packaging = function(p){
     }
 
     p.mousePressed = function(){
+        // touch on phones registers same point twice for some reason.
+        for (let i = 0; i < p.points.length; i++){
+            if (Math.pow(p.mouseX - p.points[i][0], 2) + Math.pow(p.mouseY - p.points[i][1], 2) < 40){
+                console.log("returned");
+                return;
+            }
+        }
+
         if (p.mouseX <= p.cansize && p.mouseY <= p.cansize && p.mouseX > 0 && p.mouseY > 0){
             if (p.reading){
-                p.points.push([p.mouseX, p.mouseY]);
+                                p.points.push([p.mouseX, p.mouseY]);
                 if (p.points.length > 3){
                     p.points.shift();
                 }
