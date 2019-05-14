@@ -12,8 +12,13 @@ Summary: A symmetric canvas for your symmetric art pieces.
 
 *Feature suggestions are very welcome.*
 
-<input class="slider" type="range" id="slider" min="3" max="9" step="1" value="5"> 
-<br><br>  
+<b>Symmetry :</b> <input class="slider" type="range" id="symmetry" min="3" max="9" step="1" value="5">
+<span id='symmetryVal'></span><br>
+
+<b>Pencil Shade :</b> <input class="slider" type="range" id="shade" min="0" max="16" step="4" value="8">
+<span id='shadeVal'></span>
+
+<br>
 <span id="canvas" style="touch-action: none;" class="noScroll" ontouchmove="noscroll"></span>
 
-<button id="reset">reset</button>
+<button id="reset">reset</button> <button id="save">save</button>

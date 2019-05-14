@@ -5,13 +5,29 @@ var canvasPackaging = function(p){
 
     p.centerFill = 150;
     p.symmetryFill = 180;
+    p.pencil = 80;
 
     p.setup = function(){
         p.cnv = p.createCanvas(p.cansize, p.cansize);
         p.cnv.parent("canvas");
 
         document.getElementById("reset").onclick = p.clearCanvas;
-        p.slider = document.getElementById("slider");
+        document.getElementById("save").onclick = p.saveCnv;
+
+        document.getElementById("shadeVal").innerHTML = p.pencil;
+        document.getElementById("shade").addEventListener("input", function(){
+            p.pencil = this.value*10;
+            p.stroke(p.pencil);
+            document.getElementById("shadeVal").innerHTML = p.pencil;
+        })
+
+
+        document.getElementById("shade").addEventListener("input", function(){
+            p.pencil = this.value*10;
+            document.getElementById("shadeVal").innerHTML = p.pencil;
+        })
+
+        p.slider = document.getElementById("symmetry");
         p.slider.addEventListener("input", p.clearCanvas);
         p.symmetryAxis = p.slider.value;
 
@@ -29,6 +45,7 @@ var canvasPackaging = function(p){
         p.stroke(p.symmetryFill);
         p.axis = p.createVector(0, p.cansize);
         p.symmetryAxis = p.slider.value;
+        document.getElementById("symmetryVal").innerHTML = p.symmetryAxis;
         p.angle = p.TAU / p.symmetryAxis;
         p.axis.rotate(p.angle/2);
         p.stroke(220);
@@ -37,7 +54,7 @@ var canvasPackaging = function(p){
             p.line(p.cansize/2, p.cansize/2, p.cansize/2 + p.axis.x, p.cansize/2 + p.axis.y);
             p.axis.rotate(p.angle);
         }
-        p.stroke(80);
+        p.stroke(p.pencil);
     }
 
 
@@ -63,6 +80,9 @@ var canvasPackaging = function(p){
             p.px.rotate(p.angle);
             p.ppx.rotate(p.angle);
         }
+    }
+    p.saveCnv = function(){
+        p.save();
     }
 }
 
