@@ -9,10 +9,6 @@ inbodyjs: /js/sierpinski.js, /js/hexaloop.js
 JavaScripts: p5.min.js, p5.dom.min.js, p5.sound.min.js
 Summary: See how Sierpinski Triangle emerges as you go through this iterative algorithm...
 
-Fractals are the geometric figures that are made up of identical parts which are themselves
-identical to the whole figure. Snowflakes are one example. Even chaotic phenomenon like crystal
-formation tend to give rise to these self-similar structural patterns.
-
 [Sierpinski triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle) is a fractal with a
 unit shape of a (equilateral) triangle. It's named after a polish mathematician Waclaw Sierpinski.
 
@@ -20,7 +16,7 @@ There are copule straightforward algorithms to generate this structure. One is t
 triangle and repeatedly remove a similar triangle from the center (i.e. one with the line joining
 mid-points as the sides).
 
-But, there is another, a bit more interesting algorithm which really isn't all that trivial to see
+But, there is another, a bit more interesting algorithm where it really isn't all that trivial to see
 how and why it generates Sierpinski triangle.
 
 It is also pretty simple, straightforward and goes like this:
@@ -38,7 +34,7 @@ It is also pretty simple, straightforward and goes like this:
 That is what I am trying to demonstrate in this post. Also, I want to get a sense of the number of
 iterations it takes for a satisfactory Sierpinski Triangle looking shape to emerge.  
 
-<button id='queenBtn'>add Tracer</button> <button id='pointBtn'>add Vertices</button><br><br>
+<button id='pointBtn'>Pick vertices</button> <button id='queenBtn'>Pick tracer</button> <br>
 <span id="simulation"><span>
 
 Iterations: <data id='iterations'>0</data>

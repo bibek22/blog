@@ -1,8 +1,8 @@
-Title: How to build your blog with Pelican !
+Title: Building a blog with Pelican
 Date: 2019-03-27
 Category: Tutorial
-Tags: blog, website, tech
-Slug: pelican-how-to
+Tags: ssg, python, blog, website, tech
+Slug: blog-with-pelican-a-ssg-in-python
 Summary: Here I talk about a static site generator called Pelican which is written in python.
 
 ### First thing first !
@@ -10,7 +10,7 @@ Static site generators (SSG) are these nice little framework that help you manag
 
 ### Why Pelican ?
 **Short Answer:** Because, Python !   
-**Long Answer:** Well, I don't really have a long answer to this. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to learn ruby(jekyll) just to run my blog. So, Pelican is the perfect fit. 
+**Long Answer:** Well, I don't really have a long answer. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to pick up ruby(jekyll) just to run my blog. So, Pelican is the perfect fit. 
 
 ### What do I need ?
 You'll need `python3`, `virtualenv`, `pip3` and a little bit of patience.
@@ -65,10 +65,10 @@ $ make devserver
 
 A http server will be run at port `8000`. Point your browser at that port on your localhost and you should see a landing page for Pelican.
 
-### Creating posts !
-To keep your posts sources organized, create a directory `content` inside `blog` directory. Add `.md` or `.rst` files inside this directory, one for each post. Pelican supports `markdown` or `ReStructuredText` bout of the box. You can pick a markup language you prefer.
+### Adding posts
+To keep your posts sources organized, create a directory `content` inside `blog` directory. Write your articles in `.md` or `.rst` files inside this directory, one for each post. Pelican supports *markdown* or *ReStructuredText* out of the box. You can pick the one you prefer. You can also write posts in plain html if you so desire.
 
 ### Further...
-You can pick one among several themes available for pelican from this [repo](https://github.com/getpelican/pelican-themes). Another awesome thing about Static site is that you can host it for free using github [pages](https://pages.github.com/), [netlify](https://www.netlify.com/) etc. Comment below if you are interested. I'll write about how to host your blog for free and with continuous deployment.
+You can pick one among several themes available for pelican from this [repo](https://github.com/getpelican/pelican-themes). Another awesome thing about Static site is that you can host it for free using github [pages](https://pages.github.com/), [netlify](https://www.netlify.com/) etc.
 
 The End.

@@ -3,13 +3,13 @@ tags: maths
 date: 2019-04-27 22:28
 category: Physics
 authors: Bibek Gautam
-slug: calculate-pi-md
+slug: calculate-pi-with-block-collisions
 Stylesheets: stylepi.css
 inbodyjs: /js/piCollision.js, /js/block.js
 JavaScripts: p5.min.js, p5.dom.min.js, p5.sound.min.js
 Summary: An extremely computationally inefficient way to calculate pi. Inspired from a 3Blue1Brown <a href='https://www.youtube.com/watch?v=HEfHFsfGXjs'>video</a>...
 
-If you're unsure what this is about, watch this awesome [video](https://www.youtube.com/watch?v=jsYwFizhncE) that explains everything. Code for this simulation is available on my [github](https://github.com/bibek22/blog).  
+If you're unsure what this is about, watch this awesome [video](https://www.youtube.com/watch?v=jsYwFizhncE) that explains everything. You can find the code for this simulation on [github](https://github.com/bibek22/blog).  
 
 But let me explain the setup here anyway. So, you have two blocks on a frictionless surface free to
 move in one direction.  
@@ -36,21 +36,23 @@ It's clear that the total kinetic energy in the system is conserved. To put that
 
 $$\frac{1}{2}m_1v_2^2 + \frac{1}{2}m_2v_2^2 = E$$
 
-where, the symbols have the usual meaning. $E$ is some constant which isn't much relevant for our
-problem since the result is the same no matter what initial velocity we start the bigger block with.
+where, the symbols have the usual meaning. $E$ is constant and its exact value isn't relevant for our
+problem since the result (i.e. total number of collisions) is the same irrespective of the initial velocity of the bigger block.
 
 Since, only $v_1$ and $v_2$ are changing in the above equation, it makes sense to try to plot the
 equations with those as the coordinates.
 
-You can immediately see that the equation is an ellipse. We could transform it to a circle if we
-redifined the coordinates in different scales - in particular if we took $x = \sqrt{m_1}v_1$ and
+You can immediately see that the equation is an ellipse. We can transform it to a circle if we
+scale the coordinate axes by right amount - in particular if we take $x = \sqrt{m_1}v_1$ and
 $y = \sqrt{m_2}v_2$ as the coordinates.
 
 That is what we've  done in the diagram above. State of the system on this phase diagram, which is
-represented by the position of black dots, changes on each collision. But it always remains *on* the
-circle. And we know conservation of the energy is the reason why!
+represented by black dots, changes on each collision. But it always remains *on* the
+circle. And we know that conservation of the energy is the reason why!
 
 Make sure you're working with $2$ digits to see the plot on phase space. Anything more than that
-would just cover up the entire circle and serve no value. So, I've excluded those cases.
+would just cover up the entire circle because there are too many collisions. I've excluded those cases.
 
 
+#### Why is the value of E irrelevant?
+Before answering that question, notice that on each collision between the blocks, the momentum of bigger block is increasing in positive x - direction. 

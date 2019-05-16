@@ -8,7 +8,7 @@ JavaScripts: p5.min.js, p5.dom.min.js
 Tags: art, programming
 Summary: A symmetric canvas for your symmetric art pieces.
 
-**This is a canvas that helps you to draw with radial symmetry.**
+**This is a canvas to draw with radial symmetry.**
 
 *Feature suggestions are very welcome.*
 

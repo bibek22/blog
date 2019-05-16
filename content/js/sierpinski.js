@@ -9,8 +9,9 @@ var packaging = function(p){
     p.dotSize = 4;
 
     p.history = [];
-    p.points = [];
-    p.queen = [];
+    p.points = [[10, p.cansize-10], [p.cansize-10, p.cansize-10],
+        [p.cansize/2, (1-Math.sin(Math.PI/3))*p.cansize]];
+    p.queen = [p.cansize/2, p.cansize/2];
     p.reading = 1;  // 1 for vertices, 0 for queen
     p.animating = 0;
 
