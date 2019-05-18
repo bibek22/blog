@@ -27,7 +27,7 @@ Let's first look at one dimentional example. Laplace equation in one dimension i
 
 $$ \frac{d^2 \psi}{d x^2} = 0 $$
 
-We can solve this...
+We can solve the equation:
 
 $$ d^2 \psi = 0 $$
 
@@ -67,6 +67,17 @@ $$ \psi(x,y) = \frac{ 1 }{ 2\pi R } \underset{circle}{\oint} \psi\ dl$$
 
 The function which is a 2 dimensional surface on a space (x and y as input space and z as
 the output space) would have no local minima or local maxima.
+
+To solidify this understanding, imagine a hollow pipe like this:
+
+<img src="/images/cylinder.png" width='200'/>
+
+Now, chip away at the upper end of the cylinder creating a topography however you like. You're deciding
+on the boundary conditions. Now imagine covering this undulating end of the pipe with stretchable
+rubber sheet tightly such that the sheet touches the cylinder at every point on the boundary.
+
+The surface of the rubber gives you a solution of the Laplace equation with the boundary condition
+*you* specified. Realize that such rubber surface would have no peaks or valley *inside* the boundary.
 
 ##### Does this make sense ?
 As physicist, our job is to ask ourselves if this property we highlighted makes sense for all the
