@@ -65,8 +65,8 @@ points i.e. in case of 2D, points at a circle of radius R around the point. And 
 
 $$ \psi(x,y) = \frac{ 1 }{ 2\pi R } \underset{circle}{\oint} \psi\ dl$$
 
-The function which is a 2 dimensional surface on a 3D space (x and y as input space and z as
-the output space) would have no local minima or local maxima.
+And the function which is a 2 dimensional surface on a 3D space (x and y as input space and z as
+the output) would have no local minima or local maxima.
 
 To solidify this understanding, imagine a hollow pipe like this:
 
@@ -92,11 +92,11 @@ progresses.
 
 <img src="/images/rod.png" width='400'/>
 
-Take any point along the rod, what our property #1 tells us is that the temperature at this point is
+Take any point along the rod, what the property #1 tells us is that the temperature at this point is
 the average of the temperature immediately next to it. Which is reasonable, right ?
 
 Because, part of the rod on one side is trying to cool the point and part of the rod on other side is
-trying to heat it up and the point eventually has to make peace with the both sides, and settle on
+trying to heat it up and the point eventually has to 'make peace' with the both sides, and settle on
 the average temperature which doesn't change further.
 
 This is true for every point in the rod.
