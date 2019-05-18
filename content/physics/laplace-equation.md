@@ -60,12 +60,12 @@ solution to this second order partial differential equation.
 
 But we can get some idea about the nature of the solution.
 
-Again, the value at some point should be the average of the value of the function at neighboring
-points i.e. in case of 2D points at a circle of radius d around the point. And therefore,
+Again, the value at any point should be the average of the value of the function at neighboring
+points i.e. in case of 2D, points at a circle of radius R around the point. And therefore,
 
 $$ \psi(x,y) = \frac{ 1 }{ 2\pi R } \underset{circle}{\oint} \psi\ dl$$
 
-The function which is a 2 dimensional surface on a space (x and y as input space and z as
+The function which is a 2 dimensional surface on a 3D space (x and y as input space and z as
 the output space) would have no local minima or local maxima.
 
 To solidify this understanding, imagine a hollow pipe like this:
