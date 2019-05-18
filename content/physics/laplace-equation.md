@@ -4,13 +4,13 @@ Title: Laplace Equation
 Slug: laplace-equation
 Category: Physics
 Tags: Laplace equation, PDE, Heat Flow, Electrostatics
-Summary: Laplace equation and some physical applications
+Summary: Talks about Laplace equation with some physical applications...
 
-Laplace equation is:
+The Laplace equation is:
 
 $$\Delta^2 \psi  = 0 $$
 
-Some physical applications where laplace equation arrises naturally are listed below:  
+Some physical applications where laplace equation arrises naturally are:  
 
 1. Steady state temperature distribution in the region with no source or sink
 2. Electrostatic potential in a region with no charge density
@@ -37,10 +37,12 @@ $$ \psi(x) = ax + b $$
 
 which is an equation of a straight line, a and b being constants.
 
+
 Before we look at higher dimension, let me assert some properties of this soultion:  
 
-1. the value of the function at a point is the average of the value at points around it. Take two
-   points at equal distance on either side of any point $x$, the following relation holds:
+1. the value of the function at a point is the average of the value at points around it.  
+  <img src="/images/st-line-average.png" width='400'/>  
+   Take two points at equal distance on either side of any point $x$, the following relation holds:
   $$ \psi(x) = \frac{1}{2} \left[ \psi (x + d) + \psi (x - d) \right] $$  
   where, d is some distance. And above holds for all possible d.
 
