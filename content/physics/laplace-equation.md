@@ -15,15 +15,15 @@ Some physical applications where laplace equation arrises naturally are:
 1. Steady state temperature distribution in the region with no source or sink
 2. Electrostatic potential in a region with no charge density
 3. Gravitational potential in a region with no mass
-4. Velocity potential in a region with no source or sink
+4. Velocity potential in a region of fluid with no source or sink
 
-Do you see some pattern here ? Of course you do.
+Do you see some pattern here ? Of course you do!
 
 
-Before talking about specific cases of these applications, let's talk about the equation itself.
+But, before talking about any specific cases of these applications, let's talk about the equation itself.
 Let's see what kind of functions satisfy the Laplace equation.
 
-Let's first look at one dimentional example. Laplace equation in one dimension is:
+Let's first look at one dimensional example. Laplace equation in one dimension is:
 
 $$ \frac{d^2 \psi}{d x^2} = 0 $$
 

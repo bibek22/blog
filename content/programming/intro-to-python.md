@@ -5,7 +5,7 @@ Tags: tutorial, python, programming
 Slug: python-for-absolute-beginners
 Summary: [to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about *python* before and wondered what the fuss was about? **Continue reading** if you want to learn one of the most popular programming language right now from the very basics.
 
-*Note: This is a direct export of jupyter notebook I made for a one day workshop on python I did. This needs editing. I might come back to it at some point in the future.*
+*Note: This is a direct export of jupyter notebook I made for a one day workshop on python I did on my campus. This needs editing. I might come back to it at some point in the future. No assurance of quality on this one just yet!*
 
 # Introduction to Programming in Python
 

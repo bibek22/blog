@@ -9,7 +9,7 @@ Summary: On how fourier series and fourier series relate to each other
 
 
 If you're familiar with fourier series, you already know that given a function $f(x)$ satisfies a
-certain [conditions](), it can be written as an infinite sum of sines and cosines as follow:
+certain [conditions](https://en.wikipedia.org/wiki/Dirichlet_conditions), it can be written as an infinite sum of sines and cosines as follow:
 
 $$ f(x) = a_0 + \sum_{n=1}^\infty{a_n \cos nx} + \sum_{n=1}^\infty{b_n \sin nx} $$
 
