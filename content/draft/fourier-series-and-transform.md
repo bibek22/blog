@@ -4,9 +4,9 @@ Title: Fourier Series and Transform
 Slug: fourier-series-and-transform
 Category: Physics
 Tags: fourier, series, transform, physics, maths
-Status: Draft
 Summary: On how fourier series and fourier series relate to each other
 
+Status: Draft
 
 If you're familiar with fourier series, you already know that given a function $f(x)$ satisfies a
 certain [conditions](https://en.wikipedia.org/wiki/Dirichlet_conditions), it can be written as an infinite sum of sines and cosines as follow:
@@ -43,12 +43,21 @@ Make sure you get exactly the same terms as above when you expand this new expre
 
 This is equivalent to the more familiar fourier series formula that we started with.
 
-Let me reiterate the big punchline here.
+Now if the function has a period other than $2\pi$, you can go through this same process with the
+fourier series in such cases and arrive at a formula that looks like this:
 
-Just like you can add various pure harmonics of various frequencies to create wonderfully complex music, you can add pure sines and cosines of various period to get any$^\dagger$ complicated functions.
+$$ f(x) = \sum_{n=-\infty}^\infty{c_n e^{\frac{in\pi x}{L}}} $$
 
+Let me reiterate the big punchline of fourier series.
+
+Just like you can add various pure harmonics of various frequencies to create wonderfully complex music, you can add pure sines and cosines of various period to get any$^\dagger$ complicated periodic functions.
+
+What about the functions that are not periodic ? 
+
+<!
 But, obviously, we've only added sines and cosines with period $\frac{n}{2\pi}$, where n = 1, 2, 3,
 and so on. Those are descrete values of n, where it could really take continuous values.
+!>
 
 #### Fourier Transform
 

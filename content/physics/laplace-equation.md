@@ -44,7 +44,7 @@ Before we look at higher dimension, let me assert some properties of this soulti
   <img src="/images/st-line-average.png" width='400'/>  
    Take two points at equal distance on either side of any point $x$, the following relation holds:
   $$ \psi(x) = \frac{1}{2} \left[ \psi (x + d) + \psi (x - d) \right] $$  
-  where, d is some distance. And above holds for all possible d.
+  where, d is any distance.
 
 2. The solution has no local maxima or minima and the global minima and maxima always lie on the
    end points i.e. on the boundary.
@@ -86,9 +86,8 @@ physical application where Laplace equation comes about.
 We can be sure that it does by using symmetry argument.
 
 Consider a metal rod of finite length $l$ with ends kept at 0 &deg;C and 100 &deg;C as in figure
-below. We are interested in the steady state temperature i.e. temperature distribution in the rod
-once the heat flow has settled or in other words no further temperature change occurs as time
-progresses.
+below. We are interested in the steady state temperature i.e. the temperature distribution in the rod
+after a long time such that it doesn't change further as time evolves.
 
 <img src="/images/rod.png" width='400'/>
 

@@ -53,6 +53,9 @@ circle. And we know that conservation of the energy is the reason why!
 Make sure you're working with $2$ digits to see the plot on phase space. Anything more than that
 would just cover up the entire circle because there are too many collisions. I've excluded those cases.
 
-
+<!
 #### Why is the value of E irrelevant?
-Before answering that question, notice that on each collision between the blocks, the momentum of bigger block is increasing in positive x - direction. 
+Before answering that question, notice that on each collision between the blocks, the momentum of bigger block is increasing in positive x - direction.  
+
+The velocity of the bigger mass after elastic collision with the small mass is:
+!>
