@@ -95,31 +95,34 @@ Take any point along the rod, what the property #1 tells us is that the temperat
 the average of the temperature immediately next to it. Which is reasonable, right ?
 
 Because, part of the rod on one side is trying to cool the point and part of the rod on other side is
-trying to heat it up and the point eventually has to 'make peace' with the both sides, and settle on
+trying to heat it up and the point eventually has to "make peace" with the both sides, and settle on
 the average temperature which doesn't change further.
 
-This is true for every point in the rod.
+This is true for every point in the rod except, of course, the end points.
 
 The second point was that there are no local minima/maxima on the inside of the rod.
 
-Suppose there is a local minima within the rod somewhere. That means the temperature of the rod on
-both sides is higher that the temperature at this point. If this were the case, the point would
-start to be heated from both sides and temperature would start to change. But this can't happen
-since we're already talking about steady state temperature. However the temperature needs to change
-has already changed before arriving at the steady state.
+Suppose there is a local minima at a point within the rod somewhere. That implies the temperature of the
+rod on both sides is higher that the temperature at this point. We know for sure this can't happen. Why?
+Because If this were the case, the point would start to be heated from both sides and the temperature would
+start to change. But this can't happen since we're already talking about steady state temperature. All the temperature needs to happen, has already happened before arriving at the steady state.
 
 You can argue similarly for local maxima.
-
-Note that the condition would be entirely different, if there were sources or sinks within the rod.
-In this case, Laplace equation would no longer hold. There would be non zero term on the RHS to
-account for these sources/sinks. And such equation is called Poission's equation.
-
-$$\Delta^2 \psi  = f(x,y,z) $$
 
 Velocity potential, electrostatic and gravitational potential can be understood similarly.
 
 If the fluid velocity potential distribution in the region wasn't like we characterized above, then
 there would be net force across the region to cancel out these irregularities and the system would
 reach this 'smoothness' asymptotically.
+
+Note that the condition would be entirely different, if there were sources or sinks within the rod.
+Sources would heat up the rod on both sides and thus create maxima and sinks would create
+minima. In fact, Laplace equation doesn't hold such cases. There would be non zero source/sink term
+on the RHS to account for these sources/sinks. This equation is called Poission's equation.
+
+$$\Delta^2 \psi  = f(x,y,z) $$
+
+where $f(x,y,z)$ characterizes the sources/sinks in the space. This could be charge density in
+electrostatics, mass density in gravitation.
 
 The End.

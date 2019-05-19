@@ -26,3 +26,8 @@ button:focus {
 .p5Canvas{
     touch-action: none;
 }
+
+.math-equation {
+  /* for scrollable maths block */
+  overflow-x: scroll;
+}
