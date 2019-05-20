@@ -4,6 +4,7 @@ Title: Dijkstra's Algorithm and Efficient path finding
 Slug: dijkstra's-algorithm-and-efficient-path-finding
 Category: Programming
 Tags: dijkstra's, algorithm, programming, project euler
+Status: Draft
 Summary: A particularly fun problem and way to solve it using dijkstra's algorithm
 
 I used to work on the problems from this website called Project Euler and this is one of the problem
@@ -11,12 +12,12 @@ I found particularly fun. So the problem goes like this:
 
 You have a inverted tree structure as so
 
-<blockquote>
+```
    3
   7 4
  2 4 6
 8 5 9 3
-</blockquote>
+```
 
 And by starting at the top you have to find a path that has the least sum along the way till you
 reach the bottom. You can pick either left or right on every new row.

@@ -144,17 +144,20 @@ type(a)
 It confirms that `a` is indeed an `int`. Now, try for `b` and `c` yourself.
 
 #### Functions
-What we just used above to check the type of a variable is a `function`. 
-Functions in computer programs are like those in mathematics.
-A function takes some inputs, do something to them and (usually) 
-return some output.  
-`type()` function as we saw took one input, i.e. name of the variable and returned it's type. You'll see
-functions that take many more inputs and return multiple or complex kind of data as you learn more.
+`type()` that we used above is called a `function`. 
 
-The line of code we saw above is called a **function call**  
-but you can also think of it as running a machine that performs
-a specific task.
-Inputs to a functions are called `arguments`. This is the way to call any function:  
+Functions in computer programs are like those in mathematics. A function takes some inputs, 
+do something to them and (usually) return some output.  
+
+`type()` function as we saw took one input, i.e. name of the variable and returned it's type. 
+
+You'll see functions that take many more inputs and return multiple or complex kind of data 
+as you learn more.
+
+You can hear using a function refered to as a *function call*  
+You can just as well think of it as running a machine that performs a specific task.
+
+Inputs to a functions are called *arguments*. This is the way to call any function:  
 
 `functionName(argument1, argument2, ..)`  
 
@@ -170,13 +173,14 @@ type("hi everyone!")
 
 ##### What's str ??
 
-What we generally call "text" in normal talk is called `string` 
-in programming. 
+What we generally know as text in normal talk is called `string` in programming as in string of
+characters.
 
 
 ```python3
 college = "St. Xavier's College"
 ```
+
 So, `college` is now a string variable.
 
 There are somes rules for naming a variable.
@@ -189,12 +193,18 @@ You can't have a name starting with digit.
 # but name_1st is okay!
 ```
 
-
       File "<ipython-input-10-092931d47764>", line 1
         1stName = "bibek"
               ^
     SyntaxError: invalid syntax
 
+Make habbit of reading the error message as early as you can. It helps you with a lot of trouble
+along the way. You don't need to fear them. Error messages in python are more friendly compared to
+other programming languages. When you're writing a program with complicated logic and structure,
+it's essential that you read the error message and know where the mistake lies.
+
+Presently, compiler is informing you that there is some syntax error and it points to the variable
+name as well.
 
 There are these words that are defined in the python language itself and have special meaning. They
 are reserved and you can't redefine them to something else.
@@ -204,16 +214,13 @@ are reserved and you can't redefine them to something else.
 class = "BSC-III"
 ```
 
-
       File "<ipython-input-11-86ebb738ef0a>", line 1
         class = "BSC-III"   # keywords are reserved
               ^
     SyntaxError: invalid syntax
 
-
-
-Few **keywords** are :  
-**def, True, False, if, else, while, for, and, not, in**,  etc..
+Some *keywords* are :  
+*def, True, False, if, else, while, for, and, not, in*,  etc..
 
 You'll come across some more as you go along. I just wanted to point out right away so that you
 don't get stuck when it doesn't let you name a variable because it's a reserved keyword.
@@ -245,9 +252,6 @@ text = input("Enter some text: ")
 ```python3
 text.replace("i", "y")
 ```
-
-
-
 
     ''
 

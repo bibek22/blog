@@ -10,7 +10,7 @@ The Laplace equation is:
 
 $$\Delta^2 \psi  = 0 $$
 
-Some physical applications where laplace equation arrises naturally are:  
+Some physical applications where laplace equation arises naturally are:  
 
 1. Steady state temperature distribution in the region with no source or sink
 2. Electrostatic potential in a region with no charge density
