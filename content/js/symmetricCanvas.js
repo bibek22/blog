@@ -82,7 +82,9 @@ var canvasPackaging = function(p){
         }
     }
     p.saveCnv = function(){
-        p.save();
+        d = new Date();
+        p.save(d.getMonth() + '-' + d.getDate() + '-' + d.getHours()
+            + '-' + d.getMinutes() + '-' + d.getSeconds());
     }
 }
 

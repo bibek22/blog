@@ -117,9 +117,10 @@ As you can see, python is a built-in calculator. It does all the number arithmet
 
 ### Variables 
 
-Variables is something that can refer to the data that you store in memory. 
-1. implicitly declared.
-2. dynamically typed.
+Variables is essentially a name you can give to the data so we can refer to it conviniently. Variables in python are:  
+
+1. implicitly declared
+2. dynamically typed
 
 
 ```python3
@@ -176,24 +177,31 @@ in programming.
 ```python3
 college = "St. Xavier's College"
 ```
+So, `college` is now a string variable.
 
+There are somes rules for naming a variable.
+
+You can't have a name starting with digit.
 
 ```python3
- 1stName = "bibek"   # no digits allowed as the first character
-# name_1st is okay!
+# no digits allowed as the first character in variable name
+ 1stName = "bibek"
+# but name_1st is okay!
 ```
 
 
       File "<ipython-input-10-092931d47764>", line 1
-        1stName = "bibek"   # no digits allowed as the first character
+        1stName = "bibek"
               ^
     SyntaxError: invalid syntax
 
 
-
+There are these words that are defined in the python language itself and have special meaning. They
+are reserved and you can't redefine them to something else.
 
 ```python3
-class = "BSC-III"   # keywords are reserved
+# class is a keyword.
+class = "BSC-III"
 ```
 
 
@@ -204,45 +212,35 @@ class = "BSC-III"   # keywords are reserved
 
 
 
-few more **keywords** are :  
-**def, True, False, if, else, while, for, not, in**,  etc..
+Few **keywords** are :  
+**def, True, False, if, else, while, for, and, not, in**,  etc..
 
-
+You'll come across some more as you go along. I just wanted to point out right away so that you
+don't get stuck when it doesn't let you name a variable because it's a reserved keyword.
 
 #### Strings in python are first class citizens !
-
+If you're coming from programming languages like C, this is a pleasant surprise. It's very easy to work
+with strings in python compared to C.
 
 ```python3
 country = "Nepal"
-```
 
-
-```python3
 "I love " + country + "."
 ```
 
-
-
-
     'I love Nepal.'
 
+Adding strings together is called *concatenation*. The value of the variable `country` was joined
+with the strig with `+` operator. Play around with it and get used to it.
 
-
-^^    This is called concatenation ! Adding strings together.
-
-You were talking about functions !!
-
-Okay, here's one more!
-
-
+#### Taking inputs
+Let's talk about one more important function.
 ```python3
 text = input("Enter some text: ")
 # a function to take inputs from keyboard
+
 ```
-
-    Enter some text: 
-
-
+    Enter some text:
 
 ```python3
 text.replace("i", "y")

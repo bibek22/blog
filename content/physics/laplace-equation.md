@@ -94,6 +94,8 @@ after a long time such that it doesn't change further as time evolves.
 Take any point along the rod, what the property #1 tells us is that the temperature at this point is
 the average of the temperature immediately next to it. Which is reasonable, right ?
 
+<!img src="/images/temp-grad.png" align=centerwidth='150' height='20'/!>
+
 Because, part of the rod on one side is trying to cool the point and part of the rod on other side is
 trying to heat it up and the point eventually has to "make peace" with the both sides, and settle on
 the average temperature which doesn't change further.
