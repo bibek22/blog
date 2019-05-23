@@ -94,8 +94,6 @@ var packagingS_1 = function(p){
         p.cnv = p.createCanvas(p.cansize, p.cansize);
         p.cnv.parent("slight_2");
         p.background(255);
-        p.first = new Pendulum(p.r1, p.m1);
-        p.second = new Pendulum(p.r2, p.m2);
         p.frameRate(p.fps);
         p.noLoop();
     }
@@ -164,8 +162,6 @@ var packaging = function(p){
         p.cnv = p.createCanvas(p.cansize, p.cansize);
         p.cnv.parent("trailer");
         p.background(255);
-        p.first = new Pendulum(p.r1, p.m1);
-        p.second = new Pendulum(p.r2, p.m2);
         p.frameRate(p.fps);
     }
 
