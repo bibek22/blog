@@ -27,29 +27,30 @@ Python is an interpreted language. I am going to assume you have access to a *py
 
 Programming, especially in science, is used for manipulation of data in some ways. Therefore, it is necessary that the language that we use have some ways of representing different types of  data that we might want to work with eg. integers, real numbers, complex numbers etc.  
   
-Python understands numbers automatically.
 
-
-* **Integers**  
+Python recognizes variety of numbers out of the box.
+* **Integers**
 ```python3
 >>> 1
 ```
     1
 
-When I type `1` into the interpreter, it returns 1. Note that `>>> ` is the python prompt. This is where you Enter your line of code. I might avoid showing the prompt a bit later. But you know it's there.
+When I type `1` into the interpreter, it returns 1.
+
+Note that `>>> ` is the python prompt. This is where you Enter your line of code. I might avoid showing the prompt a bit later. But you know it's there.
+
 ```python3
 >>> 10     # simple integer
 ```
 
-
     10
 
-Note that: Everything after `#`  is considered as *comment* in python.  
+Note that: Everything after `#`  is regarded as *comments* in python.  
 
-*Comments* are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.
+*Comments* are little notes you write in your source code to make it readable to someone else or yourself for when you come back to it days later.
 
 * **Real numbers** 
-Real numbers are called floating points, or just `floats` in programming term.
+Real numbers are called floating points, or just *floats* in programming term.
 
 ```python3
 >>> 1.23e-3  # floating points in scientific notation
@@ -60,7 +61,7 @@ Real numbers are called floating points, or just `floats` in programming term.
 * **Complex Numbers**
 Python also has a way to represent complex numbers by default.
 ```python3
->>> 2+3j
+>>> 2+3j   # turns out they use j in engineering
 (2+3j)
 ```
 
@@ -117,11 +118,7 @@ As you can see, python is a built-in calculator. It does all the number arithmet
 
 ### Variables 
 
-Variables is essentially a name you can give to the data so we can refer to it conviniently. Variables in python are:  
-
-1. implicitly declared
-2. dynamically typed
-
+Variable is essentially a reference to some data. Variables are ways to give names to useful data so we can refer to it conviniently.
 
 ```python3
 a = 5  # variable declaration and assignment
@@ -168,7 +165,6 @@ And the result is called `return value` which again if you want to save into a v
 ```python3
 type("hi everyone!")
 ```
-
     str
 
 ##### What's str ??
@@ -199,14 +195,15 @@ You can't have a name starting with digit.
     SyntaxError: invalid syntax
 
 Make habbit of reading the error message as early as you can. It helps you with a lot of trouble
-along the way. You don't need to fear them. Error messages in python are more friendly compared to
-other programming languages. When you're writing a program with complicated logic and structure,
-it's essential that you read the error message and know where the mistake lies.
+along the way. You don't need to fear them. When you're writing a program with complicated logic
+and structure, it's essential that you read the error message and get some idea about where the
+mistake lies. It's noteworthy that Error messages in python are more friendly compared to other
+programming languages.
 
 Presently, compiler is informing you that there is some syntax error and it points to the variable
 name as well.
 
-There are these words that are defined in the python language itself and have special meaning. They
+There are these words that are defined as a part of the python language itself and have special meaning. They
 are reserved and you can't redefine them to something else.
 
 ```python3
@@ -256,19 +253,11 @@ text.replace("i", "y")
     ''
 
 
-
-
 ```python3
 text
 ```
 
-
-
-
     ''
-
-
-
 
 ```python3
 text.count("i"
@@ -280,15 +269,9 @@ text.count("i"
                       ^
     SyntaxError: unexpected EOF while parsing
 
-
-
-
 ```python3
 text.split(" ")
 ```
-
-
-
 
     ['']
 
@@ -299,12 +282,7 @@ text.split(" ")
 text.isdigit()
 ```
 
-
-
-
     False
-
-
 
 
 ```python3
