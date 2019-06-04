@@ -56,7 +56,7 @@ Now let's look at 2D case. Laplace equation in two dimension is:
 $$ \frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} = 0 $$
 
 This is no longer an ordinary differential equation. It is impossible to write a complete general
-solution to this second order partial differential equation.
+solution (in closed form) to this second order partial differential equation.
 
 But we can get some idea about the nature of the solution.
 
