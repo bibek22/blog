@@ -68,6 +68,11 @@ $$ \psi(x,y) = \frac{ 1 }{ 2\pi R } \underset{circle}{\oint} \psi\ dl$$
 And the function which is a 2 dimensional surface on a 3D space (x and y as input space and z as
 the output) would have no local minima or local maxima.
 
+Why? Well, you can see from the equation itself that second derivative with respect to x and y
+should have opposite signs. That means if the surface is concave downward in x direction at some
+point, it has to be concave upward along y direction at that point. That implies the point can't be
+a local minima *or* a local maxima.
+
 To solidify this understanding, imagine a hollow pipe like this:
 
 <img src="/images/cylinder.png" width='200'/>

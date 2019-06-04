@@ -1,4 +1,3 @@
-//
 // Momentum States
 var phaseState = [];
 
@@ -47,10 +46,6 @@ var packaging = function(p){
             p.canvasSize/4,
             p.wallPos + p.block1.s);
 
-        // Initial momentum states filled right away
-        p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
-        phaseState.push(p.vect.normalize());
-
         // =======COLLISION COUNTER=======
         //
         p.countDiv = document.getElementById("counter");
@@ -66,6 +61,11 @@ var packaging = function(p){
         p.restart.onclick = p.restartAnim;
 
         p.resetSketch(p.slider);
+
+
+        // Initial momentum states filled right away
+        p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+        phaseState.push(p.vect.normalize());
     }
 
     p.draw = function (){
@@ -160,6 +160,7 @@ var packaging = function(p){
     }
 
     p.resetSketch = function (){
+
         p.block2.m = Math.pow(100, p.digits);
         p.clear();
     }
@@ -172,6 +173,12 @@ var packaging = function(p){
         p.block1.vx = 0;
         p.block2.vx = p.initialVelocity;
         p.block2.x = p.canvasSize/1.5;
+
+
+        // Initial momentum states filled right away
+        p.vect = p.createVector(Math.sqrt(p.block1.m)*p.block1.vx,Math.sqrt(p.block2.m)*p.block2.vx);
+        phaseState.push(p.vect.normalize());
+
         p.loop();
     }
 }
