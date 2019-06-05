@@ -6,9 +6,10 @@ Category: programming
 Tags: C, programming, TU
 Summary: Study Resources for B.Sc. Math 3rd Year computer programming
 
-##### Introduction to computer systems
+## Ch - 1: Introduction to computer systems
 
 ** Q. What is a computer ? **
+
 Computer is an advanced electronic device that takes raw data as input from the user and processes
 these dataunder the control of set of instructions (called program) and gives the result (output) and
 saves output for the future use. It can process both numerical and non-numerical (arithmetic and logical) calculations. The term computer is derived from the Latin term *computare*, which means to calculate.
@@ -41,8 +42,8 @@ the system. During normal operations it feeds instructions and data to the proce
 times it is the source or destination of data transferred by I/O devices. Information in a memory is
 accessed by its address. Memory can be thought of as a one-dimensional array M. A processor's request to
 the memory might be:  
-*send the instruction at location M[1000]* or  
-*store the given data in locations M[0] to M[255]*  
+*send the instruction at location M[1000]* 
+*store the following block of data in locations M[0] to M[255]*  
 and so on.
 
 
@@ -217,5 +218,116 @@ The characteristics(differences) of application software compared to System soft
     * Easy to manipulate and use
     * Bigger in size and requires large storage space
 
-### Operating Systems
+### Operating Systems (OS)
+Operating system is a system software which provides platform for other user applications to run on
+a computer. Operating system maintains an ecosystem of input and output devices working with each
+other in harmony.  
+
+Besides I/O devices, OS also manages otehr hardware resources such as network
+devices which includes modem, routers etc.
+
+An operating system has three distinct components:
+
+* **Kernel**  
+  This is a software that provides basic level control over all the hardware devices. It's main roles
+  include reading/writing data to and from memory, dealing with data received from input devices like
+  keyboard, mouse and data to be sent to output devices like monitor and also dealing with incoming
+  and outgoing data via networks.  
+* **User Interface**  
+  This is the part of the OS which facilitates the user to interact with the computer. So, this
+  includes, graphical window, icons, desktop, command line etc.  
+* **Application Programming Interface(API)**  
+  Presence of API in the OS allows the programmers to write application softwares more easily. API
+  provides an interface for the programmer to manipulate the underlying hardware using high level
+  languages.
+
+
+Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Linux, etc.
+
+### Generations of computer
+
+### Applications of computer
+
+## Ch - 2: Introduction to Programming Languages
+
+###Programming Language
+Programming language is any language used to instruct a computer for performing specific tasks. It
+is a set of vocabulary and rules of grammar (syntax) like any other languages. Programming languages
+are low level and high level depending on how close to the hardware they deal with.
+
+###Evolution of Programming Languages
+
+** Q. What is Structured Programming? **  
+It is a programming paradigm in which structured control flow constructs like choice(if, else,
+then), repetition(for, while), block structures (with curly braces), functions etc are used to
+improve the clarity, quality, and development time of the programs.
+
+###Compilation Process
+** Q. Describe the compilation process. **  
+Compilation is the process of translating the source code written by the programmer into a language
+that is understood by the target machine.  
+
+Compilation is a multi step process. It has four distinct process which are:
+
+* ** Preprocessing**  
+This is the first step of the compilation. In this step, lines starting with a # character are
+interpreted by the preprocessor as preprocessor commands. Any macros or constant definitions made in
+those lines are used to substitute the occurance of the macros or constants in the rest of the
+source code.  
+The library files that are included in the header are also attached with the program in this step.
+
+* **Compilation**  
+The second step is called the compilation. In this step, the preprocessed code is translated to assembly instructions specific to the target processor architecture. This is still human readable.
+
+* **Assembly**  
+During this stage, an assembler is used to translate the assembly instructions to object code. The
+output is written in an object file with `.o` extension and contains the actual instructions that
+the target processor can run.  
+Since large program generally contain multiple source code file, more than one object files are
+generated in this step. They have to linked together to form the final program which is done in the
+next step.
+
+* **Linking**  
+In the last step, the object files are linked together using a piece of software called linker to create
+a complete set of instructions that can be executed in the machine. An executable file is produced after
+this step which has the extension `.exe` in windows system. This file can now be run to perform the
+desired task.
+
+Preprocessor, compiler, assembler, linker all are the part of C compiler. They don't need to be run
+seperately.
+
+**Q. What is Object code?**  
+Object code is a set of instruction codes that is understood by a computer at the lowest hardware level. Object code is produced by a compiler that reads some higher level computer language (like C) source code and translates them into equivalent machine language instructions. Object code is produced by assembler and they have `.o` extension.
+
+**Q. What do you mean by source code?**  
+It is the sequence of instructions written by the programmer. Source code is in plain
+text.
+
+**Q. Define Executable code.**  
+It's a piece of code that can be executed on the target machine. Executable code is produced in the
+last step of compilation process after linking all the object files together to form a complete set
+of instructions called program.
+
+**Q. What's Interpreter?**  
+Unlike C, some programming languages can directly be executed from the source code without
+the compilation process. The software that takes in the source code and directly executes them is
+known as interpreter. Interpreters avoid the neccesity to have a previously compiled executable
+program.
+
+**Q. What is Loaders? What does it do ?**  
+A loader is a part of the Operating System that is responsible for loading the programs into memory
+and preparing the execution of the program. Once the loader loads the program into memory, the OS
+passes control to the loaded program code for it's execution.
+
+**Q. What do you understand by Algorithm?**  
+An algorithm is a detailed series of instructions for carrying out an operation or solving a problem.
+
+**Q. What do you mean by Flow Chart?**  
+A flowchart is a diagram that depicts a process, system or computer algorithm. Before writing the
+source code, it is helpful to draw a flow chart containing the algorithm that you intend to
+implement. Flow chart makes coding a little more easy especially when the program is large and
+complicated. It also helps in debugging.
+
+
+## Ch - 2 Fundamentals of C programming
 
