@@ -314,7 +314,7 @@ the compilation process. The software that takes in the source code and directly
 known as interpreter. Interpreters avoid the neccesity to have a previously compiled executable
 program.
 
-**Q. What is Loaders? What does it do ?**  
+**Q. What is a Loader? What does it do ?**  
 A loader is a part of the Operating System that is responsible for loading the programs into memory
 and preparing the execution of the program. Once the loader loads the program into memory, the OS
 passes control to the loaded program code for it's execution.
@@ -331,3 +331,96 @@ complicated. It also helps in debugging.
 
 ## Ch - 3 Fundamentals of C programming
 
+Some terms that could be asked for definition:
+
+* **Keywords:** Keywords are those words whose meaning is already defined by Compiler and cant be
+  used as an identifier by the user. Eg. while, main, do, for, if, else, typedef, struct, etc.
+
+* **Identifier:** An identifier is a name that is assigned by the user to a program element such
+  as variable, type, class, function, etc.
+
+Rules for Identifier:  
+
+1.     The first character in an identifier must be an alphabet or an underscore and can be followed only by any number alphabets, or digits or underscores.
+2.     They must not begin with a digit.
+3.     Uppercase and lowercase letters are distinct. That is, identifiers are case sensitive.
+4.     Commas or blank spaces are not allowed within an identifier.
+5.     Keywords cannot be used as an identifier.
+6.     Identifiers should not be of length more than 31 characters.
+
+
+* **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data. A variable could be of any type like int, float, char, etc.
+
+* **Constant**: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called literals. And the name given to them are called symbolic constants.
+
+```
+#DEFINE PI 3.1415
+```
+
+In above, `PI` is a symbolic constant, and `3.1415` is a literal constant.
+
+* **Expression**: an expression is any legal combination of symbols that represents a value. For
+  example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
+  they are valid as + operator in previous example.
+
+## Ch - 4 Input and Output
+
+Input can mainly be from two sources:
+
+* From a file
+
+```c
+  FILE *fpt = fopen("file.txt", 'r');
+  getc(fpt);
+```
+* And from the keyboard
+
+```c
+  char c;
+  while (c = getchar() != '\n'){
+      printf("%c", c);
+  }
+```
+
+And output can be into two targets:
+
+* To a file
+
+```c
+  char c;
+  FILE *fpt = fopen("OutputFile.txt", "w");
+  while (c = getchar() != '\n'){
+      fprintf(fpt, c);
+  }
+```
+To the monitor
+
+```C
+   char txt[20] = "This is a text";
+   printf("%s", txt);
+
+   /* putchar outputs one character at a time */
+   for (int i=0; i<20; i++){
+       putchar(*txt[i]);
+   }
+```
+
+To input one character at a time:
+
+``` C
+   getchar();  /* doesn't echo back */
+   getche();   /* echoes back the character*/
+```
+
+
+To input/output strings at once:
+
+```C
+   char str[100];
+
+   printf( "Enter a value :");
+   gets( str );
+
+   printf( "\nYou entered: ");
+   puts( str );
+```
