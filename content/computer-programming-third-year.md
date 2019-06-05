@@ -329,5 +329,5 @@ implement. Flow chart makes coding a little more easy especially when the progra
 complicated. It also helps in debugging.
 
 
-## Ch - 2 Fundamentals of C programming
+## Ch - 3 Fundamentals of C programming
 
