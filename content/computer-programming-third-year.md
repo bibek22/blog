@@ -78,16 +78,14 @@ Major functions of CPU are listed below:
 
 CPU has two distinct components:
 
-1. Arithmetic and Logical Unit (ALU)
-
+1. **Arithmetic and Logical Unit (ALU)**  
   ALU is a digital electronic circuit that performs arithmetic and logical operations. It is the
   fundamental building block of CPU. Transistors are combined together to make basic arithmetic
   units like adder, substractor, etc and also logic gates such as *AND*, *OR*, *NOT*, *XOR*, etc.
   These work together to perform all arithmetic, floating point and bitwise operations. Logic gates
   helps in decision making and switch case operations.
 
-2. Control Unit (CU)
-
+2. **Control Unit (CU)**  
   A control unit is also made up of transistor circuits.
   A CU component is considered the processor brain because it issues orders to just about
   everything and ensures correct instruction execution. Some of it works are as follows:
@@ -154,4 +152,70 @@ than primary memory but can store much larger amount of data in the range of gig
 [Here](http://cdn.differencebetween.net/wp-content/uploads/2018/03/Primary-Memory-VERSUS-Secondary-Memory-.jpg) is a table that shows the difference between secondary and main memory.
 
 #### Input Devices
+Devices used to feed any input signal into the computer are called input devices.
+Following are some of the important input devices:
+
+* Keyboard
+* Mouse
+* Joy Stick
+* Light pen
+* Track Ball
+* Scanner
+* Graphic Tablet
+* Microphone
+* Magnetic Ink Card Reader(MICR)
+* Optical Character Reader(OCR)
+* Bar Code Reader
+* Optical Mark Reader(OMR)
+
+This [page](https://www.tutorialspoint.com/computer_fundamentals/computer_input_devices.htm) has the
+description for each devices.
+
+### Output devices
+These are the devices where the output of the program or data stored in the memory devices can be
+seen by the user.
+
+Following are some of the important output devices:
+
+* Monitors
+* Graphic Plotter
+* Printer
+
+### Computer Software
+Software is a set of programs, which is designed to perform a specific and well-defined task. A program is a sequence of instructions written to solve a particular problem.
+
+There are two types of software:
+
+* **System Software**  
+  System software is software designed to provide a platform for other software. It is an interface
+  between application softwares and the hardware. Operating system is an example of system software.
+  Some others are:
+    * **BIOS**: (basic input/output system) gets the computer system started after you turn it on and
+    manages the data flow between the operating system and attached devices such as the hard disk, video
+    adapter, keyboard, mouse and printer.
+    * **Boot**: Boot program loads the operating system into the computer's main memory or random access
+    memory (RAM).
+    * **Assembler**: It takes basic computer instructions and converts them into a pattern of binary
+    digits that the processor understands.
+    * **Device Driver**: A device driver controls a particular type of device that is attached to your
+    computer, such as a keyboard or a mouse. The driver program converts the more general input/output
+    instructions of the operating system to messages that the device can understand. Eg. Keyboard
+    driver, display driver, etc.
+
+* **Application Software**  
+Application software are the program that are of specific utility to the users. Application software
+can be a single program like MS Notepad with a single utility function. It can also be a collection
+of programs called software package which perform more broad and related tasks. For ex. MS Office
+Suite which includes MS Word, MS Powerpoint, MS Excel, and so on.  
+The characteristics(differences) of application software compared to System software are as follows:
+    * Close to the user
+    * Easy to design
+    * More interactive
+    * Slow in speed
+    * Generally written in high-level language
+    * Easy to understand
+    * Easy to manipulate and use
+    * Bigger in size and requires large storage space
+
+### Operating Systems
 
