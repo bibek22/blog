@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Bibek Gautam'
-SITEURL = 'https://www.bibekgautm.com.np'
+SITEURL = 'http://192.168.1.65:8000'
 SITENAME = 'Bibek Gautam - Blog'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
