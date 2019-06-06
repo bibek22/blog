@@ -524,8 +524,6 @@ If you want to add to the file and not replace everything, you will open it in a
 So, the modes are listed below:
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups">
-
-
 <colgroup>
 <col  class="org-left" />
 
