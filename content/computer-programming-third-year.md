@@ -11,8 +11,8 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
 ** Q. What is a computer ? **
 
 Computer is an advanced electronic device that takes raw data as input from the user and processes
-these dataunder the control of set of instructions (called program) and gives the result (output) and
-saves output for the future use. It can process both numerical and non-numerical (arithmetic and logical) calculations. The term computer is derived from the Latin term *computare*, which means to calculate.
+these using a set of instructions (called program) to produce the result (called output) and also
+saves the output for future use. It can process both numerical and non-numerical (arithmetic and logical) calculations. The term computer is derived from the Latin term *computare*, which means to calculate.
 
 
 ** Q. Write about computer architecture. **
@@ -310,9 +310,9 @@ of instructions called program.
 
 **Q. What's Interpreter?**  
 Unlike C, some programming languages can directly be executed from the source code without
-the compilation process. The software that takes in the source code and directly executes them is
-known as interpreter. Interpreters avoid the neccesity to have a previously compiled executable
-program.
+going through the compilation process. The software that takes in the source code and directly executes
+them is known as interpreter. Interpreters avoid the neccesity to have a previously compiled executable
+program. Python interpreter is an example.
 
 **Q. What is a Loader? What does it do ?**  
 A loader is a part of the Operating System that is responsible for loading the programs into memory
@@ -321,6 +321,7 @@ passes control to the loaded program code for it's execution.
 
 **Q. What do you understand by Algorithm?**  
 An algorithm is a detailed series of instructions for carrying out an operation or solving a problem.
+For example, Euclid algorithm is an algorithm to find the greatest common devider of two numbers.
 
 **Q. What do you mean by Flow Chart?**  
 A flowchart is a diagram that depicts a process, system or computer algorithm. Before writing the
@@ -337,27 +338,23 @@ Some terms that could be asked for definition:
   used as an identifier by the user. Eg. while, main, do, for, if, else, typedef, struct, etc.
 
 * **Identifier:** An identifier is a name that is assigned by the user to a program element such
-  as variable, type, class, function, etc.
-
-Rules for Identifier:  
-
-1.     The first character in an identifier must be an alphabet or an underscore and can be followed only by any number alphabets, or digits or underscores.
-2.     They must not begin with a digit.
-3.     Uppercase and lowercase letters are distinct. That is, identifiers are case sensitive.
-4.     Commas or blank spaces are not allowed within an identifier.
-5.     Keywords cannot be used as an identifier.
-6.     Identifiers should not be of length more than 31 characters.
+  as variable, type, class, function, etc.  
+  Rules for Identifier:  
+    1.     The first character must be an alphabet or an underscore and can be followed only by any number alphabets, or digits or underscores.
+    2.     They must not begin with a digit.
+    6.     Identifiers should not be of length more than 31 characters.
+    3.     Uppercase and lowercase letters are distinct. That is, identifiers are case sensitive.
+    4.     Commas or blank spaces are not allowed within an identifier.
+    5.     Keywords cannot be used as an identifier.
 
 
 * **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data. A variable could be of any type like int, float, char, etc.
 
-* **Constant**: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called literals. And the name given to them are called symbolic constants.
-
+* **Constant**: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called **literal constants**. And the name given to them are called **symbolic constants**.
 ```
 #DEFINE PI 3.1415
 ```
-
-In above, `PI` is a symbolic constant, and `3.1415` is a literal constant.
+  In above, `PI` is a symbolic constant, and `3.1415` is a literal constant.
 
 * **Expression**: an expression is any legal combination of symbols that represents a value. For
   example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
