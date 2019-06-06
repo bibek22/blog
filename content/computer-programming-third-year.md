@@ -12,7 +12,8 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
 
 Computer is an advanced electronic device that takes raw data as input from the user and processes
 these using a set of instructions (called program) to produce the result (called output) and also
-saves the output for future use. It can process both numerical and non-numerical (arithmetic and logical) calculations. The term computer is derived from the Latin term *computare*, which means to calculate.
+saves the output for future use. It can process both numerical and non-numerical (arithmetic and logical)
+calculations. The term computer is derived from the Latin term *computare*, which means to calculate.
 
 
 ** Q. Write about computer architecture. **
@@ -150,7 +151,8 @@ such as hard drives, floppy disks, magnetic tapes, USB flash drives, CDs, DVDs, 
 than primary memory but can store much larger amount of data in the range of gigabytes to terabytes.
 
 
-[Here](http://cdn.differencebetween.net/wp-content/uploads/2018/03/Primary-Memory-VERSUS-Secondary-Memory-.jpg) is a table that shows the difference between secondary and main memory.
+[Here](http://cdn.differencebetween.net/wp-content/uploads/2018/03/Primary-Memory-VERSUS-Secondary-Memory-.jpg)
+is a table that shows the difference between secondary and main memory.
 
 #### Input Devices
 Devices used to feed any input signal into the computer are called input devices.
@@ -183,7 +185,8 @@ Following are some of the important output devices:
 * Printer
 
 ### Computer Software
-Software is a set of programs, which is designed to perform a specific and well-defined task. A program is a sequence of instructions written to solve a particular problem.
+Software is a set of programs, which is designed to perform a specific and well-defined task. A program 
+is a sequence of instructions written to solve a particular problem.
 
 There are two types of software:
 
@@ -360,18 +363,12 @@ Some terms that could be asked for definition:
   example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
   they are valid as + operator in previous example.
 
-## Ch - 4 Input and Output
-
+## Ch - 4, 10 Input and Output & File Handling
 Input can mainly be from two sources:
 
-* From a file
-
-```c
-  FILE *fpt = fopen("file.txt", 'r');
-  getc(fpt);
-```
-* And from the keyboard
-
+* From a file (this will come later)
+* And from the keyboard  
+getchar() reads one character at a time.  
 ```c
   char c;
   while (c = getchar() != '\n'){
@@ -379,21 +376,24 @@ Input can mainly be from two sources:
   }
 ```
 
+There's also getche() which echoes back the character entered unlike getchar().
+
+There's scanf() that takes formatted input.
+```c
+  int day, month, year;
+  printf("Enter your DOB (dd/mm/yyyy): ");
+  scanf("%d/%d/%d", &day, &month, &year);
+  /* reads input in that specified format
+  of dd/mm/yy */
+```
+
 And output can be into two targets:
 
-* To a file
-
-```c
-  char c;
-  FILE *fpt = fopen("OutputFile.txt", "w");
-  while (c = getchar() != '\n'){
-      fprintf(fpt, c);
-  }
-```
-To the monitor
-
+* To a file (see below)
+* To the monitor
 ```C
    char txt[20] = "This is a text";
+   /* print in specified format */
    printf("%s", txt);
 
    /* putchar outputs one character at a time */
@@ -402,17 +402,9 @@ To the monitor
    }
 ```
 
-To input one character at a time:
-
-``` C
-   getchar();  /* doesn't echo back */
-   getche();   /* echoes back the character*/
-```
-
-
 To input/output strings at once:
 
-```C
+```c
    char str[100];
 
    printf( "Enter a value :");
@@ -421,3 +413,158 @@ To input/output strings at once:
    printf( "\nYou entered: ");
    puts( str );
 ```
+
+
+##### Files
+To work with a file, you have to create a file handle for it. File handle is nothing but a pointer
+to a FILE type. You create it as follows:
+
+```c
+FILE *fpt = fopen("File.txt", "r");
+```
+
+Above line creates a pointer named fpt to a FILE type variable in memory that is returned by `fopen()`
+function. It creates a handle for the file "File.txt" which is opened in readonly 'r' mode.
+
+Now to read from the file there's `fgetc()`. It reads one character at a time as the name suggests:
+
+```c
+while ((c = fgetc(fpt)) != EOF){
+    putchar(c);
+}
+```
+EOF above indicates End Of File. So, the loop runs till it reaches the end of the file.
+
+You can read string at once ie. array of character at once with fgets():
+```c
+char text[100];
+fgets(text, 100, fpt);
+```
+
+Above reads, 99 characters from the file pointer fpt and copies it into the variable text. The last
+element in an array should always be '\0' which indicates the end of array.
+
+There are fputc() and fputs() to write character and string into the file.
+
+But for that the file should be opened in write mode. 
+
+To do that, first lets **close** the file opened above and reopen it in write mode.
+
+```c
+fclose(fpt);
+
+/* Open in write mode */
+
+FILE *fpt = fopen("File.txt", "w");
+```
+
+Now, Let's read input from the keyboard with getchar() and write it onto the file.
+
+```c
+  char c;
+  while (c = getchar() != '\n'){
+      fputc(c, fpt);
+  }
+```
+
+Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.
+
+##### Read/Write in block
+We've seen how to read/write string and characters. We might want to write more complicated, custom
+defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.
+
+In such cases, it is better to read/write in block. We can read/write in binary data of any size we
+want instead of individual data type.
+
+Let's create a struct and define a new type for date of birth to illustrate:
+```c
+    struct DOB {
+        int day;
+        int month;
+        int year;
+    };
+
+    typedef struct DOB dob;
+```
+stuct DOB is now defined as dob data type.
+
+Now, let's create a variable of type dob. We want to write it to a file.
+```c
+dob myBDay;
+myBday.day = 11;
+myBday.month = 10;
+myBday.year = 1987;
+```
+
+Now, we'll write it to the file at once.
+
+But before we do, there's one important thing. We opened the file in write mode which is only good
+for writing strings and characters.  
+
+If we want to write in binary format, we have to open it in binary write mode i.e. "wb" instead of "w". Let's do that now.
+```c
+fclose(fpt);
+FILE *fpt = fopen("File.txt", "wr");
+```
+
+Now we can write myBday into the file.
+```c
+fwrite(&myBday, 12, 1, fpt);
+fclose(fpt);
+```
+
+Above line tells `fwrite()` to treat `12` bits (= 3 integers) of data as one block and write `1` such
+block starting from `&myBday` location in memory into the file stream `fpt`.
+
+Another important thing to note is that when you open in write mode everything that was in the file
+previously is erased and new data is stored. 
+
+If you want to add to the file and not replace everything, you will open it in append mode with "a".
+
+So, the modes are listed below:
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Mode</th>
+<th scope="col" class="org-left">Permission</th>
+<th scope="col" class="org-left">Mode</th>
+<th scope="col" class="org-left">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">"r"</td>
+<td class="org-left">read only</td>
+<td class="org-left">"r+"</td>
+<td class="org-left">read and write</td>
+</tr>
+
+<tr>
+<td class="org-left">"w"</td>
+<td class="org-left">write only</td>
+<td class="org-left">"w+"</td>
+<td class="org-left">write and read</td>
+</tr>
+
+<tr>
+<td class="org-left">"a"</td>
+<td class="org-left">append only</td>
+<td class="org-left">"a+"</td>
+<td class="org-left">append and read</td>
+</tr>
+</tbody>
+</table>
+
+Add a "b" to each one of the above to read/write/append in binary mode.
