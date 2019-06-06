@@ -504,7 +504,7 @@ for writing strings and characters.
 If we want to write in binary format, we have to open it in binary write mode i.e. "wb" instead of "w". Let's do that now.
 ```c
 fclose(fpt);
-FILE *fpt = fopen("File.txt", "wr");
+FILE *fpt = fopen("File.txt", "wb");
 ```
 
 Now we can write myBday into the file.
@@ -514,14 +514,14 @@ fclose(fpt);
 ```
 
 Above line tells `fwrite()` to treat `12` bits (= 3 integers) of data as one block and write `1` such
-block starting from `&myBday` location in memory into the file stream `fpt`.
+block reading from `&myBday` location in memory into the file stream `fpt`.
 
 Another important thing to note is that when you open in write mode everything that was in the file
-previously is erased and new data is stored. 
+previously gets erased and new data is written. 
 
-If you want to add to the file and not replace everything, you will open it in append mode with "a".
+If you don't want to erase everything, you need open it in append mode with "a" argument.
 
-So, the modes are listed below:
+All the modes are shown in table below:
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups">
 <colgroup>
@@ -553,7 +553,7 @@ So, the modes are listed below:
 <td class="org-left">"w"</td>
 <td class="org-left">write only</td>
 <td class="org-left">"w+"</td>
-<td class="org-left">write and read</td>
+<td class="org-left">read and write</td>
 </tr>
 
 <tr>
@@ -565,4 +565,4 @@ So, the modes are listed below:
 </tbody>
 </table>
 
-Add a "b" to each one of the above to read/write/append in binary mode.
+Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
