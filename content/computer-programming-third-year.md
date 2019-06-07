@@ -72,8 +72,9 @@ commonly as processor. The CPU is the brains of the computer where most calculat
 terms of computing power, the CPU is the most important element of a computer system.
 
 Major functions of CPU are listed below:
+
 1. Perform all basic arithmetic operations
-2. Perform logical ie. decision making tasks
+2. Perform logical operations i.e. decision making tasks
 3. Facilitate reading and writing to and from memory devices
 4. Connect all the input/output devices together and interpret signals
 
@@ -248,9 +249,68 @@ An operating system has three distinct components:
 Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Linux, etc.
 
 ### Generations of computer
+Generations of computer indicate a major shift in the technology involved in computing.
+
+* **First Generation Computers**
+First generation computers used vacuum tubes for circuitry and magnetic drums for memory. They were large 
+enough to take up entire room. They consumed a lot of power and generated significant amount of heat which
+had to be regulated using cooling system so as to prevent damage to the system due to overheating. This made 
+them expensive to operate. They were instructed with machine code had very limited computing power.
+The UNIVAC, EDVAC, and ENIAC computers are the examples of first gen. computers.
+
+* **Second Generation Computers (1956-63)**
+Vacuum tubes were replaced by transistors in second generation computers. Transistors are semiconductor based
+switches. They significantly reduced space and power consumption compared to first gen computers. Transistors
+are also more reliable than vacuum tubes and hence less prone to failure. Heat regulation was much less of a 
+concern.
+They used punched cards for input and printouts for output. Assembly language was used in these computers which
+avoided the need to work with binary machine code.
+IBM 1620, IBM 7090, PDP-1 are few examples.
+
+* **Third Generation Computers (1964-71)**
+These computers used integrated circuit(IC) which is essentially a complex electronic circuit made up of a lot
+of miniaturized transistors, diodes, resistors etc. This reduced the size of the computer even further and
+significantly increased speed and efficiency.
+Keyboard, monitors and Operating system interfaces were introduced in these computers. These were the first computer
+capable to run multiple applications at once.
+Programming languages like COBOL, FORTRAN were commonly used.
+
+* **Fourth Generation Computers (1971-Present)**
+Thousands of integrated circuits are built onto a single piece of silicon to form a microprocessor. This brought
+down the size and cost of the computers. High speed networking of computers were developed that linked multiple 
+computers together. User friendly Operating systems and applications were developed as computers slowly became common 
+household items. 
+Semiconductor based memory devices were also introduced which are faster, smaller in size aster and
+have low failure rate. 
+Apple Macintosh, Pentium computers etc the examples.
+High level programming languages were introduced.
+
 
 ### Applications of computer
+* **Business**
+    * Payroll calculations
+    * Budgeting
+    * Sales analysis
+    * Financial forecasting
+    * Managing employee database
 
+* **Banking**
+    * ATM Machines
+    * Online banking and transactions
+
+* **Education**
+    * Long distance education
+    * Online courses
+    * Keep Students database and performance analysis
+    
+* **Marketing**
+    * Advertesing
+    * Online shopping
+
+* **Health Care**
+    * Diagnostic System
+    * Patient monitoring systems
+    * Computer aided surgery
 ## Ch - 2: Introduction to Programming Languages
 
 ###Programming Language
