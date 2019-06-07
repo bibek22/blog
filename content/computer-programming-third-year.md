@@ -251,14 +251,14 @@ Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Lin
 ### Generations of computer
 Generations of computer indicate a major shift in the technology involved in computing.
 
-* **First Generation Computers**
+* **First Generation Computers**  
 First generation computers used vacuum tubes for circuitry and magnetic drums for memory. They were large 
 enough to take up entire room. They consumed a lot of power and generated significant amount of heat which
 had to be regulated using cooling system so as to prevent damage to the system due to overheating. This made 
 them expensive to operate. They were instructed with machine code had very limited computing power.
 The UNIVAC, EDVAC, and ENIAC computers are the examples of first gen. computers.
 
-* **Second Generation Computers (1956-63)**
+* **Second Generation Computers (1956-63)**  
 Vacuum tubes were replaced by transistors in second generation computers. Transistors are semiconductor based
 switches. They significantly reduced space and power consumption compared to first gen computers. Transistors
 are also more reliable than vacuum tubes and hence less prone to failure. Heat regulation was much less of a 
@@ -267,7 +267,7 @@ They used punched cards for input and printouts for output. Assembly language wa
 avoided the need to work with binary machine code.
 IBM 1620, IBM 7090, PDP-1 are few examples.
 
-* **Third Generation Computers (1964-71)**
+* **Third Generation Computers (1964-71)**  
 These computers used integrated circuit(IC) which is essentially a complex electronic circuit made up of a lot
 of miniaturized transistors, diodes, resistors etc. This reduced the size of the computer even further and
 significantly increased speed and efficiency.
@@ -275,7 +275,7 @@ Keyboard, monitors and Operating system interfaces were introduced in these comp
 capable to run multiple applications at once.
 Programming languages like COBOL, FORTRAN were commonly used.
 
-* **Fourth Generation Computers (1971-Present)**
+* **Fourth Generation Computers (1971-Present)**  
 Thousands of integrated circuits are built onto a single piece of silicon to form a microprocessor. This brought
 down the size and cost of the computers. High speed networking of computers were developed that linked multiple 
 computers together. User friendly Operating systems and applications were developed as computers slowly became common 
@@ -304,13 +304,31 @@ High level programming languages were introduced.
     * Keep Students database and performance analysis
     
 * **Marketing**
-    * Advertesing
+    * Advertising
     * Online shopping
 
 * **Health Care**
     * Diagnostic System
     * Patient monitoring systems
     * Computer aided surgery
+
+* **Government**
+    * Budgets
+    * Tax/Revenue department
+    * Census
+    * Computerization of voters lists
+    * Computerization of PAN card
+    * Weather forecasting
+    
+* **Communication**
+    * E-mail
+    * Chatting
+    * Usenet
+    * FTP
+    * Telnet
+    * Video-conferencing
+
+
 ## Ch - 2: Introduction to Programming Languages
 
 ###Programming Language
@@ -319,6 +337,22 @@ is a set of vocabulary and rules of grammar (syntax) like any other languages. P
 are low level and high level depending on how close to the hardware they deal with.
 
 ###Evolution of Programming Languages
+
+* **Machine Language**  
+It's the code that a computer actually understands. It is written in binary representation. 
+It's very difficult to code with machine language. Machine language is specific to the architecture of the
+processor. These are considered very close to the machine itself.
+* **Low Level Language**  
+Low level language are still close to the machine but they are written with characters instead of binary
+which make them more approachable. They provide very little or no abstraction of programming concepts. Assembly
+code is an example.
+* **High Level Language**  
+These are programming languages with more rich programming abstraction, syntax, and structural constructs. It
+is much easier to work with high level languages. They save time of the programmer and increase productivity.
+Vast majority of the code written today are written in high level language. Depending on the level of abstraction, 
+some high level language can be considered low or close to the machine than others. For example C is considered
+closer to machine than python, ruby, etc.
+
 
 ** Q. What is Structured Programming? **  
 It is a programming paradigm in which structured control flow constructs like choice(if, else,
