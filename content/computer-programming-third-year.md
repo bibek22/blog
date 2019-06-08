@@ -446,10 +446,40 @@ Some terms that could be asked for definition:
     5.     Keywords cannot be used as an identifier.
 
 
-* **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data. A variable could be of any type like int, float, char, etc.
+* **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data.
+A variable could be of any type like int, float, char, etc.
+
+* **Comments**: Comments in programming, as the name suggests, are programmer-readable texts that are written
+in the source code to explain or comment on a portion of the code, statement, a function or an expression to help the
+reader understand the code fast and more easily.  
+Comments serve various purpose which are outlined below:  
+    * For code description: Explain a piece of code.
+    * Planning and Review: To write pseudo-code which will be filled in with actual code later.
+    * Algorithmic Description: To explain why a certain algorithm was chosen and not the other.
+    * Request for comments: Comments can be used to communicate when the project is large and multiple programmers are
+    working on the same project at once.
+    * Documentation: Comments can be added which is used for automatic documentation generation for an API or a program.
+    * Debugging: During debugging, any portion of the code can be commented for trail and error.
+    
+In C, any text between `/*` and `*/` are considered as comments. 
+For eg:  
+```c
+int gcd(int n, int m){
+    /*
+    Greatest common divider function.
+    Takes two integers n and m as input.
+    Returns a single integer.
+    */
+    .
+    .
+    .
+}
+```  
 
 * **Constant**: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called **literal constants**. And the name given to them are called **symbolic constants**.
 ```
+
+
 #DEFINE PI 3.1415
 ```
   In above, `PI` is a symbolic constant, and `3.1415` is a literal constant.
