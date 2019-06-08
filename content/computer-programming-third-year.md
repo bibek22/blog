@@ -341,11 +341,12 @@ are low level and high level depending on how close to the hardware they deal wi
 * **Machine Language**  
 It's the code that a computer actually understands. It is written in binary representation. 
 It's very difficult to code with machine language. Machine language is specific to the architecture of the
-processor. These are considered very close to the machine itself.
+processor. These are considered very close to the machine. Early computers were programmed solely using
+machine code.
 * **Low Level Language**  
 Low level language are still close to the machine but they are written with characters instead of binary
 which make them more approachable. They provide very little or no abstraction of programming concepts. Assembly
-code is an example.
+code is an example of low level language.
 * **High Level Language**  
 These are programming languages with more rich programming abstraction, syntax, and structural constructs. It
 is much easier to work with high level languages. They save time of the programmer and increase productivity.
@@ -536,9 +537,9 @@ fgets(text, 100, fpt);
 ```
 
 Above reads, 99 characters from the file pointer fpt and copies it into the variable text. The last
-element in an array should always be '\0' which indicates the end of array.
+element in a character array should always be `\0` which indicates the end of the string.
 
-There are fputc() and fputs() to write character and string into the file.
+There are `fputc()` and `fputs()` to write character and string into the file.
 
 But for that the file should be opened in write mode. 
 
@@ -552,7 +553,7 @@ fclose(fpt);
 FILE *fpt = fopen("File.txt", "w");
 ```
 
-Now, Let's read input from the keyboard with getchar() and write it onto the file.
+Now, Let's read input from the keyboard with `getchar()` and write it onto the file.
 
 ```c
   char c;
