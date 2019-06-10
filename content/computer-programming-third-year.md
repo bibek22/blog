@@ -3,6 +3,7 @@ Date: 2019-06-05 08:21
 Title: Computer Programming - TU
 Slug: computer-programming-third-year
 Category: programming
+inbodyjs: /js/scrollup.js
 Tags: C, programming, TU
 Summary: Study Resources for B.Sc. Math 3rd Year computer programming
 
@@ -31,9 +32,11 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Constant](#constant)
     * [Expression](#expression)
   * [Ch - 4&10: Input and Output & File Handling](#ch4)
+    * [Standard input/output](#stdin)
     * [Files](#files)
-    * [Read/Write Integers](#getwputw)
-    * [Read/Write in block](#read-write-in-block)
+    * [Read/Write Integers: getw, putw](#getwputw)
+    * [Formatted Read/Write: fprintf, fscanf](#fprintf)
+    * [Read/Write in block: fread, fwrite](#read-write-in-block)
   * [Ch - 8: Pointers](#ch8)
     * [Pointers](#pointers)
     * [Dynamic Memory Allocation](#dma)
@@ -46,6 +49,7 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Structure Pointer](#structure-pointer)
 
 
+ <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> 
 
 <a name="ch1"></a>
 ## Ch - 1: Introduction to computer systems
@@ -562,6 +566,8 @@ int gcd(int n, int m){
 
 <a name="ch4"></a>
 ## Ch - 4, 10: Input and Output & File Handling
+
+<a name="stdin"></a>
 Input can mainly be from two sources:
 
 * From a [file](#files)
@@ -704,7 +710,7 @@ The output is:
 ```
 
 
-<a name="printf"></a>
+<a name="fprintf"></a>
 ##### formatted read/write
 You know how `scanf()` and `printf()` read and print formatted texts from keyboard and to the display.
 
