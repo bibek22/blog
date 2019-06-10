@@ -23,8 +23,8 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Programming Language](#programming-language)
     * [Evolution of Programming Languages](#evolution-of-programming-languages)
     * [Compilation Process](#compilation-process)
-  * [Ch - 3 Fundamentals of C programming](#ch3)
-  * [Ch - 4&10 Input and Output & File Handling](#ch4)
+  * [Ch - 3: Fundamentals of C programming](#ch3)
+  * [Ch - 4&10: Input and Output & File Handling](#ch4)
     * [Files](#files)
     * [Read/Write Integers](#getwputw)
     * [Read/Write in block](#read-write-in-block)
@@ -473,7 +473,7 @@ Here's a quick illustration for various elements used in a Flow chart
 You'll mostly only need Data (i.e. input/output), process, decision, and start/end.
 
 <a name="ch3"></a>
-## Ch - 3 Fundamentals of C programming
+## Ch - 3: Fundamentals of C programming
 
 Some terms that could be asked for definition:
 
@@ -534,7 +534,7 @@ int gcd(int n, int m){
   they are valid as + operator in previous example.
 
 <a name="ch4"></a>
-## Ch - 4, 10 Input and Output & File Handling
+## Ch - 4, 10: Input and Output & File Handling
 Input can mainly be from two sources:
 
 * From a file (this will come later)
@@ -547,9 +547,9 @@ getchar() reads one character at a time.
   }
 ```
 
-There's also getche() which echoes back the character entered unlike getchar().
+There's also `getche()` which echoes back the character entered unlike `getchar()`.
 
-There's scanf() that takes formatted input.
+There's `scanf()` that takes formatted input.
 ```c
   int day, month, year;
   printf("Enter your DOB (dd/mm/yyyy): ");
@@ -607,7 +607,7 @@ while ((c = fgetc(fpt)) != EOF){
 ```
 EOF above indicates End Of File. So, the loop runs till it reaches the end of the file.
 
-You can read string at once ie. array of character at once with fgets():
+You can read string at once ie. array of character at once with `fgets()`:
 ```c
 char text[100];
 fgets(text, 100, fpt);
@@ -769,4 +769,5 @@ All the modes are shown in table below:
 </table>
 
 Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
+
 
