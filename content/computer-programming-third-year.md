@@ -274,6 +274,7 @@ significantly increased speed and efficiency.
 Keyboard, monitors and Operating system interfaces were introduced in these computers. These were the first computer
 capable to run multiple applications at once.
 Programming languages like COBOL, FORTRAN were commonly used.
+IBM 370, PDP-11, CDC 7600 etc are the examples.
 
 * **Fourth Generation Computers (1971-Present)**  
 Thousands of integrated circuits are built onto a single piece of silicon to form a microprocessor. This brought
@@ -282,8 +283,8 @@ computers together. User friendly Operating systems and applications were develo
 household items. 
 Semiconductor based memory devices were also introduced which are faster, smaller in size aster and
 have low failure rate. 
+Many high level programming languages were introduced and used extensively during this period.
 Apple Macintosh, Pentium computers etc the examples.
-High level programming languages were introduced.
 
 
 ### Applications of computer
@@ -427,6 +428,11 @@ source code, it is helpful to draw a flow chart containing the algorithm that yo
 implement. Flow chart makes coding a little more easy especially when the program is large and
 complicated. It also helps in debugging.
 
+Here's a quick illustration for various elements used in a Flow chart
+
+![Flow chart symbols]( https://d3n817fwly711g.cloudfront.net/blog/wp-content/uploads/2011/09/All-you-Need-to-Know-about-Flowcharting.png )
+
+You'll mostly only need Data (i.e. input/output), process, decision, and start/end.
 
 ## Ch - 3 Fundamentals of C programming
 
@@ -453,13 +459,13 @@ A variable could be of any type like int, float, char, etc.
 in the source code to explain or comment on a portion of the code, statement, a function or an expression to help the
 reader understand the code fast and more easily.  
 Comments serve various purpose which are outlined below:  
-    * For code description: Explain a piece of code.
-    * Planning and Review: To write pseudo-code which will be filled in with actual code later.
-    * Algorithmic Description: To explain why a certain algorithm was chosen and not the other.
-    * Request for comments: Comments can be used to communicate when the project is large and multiple programmers are
+    * To explain a piece of code.
+    * To write pseudo-code which will later be filled in with actual code.
+    * To explain why a certain algorithm was chosen instead of the other.
+    * Comments can be used to communicate when the project is large and multiple programmers are
     working on the same project at once.
-    * Documentation: Comments can be added which is used for automatic documentation generation for an API or a program.
-    * Debugging: During debugging, any portion of the code can be commented for trail and error.
+    * Comments can be used to generate documentation for an API or a program automatically.
+    * During debugging, any portion of the code can be commented for trail and error.
     
 In C, any text between `/*` and `*/` are considered as comments. 
 For eg:  
@@ -594,6 +600,35 @@ Now, Let's read input from the keyboard with `getchar()` and write it onto the f
 
 Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.
 
+##### Read/Write Integers <a name="getwputw"></a>
+There are `getw()` and `putw()` functions to read and write integer values to/from a file. An example is given below:
+```c
+   FILE *fp;
+   int i=1, j=2, k=3, num;
+   fp = fopen ("file.txt","w");
+   putw(i,fp);
+   putw(j,fp);
+   putw(k,fp);
+   fclose(fp);
+ 
+   fp = fopen ("file.txt","r");
+ 
+   while(getw(fp)!=EOF)
+   {
+      num= getw(fp);
+      printf("%d\n", num);
+   }
+   fclose(fp);
+```
+
+The output is:
+```console
+    1
+    2
+    3
+```
+
+
 ##### Read/Write in block
 We've seen how to read/write string and characters. We might want to write more complicated, custom
 defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.
@@ -691,3 +726,4 @@ All the modes are shown in table below:
 </table>
 
 Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
+
