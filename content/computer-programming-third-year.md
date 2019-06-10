@@ -820,8 +820,26 @@ All the modes are shown in table below:
 </tbody>
 </table>
 
-Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
+Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+**, etc.
 
+<a name="getcputc"></a>
+**Q. Write a program to read a character and display it using getc and putc**
+```c
+#include <stdio.h>
+
+void main(){
+    char c;
+
+    c = getc(stdin);
+    putc(c, stdout);
+}
+```
+
+`getc()` and `putc()` are normally used to read and write from a file. But the question wants us to read it and display it to the monitor.
+
+There are files streams (FILE *) associated with keyboard input and monitor output. They are defined in `stdio.h` as `stdin` and `stdout`.
+
+So, we pass them as the file stream instead of a handler of an actual file.
 
 <a name="ch8"></a>
 ## Ch - 8: Pointers
