@@ -6,6 +6,31 @@ Category: programming
 Tags: C, programming, TU
 Summary: Study Resources for B.Sc. Math 3rd Year computer programming
 
+**Table Of Contents**
+
+  * [Ch - 1: Introduction to computer systems](#ch1)
+      * [Central Processing Unit](#cpu)
+    * [Memory Systems](#memory-systems)
+        * [Primary Memory](#primary-memory)
+        * [Secondary Memory](#secondary-memory)
+      * [Input Devices](#input-devices)
+    * [Output devices](#output-devices)
+    * [Computer Software](#computer-software)
+    * [Operating Systems (OS)](#operating-systems)
+    * [Generations of computer](#generations-of-computer)
+    * [Applications of computer](#applications-of-computer)
+  * [Ch - 2: Introduction to Programming Languages](#ch2)
+    * [Programming Language](#programming-language)
+    * [Evolution of Programming Languages](#evolution-of-programming-languages)
+    * [Compilation Process](#compilation-process)
+  * [Ch - 3 Fundamentals of C programming](#ch3)
+  * [Ch - 4&10 Input and Output & File Handling](#ch4)
+    * [Files](#files)
+    * [Read/Write Integers](#getwputw)
+    * [Read/Write in block](#read-write-in-block)
+
+
+<a name="ch1"></a>
 ## Ch - 1: Introduction to computer systems
 
 ** Q. What is a computer ? **
@@ -64,6 +89,7 @@ given point in time. When a switch is configured to allow two devices to exchang
 devices that rely on the switch are blocked, i.e. they must wait until the switch can be reconfigured.  
 
 
+<a name="cpu"></a>
 #### Central Processing Unit
 _**Q. What is the use of CPU in a computer system? How does it work?**_
 
@@ -98,7 +124,7 @@ CPU has two distinct components:
     - directs other units by providing control and timing signals.
     - handles multi taksing
 
-
+<a name="memory-systems"></a>
 ### Memory Systems
 Memory system consists of memory devices, means to access, read and write data and link components
 to the cpu. The main purpose of memory system is to store and access data. Depending on the type of
@@ -107,6 +133,7 @@ the data, they are split into two types which are:
 * Primary Memory
 * Secondary Memory
 
+<a name="primary-memory"></a>
 ##### Primary Memory
 Primary Memory or main memory is the area in a computer which stores data and information for fast
 access. It’s a
@@ -141,6 +168,7 @@ Primary memory are of two types:
     * **EEROM** (Electrically Erasable ROM): similar to EROM but erasing can be done electrically.
 
 
+<a name="secondary-memory"></a>
 ##### Secondary Memory
 Secondary memory on the other hand is the external memory of the computer which can be used to store data
 and information on a long-term basis. It’s a non-volatile memory which means data stays intact even if
@@ -155,6 +183,7 @@ than primary memory but can store much larger amount of data in the range of gig
 [Here](http://cdn.differencebetween.net/wp-content/uploads/2018/03/Primary-Memory-VERSUS-Secondary-Memory-.jpg)
 is a table that shows the difference between secondary and main memory.
 
+<a name="input-devices"></a>
 #### Input Devices
 Devices used to feed any input signal into the computer are called input devices.
 Following are some of the important input devices:
@@ -175,6 +204,7 @@ Following are some of the important input devices:
 This [page](https://www.tutorialspoint.com/computer_fundamentals/computer_input_devices.htm) has the
 description for each devices.
 
+<a name="output-devices"></a>
 ### Output devices
 These are the devices where the output of the program or data stored in the memory devices can be
 seen by the user.
@@ -185,6 +215,7 @@ Following are some of the important output devices:
 * Graphic Plotter
 * Printer
 
+<a name="computer-software"></a>
 ### Computer Software
 Software is a set of programs, which is designed to perform a specific and well-defined task. A program 
 is a sequence of instructions written to solve a particular problem.
@@ -222,6 +253,7 @@ The characteristics(differences) of application software compared to System soft
     * Easy to manipulate and use
     * Bigger in size and requires large storage space
 
+<a name="operating-systems"></a>
 ### Operating Systems (OS)
 Operating system is a system software which provides platform for other user applications to run on
 a computer. Operating system maintains an ecosystem of input and output devices working with each
@@ -248,6 +280,7 @@ An operating system has three distinct components:
 
 Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Linux, etc.
 
+<a name="generations-of-computer"></a>
 ### Generations of computer
 Generations of computer indicate a major shift in the technology involved in computing.
 
@@ -287,6 +320,7 @@ Many high level programming languages were introduced and used extensively durin
 Apple Macintosh, Pentium computers etc the examples.
 
 
+<a name="applications-of-computer"></a>
 ### Applications of computer
 * **Business**
     * Payroll calculations
@@ -330,13 +364,16 @@ Apple Macintosh, Pentium computers etc the examples.
     * Video-conferencing
 
 
+<a name="ch2"></a>
 ## Ch - 2: Introduction to Programming Languages
 
+<a name="programming-language"></a>
 ###Programming Language
 Programming language is any language used to instruct a computer for performing specific tasks. It
 is a set of vocabulary and rules of grammar (syntax) like any other languages. Programming languages
 are low level and high level depending on how close to the hardware they deal with.
 
+<a name="evolution-of-programming-languages"></a>
 ###Evolution of Programming Languages
 
 * **Machine Language**  
@@ -361,6 +398,7 @@ It is a programming paradigm in which structured control flow constructs like ch
 then), repetition(for, while), block structures (with curly braces), functions etc are used to
 improve the clarity, quality, and development time of the programs.
 
+<a name="compilation-process"></a>
 ###Compilation Process
 ** Q. Describe the compilation process. **  
 Compilation is the process of translating the source code written by the programmer into a language
@@ -434,6 +472,7 @@ Here's a quick illustration for various elements used in a Flow chart
 
 You'll mostly only need Data (i.e. input/output), process, decision, and start/end.
 
+<a name="ch3"></a>
 ## Ch - 3 Fundamentals of C programming
 
 Some terms that could be asked for definition:
@@ -494,6 +533,7 @@ int gcd(int n, int m){
   example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
   they are valid as + operator in previous example.
 
+<a name="ch4"></a>
 ## Ch - 4, 10 Input and Output & File Handling
 Input can mainly be from two sources:
 
@@ -546,6 +586,7 @@ To input/output strings at once:
 ```
 
 
+<a name="files"></a>
 ##### Files
 To work with a file, you have to create a file handle for it. File handle is nothing but a pointer
 to a FILE type. You create it as follows:
@@ -600,7 +641,8 @@ Now, Let's read input from the keyboard with `getchar()` and write it onto the f
 
 Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.
 
-##### Read/Write Integers <a name="getwputw"></a>
+<a name="getwputw"></a>
+##### Read/Write Integers 
 There are `getw()` and `putw()` functions to read and write integer values to/from a file. An example is given below:
 ```c
    int i=1, j=2, k=3, num;
@@ -629,6 +671,7 @@ The output is:
 ```
 
 
+<a name="read-write-in-block"></a>
 ##### Read/Write in block
 We've seen how to read/write string and characters. We might want to write more complicated, custom
 defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.
