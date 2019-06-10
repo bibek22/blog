@@ -564,9 +564,9 @@ int gcd(int n, int m){
 ## Ch - 4, 10: Input and Output & File Handling
 Input can mainly be from two sources:
 
-* From a file (this will come later)
+* From a [file](#files)
 * And from the keyboard  
-getchar() reads one character at a time.  
+`getchar()` reads from the keyboard one character at a time.  
 ```c
   char c;
   while (c = getchar() != '\n'){
@@ -574,11 +574,12 @@ getchar() reads one character at a time.
   }
 ```
 
-There's also `getche()` which echoes back the character entered unlike `getchar()`.
+There's also `getche()` which echoes back the character entered onto the display unlike `getchar()`.
 
-There's `scanf()` that takes formatted input.
+There's `scanf()` that allows you to take formatted input from keyboard.
 ```c
   int day, month, year;
+
   printf("Enter your DOB (dd/mm/yyyy): ");
   scanf("%d/%d/%d", &day, &month, &year);
   /* reads input in that specified format
@@ -587,8 +588,9 @@ There's `scanf()` that takes formatted input.
 
 And output can be into two targets:
 
-* To a file (see below)
+* To a [file](#files)
 * To the monitor
+`putchar()` display one character at a time onto the display. `printf()` is for formatted display.
 ```C
    char txt[20] = "This is a text";
    /* print in specified format */
@@ -601,6 +603,8 @@ And output can be into two targets:
 ```
 
 To input/output strings at once:
+
+`gets()` reads string from the keyboard. `puts()` prints string onto the display.
 
 ```c
    char str[100];
@@ -625,7 +629,8 @@ to a FILE type. You create it as follows:
 Above line creates a pointer named fpt to a FILE type variable in memory that is returned by `fopen()`
 function. It creates a handle for the file "File.txt" which is opened in readonly 'r' mode.
 
-Now to read from the file there's `fgetc()`. It reads one character at a time as the name suggests:
+Now to read from the file there's `fgetc()`. It reads one character at a time as the name suggests. 
+`getc()` is equivalent to `fgetc()`.
 
 ```c
     while ((c = fgetc(fpt)) != EOF){
@@ -652,8 +657,7 @@ To do that, first lets **close** the file opened above and reopen it in write mo
 ```c
     fclose(fpt);
     
-    /* Open in write mode */
-    
+    /* Now open in write mode */
     FILE *fpt = fopen("File.txt", "w");
 ```
 
@@ -665,6 +669,8 @@ Now, Let's read input from the keyboard with `getchar()` and write it onto the f
       fputc(c, fpt);
   }
 ```
+
+`putc()` is equivalent to `fputc()`.
 
 Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.
 
@@ -697,6 +703,25 @@ The output is:
     3
 ```
 
+
+<a name="printf"></a>
+##### formatted read/write
+You know how `scanf()` and `printf()` read and print formatted texts from keyboard and to the display.
+
+There are `fprintf()` and `fscanf()` that do essentially the same thing but with files.
+Here's an example:
+```c
+   FILE *fpt;
+
+   fpt = fopen ("File.txt", "w+");
+   fptrintf(fpt, "My fav. number is %d.", 7);
+   
+   fclose(fpt);
+```
+
+That writes `My fav. number is 7.` to the file `File.txt`.
+
+And similarly for `fscanf()`.
 
 <a name="read-write-in-block"></a>
 ##### Read/Write in block
@@ -1090,6 +1115,26 @@ to take 5 bytes. So, The largest of the members decides the memory allocation si
 Passing structure, union, or structure pointer and union pointer work similarly as the native data types.
 
 
+<a name="Arrays within structure"></a>
+#### Arrays within Structure
+Let's define a datatype to store simple data of a student.
+
+```c
+    typedef struct {
+        char name[50];
+        int roll;
+        int class;
+    } student;
+```
+
+Now lets create an instance and add values.
+```c
+    student rohan;
+    
+    rohan.name = "Rohan Sharma";
+    rohan.roll = 12;
+    rohan.class = 8;
+```
 
 <a name="structure-pointer"></a>
 #### Structure Pointer
