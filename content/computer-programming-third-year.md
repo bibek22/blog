@@ -24,10 +24,17 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Evolution of Programming Languages](#evolution-of-programming-languages)
     * [Compilation Process](#compilation-process)
   * [Ch - 3: Fundamentals of C programming](#ch3)
+    * [Keywords](#keywords)
+    * [Identifier](#identifier)
+    * [Variables](#variables)
+    * [Comments](#comments)
+    * [Constant](#constant)
+    * [Expression](#expression)
   * [Ch - 4&10: Input and Output & File Handling](#ch4)
     * [Files](#files)
     * [Read/Write Integers](#getwputw)
     * [Read/Write in block](#read-write-in-block)
+  * [Ch - 9: Structures and Unions](#ch9)
 
 
 <a name="ch1"></a>
@@ -476,9 +483,12 @@ You'll mostly only need Data (i.e. input/output), process, decision, and start/e
 ## Ch - 3: Fundamentals of C programming
 
 Some terms that could be asked for definition:
+<a name="keywords"></a>
 
 * **Keywords:** Keywords are those words whose meaning is already defined by Compiler and cant be
   used as an identifier by the user. Eg. while, main, do, for, if, else, typedef, struct, etc.
+
+<a name="identifier"></a>
 
 * **Identifier:** An identifier is a name that is assigned by the user to a program element such
   as variable, type, class, function, etc.  
@@ -491,8 +501,12 @@ Some terms that could be asked for definition:
     5.     Keywords cannot be used as an identifier.
 
 
+<a name="variables"></a>
+
 * **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data.
 A variable could be of any type like int, float, char, etc.
+
+<a name="comments"></a>
 
 * **Comments**: Comments in programming, as the name suggests, are programmer-readable texts that are written
 in the source code to explain or comment on a portion of the code, statement, a function or an expression to help the
@@ -515,19 +529,20 @@ int gcd(int n, int m){
     Takes two integers n and m as input.
     Returns a single integer.
     */
-    .
-    .
-    .
+    ...
 }
 ```  
+
+<a name="constant"></a>
 
 * **Constant**: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called **literal constants**. And the name given to them are called **symbolic constants**.
 ```
 
-
 #DEFINE PI 3.1415
 ```
   In above, `PI` is a symbolic constant, and `3.1415` is a literal constant.
+
+<a name="expression"></a>
 
 * **Expression**: an expression is any legal combination of symbols that represents a value. For
   example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
@@ -716,7 +731,7 @@ fwrite(&myBday, 12, 1, fpt);
 fclose(fpt);
 ```
 
-Above line tells `fwrite()` to treat `12` bits (= 3 integers) of data as one block and write `1` such
+Above line tells `fwrite()` to treat `12` bytes (= 3 integers) of data as one block and write `1` such
 block reading from `&myBday` location in memory into the file stream `fpt`.
 
 Another important thing to note is that when you open in write mode everything that was in the file
@@ -771,3 +786,88 @@ All the modes are shown in table below:
 Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
 
 
+<a name="ch9"></a>
+## Ch - 9: Structures and Unions
+
+##### Structures
+Structures are essentially means to custom (compound) data types in C programming language.
+
+Two keywords are relevant when it comes to structures - `struct` and `typedef`.
+
+Struct is used to group together basic data types to make more complex data types as follows:
+
+```c
+int main() {
+    struct DOB{
+        int day;
+        int month;
+        int year;
+    };
+    
+    struct DOB x;
+    ...
+}
+```
+
+This defines a structure with name `struct DOB`. You can declare a variable that looks like struct
+DOB as we defined. But it's tedius to have to use two words to refer to a data type. So, there is `typedef`
+that allows you to define a new type and give it a name once and for all. For ex:
+
+```c
+int main() {
+    struct DOB{
+        int day;
+        int month;
+        int year;
+    };
+    
+    typedef struct DOB dob;
+    
+    dob x;
+    ...
+}
+```
+This defines a new data type `dob` for us and we can do `dob x;` to create a variable named x of 'dob' type just as we'd do
+`int x;` for integers.
+
+The `dob` type as defined above takes 12 bytes in memory because it is made of 3 integers and each integer takes 4 bytes.
+Once declared values can be written in the variable as:
+```c
+    dob x;
+    
+    dob.day = 12;
+    dob.month = 2;
+    dob.year = 1999;
+```
+
+#### Self referential datatype
+
+We saw above that custom data types use predefined primitive data types (for eg. int, floats, etc) to create something
+more complex. 
+
+Self referential datatype is custom datatype that use itself as a building block. How does that work ! Let's see an example:
+
+```c
+    struct item {
+        int data;
+        struct item *next;
+    };
+    
+    typedef struct item llist;
+```
+
+We defined a struct named `item`. It has an integer named data and a pointer to a `struct item`. 
+
+That is every instance of struct item has a reference (pointer) to another instance of self item itself.
+
+Hence, it's called self-referential.
+
+What is the use of doing this? Well, these are just like arrays but unlike array, you don't have to know how many items there
+are going to be in the array at the time of declaration. You can keep adding at the end of the data as you go.
+
+These are known as **linked list**. And each item is commonly known as a node.
+
+So, a linked list is a chain of nodes onto which you can always attach more nodes.
+
+To show it visually, it looks something like this:
+![Linked list in graphics](https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png)
