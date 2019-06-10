@@ -603,22 +603,22 @@ Remember the order of arguments. Character is the first and file pointer (buffer
 ##### Read/Write Integers <a name="getwputw"></a>
 There are `getw()` and `putw()` functions to read and write integer values to/from a file. An example is given below:
 ```c
-   FILE *fp;
    int i=1, j=2, k=3, num;
-   fp = fopen ("file.txt","w");
-   putw(i,fp);
-   putw(j,fp);
-   putw(k,fp);
-   fclose(fp);
+   FILE *fpt;
+   fpt = fopen("file.txt","w");
+   putw(i,fpt);
+   putw(j,fpt);
+   putw(k,fpt);
+   fclose(fpt);
  
-   fp = fopen ("file.txt","r");
+   fpt = fopen ("file.txt","r");
  
-   while(getw(fp)!=EOF)
+   while(getw(fpt)!=EOF)
    {
-      num= getw(fp);
+      num= getw(fpt);
       printf("%d\n", num);
    }
-   fclose(fp);
+   fclose(fpt);
 ```
 
 The output is:
