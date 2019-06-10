@@ -37,6 +37,7 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
   * [Ch - 9: Structures and Unions](#ch9)
     * [Structures](#structures)
     * [Self referential Structure](#self-referential-structure)
+    * [Union](#union)
 
 
 
@@ -876,3 +877,31 @@ So, a linked list is a chain of nodes onto which you can always attach more node
 
 To show it visually, it looks something like this:
 ![Linked list in graphics](https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png)
+
+
+<a name="union"></a>
+#### Union
+Union is similar to struct - only difference is that only one of the component aka. member of a union can have a value stored 
+at a time. While all of the members of a struct eg. day, month, year in dob type above can and do usually have values assigned to them,
+union on the other hand only has only one of its elements assigned with value.
+
+```c
+    union Data {
+        int n;
+        float f;
+        char c[5];
+    };
+    
+    typedef union Data data;
+```
+
+Everything above is similar to struct, except for the keyword union.
+
+This defines a type named `data` which is a `union` and can store either an integer, a float, or a character array of length 5 - only one of them
+at any given time !
+
+The size reserved in memory for `data` type is then 5 bytes because int and float both take 4 bytes and char array above is specified
+to take 5 bytes. So, The largest of the members decides the memory allocation size for the union.
+
+
+Passing structure, union, or structure pointer and union pointer work similarly as the native data types.
