@@ -34,6 +34,11 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Files](#files)
     * [Read/Write Integers](#getwputw)
     * [Read/Write in block](#read-write-in-block)
+  * [Ch - 8: Pointers](#ch8)
+    * [Pointers](#pointers)
+    * [Dynamic Memory Allocation](#dma)
+        * [malloc()](#malloc)
+        * [free()](#free)
   * [Ch - 9: Structures and Unions](#ch9)
     * [Structures](#structures)
     * [Self referential Structure](#self-referential-structure)
@@ -79,8 +84,10 @@ the system. During normal operations it feeds instructions and data to the proce
 times it is the source or destination of data transferred by I/O devices. Information in a memory is
 accessed by its address. Memory can be thought of as a one-dimensional array M. A processor's request to
 the memory might be:  
-*send the instruction at location M[1000]* 
+
+*send the instruction at location M[1000]*   
 *store the following block of data in locations M[0] to M[255]*  
+
 and so on.
 
 
@@ -841,6 +848,7 @@ We also know that an array has a chunk of memory allocated all at one place. So,
 the first element of `a`, was 2740004, then `&a[10]` would be 2740013 and every other elements would lie in between.
 
 So, we can do maths on the address itself and dereference it to loop through an array. Like so:
+
 ```c
     char text[20] = "C Programming Language.";
     
@@ -855,8 +863,110 @@ So, we can do maths on the address itself and dereference it to loop through an 
         putchar(*(pt+i));
     } 
 ```
-
 Unsurprisingly, above prints `C Programming Language.`
+
+**Little Syntax**
+
+Declaring functions with pointer arguments:
+
+```c
+/* function with return type int */
+int function(int *n, char *c){
+    ...
+}
+
+/* function with return type int */
+int *function(int *n, char *c){
+    ...
+}
+```
+Passing pointer arguments:
+```c
+    int *num;
+    char *c;
+    
+    function(num, c);
+```
+
+<a name="dma"></a>
+#### Dynamic Memory Allocation
+*Note: Come here after understanding [this](#self-referential-structure)*
+
+Memory allocation is essentially the process of reserving memory for a variable. It's
+mostly done in the compile time. Compiler looks at the code to figure out how many variables
+there are and how much space do each one of them need. This is called **static allocation**.
+
+Sometimes, the compiler doesn't know how much memory the program needs. For eg. we could keep
+adding more and more node to a Linked list (or other self referential data type) when the program
+is being run as per need.
+
+So, we need to be able to allocate memory at the runtime. This is called **dynamic memory allocation**.
+
+There are two important function to learn for dynamic memory allocation: `malloc()` and `free`. These
+are part of the standard input/output library. So, `stdio.h` includes this.
+
+<a name="malloc"></a>
+
+* **malloc()**
+
+This function is used to ask for a space in memory. 
+
+`malloc(int size)` allocates `size`(in bytes) amount of memory and returns the address from which that chunk of memory starts.
+
+Let's see an example.
+
+```c
+    /* Declare a char pointer */
+    char *text[];
+    /* text is a pointer but
+    doesn't have an address
+    assigned to it yet */
+    
+    text = malloc(3);
+    /* malloc returns an address
+    which is assigned to text */
+    
+    /* fill the array with an
+    string "hi" */
+    *(text) = 'h';
+    *(text+1) = 'i';
+    *(text+2) = '\0';
+```
+
+<a name="free"></a>
+
+* **free()**
+
+When you malloc a chunk of memory, it's reserved. You could run out of RAM if you keep malloc'ing memory.
+You should always "free" a memory that was reserved using malloc if you are done using it.
+
+`free()` takes in the address of the first block of memory that was malloc'ed and frees it for use.
+
+So, continuing above example, after you're done with the array `text`, you should free it as:
+```c
+    printf("%s", text);
+
+    /* if 'text' is no longer needed
+    in the program */
+    free(text);
+```
+
+At this stage, the memory that was allocated, whose address was stored in `text` is free. But the variable
+`text` still remains. It still has the address as its value. But it can't be dereferenced any longer. Because `text`
+no longer has the permission to access that block of memory. 
+
+But we can always use `malloc()` to reserve some memory and store the address into `text` if we so need.
+
+#### Array of Pointers
+Array of pointers is just like a character array but with pointer variables instead of `char`.
+
+```c
+    char text[10];
+    
+    int (*ptrs)[10];
+```
+
+`ptrs` is an array of 10 int pointers.
 
 <a name="ch9"></a>
 ## Ch - 9: Structures and Unions
@@ -949,7 +1059,7 @@ To show it visually, it looks something like this:
 
 <a name="union"></a>
 #### Union
-Union is similar to struct - only difference is that only one of the component aka. member of a union can have a value stored 
+Union is similar to struct - only difference is that only one of the member of a union can have a value stored 
 at a time. While all of the members of a struct eg. day, month, year in dob type above can and do usually have values assigned to them,
 union on the other hand only has only one of its elements assigned with value.
 
