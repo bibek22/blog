@@ -43,6 +43,7 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Structures](#structures)
     * [Self referential Structure](#self-referential-structure)
     * [Union](#union)
+    * [Structure Pointer](#structure-pointer)
 
 
 
@@ -955,14 +956,18 @@ At this stage, the memory that was allocated, whose address was stored in `text`
 `text` still remains. It still has the address as its value. But it can't be dereferenced any longer. Because `text`
 no longer has the permission to access that block of memory. 
 
-But we can always use `malloc()` to reserve some memory and store the address into `text` if we so need.
+But we can always use `malloc()` to reserve some memory and store the address into `text** if we so need.
+
+*Note: Also see [struct pointers](structure-pointer)*
 
 #### Array of Pointers
 Array of pointers is just like a character array but with pointer variables instead of `char`.
 
 ```c
+    /* character array */
     char text[10];
     
+    /* array of int pointers */
     int (*ptrs)[10];
 ```
 
@@ -1083,3 +1088,41 @@ to take 5 bytes. So, The largest of the members decides the memory allocation si
 
 
 Passing structure, union, or structure pointer and union pointer work similarly as the native data types.
+
+
+
+<a name="structure-pointer"></a>
+#### Structure Pointer
+*Note: read [malloc()](#malloc) first if you haven't already.*
+
+These are just like any other pointers. This is how you declare them:
+```c
+    ...
+    struct dob *myBday;
+```
+
+`myBday` is now a pointer that points to a `struct dob` type of data.
+
+Dereferencing struct pointer is a little different. Instead of period (.) to access elements
+of a struct, you use arrow (->).
+
+But before we do, first we need to create a space in memory for our variable and assign the address of that
+memory to `myBday`. We use malloc:
+```c
+    myBday = malloc(sizeof(struct dob));
+```
+`sizeof()` returns the size that the struct dob data requires in bytes which is given as argument to `malloc()`. The addresss
+returned is assigned to myBday.
+
+Now, let's assign values to the struct itself.
+```c
+    ...
+    myBday->day = 12;
+    myBday->month = 11;
+    myBday->year = 1992;
+    ...
+```
+
+And once you are done with myBday, it's good idea to free the memory using `free(myBday);`
+
+Union pointers are done similarly.
