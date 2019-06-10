@@ -35,6 +35,9 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Read/Write Integers](#getwputw)
     * [Read/Write in block](#read-write-in-block)
   * [Ch - 9: Structures and Unions](#ch9)
+    * [Structures](#structures)
+    * [Self referential Structure](#self-referential-structure)
+
 
 
 <a name="ch1"></a>
@@ -789,6 +792,7 @@ Add "b" to each one of the above to read/write/append in binary mode. For ex. "w
 <a name="ch9"></a>
 ## Ch - 9: Structures and Unions
 
+<a name="structures"></a>
 ##### Structures
 Structures are essentially means to custom (compound) data types in C programming language.
 
@@ -840,7 +844,8 @@ Once declared values can be written in the variable as:
     dob.year = 1999;
 ```
 
-#### Self referential datatype
+<a name="self-referential-structure"></a>
+#### Self referential Structure
 
 We saw above that custom data types use predefined primitive data types (for eg. int, floats, etc) to create something
 more complex. 
@@ -858,9 +863,9 @@ Self referential datatype is custom datatype that use itself as a building block
 
 We defined a struct named `item`. It has an integer named data and a pointer to a `struct item`. 
 
-That is every instance of struct item has a reference (pointer) to another instance of self item itself.
+That is every instance of `struct item` has a reference (pointer) to another instance of `struct item` itself.
 
-Hence, it's called self-referential.
+Hence the name self-referential.
 
 What is the use of doing this? Well, these are just like arrays but unlike array, you don't have to know how many items there
 are going to be in the array at the time of declaration. You can keep adding at the end of the data as you go.
