@@ -186,7 +186,7 @@ and information on a long-term basis. It’s a non-volatile memory which means d
 the computer is turned off. Data cannot be directly processed by the processing unit in secondary memory;
 in fact, it is first transferred into the main memory before processing.
 
-Secondary memory consits of all external storage devices that are capable of storing high volumes of data
+Secondary memory consists of all external storage devices that are capable of storing high volumes of data
 such as hard drives, floppy disks, magnetic tapes, USB flash drives, CDs, DVDs, etc. It’s generally slower
 than primary memory but can store much larger amount of data in the range of gigabytes to terabytes.
 
@@ -276,7 +276,7 @@ devices which includes modem, routers etc.
 An operating system has three distinct components:
 
 * **Kernel**  
-  This is a software that provides basic level control over all the hardware devices. It's main roles
+  This is a software that provides basic level control over all the hardware devices. Its main roles
   include reading/writing data to and from memory, dealing with data received from input devices like
   keyboard, mouse and data to be sent to output devices like monitor and also dealing with incoming
   and outgoing data via networks.  
@@ -465,7 +465,7 @@ program. Python interpreter is an example.
 **Q. What is a Loader? What does it do ?**  
 A loader is a part of the Operating System that is responsible for loading the programs into memory
 and preparing the execution of the program. Once the loader loads the program into memory, the OS
-passes control to the loaded program code for it's execution.
+passes control to the loaded program code for its execution.
 
 **Q. What do you understand by Algorithm?**  
 An algorithm is a detailed series of instructions for carrying out an operation or solving a problem.
@@ -611,7 +611,7 @@ To work with a file, you have to create a file handle for it. File handle is not
 to a FILE type. You create it as follows:
 
 ```c
-FILE *fpt = fopen("File.txt", "r");
+    FILE *fpt = fopen("File.txt", "r");
 ```
 
 Above line creates a pointer named fpt to a FILE type variable in memory that is returned by `fopen()`
@@ -620,16 +620,16 @@ function. It creates a handle for the file "File.txt" which is opened in readonl
 Now to read from the file there's `fgetc()`. It reads one character at a time as the name suggests:
 
 ```c
-while ((c = fgetc(fpt)) != EOF){
-    putchar(c);
-}
+    while ((c = fgetc(fpt)) != EOF){
+        putchar(c);
+    }
 ```
-EOF above indicates End Of File. So, the loop runs till it reaches the end of the file.
+`EOF` above indicates End Of File. So, the loop runs till it reaches the end of the file.
 
 You can read string at once ie. array of character at once with `fgets()`:
 ```c
-char text[100];
-fgets(text, 100, fpt);
+    char text[100];
+    fgets(text, 100, fpt);
 ```
 
 Above reads, 99 characters from the file pointer fpt and copies it into the variable text. The last
@@ -642,11 +642,11 @@ But for that the file should be opened in write mode.
 To do that, first lets **close** the file opened above and reopen it in write mode.
 
 ```c
-fclose(fpt);
-
-/* Open in write mode */
-
-FILE *fpt = fopen("File.txt", "w");
+    fclose(fpt);
+    
+    /* Open in write mode */
+    
+    FILE *fpt = fopen("File.txt", "w");
 ```
 
 Now, Let's read input from the keyboard with `getchar()` and write it onto the file.
@@ -712,10 +712,10 @@ stuct DOB is now defined as dob data type.
 
 Now, let's create a variable of type dob. We want to write it to a file.
 ```c
-dob myBDay;
-myBday.day = 11;
-myBday.month = 10;
-myBday.year = 1987;
+    dob myBDay;
+    myBday.day = 11;
+    myBday.month = 10;
+    myBday.year = 1987;
 ```
 
 Now, we'll write it to the file at once.
@@ -725,14 +725,14 @@ for writing strings and characters.
 
 If we want to write in binary format, we have to open it in binary write mode i.e. "wb" instead of "w". Let's do that now.
 ```c
-fclose(fpt);
-FILE *fpt = fopen("File.txt", "wb");
+    fclose(fpt);
+    FILE *fpt = fopen("File.txt", "wb");
 ```
 
 Now we can write myBday into the file.
 ```c
-fwrite(&myBday, 12, 1, fpt);
-fclose(fpt);
+    fwrite(&myBday, 12, 1, fpt);
+    fclose(fpt);
 ```
 
 Above line tells `fwrite()` to treat `12` bytes (= 3 integers) of data as one block and write `1` such
@@ -790,6 +790,74 @@ All the modes are shown in table below:
 Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+", etc.
 
 
+<a name="ch8"></a>
+## Ch - 8: Pointers
+
+<a name="pointers"></a>
+##### Pointers
+Every variable is assigned a space in memory that it can use to store value.
+
+An `int` variable takes 4 (2 in some machines) bytes, `char` takes a single byte and so on.
+
+Sometimes it is useful to have an actual address in memory device where the space is reserved
+for a specific variable.
+
+This is one of the reason why some languages are called low level. They provide you with ability to 
+get close to the machine and manipulate things.
+
+You use ampersand (&amp;) to get the address of a variable. For example: if you have an integer variable
+named `n`, `&n` would give you the address of n i.e. its location in memory. 
+
+An address is a number. It is normally written in hexadecimal digits. But they are basically just integers.
+So, a pointer is just a variable whose value is some integer that represents some location in memory.
+
+```c
+    int num = 5;
+    int *pt;
+    
+    pt = &num;
+```
+In Above, we have an integer variable `num` and an integer pointer `pt`. In the last time `pt` is assigned a
+value which is the address of `num` i.e. `&n`. So now, `pt` holds the address of some memory location, and `num`
+holds the data/value stored at that location. 
+
+Now, once you have the location, what could you do with it ? 
+
+For one thing, you could go to the address and see what is stored at that location. This is called **dereferencing**
+as we are going from a reference(a pointer) to the thing it is referring(the value).
+
+You can do that with an asterisk(*):
+```c
+    printf("%d", *pt);
+    /* prints 5 */
+```
+
+Now, another thing you can do with the address is do arithmetic on the address itself. What does that mean?
+
+Say you have an array `char a[10]`. We know that `a` actually stores the address of the first element of the
+array - that is the location of `a[0]`.
+
+We also know that an array has a chunk of memory allocated all at one place. So, for example if `&a[0]`, the address of
+the first element of `a`, was 2740004, then `&a[10]` would be 2740013 and every other elements would lie in between.
+
+So, we can do maths on the address itself and dereference it to loop through an array. Like so:
+```c
+    char text[20] = "C Programming Language.";
+    
+    char *pt = text;
+    /* equivalent to doing
+    char *pt = &text[0];
+    */
+
+    for (int i=0; i<10; i++){
+        /* deferencing an address
+        to get the char value */
+        putchar(*(pt+i));
+    } 
+```
+
+Unsurprisingly, above prints `C Programming Language.`
+
 <a name="ch9"></a>
 ## Ch - 9: Structures and Unions
 
@@ -815,7 +883,7 @@ int main() {
 ```
 
 This defines a structure with name `struct DOB`. You can declare a variable that looks like struct
-DOB as we defined. But it's tedius to have to use two words to refer to a data type. So, there is `typedef`
+DOB as we defined. But it's tedious to have to use two words to refer to a data type. So, there is `typedef`
 that allows you to define a new type and give it a name once and for all. For ex:
 
 ```c
