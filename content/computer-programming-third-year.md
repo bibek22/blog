@@ -15,16 +15,16 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
         * [Primary Memory](#primary-memory)
         * [Secondary Memory](#secondary-memory)
       * [Input Devices](#input-devices)
-    * [Output devices](#output-devices)
+    * [Output Devices](#output-devices)
     * [Computer Software](#computer-software)
     * [Operating Systems (OS)](#operating-systems)
-    * [Generations of computer](#generations-of-computer)
-    * [Applications of computer](#applications-of-computer)
+    * [Generations of Computer](#generations-of-computer)
+    * [Applications of Computer](#applications-of-computer)
   * [Ch - 2: Introduction to Programming Languages](#ch2)
     * [Programming Language](#programming-language)
     * [Evolution of Programming Languages](#evolution-of-programming-languages)
     * [Compilation Process](#compilation-process)
-  * [Ch - 3: Fundamentals of C programming](#ch3)
+  * [Ch - 3: Fundamentals of C Programming](#ch3)
     * [Keywords](#keywords)
     * [Identifier](#identifier)
     * [Variables](#variables)
@@ -32,15 +32,15 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Constant](#constant)
     * [Expression](#expression)
   * [Ch - 4&10: Input and Output & File Handling](#ch4)
-    * [Standard input/output](#stdin)
+    * [Standard Input/Output](#stdin)
     * [Files](#files)
     * [Read/Write Integers: getw, putw](#getwputw)
     * [Formatted Read/Write: fprintf, fscanf](#fprintf)
-    * [Read/Write in block: fread, fwrite](#read-write-in-block)
+    * [Read/Write in Block: fread, fwrite](#read-write-in-block)
   * [Ch - 5: Operator and Expressions](#ch5)
     * [Operators](#operators)
     * [Expressions](#expressions)
-    * [Type conversion](#type-conversion)
+    * [Type Conversion](#type-conversion)
   * [Ch - 8: Pointers](#ch8)
     * [Pointers](#pointers)
     * [Dynamic Memory Allocation](#dma)
@@ -48,7 +48,7 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
         * [free()](#free)
   * [Ch - 9: Structures and Unions](#ch9)
     * [Structures](#structures)
-    * [Self referential Structure](#self-referential-structure)
+    * [Self Referential Structure](#self-referential-structure)
     * [Union](#union)
     * [Structure Pointer](#structure-pointer)
 
@@ -232,7 +232,7 @@ This [page](https://www.tutorialspoint.com/computer_fundamentals/computer_input_
 description for each devices.
 
 <a name="output-devices"></a>
-### Output devices
+### Output Devices
 These are the devices where the output of the program or data stored in the memory devices can be
 seen by the user.
 
@@ -308,7 +308,7 @@ An operating system has three distinct components:
 Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Linux, etc.
 
 <a name="generations-of-computer"></a>
-### Generations of computer
+### Generations of Computer
 Generations of computer indicate a major shift in the technology involved in computing.
 
 * **First Generation Computers**  
@@ -348,7 +348,7 @@ Apple Macintosh, Pentium computers etc the examples.
 
 
 <a name="applications-of-computer"></a>
-### Applications of computer
+### Applications of Computer
 * **Business**
     * Payroll calculations
     * Budgeting
@@ -500,7 +500,7 @@ Here's a quick illustration for various elements used in a Flow chart
 You'll mostly only need Data (i.e. input/output), process, decision, and start/end.
 
 <a name="ch3"></a>
-## Ch - 3: Fundamentals of C programming
+## Ch - 3: Fundamentals of C Programming
 
 Some terms that could be asked for definition:
 <a name="keywords"></a>
@@ -773,7 +773,7 @@ That writes `My fav. number is 7.` to the file `File.txt`.
 And similarly for `fscanf()`.
 
 <a name="read-write-in-block"></a>
-#### Read/Write in block
+#### Read/Write in Block
 We've seen how to read/write string and characters. We might want to write more complicated, custom
 defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.
 
@@ -1248,7 +1248,7 @@ Once declared values can be written in the variable as:
 ```
 
 <a name="self-referential-structure"></a>
-#### Self referential Structure
+#### Self Referential Structure
 
 We saw above that custom data types use predefined primitive data types (for eg. int, floats, etc) to create something
 more complex. 
@@ -1270,8 +1270,9 @@ That is every instance of `struct item` has a reference (pointer) to another ins
 
 Hence the name self-referential.
 
-What is the use of doing this? Well, these are just like arrays but unlike array, you don't have to know how many items there
-are going to be in the array at the time of declaration. You can keep adding at the end of the data as you go.
+What is the use of doing this? Well, these are just like arrays but unlike array, you don't have to
+know how many items there are going to be in the array at the time of declaration. You can keep
+adding at the end of the data as you go.
 
 These are known as **linked list**. And each item is commonly known as a node.
 
@@ -1283,9 +1284,9 @@ To show it visually, it looks something like this:
 
 <a name="union"></a>
 #### Union
-Union is similar to struct - only difference is that only one of the member of a union can have a value stored 
-at a time. While all of the members of a struct eg. day, month, year in dob type above can and do usually have values assigned to them,
-union on the other hand only has only one of its elements assigned with value.
+Union is similar to struct - only difference is that only one of the member of a union can have a value stored
+at a time. While all of the members of a struct eg. day, month, year in dob type above can and do
+usually have values assigned to them, union on the other hand only has only one of its elements assigned with value.
 
 ```c
     union Data {
@@ -1299,15 +1300,16 @@ union on the other hand only has only one of its elements assigned with value.
 
 Everything above is similar to struct, except for the keyword union.
 
-This defines a type named `data` which is a `union` and can store either an integer, a float, or a character array of length 5 - only one of them
-at any given time !
+This defines a type named `data` which is a `union` and can store either an integer, a float, or a
+character array of length 5 - only one of them at any given time !
 
-The size reserved in memory for `data` type is then 5 bytes because int and float both take 4 bytes and char array above is specified
-to take 5 bytes. So, The largest of the members decides the memory allocation size for the union.
+The size reserved in memory for `data` type is then 5 bytes because int and float both take 4 bytes
+and char array above is specified to take 5 bytes. So, The largest of the members decides the memory
+allocation size for the union.
 
 
-Passing structure, union, or structure pointer and union pointer work similarly as the native data types.
-
+Passing structure, union, or structure pointer and union pointer work similarly as the native data
+types.
 
 <a name="Arrays within structure"></a>
 #### Arrays within Structure
@@ -1342,15 +1344,16 @@ These are just like any other pointers. This is how you declare them:
 
 `myBday` is now a pointer that points to a `struct dob` type of data.
 
-Dereferencing struct pointer is a little different. Instead of period (.) to access elements
-of a struct, you use arrow (->).
+Dereferencing struct pointer is a little different. Instead of period (.) to
+access elements of a struct, you use arrow (->).
 
-But before we do, first we need to create a space in memory for our variable and assign the address of that
-memory to `myBday`. We use malloc:
+But before we do, first we need to create a space in memory for our variable
+and assign the address of that memory to `myBday`. We use malloc:
 ```c
     myBday = malloc(sizeof(struct dob));
 ```
-`sizeof()` returns the size that the struct dob data requires in bytes which is given as argument to `malloc()`. The addresss
+`sizeof()` returns the size that the struct dob data requires in bytes which is
+given as argument to `malloc()`. The addresss
 returned is assigned to myBday.
 
 Now, let's assign values to the struct itself.
