@@ -37,6 +37,10 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Read/Write Integers: getw, putw](#getwputw)
     * [Formatted Read/Write: fprintf, fscanf](#fprintf)
     * [Read/Write in block: fread, fwrite](#read-write-in-block)
+  * [Ch - 5: Operator and Expressions](#ch5)
+    * [Operators](#operators)
+    * [Expressions](#expressions)
+    * [Type conversion](#type-conversion)
   * [Ch - 8: Pointers](#ch8)
     * [Pointers](#pointers)
     * [Dynamic Memory Allocation](#dma)
@@ -663,7 +667,7 @@ To input/output strings at once:
 
 
 <a name="files"></a>
-##### Files
+#### Files
 To work with a file, you have to create a file handle for it. File handle is nothing but a pointer
 to a FILE type. You create it as follows:
 
@@ -720,7 +724,7 @@ Now, Let's read input from the keyboard with `getchar()` and write it onto the f
 Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.
 
 <a name="getwputw"></a>
-##### Read/Write Integers 
+#### Read/Write Integers 
 There are `getw()` and `putw()` functions to read and write integer values to/from a file. An example is given below:
 ```c
    int i=1, j=2, k=3, num;
@@ -750,7 +754,7 @@ The output is:
 
 
 <a name="fprintf"></a>
-##### formatted read/write
+#### Formatted read/write
 You know how `scanf()` and `printf()` read and print formatted texts from keyboard and to the display.
 
 There are `fprintf()` and `fscanf()` that do essentially the same thing but with files.
@@ -769,7 +773,7 @@ That writes `My fav. number is 7.` to the file `File.txt`.
 And similarly for `fscanf()`.
 
 <a name="read-write-in-block"></a>
-##### Read/Write in block
+#### Read/Write in block
 We've seen how to read/write string and characters. We might want to write more complicated, custom
 defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.
 
@@ -823,7 +827,7 @@ If you don't want to erase everything, you need open it in append mode with "a" 
 
 All the modes are shown in table below:
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups">
+<table border="2">
 <colgroup>
 <col  class="org-left" />
 
@@ -882,15 +886,142 @@ void main(){
 
 `getc()` and `putc()` are normally used to read and write from a file. But the question wants us to read it and display it to the monitor.
 
-There are files streams (FILE *) associated with keyboard input and monitor output. They are defined in `stdio.h` as `stdin` and `stdout`.
+There are files streams (FILE *) associated with keyboard input and monitor output. They are defined in `stdio.h` as `stdin` and `stdout**.
 
 So, we pass them as the file stream instead of a handler of an actual file.
+
+
+<a name="ch5"></a>
+## Ch - 5: Operators and Expressions
+
+<a name="operators"></a>
+### Operators
+**Operators** are symbols that tells the compiler to do specific mathematical or logical operations. The values or variables
+that the operators acts upon are called **operands.**
+
+Operators with their generic name are given in the descending order of **precedence**:
+
+<table cellspacing="6" cellpadding="6" border="2">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Category</th>
+<th scope="col" class="org-left">Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Parenthesis and so on</td>
+<td class="org-left">( ) [ ] -&gt; . ++ --</td>
+</tr>
+
+<tr>
+<td class="org-left">Unary</td>
+<td class="org-left">+ - ! ~ ++ - - (type)* &amp; sizeof</td>
+</tr>
+
+<tr>
+<td class="org-left">Multiplicative</td>
+<td class="org-left">* / %</td>
+</tr>
+
+<tr>
+<td class="org-left">Additive</td>
+<td class="org-left">+ -</td>
+</tr>
+
+<tr>
+<td class="org-left">Bitwise Shift</td>
+<td class="org-left">&lt;&lt;  &gt;&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Relational</td>
+<td class="org-left">&lt; &lt;= &gt; &gt;=</td>
+</tr>
+
+<tr>
+<td class="org-left">Equality</td>
+<td class="org-left">= !</td>
+</tr>
+
+<tr>
+<td class="org-left">Bitwise(AND XOR OR)</td>
+<td class="org-left">&amp;&amp; || </td>
+</tr>
+
+<tr>
+<td class="org-left">Conditional</td>
+<td class="org-left">?:</td>
+</tr>
+
+<tr>
+<td class="org-left">Assignment</td>
+<td class="org-left">= += -= *= /=</td>
+</tr>
+
+<tr>
+<td class="org-left">Comma</td>
+<td class="org-left">,</td>
+</tr>
+</tbody>
+</table>
+
+<a name="expressions"></a>
+### Expressions
+Expression in programming languages is any legal combination of symbols that evaluates
+to a value. For eg. `5 + 6 * (1 + 3)` is an expression and so is `4 * x` where x is a variable of valid type.
+
+<a name="type-conversion"></a>
+### Type Conversion
+Type casting or conversion is the process of converting a data from one type to another.
+This is done in two modes:
+
+* **Implicit**
+
+Compiler automatically converts data types whenever it makes sense. For example:
+```c
+  ...
+  int x = 4;
+  double y = 40000;
+  
+  printf("%lf", x+y);
+  ...
+```
+
+`+` can only operate on data of same type. But, it makes sense to add two numbers: int and double.
+So, compiler itself converts value of x into a double before evaluating the expression.
+
+* **Explicit**
+
+We may want to explicitly change the type of the variable sometimes. For ex.
+
+```c
+  ...
+  int x = 5, y;
+  float z = 12.0;
+  
+  y = (int) z/x;
+  ...
+```
+Here, z is implicitly converted to float first and the expression `z/x` is evaluated. But since the
+variable `y` is an integer variable, we want to assign an integer to y. 
+
+In the last line, `(int)` explicitly tells
+the compiler to convert the result of the expression to an integer before assigning to `y`. 
+Digits after decimal are truncated and only the integer part is assigned i.e. It is always rounded down.
 
 <a name="ch8"></a>
 ## Ch - 8: Pointers
 
 <a name="pointers"></a>
-##### Pointers
+#### Pointers
 Every variable is assigned a space in memory that it can use to store value.
 
 An `int` variable takes 4 (2 in some machines) bytes, `char` takes a single byte and so on.
@@ -979,7 +1110,7 @@ Passing pointer arguments:
 
 <a name="dma"></a>
 #### Dynamic Memory Allocation
-*Note: Come here after understanding [this](#self-referential-structure)*
+*Note: Recommend reading [this](#self-referential-structure) first*
 
 Memory allocation is essentially the process of reserving memory for a variable. It's
 mostly done in the compile time. Compiler looks at the code to figure out how many variables
@@ -1065,7 +1196,7 @@ Array of pointers is just like a character array but with pointer variables inst
 ## Ch - 9: Structures and Unions
 
 <a name="structures"></a>
-##### Structures
+#### Structures
 Structures are essentially means to custom (compound) data types in C programming language.
 
 Two keywords are relevant when it comes to structures - `struct` and `typedef`.
