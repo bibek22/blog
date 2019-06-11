@@ -538,7 +538,7 @@ void main(){
         /*
         variable a declared in this block is
         completely different from variable
-        declared outside. These are said to be
+        declared outside. Former is said to be
         local within this block
         */
         int a = 10;
@@ -934,7 +934,7 @@ Say you have an array `char a[10]`. We know that `a` actually stores the address
 array - that is the location of `a[0]`.
 
 We also know that an array has a chunk of memory allocated all at one place. So, for example if `&a[0]`, the address of
-the first element of `a`, was 2740004, then `&a[10]` would be 2740013 and every other elements would lie in between.
+the first element of `a` were 2740004, then `&a[10]` would be 2740013 and every other elements would lie in between.
 
 So, we can do maths on the address itself and dereference it to loop through an array. Like so:
 
