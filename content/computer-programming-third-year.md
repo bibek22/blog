@@ -521,6 +521,44 @@ Some terms that could be asked for definition:
 
 * **Variables**: Variable is a name given to a location in a memory where a program can manipulate the data.
 A variable could be of any type like int, float, char, etc.
+    * Types of variables:
+        * **Static and Dynamic**: This is a classification based on when the memory for the variable is allocated.
+        Static variables are those variables whose memory space is allocated by the compiler at the compile time. On the
+        other hand, dynamic variables are allocated memory space in the run-time by the program itself. See [Dynamic memory allocation](#dma)
+        * **Local and Global**: This classification is based on the **scope** of a variable. If a variable is available 
+        only within a function or a block in which it is defined, then such variable is said to be **local**  to that 
+        function or block. But if the variable is available to the entire program, then it's called a **global** variable. 
+```c
+#include<stdio.h>
+ 
+void main(){
+    int a = 100;
+    int b = 20;
+    {
+        /*
+        variable a declared in this block is
+        completely different from variable
+        declared outside. These are said to be
+        local within this block
+        */
+        int a = 10;
+        printf("Inner a = %d\nInner b = %d\n", a, b);
+    }
+ 
+    printf("Outer a = %d\nOuter b = %d\n", a, b);
+}
+```
+Everything within a pair of braces `{` `}` makes a block. Variables declared within the block are limited in scope to the block itself.
+Therefore, the expected output of the above program is:
+```c
+Inner a = 10
+Inner b = 20
+Outer a = 100
+Outer b = 20
+```
+Note that the variable `b` created outside does *pass* inside the braces-block but not the other way around. 
+This is also called **Lexical scoping** is programming languages.
+        
 
 <a name="comments"></a>
 
@@ -596,6 +634,7 @@ And output can be into two targets:
 
 * To a [file](#files)
 * To the monitor
+
 `putchar()` display one character at a time onto the display. `printf()` is for formatted display.
 ```C
    char txt[20] = "This is a text";
