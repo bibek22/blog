@@ -1,11 +1,11 @@
 Author: Bibek Gautam
-Date: 2019-06-05 08:21
+Date: 2019-04-05 08:21
 Title: Computer Programming - TU
 Slug: computer-programming-third-year
 Category: programming
 inbodyjs: /js/scrollup.js
 Tags: C, programming, TU
-Summary: Study Resources for B.Sc. Math 3rd Year computer programming
+Summary: A quick reference for TU MATH 301 computer programming
 
 **Table Of Contents**
 
@@ -31,6 +31,7 @@ Summary: Study Resources for B.Sc. Math 3rd Year computer programming
     * [Comments](#comments)
     * [Constant](#constant)
     * [Expression](#expression)
+    * [Statement](#statement)
   * [Ch - 4&10: Input and Output & File Handling](#ch4)
     * [Standard Input/Output](#stdin)
     * [Files](#files)
@@ -605,6 +606,13 @@ int gcd(int n, int m){
 * **Expression**: an expression is any legal combination of symbols that represents a value. For
   example: `x+5`, `"Programming"`, `4.023`, etc. Expression can have operators in them so long as
   they are valid as + operator in previous example.
+  
+ <!-- 
+<a name="statement"></a>
+* **Statement** : Statement is any combination of keywords, identifiers, and symbols that gives a meaningful
+action to be done by the machine. Statements are of three types:
+    * Expression statement: It's a simple statement 
+-->
 
 <a name="ch4"></a>
 ## Ch - 4, 10: Input and Output & File Handling
@@ -1044,7 +1052,7 @@ So, a pointer is just a variable whose value is some integer that represents som
     
     pt = &num;
 ```
-In Above, we have an integer variable `num` and an integer pointer `pt`. In the last time `pt` is assigned a
+In Above, we have an integer variable `num` and an integer pointer `pt`. In the last line `pt` is assigned a
 value which is the address of `num` i.e. `&n`. So now, `pt` holds the address of some memory location, and `num`
 holds the data/value stored at that location. 
 

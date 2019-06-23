@@ -3,8 +3,8 @@ Date: 2019-05-18 10:28
 Title: Fourier Series and Fourier Transform
 Slug: fourier-series-and-transform
 Category: Physics
-Status: Draft
 Tags: fourier, series, transform, physics, maths
+Status: draft
 Summary: On how fourier series and fourier series relate to each other
 
 <script type="text/x-mathjax-config">
@@ -55,32 +55,41 @@ $$ f(x) = \sum_{n=-\infty}^\infty{c_n e^{inx}} $$
 
 Make sure you get exactly the same terms as above when you expand this new expression.
 
-This is equivalent to the more familiar fourier series formula\eqref{eq:fseries} that we started with.
+This is equivalent to the more familiar Fourier series formula\eqref{eq:fseries} that we started with.
 
 Now if the function has a period other than $2\pi$, you can go through this same process with the
-fourier series in such cases and arrive at a formula that looks like this:
+Fourier series in such cases and arrive at a formula that looks like this:
 
-$$ f(x) = \sum_{n=-\infty}^\infty{c_n e^{\frac{in\pi x}{L}}} $$
+<div class='math-equation'>
+\begin{equation}
+f(x) = \sum_{n=-\infty}^\infty{c_n e^{\frac{in\pi x}{L}}}
+\end{equation}
+</div>
 
-Let me reiterate the big punchline of fourier series.
+The coefficients can be determined by the following formula:
 
-Just like you can add various pure harmonics of various frequencies to create wonderfully complex music, you can add pure sines and cosines of various period to get any$^\dagger$ complicated periodic functions.
+<div class='math-equation'>
+\begin{equation}
+ c_n = \frac{1}{2L}\int_{-\infty}^\infty{f(x) e^{\frac{-i n\pi x}{L}}} dx 
+\end{equation}
+</div>
 
-What about the functions that are not periodic ? After all, Fourier transform doesn't require the
-function to be periodic. If you're thinking why not try to get the Fourier series with at the limit
-when $\left(-L, L\right) \to \left( -\infty, \infty \right)$, you're in the right direction.
+Substitute $f(x)$ from $(2)$ in $(3)$ to see that above formula is indeed valid.
 
-<!
-But, obviously, we've only added sines and cosines with period $\frac{n}{2\pi}$, where n = 1, 2, 3,
-and so on. Those are descrete values of n, where it could really take continuous values.
-!>
+Now, what if the function is not periodic? How can we extend this Fourier relation to non periodic function.
+
+To say that a function is not periodic is equivalent to saying that its period is $\infty$
+
+So, maybe there is a way to safely let $L$ tend to $\infty$
 
 #### Fourier Transform
 
-Our goal is to see the connection between fourier series to the fourier transform. Let me write the
-fourier transform formula which goes like this:
+Since we want to see a clear link between fourier series and fourier transform, let's look at
+the fourier transform formula here.
 
-$$ G(k) = \int_{-\infty}^{\infty}{f(x)e^{ikx} dx} $$
+$$ G(k) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{ikx} dx} $$
+
+$G(k)$ and $f(x)$ are called the Fourier transforms of each other.
 
 
 *$\dagger$ subject to Dirichlet Conditions*

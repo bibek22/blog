@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-05-06 07:25
 Title: Sierpinski Triangle
 Slug: sierpinski-triangle
-Category: Physics
+Category: Maths
 Tags: physics, maths, fractals
 Stylesheets: style_sim.css
 inbodyjs: /js/sierpinski.js, /js/hexaloop.js
@@ -29,11 +29,10 @@ It is also pretty simple, straightforward and goes like this:
 6. Repeat from step 3.  
 
 
- ** Steps 4 - 6 is done automatically, just hit the play button below. **
-
-That is what I am trying to demonstrate in this post. Also, I want to get a sense of the number of
+ This is what I am trying to demonstrate here. I also want to get a sense of the number of
 iterations it takes for a satisfactory Sierpinski Triangle looking shape to emerge.  
 
+ ** Steps 4 - 6 is done automatically, just hit the play button below. **
 <button id='pointBtn'>Pick vertices</button> <button id='queenBtn'>Pick tracer</button> <br>
 <span id="simulation"><span>
 
@@ -62,4 +61,3 @@ But still, it's amazing to see the shape emerge.
 Try to look for pattern and see what the steps are. It's more subtle than you might think at first.
 
 The End.
-
