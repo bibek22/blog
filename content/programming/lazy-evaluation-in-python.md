@@ -10,8 +10,8 @@ Summary: I talk about lazy evaluation and use it to generate infinite list of pr
 Say, I wrote a program that generates fibonacci numbers. I could write a loop keeping in memory last
 two fibonacci numbers and returning the new one as the sum of last two. We've all seen this.
 ```python3
-last = 0
-secondlast = 0
+last = 1
+secondlast = 1
 while (True):
     next = last + secondlast
     secondlast = last
