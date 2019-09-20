@@ -4,6 +4,7 @@ Title: Fourier Series and Fourier Transform
 Slug: fourier-series-and-transform
 Category: Physics
 Tags: fourier, series, transform, physics, maths
+Status: draft
 Summary: On how fourier series and fourier series relate to each other
 
 <script type="text/x-mathjax-config">
@@ -90,5 +91,6 @@ $$ G(k) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{ikx} dx} $$
 
 $G(k)$ and $f(x)$ are called the Fourier transforms of each other.
 
+<iframe src="https://www.desmos.com/calculator/y5laguevjy?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
 
 *$\dagger$ subject to Dirichlet Conditions*
