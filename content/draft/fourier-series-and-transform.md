@@ -1,11 +1,10 @@
 Author: Bibek Gautam
-Date: 2019-05-18 10:28
-Title: Fourier Series and Fourier Transform
+Date: 2019-08-18 10:28
+Title: Fourier Series and Transform
 Slug: fourier-series-and-transform
 Category: Physics
-Tags: fourier, series, transform, physics, maths
-Status: draft
-Summary: On how fourier series and fourier series relate to each other
+Tags: Fourier, series, transform, physics, maths
+Summary: On how Fourier series and Fourier transform relate to each other
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -13,7 +12,7 @@ MathJax.Hub.Config({
 });
 </script>
 
-If you're familiar with fourier series, you already know that given that a periodic function $f(x)$
+If you're familiar with Fourier series, you already know that given that a periodic function $f(x)$
 satisfies a certain [conditions](https://en.wikipedia.org/wiki/Dirichlet_conditions), it can be
 written as an infinite sum of sines and cosines as follow:
 <div class='math-equation'>
@@ -34,7 +33,7 @@ $$ \sin x =  \frac{e ^{ix} - e^{-ix}}{2} $$
 $$ \cos x =  \frac{e ^{ix} + e^{-ix}}{2} $$
 
 
-In light of these relations, lets rewrite the fourier series in terms of complex exponentials:
+In light of these relations, lets rewrite the Fourier series in terms of complex exponentials:
 
 <div class='math-equation'>
 $$ f(x) = a_0 + \sum_{n=1}^\infty{a_n \frac{e ^{inx} + e^{-inx}}{2}} + \sum_{n=1}^\infty{b_n \frac{e ^{inx} - e^{-inx}}{2} } $$
@@ -83,14 +82,29 @@ To say that a function is not periodic is equivalent to saying that its period i
 So, maybe there is a way to safely let $L$ tend to $\infty$
 
 #### Fourier Transform
+Indeed that is what we do when we get to Fourier transform. Instead of trying to present a textbook derivation leading to the Fourier transform, I've decided to just assert that such derivation is possible and instead talk about the physical intuition relating the transform. 
 
-Since we want to see a clear link between fourier series and fourier transform, let's look at
-the fourier transform formula here.
+When you let $L$ approach $\infty$ as mentioned above and change the summation involved into an integral in the process, you get to the following relation.
 
-$$ G(k) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{ikx} dx} $$
+<div class='math-equation'>
+\begin{equation}
+f(x) = \frac{1}{2\pi} \int_{- \infty}^{\infty} e^{ikx} dk \int_{- \infty}^{\infty} f(u) e^{-iku} du
+\end{equation}
+</div>
 
-$G(k)$ and $f(x)$ are called the Fourier transforms of each other.
+Then, we just *define*
+$$ g(k) := \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{-ikx} dx} $$
+And from the above relation:
+$$ f(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{ikx} dk} $$
 
-<iframe src="https://www.desmos.com/calculator/y5laguevjy?embed" width="500px" height="500px" style="border: 1px solid #ccc" frameborder=0></iframe>
+$g(k)$ and $f(x)$ are called the Fourier transforms of each other.
+
+The function $g(k)$ here is a continuous analogue of $c_n$ that we had in Fourier Series, which you'll remember are just the coefficients of the particular frequency component n present in the function $f(x)$.
+
+What equation (4) is basically trying to say is the following:
+
+1. Start with a function $f(x)$
+1. For every all real values of k (all possible frequencies), compute the coefficient, $g(k)$, for that particular frequency component k,
+2. Take $g(k)$ "amount" of the pure frequency k for all values of 
 
 *$\dagger$ subject to Dirichlet Conditions*

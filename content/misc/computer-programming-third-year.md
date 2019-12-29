@@ -6,6 +6,7 @@ Category: programming
 inbodyjs: /js/scrollup.js
 Tags: C, programming, TU
 Summary: A quick reference for TU MATH 301 computer programming
+Status: Draft
 
 **Table Of Contents**
 
