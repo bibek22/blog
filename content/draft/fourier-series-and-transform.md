@@ -4,6 +4,7 @@ Title: Fourier Series and Transform
 Slug: fourier-series-and-transform
 Category: Physics
 Tags: Fourier, series, transform, physics, maths
+Status:Draft
 Summary: On how Fourier series and Fourier transform relate to each other
 
 <script type="text/x-mathjax-config">

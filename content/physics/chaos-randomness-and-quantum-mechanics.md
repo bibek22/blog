@@ -4,10 +4,9 @@ Title: Chaos, Randomness, and Quantum Mechanics
 Slug: chaos-randomness-and-quantum-mechanics
 Category: physics
 Tags: physics,chaos, quantum mechanics, non-linear dynamics
+Status: Draft
 Summary: Some thoughts on chaos and randomness
 
-
-Status: Draft
 A system is said to be chaotic if it is highly sensitive to initial condition. Double pendulum is a classical example.
 Very little uncertainty or error in the initial condition gets amplified exponentially to be as large as the system size itself. A dynamical variable which is governed by such chaotic non linear dynamics looks very 'random'. We are going to explore more on this on this post.
 

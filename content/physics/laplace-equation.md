@@ -31,7 +31,7 @@ We can solve the equation:
 
 $$ d^2 \psi = 0 $$
 
-Integrate twice in a row to get:
+Integrate twice to get:
 $$ d \psi = a $$
 $$ \psi(x) = ax + b $$
 
