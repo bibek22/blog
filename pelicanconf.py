@@ -7,7 +7,7 @@ SITENAME = 'Bibek Gautam - Blog'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
 SITEDESCRIPTION = AUTHOR + '\'s Thoughts and Writings'
-SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120'
+SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220'
 FAVICON = '/images/favicon.ico'
 BROWSER_COLOR = '#333333'
 PYGMENTS_STYLE = 'friendly'
