@@ -32,5 +32,3 @@ The red points indicate spam emails and green dots indicate non spam ones. Of co
 but this helps to illustrate.
 
 Clearly, there is a line to be drawn in between two cluster of points which serves as a boundary for spam vs. non-spam emails.
-
-

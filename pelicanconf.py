@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 
 AUTHOR = 'Bibek Gautam'
-SITEURL = 'https://www.bibekgautm.com.np'
+SITEURL = 'http://127.0.0.1:8000'
 SITENAME = 'Bibek Gautam - Blog'
 SITETITLE = AUTHOR
 SITESUBTITLE = 'Aspiring Physicist and Programmer'
@@ -66,9 +66,12 @@ DEFAULT_PAGINATION = 5
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
 PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'ipynb.liquid', 'render_math']
+# , "pelican-ipynb.markup"]
+
+# IGNORE_FILES = [".ipynb_checkpoints"]
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-
+# IPYNB_USE_METACELL = True
 SITEMAP = {
     'format': 'xml',
     'priorities': {
