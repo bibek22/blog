@@ -8,12 +8,11 @@ Summary:
 
 We would like to have a notion of length in our smooth manifolds. Maybe we'd
 like to have a notion of angles between vectors in $T_pM$. In a smooth manifold
-with connection $(M, \mathcal O, A, \mathrm \Delta)$, we don't have enough structure to talk about those things.
-To talk about lengths of vectors, we could introduce norm. Similarly, we could introduce
-inner product to talk about angles. But we need a metric to talk about lengths
+with connection $(M, \mathcal O, \mathcal A, \mathrm \Delta)$, we don't have enough structure to talk about those things.
+We could introduce norm to define lengths of vectors. Similarly, we could introduce
+inner product to talk about angles. But we need a metric to talk about length
 in position space. Metric is an extra structure we provide, on top of a smooth
 manifold, in order to be able to talk about these things.
-
 
 A Metric tensor g on a smooth manifold is a (0, 2) tensor field ie.
 
@@ -35,13 +34,13 @@ In manifold way of speaking, one could also say that so called musical map
 exists. But that isn't any more insightful.
 
 
-The inverse of $g_ab$ obtained in the way of matrix inversion denoted by $g^ab$
-is a (2,0) tensor which we know is a multilinear map as such
+The inverse of $g_{ab}$ obtained in the way of matrix inversion denoted by
+$g^{ab}$ is a (2,0) tensor which we know is a multilinear map as such
 
 $${g^{ab}}:{\Gamma (T^*M) \times \Gamma (T^*M)}\rightarrow{\mathbb R}$$
 
 But we expect the inverse of a map to defined from codomain to domain of the
-map itself. So, as we see a (2,0) tensor, g^ab is an example of which, fails to
+map itself. So, as we see a (2,0) tensor, $g^{ab}$ is an example of which, fails to
 comply to that definition.
 
 #### Eigenvalues and Signature
@@ -60,14 +59,14 @@ vector.
 
 So, it makes sense to try and solve the eigenvalue equation:
 
-$$ A^i_j v^j  = \lambda v^j $$
+$$ A^i_j v^j  = \lambda v^i $$
 
 But what about a (0,2) tensor?
 
-We could feed a vector to a (0,2) tensor, lets take $g_ab$ for example. But
-$g_ab v^j$ would be a co-vector.
+We could feed a vector to a (0,2) tensor, lets take $g_{ab}$ for example. But
+$g_{ab} v^j$ would be a co-vector.
 
-$$ g_{ij} v^j  = \lambda v^j (?) $$
+$$ g_{ij} v^j  = \lambda v^i (?) $$
 
 So, we can't really talk about eigenvalues of metric tensor. 
 
