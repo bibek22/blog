@@ -1,5 +1,5 @@
 Author: Bibek Gautam
-Date: 2019-09-27 12:34
+Date: 2020-02-27 12:34
 Title: Chaos, Randomness, and Quantum Mechanics
 Slug: chaos-randomness-and-quantum-mechanics
 Category: physics

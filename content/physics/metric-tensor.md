@@ -4,7 +4,7 @@ Title: g<sup>ab</sup> is not an inverse of g<sub>ab</sub>
 Slug: metric-tensor
 Category: physics
 Tags: physics, differential geometry, GTR
-Summary: 
+Summary: Brief note on metric tensors
 
 We would like to have a notion of length in our smooth manifolds. Maybe we'd
 like to have a notion of angles between vectors in $T_pM$. In a smooth manifold
@@ -63,12 +63,12 @@ $$ A^i_j v^j  = \lambda v^i $$
 
 But what about a (0,2) tensor?
 
-We could feed a vector to a (0,2) tensor, lets take $g_{ab}$ for example. But
-$g_{ab} v^j$ would be a co-vector.
+We could feed a vector to a (0,2) tensor, lets take $g_{ij}$ for example. But
+$g_{ij} v^j$ would be a co-vector.
 
 $$ g_{ij} v^j  = \lambda v^i (?) $$
 
-So, we can't really talk about eigenvalues of metric tensor. 
+So, we can't really talk about eigenvalues of metric tensor.
 
 However, there's nothing stopping us from diagonalizing the matrix
 representation by going to the right basis where let's say we get the diagonal
@@ -81,4 +81,4 @@ to 1's, -1's and 0s.
 
 If $p$ and $q$ are the number of 1's and -1's in the diagonal entries, $(p,q)$ is
 defined as the signature of the metric at that point. And the statement is that
-this signature is well-defined irrespective of the chart you choose.
+this signature is well-defined with respect to the choice of charts.
