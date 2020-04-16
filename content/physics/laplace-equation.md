@@ -41,7 +41,7 @@ which is an equation of a straight line, a and b being constants.
 Before we look at higher dimension, let me assert some properties of this soultion:  
 
 1. the value of the function at a point is the average of the value at points around it.  
-  <img src="/images/st-line-average.png" width='400'/>  
+  <img src="/images/st-line-average.png" width='350' class='center'/>  
    Take two points at equal distance on either side of any point $x$, the following relation holds:
   $$ \psi(x) = \frac{1}{2} \left[ \psi (x + d) + \psi (x - d) \right] $$  
   where, d is any distance.
@@ -75,7 +75,7 @@ a local minima *or* a local maxima.
 
 To solidify this understanding, imagine a hollow pipe like this:
 
-<img src="/images/cylinder.png" width='200'/>
+<img src="/images/cylinder.png" width='200' class='center'/>
 
 Now, chip away at the upper end of the cylinder creating a topography however you like. You're deciding
 on the boundary conditions. Now imagine covering this undulating end of the pipe with stretchable
@@ -94,7 +94,7 @@ Consider a metal rod of finite length $l$ with ends kept at 0 &deg;C and 100 &de
 below. We are interested in the steady state temperature i.e. the temperature distribution in the rod
 after a long time such that it doesn't change further as time evolves.
 
-<img src="/images/rod.png" width='400'/>
+<img src="/images/rod.png" width='400' class='center'/>
 
 Take any point along the rod, what the property #1 tells us is that the temperature at this point is
 the average of the temperature immediately next to it. Which is reasonable, right ?

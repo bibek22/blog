@@ -28,3 +28,4 @@ You can plug in a few numbers and see that the range of the map is $[0,1]$ and
 the map itself is discontinuous at 0.5 above which mod 1 trims off the integer portion.
 
 <img src="/images/bernoulli-map.png" width='200'/>
+
