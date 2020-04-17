@@ -70,7 +70,7 @@ subset of $\mathbb R^n$. We, therefore, add one more information to our collecti
 as elements where
 $\mathcal U \subseteq M$ is a portion of the manifold that is covered in this
 particular chart and $x$ is the map that takes $\mathcal U$ to a portion
-$\mathcal{x(U)} \in \mathbb R^n$.
+$\mathcal{x(U)} \subseteq \mathbb R^n$.
 <figure>
 <img src="images/chartmap.png" class='center' width="400"/>
 <figcaption class='center'>
