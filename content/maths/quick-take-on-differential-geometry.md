@@ -8,7 +8,7 @@ Summary: a very quick survey of ideas in differential geometry
 
 *I've committed all sorts of mathematical sins with this post. This is just
 supposed to be a very very quick rundown of mathematical preliminaries that forms the
-basis of spacetime in the general theory of relativity* 
+basis of spacetime in the general theory of relativity.*
 
 Lengths, area, volume, curvature, rate of change etc are some of the things that
 we are interested to study in geometry. We have a good handle on those when the
@@ -21,7 +21,7 @@ mathematical rigour without being too restrictive.
 
 At the coarsest level, spacetime is a set. It's a set of points. Let's call this
 set $M$. Does a set so
-defined have enough complexity to model spacetime ? Of course not. In fact,
+defined have enough complexity to model spacetime? Of course not. In fact,
 let's see what we have. A set is just an unordered collection of
 elements.
 
@@ -40,6 +40,8 @@ a set is just a set which contains a whole bunch of sets as its elements, each o
 defines a "locality". So, for each point $p \in M$, there could be an entry in this
 set, denoted by $\mathcal O$, which contains all the neighbour
 points of $p$. Let's see how our paper sheet spacetime is doing now.
+
+<img src="images/atlas.png" class='center'/>
 
 A paper spacetime equipped with a tuple $(M, \mathcal O)$, called a topological
 space, is closer to what we want compared to the powder that we had earlier. But you
@@ -66,7 +68,7 @@ require a condition that our model of spacetime be mapped *continuously* to
 subset of $\mathbb R^n$. We, therefore, add one more information to our collection namely an
 **Atlas** denoted by $\mathcal A$ which is a set of $(\mathcal U, \mathcal x)$
 as elements where
-$\mathcal U \in M$ is a portion of the manifold that is covered in this
+$\mathcal U \subseteq M$ is a portion of the manifold that is covered in this
 particular chart and $x$ is the map that takes $\mathcal U$ to a portion
 $\mathcal{x(U)} \in \mathbb R^n$. We have a whole bunch of charts because a single
 might not cover the entire manifold. So, we now consider only those spaces that
