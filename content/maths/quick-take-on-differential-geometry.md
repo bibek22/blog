@@ -70,13 +70,19 @@ subset of $\mathbb R^n$. We, therefore, add one more information to our collecti
 as elements where
 $\mathcal U \subseteq M$ is a portion of the manifold that is covered in this
 particular chart and $x$ is the map that takes $\mathcal U$ to a portion
-$\mathcal{x(U)} \in \mathbb R^n$. We have a whole bunch of charts because a single
-might not cover the entire manifold. So, we now consider only those spaces that
+$\mathcal{x(U)} \in \mathbb R^n$.
+<figure>
+<img src="images/chartmap.png" class='center' width="400"/>
+<figcaption class='center'>
+fig. Chart map from $\mathcal U$ to $\mathcal{x(U)}$
+</figcaption>
+</figure>
+
+We have a whole bunch of charts because a single might not cover the entire
+manifold. So, we now consider only those spaces that
 are locally Euclidean. This deals with the problem of wrinkles in spacetime. The
 requirement of continuity of chart maps saves the day because as one says you
 can not continuously deform a cone into a sphere.
-
-
 
 And the idea is to do calculus in charts, where we have
 all nice results and theorems from analysis. But, immediately one should be
