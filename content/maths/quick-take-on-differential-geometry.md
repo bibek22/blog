@@ -66,8 +66,9 @@ require a condition that our model of spacetime be mapped *continuously* to
 subset of $\mathbb R^n$. We, therefore, add one more information to our collection namely an
 **Atlas** denoted by $\mathcal A$ which is a set of $(\mathcal U, \mathcal x)$
 as elements where
-$\mathcal U$ is a chart and $x$ is the map that takes portion of M to a portion
-$\mathcal U \in \mathbb R^n$. We have a whole bunch of charts because a single
+$\mathcal U \in M$ is a portion of the manifold that is covered in this
+particular chart and $x$ is the map that takes $\mathcal U$ to a portion
+$\mathcal{x(U)} \in \mathbb R^n$. We have a whole bunch of charts because a single
 might not cover the entire manifold. So, we now consider only those spaces that
 are locally Euclidean. This deals with the problem of wrinkles in spacetime. The
 requirement of continuity of chart maps saves the day because as one says you
@@ -77,9 +78,9 @@ can not continuously deform a cone into a sphere.
 
 And the idea is to do calculus in charts, where we have
 all nice results and theorems from analysis. But, immediately one should be
-concerned and ask if whatever we try to establish on the charts will be
-well-defined. Because, I could just as easily go and look at another chart and
-the property that we try to ascribe to the manifold because they hold on one
+concerned and ask if whatever we try to establish on charts will be
+well-defined. Because, I could just as easily go and look at another chart. The
+property that we try to ascribe to the manifold because they hold on one
 chart may not hold in all of them. This is very serious. We don't want the
 velocity of a particle, curvature of a trajectory and so on to depend on the choice
 of our coordinates (which is what charts really are).
@@ -110,7 +111,7 @@ is no. We can't define differentiability without some further restrictions on
 our atlas.
 
 And believe it or not, what we do is restrict our atlas such that chart
-transition map between any pair of charts is infinitely differentiable or in
+transition map between any pair of overlapping charts is infinitely differentiable or in
 other word smooth. With that restriction, we now have a smooth manifold $(M, 
 \mathcal{O, A})$ where we can do calculus without running into ill definition.
 

@@ -208,14 +208,17 @@ function getx(r, theta){
     return(r*Math.sin(theta));
 }
 
+// single pendulum demo
 var experiment = new p5(packaging);
 
 // for slight change
+// side by side penduli instances
 var experimentS_1 = new p5(packagingS_1);
 var experimentS_2 = new p5(packagingS_2);
 
 var simLoopOn = 0;
 function simPlay(){
+    // function for play/pause button
     if (simLoopOn){
         experimentS_1.noLoop();
         experimentS_2.noLoop();
