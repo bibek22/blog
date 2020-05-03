@@ -124,7 +124,8 @@ into ill definition.
 
 
 There is more to it, of course. For example, we haven't defined a metric yet.
-So, we can't talk about lengths and angles like we always had on Euclidean space
-in undergraduate maths. It's not clear how one could define derivatives and so
-on without a notion of length. I will talk about these in upcoming posts if I
+So, we can't talk about lengths and angles like we always had on flat Euclidean
+space. It's not clear how one could define derivatives and so
+on without a notion of length. We'll stumble upon a major hurdle in defining
+derivatives of tensor fields. I will talk about these in upcoming posts if I
 get the clarity and a way to avoid too much maths.
