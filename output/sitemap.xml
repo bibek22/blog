@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://127.0.0.1:8000/</loc>
-<lastmod>2020-05-03T08:15:05-00:00</lastmod>
+<lastmod>2020-05-03T16:38:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://127.0.0.1:8000/archives.html</loc>
-<lastmod>2020-05-03T08:15:05-00:00</lastmod>
+<lastmod>2020-05-03T16:38:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://127.0.0.1:8000/tags.html</loc>
-<lastmod>2020-05-03T08:15:05-00:00</lastmod>
+<lastmod>2020-05-03T16:38:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>http://127.0.0.1:8000/categories.html</loc>
-<lastmod>2020-05-03T08:15:05-00:00</lastmod>
+<lastmod>2020-05-03T16:38:05-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -43,6 +43,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2019-03-27T13:27:00+05:45</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://127.0.0.1:8000/estimating-distance-using-a-cepheid-variable.html</loc>
+<lastmod>2020-05-03T07:23:00+05:45</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
 </url>
 
 <url>
@@ -201,7 +208,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://127.0.0.1:8000/category/physics.html</loc>
-<lastmod>2020-04-12T08:34:00+05:41</lastmod>
+<lastmod>2020-05-03T07:23:00+05:41</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -228,6 +235,27 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>http://127.0.0.1:8000/tag/astronomy.html</loc>
+<lastmod>2020-05-03T07:23:00+05:41</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>http://127.0.0.1:8000/tag/physics.html</loc>
+<lastmod>2020-05-03T07:23:00+05:41</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>http://127.0.0.1:8000/tag/python.html</loc>
+<lastmod>2020-05-03T07:23:00+05:41</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
 <loc>http://127.0.0.1:8000/tag/gtr.html</loc>
 <lastmod>2020-04-16T07:20:00+05:41</lastmod>
 <changefreq>daily</changefreq>
@@ -242,21 +270,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>http://127.0.0.1:8000/tag/physics.html</loc>
-<lastmod>2020-04-16T07:20:00+05:41</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
 <loc>http://127.0.0.1:8000/tag/covid-19.html</loc>
-<lastmod>2020-04-12T18:00:00+05:41</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.6</priority>
-</url>
-
-<url>
-<loc>http://127.0.0.1:8000/tag/python.html</loc>
 <lastmod>2020-04-12T18:00:00+05:41</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
@@ -453,7 +467,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://127.0.0.1:8000/author/bibek-gautam.html</loc>
-<lastmod>2020-04-16T07:20:00+05:41</lastmod>
+<lastmod>2020-05-03T07:23:00+05:41</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
