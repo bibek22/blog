@@ -1,0 +1,476 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- for custom stylesheets and js -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#333333" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="http://127.0.0.1:8000/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/theme/pygments/friendly.min.css">
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://127.0.0.1:8000/static/custom.css" rel="stylesheet">
+
+    <link href="http://127.0.0.1:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bibek Gautam - Blog Atom">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Bibek Gautam" />
+<meta name="description" content="If you deal with a large data files with multiple rows and columns and you would like to make some quick edits, selection or manipulation right from the terminal, awk is the tool to look for." />
+<meta name="keywords" content="linux, programming">
+
+<meta property="og:site_name" content="Bibek Gautam - Blog"/>
+<meta property="og:title" content="Awk Tutorial and Introduction"/>
+<meta property="og:description" content="If you deal with a large data files with multiple rows and columns and you would like to make some quick edits, selection or manipulation right from the terminal, awk is the tool to look for."/>
+<meta property="og:locale" content="en_US.utf8"/>
+<meta property="og:url" content="http://127.0.0.1:8000/awk-tutorial.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-04-07 13:25:00+05:45"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://127.0.0.1:8000/author/bibek-gautam.html">
+<meta property="article:section" content="Linux"/>
+<meta property="article:tag" content="linux"/>
+<meta property="article:tag" content="programming"/>
+<meta property="og:image" content="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220">
+
+  <title>Bibek Gautam - Blog &ndash; Awk Tutorial and Introduction</title>
+
+</head>
+<body>
+<!-- for inbody javascript -->
+<!--  -->
+  <aside>
+    <div>
+      <a href="http://127.0.0.1:8000">
+        <img src="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220" alt="Bibek Gautam" title="Bibek Gautam">
+      </a>
+      <h1><a href="http://127.0.0.1:8000">Bibek Gautam</a></h1>
+
+<p>Aspiring Physicist and Programmer</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://127.0.0.1:8000/pages/about.html#about">About</a></li>
+          <li><a href="http://127.0.0.1:8000/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/bibek22" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/truelostdreamer" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-envelope" href="mailto:forgot.bg@gmail.com" target="_blank">
+            <i class="fas fa-envelope">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-instagram" href="https://instagram.com/masterprocastinator" target="_blank">
+            <i class="fab fa-instagram">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://127.0.0.1:8000">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://127.0.0.1:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="awk-tutorial">Awk Tutorial and Introduction</h1>
+    <p>
+      Posted on April 07, 2019 in <a href="http://127.0.0.1:8000/category/linux.html">Linux</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h3>Awk</h3>
+<p>Awk is a full fledged, <a href="https://simple.wikipedia.org/wiki/Turing_complete">turing complete</a> programming language
+on its own but it was designed specifically to deal with text data.  </p>
+<p>Say, you have the following kind of data:</p>
+<div class="highlight"><pre><span></span><span class="n">PRN</span>   <span class="n">Az</span>     <span class="n">Ele</span>     <span class="n">Lat</span>     <span class="n">Lon</span>     <span class="n">Stec</span>    <span class="n">Vtec</span>    <span class="n">S4</span>
+<span class="mi">1</span>   <span class="mi">155</span><span class="p">.</span><span class="mi">41</span>  <span class="mi">5</span><span class="p">.</span><span class="mi">82</span>    <span class="mi">15</span><span class="p">.</span><span class="mi">74</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">22</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">20</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">78</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">3</span>   <span class="mi">155</span><span class="p">.</span><span class="mi">25</span>  <span class="mi">5</span><span class="p">.</span><span class="mi">95</span>    <span class="mi">15</span><span class="p">.</span><span class="mi">84</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">38</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">86</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">2</span>   <span class="mi">155</span><span class="p">.</span><span class="mi">09</span>  <span class="mi">6</span><span class="p">.</span><span class="mi">08</span>    <span class="mi">15</span><span class="p">.</span><span class="mi">94</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">26</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">84</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">1</span>   <span class="mi">154</span><span class="p">.</span><span class="mi">94</span>  <span class="mi">6</span><span class="p">.</span><span class="mi">21</span>    <span class="mi">16</span><span class="p">.</span><span class="mi">03</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">22</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">84</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">3</span>   <span class="mi">154</span><span class="p">.</span><span class="mi">78</span>  <span class="mi">6</span><span class="p">.</span><span class="mi">33</span>    <span class="mi">16</span><span class="p">.</span><span class="mi">13</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">16</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">84</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">3</span>   <span class="mi">154</span><span class="p">.</span><span class="mi">62</span>  <span class="mi">6</span><span class="p">.</span><span class="mi">46</span>    <span class="mi">16</span><span class="p">.</span><span class="mi">23</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">29</span><span class="p">.</span><span class="mi">01</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">81</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+<span class="mi">2</span>   <span class="mi">154</span><span class="p">.</span><span class="mi">46</span>  <span class="mi">6</span><span class="p">.</span><span class="mi">59</span>    <span class="mi">16</span><span class="p">.</span><span class="mi">32</span>   <span class="mi">90</span><span class="p">.</span><span class="mi">21</span>   <span class="mi">28</span><span class="p">.</span><span class="mi">98</span>   <span class="mi">10</span><span class="p">.</span><span class="mi">82</span>   <span class="o">-</span><span class="mi">99</span><span class="p">.</span><span class="mi">000</span>
+</pre></div>
+
+
+<p>Say you are interested in only some of the columns. And you want to seperate out the data by PRN
+value which runs from <span class="math">\(1\)</span> to <span class="math">\(3\)</span>. You might also want to delete those rows which have a negative
+value i.e. <code>-99.00</code> which you know implies an error or missing data. You could do all these things and
+more using <code>awk</code>.</p>
+<h3>Basic syntax</h3>
+<p>One thing you should note before we begin is that <code>awk</code> is a line editor. It processes one line at
+a time. So, no matter how many lines of input you have, awk runs the same code on all of it. It's
+basic structure is the following:</p>
+<div class="highlight"><pre><span></span><span class="nb">BEGIN</span><span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+<span class="nb">END</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>It has three blocks as you can see. Sometimes you need to do
+something before you even begin editing lines, for eg. write the header, or initialize some variables
+etc. That is what goes inside the <code>BEGIN{}</code> block.  </p>
+<p>Similary, you have <code>END{}</code> block which runs after
+the lines are finished processing. This may be used to write footer, for example.  </p>
+<p>The code that runs
+for each line of input is on the middle, also called the main block.</p>
+<h3>Running the script</h3>
+<p>Let me show you how to run the awk script. First of all, create a script file using your text
+editor, eg. <code>gedit</code>, <code>vim</code>, etc.  </p>
+<p>I recommend creating a new directory to save the file so that it is
+cleaner. Put the following into the file and name it <code>script.awk</code>:</p>
+<div class="highlight"><pre><span></span><span class="nb">BEGIN</span><span class="p">{</span>
+    <span class="kr">print</span> <span class="s2">&quot;###First Line###&quot;</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="kr">print</span>
+<span class="p">}</span>
+<span class="nb">END</span><span class="p">{</span>
+    <span class="kr">print</span> <span class="s2">&quot;###Last Line###&quot;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Also create another  file which will be the file that we want to edit/manipulate using awk. So,
+create a file named <code>list.txt</code> with the following content:</p>
+<div class="highlight"><pre><span></span><span class="n">Apples</span>
+<span class="n">Potato</span>
+<span class="n">Onion</span>
+<span class="n">Garlic</span>
+</pre></div>
+
+
+<p>Then open the terminal and <code>cd</code> into the directory where you saved
+your files. Then, enter the following command to run the script. The syntax is <code>awk -f &lt;script-file&gt;
+&lt;input file&gt;</code>.</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> awk -f script.awk list.txt
+<span class="gp">#</span><span class="c1">##First Line###</span>
+<span class="go">Apples</span>
+<span class="go">Potato</span>
+<span class="go">Onion</span>
+<span class="go">Garlic</span>
+<span class="gp">#</span><span class="c1">##Last Line###</span>
+</pre></div>
+
+
+<p>If you get the output that looks like above, everything is working correctly. Now let's talk about
+what the program did.  </p>
+<p><code>BEGIN</code> block has a line that says <code>print "###First Line###"</code>. Since this block runs before dealing
+with any line in the file <code>list.txt</code> itself, we see the line in the first line of the output.
+You also see that <code>print</code> is the command to write something to the screen/file.  </p>
+<p>Similarly, the <code>END</code> block writes to the last line i.e. after every line in the given file is
+evaluated. The line in the main block is a little different. It just says <code>print</code>. When the argument
+to print is missing, it just prints the line in the input file as it is as we see above.  </p>
+<p>It's only interesting when you start to manipulate the lines given. But before we do, let's see how
+to save the output to a new file.</p>
+<h3>Saving output to a file</h3>
+<p>Unix/Linux has this concept of pipe/redirection, which basically is a way to link output of one
+program to the input of some other program or to a file, etc.  </p>
+<p>Pipe symbols <code>|</code> are used to pipe data
+between two programs and <code>&lt;</code>, <code>&gt;</code> for redirection to/from a file. As such:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> awk -f script.awk list.txt &gt; output.txt
+<span class="gp">$</span> ls
+<span class="go">list.txt  output.txt  script.awk</span>
+</pre></div>
+
+
+<p>You see a new file <code>output.txt</code> has been created. You can <code>cat output.txt</code> to check that the output
+has indeed been written to that file.</p>
+<h3>Selecting columns</h3>
+<p>A column in awk is represented by &dollar;n where n is <span class="math">\(1\)</span> for first column, and <span class="math">\(8\)</span> for eighth
+column. So, $3 would be the third column.   </p>
+<p>For example purpose, copy the following into the <code>list.txt</code> file we created earlier.</p>
+<div class="highlight"><pre><span></span><span class="n">Apples</span>  <span class="mi">1</span><span class="n">Kg</span>
+<span class="n">Potato</span>  <span class="mi">5</span><span class="n">Kg</span>
+<span class="n">Onion</span>   <span class="mi">1</span><span class="n">Kg</span>
+<span class="n">Garlic</span>  <span class="p">.</span><span class="mi">5</span><span class="n">Kg</span>
+</pre></div>
+
+
+<p>And create a script <code>itemOnly.awk</code> with the following code:</p>
+<div class="highlight"><pre><span></span><span class="nb">BEGIN</span><span class="p">{</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="kr">print</span> <span class="o">$</span><span class="mi">1</span>
+<span class="p">}</span>
+<span class="nb">END</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>And save and run the script against the file <code>list.txt</code> like this:</p>
+<div class="highlight"><pre><span></span><span class="gp">$</span> awk -f itemOnly.awk list.txt
+<span class="go">Apples</span>
+<span class="go">Potato</span>
+<span class="go">Onion</span>
+<span class="go">Garlic</span>
+</pre></div>
+
+
+<p>Note that we didn't write anything in <code>BEGIN</code> and <code>END</code> block. That's allowed. If you wanted to
+write a header for example that says "Items" at the top, you could do <code>print "Item"</code> in your <code>BEGIN</code>
+block.  </p>
+<p>You can also very simply change the order of the columns:</p>
+<div class="highlight"><pre><span></span><span class="nb">BEGIN</span><span class="p">{</span>
+    <span class="kr">print</span> <span class="s2">&quot;Qty.&quot;</span> <span class="s2">&quot;\t&quot;</span> <span class="s2">&quot;Items&quot;</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="kr">print</span> <span class="o">$</span><span class="mi">2</span> <span class="s2">&quot;\t&quot;</span> <span class="o">$</span><span class="mi">1</span>
+<span class="p">}</span>
+<span class="nb">END</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Save and run just like above, you'll get something like this:</p>
+<div class="highlight"><pre><span></span><span class="n">Qty</span><span class="p">.</span>    <span class="n">Items</span>
+<span class="mi">1</span><span class="n">Kg</span>     <span class="n">Apples</span>
+<span class="mi">5</span><span class="n">Kg</span>     <span class="n">Potato</span>
+<span class="mi">1</span><span class="n">Kg</span>     <span class="n">Onion</span>
+<span class="p">.</span><span class="mi">5</span><span class="n">Kg</span>    <span class="n">Garlic</span>
+</pre></div>
+
+
+<p>So, you see the order has been reversed and the heading has been added.  </p>
+<p>And, you can change the order
+of columns into anything you like just by specifying them in the main block as we did above.   </p>
+<p>Also note that the <code>\t</code> is a tab character which puts a tabspace in between two columns. You could
+also put space or comma <code>,</code>(for csv files for example) or semicolon <code>;</code> or any other column seperator you like.</p>
+<h3>Variables</h3>
+<p>Variables are easy to declare and use. If you are familiar with C, the syntax is similar. Let's add
+a new column <code>S.N</code> for serial number into our list above. Since we want <code>awk</code> to put the value
+<span class="math">\(1,2,3\)</span> and so on automatically, we need a variable that counts the line and writes the value of
+<code>S.N</code> for each row.  </p>
+<p>Let me show you what I mean:</p>
+<div class="highlight"><pre><span></span><span class="nb">BEGIN</span><span class="p">{</span>
+    <span class="kr">print</span> <span class="s2">&quot;S.N.&quot;</span> <span class="s2">&quot;\t&quot;</span> <span class="s2">&quot;Qty.&quot;</span> <span class="s2">&quot;\t&quot;</span> <span class="s2">&quot;Items&quot;</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="p">{</span>
+    <span class="kr">print</span> <span class="nx">i</span> <span class="s2">&quot;\t&quot;</span> <span class="o">$</span><span class="mi">2</span> <span class="s2">&quot;\t&quot;</span> <span class="o">$</span><span class="mi">1</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="nb">END</span> <span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now if you save and run the program, you'll get the following:</p>
+<div class="highlight"><pre><span></span><span class="n">S</span><span class="p">.</span><span class="n">N</span><span class="p">.</span>    <span class="n">Qty</span><span class="p">.</span>    <span class="n">Items</span>
+<span class="mi">1</span>       <span class="mi">1</span><span class="n">Kg</span>     <span class="n">Apples</span>
+<span class="mi">2</span>       <span class="mi">5</span><span class="n">Kg</span>     <span class="n">Potato</span>
+<span class="mi">3</span>       <span class="mi">1</span><span class="n">Kg</span>     <span class="n">Onion</span>
+<span class="mi">4</span>       <span class="p">.</span><span class="mi">5</span><span class="n">Kg</span>    <span class="n">Garlic</span>
+</pre></div>
+
+
+<p>So, we made a variable called 'i' which has a value <span class="math">\(1\)</span> to start. Note that since we only make a variable
+once, we do this in <code>BEGIN</code> block. Then, we print the value of <code>i</code> in the main block, which is
+executed once for every line of input, so it writes Serial Number for each line in the file given.  </p>
+<p>Also note that we increase the value of <code>i</code> by 1 in the main block which means when evaluating each line
+of the input file <code>i</code> increases by <span class="math">\(1\)</span> so that next line is given a new serial number.</p>
+<h3>Conditionals</h3>
+<p>Suppose I don't have much money and I only intend to buy first two items from our shopping list. We
+want to reduce the list to just two items. In other words we want only those columns which have <code>S.N</code> <span class="math">\(1\)</span> and <span class="math">\(2\)</span>. Another way to say the same thing is serial number less than <span class="math">\(3\)</span>.  </p>
+<p>This is where we need conditionals.
+So, we update the main block of our last script putting in the conditional as follows:</p>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">){</span>
+        <span class="kr">print</span> <span class="nx">i</span> <span class="s2">&quot;\t&quot;</span> <span class="o">$</span><span class="mi">2</span> <span class="s2">&quot;\t&quot;</span> <span class="o">$</span><span class="mi">1</span>
+    <span class="p">}</span>
+
+    <span class="nx">i</span> <span class="o">=</span> <span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>We added an <code>if</code> conditional in the main block. Therefore, the <code>print</code> line only gets evaluated if
+the conditional is true namely if the value of <code>i</code> is less than <span class="math">\(3\)</span>.  </p>
+<p>Save and run the script with
+<code>list.txt</code> as input and verity that it runs as expected.</p>
+<p>All of the following relational operators can be used in a conditional:</p>
+<table border=2>
+<tbody>
+<tr><th>Operator</th><th>Meaning</th></tr>
+<tr><td>==</td><td>Is equal</td></tr>
+<tr><td>!=</td><td>Is not equal to</td></tr>
+<tr><td>&gt;</td><td>Is greater than</td></tr>
+<tr><td>&gt;=</td><td>Is greater than or equal to</td></tr>
+<tr><td>&lt;</td><td>Is less than</td></tr>
+<tr><td>&lt;=</td><td>Is less than or equal to</td></tr>
+</tbody>
+</table>
+
+<h5>Regular expression</h5>
+<p>If you're familiar with regular expressions, you can use <code>~</code> to mean matches a certain pattern
+and <code>!~</code> to mean doesn't match. If you're unfamiliar with RegEx, comment
+below and I will write another short intro about them.  </p>
+<p>Besides, you also have boolean operators 'and' <code>&amp;&amp;</code> and 'or' <code>||</code> if you want to combine two or more
+conditions.</p>
+<h3>Loops</h3>
+<p>To be continued...</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://127.0.0.1:8000/tag/linux.html">linux</a>
+      <a href="http://127.0.0.1:8000/tag/programming.html">programming</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; Bibek Gautam 2019 - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>
+</p>
+<p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Bibek Gautam - Blog ",
+  "url" : "http://127.0.0.1:8000",
+  "image": "https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220",
+  "description": "Bibek Gautam's Thoughts and Writings"
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Maths</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/maths.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2019-05-06T07:25:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Sierpinski Triangle</title><link href="http://127.0.0.1:8000/sierpinski-triangle.html" rel="alternate"></link><published>2019-05-06T07:25:00+05:45</published><updated>2019-05-06T07:25:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-05-06:/sierpinski-triangle.html</id><summary type="html">&lt;p&gt;See how Sierpinski Triangle emerges as you go through this iterative algorithm...&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle"&gt;Sierpinski triangle&lt;/a&gt; is a fractal with a
+unit shape of a (equilateral) triangle. It's named after a polish mathematician Waclaw Sierpinski.&lt;/p&gt;
+&lt;p&gt;There are copule straightforward algorithms to generate this structure. One is to start with a solid
+triangle and repeatedly remove a similar triangle from the center (i.e. one with the line joining
+mid-points as the sides).&lt;/p&gt;
+&lt;p&gt;But, there is another, a bit more interesting algorithm where it really isn't all that trivial to see
+how and why it generates Sierpinski triangle.&lt;/p&gt;
+&lt;p&gt;It is also pretty simple, straightforward and goes like this:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Take three points(vertices) in a plane to form a triangle.  &lt;/li&gt;
+&lt;li&gt;Randomly select any point(tracer) inside the triangle and consider that your current position.  &lt;/li&gt;
+&lt;li&gt;Randomly select any one of the three vertex points.  &lt;/li&gt;
+&lt;li&gt;Move half the distance from your current position to the selected vertex.  &lt;/li&gt;
+&lt;li&gt;Plot the current position.  &lt;/li&gt;
+&lt;li&gt;Repeat from step 3.  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This is what I am trying to demonstrate here. I also want to get a sense of the number of
+iterations it takes for a satisfactory Sierpinski Triangle looking shape to emerge.  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Steps 4 - 6 is done automatically, just hit the play button below. &lt;/strong&gt;
+&lt;button id='pointBtn'&gt;Pick vertices&lt;/button&gt; &lt;button id='queenBtn'&gt;Pick tracer&lt;/button&gt; &lt;br&gt;
+&lt;span id="simulation"&gt;&lt;span&gt;&lt;/p&gt;
+&lt;p&gt;Iterations: &lt;data id='iterations'&gt;0&lt;/data&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button id='play'&gt;play/pause&lt;/button&gt;
+&lt;button id='reset'&gt;reset&lt;/button&gt;&lt;/p&gt;
+&lt;h3&gt;Arrowhead curve&lt;/h3&gt;
+&lt;p&gt;Okay, here's a bonus. This is another way to create Sierpinski Triangle. It's called arrowhead curve. It is pretty interesting if this is the first time you're seeing this.&lt;/p&gt;
+&lt;p&gt;Once again, we start with something that looks nothing like Sierpinski Triangle. But slowly the shape
+begins to appear. This essentially creates Sierpinski Triangle out of line.  &lt;/p&gt;
+&lt;p&gt;Of course,
+Sierpinski Triangle is the limit of this process as you take infinite order of this recursion.
+That  makes this an infinite line which, isn't all that amazing to say, I guess. Every figure can be made
+with line of infinite length, or with infinite points.&lt;/p&gt;
+&lt;p&gt;But still, it's amazing to see the shape emerge.&lt;/p&gt;
+&lt;p&gt;&lt;span id="hexaloop"&gt; &lt;/span&gt;  &lt;br&gt;&lt;br&gt;
+&lt;button id='next'&gt;next&lt;/button&gt;
+&lt;button id='resetHexaLoop'&gt;reset&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;Try to look for pattern and see what the steps are. It's more subtle than you might think at first.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;</content><category term="Maths"></category><category term="physics"></category><category term="maths"></category><category term="fractals"></category></entry><entry><title>Curvature and Second Derivative</title><link href="http://127.0.0.1:8000/xmodx-and-curvature.html" rel="alternate"></link><published>2019-03-29T21:07:00+05:45</published><updated>2019-03-29T21:07:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-03-29:/xmodx-and-curvature.html</id><summary type="html">&lt;p&gt;This is like a mental anchor that makes function analysis a little easier. I found I wasn't thinking like this even though this is pretty elementary.&lt;/p&gt;</summary><content type="html">&lt;p&gt;You know the function &lt;span class="math"&gt;\(y = \mid x \mid\)&lt;/span&gt; does not have a derivative at &lt;span class="math"&gt;\(x = 0\)&lt;/span&gt;.
+But what about the following function ?
+&lt;/p&gt;
+&lt;div class="math"&gt;$$  y  = x \mid x \mid $$&lt;/div&gt;
+&lt;p&gt;Does it have first derivative at &lt;span class="math"&gt;\(x = 0\)&lt;/span&gt;? What about second derivative ?&lt;/p&gt;
+&lt;p&gt;As you might have noticed, it does have a first derivative. In fact, the slope from
+both sides approaches &lt;span class="math"&gt;\(0\)&lt;/span&gt; as &lt;span class="math"&gt;\(x\to 0\)&lt;/span&gt;. But, the second derivative is
+not the same. You could wonder about the definition of derivative, left and
+right limits and so on. But there's a quicker way to be sure that second derivative
+doesn't exist at &lt;span class="math"&gt;\( x = 0\)&lt;/span&gt;. Notice that the function is essentially this:&lt;/p&gt;
+&lt;div class="math"&gt;$$ y = \left\{
+  \begin{array}{cc}
+    - x^2 &amp;amp; x &amp;lt;  0, \\
+    x^2 &amp;amp; x \geq 0
+  \end{array}\right\}
+$$&lt;/div&gt;
+&lt;p&gt;which looks something like below: 
+&lt;div style="text-align:center"&gt;
+&lt;img alt="x mod x plot" src="images/xmodx.png"&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;And just realize that those are portions of two parabola, one facing up and
+another facing downwards. They have opposite curvature as they approach the origin.
+So, they must have second derivatives with opposite signs. And hence, the second derivative doesn't exist at
+&lt;span class="math"&gt;\(x=0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Maths"></category><category term="graphs"></category><category term="functions"></category><category term="analytic-geometry"></category></entry></feed>

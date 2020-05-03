@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Tutorial</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/tutorial.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2019-03-27T00:00:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Building a blog with Pelican</title><link href="http://127.0.0.1:8000/blog-with-pelican-a-ssg-in-python.html" rel="alternate"></link><published>2019-03-27T00:00:00+05:45</published><updated>2019-03-27T00:00:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-03-27:/blog-with-pelican-a-ssg-in-python.html</id><summary type="html">&lt;p&gt;Here I talk about a static site generator called Pelican which is written in python.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;First thing first !&lt;/h3&gt;
+&lt;p&gt;Static site generators (SSG) are these nice little framework that help you manage your website with humble needs using static pages only. Blogs are perfect fit to use SSGs. You publish your articles and they are unchanged till you make further edits. Your sites doesn't need to be dynamic to accomodate that. This is why SSGs have gained popularity since they just make more sense and also make your life much easier. Once you set up and get going that is. We are going to use Pelican which is one such SSG based on &lt;code&gt;python&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Why Pelican ?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Short Answer:&lt;/strong&gt; Because, Python ! &lt;br&gt;
+&lt;strong&gt;Long Answer:&lt;/strong&gt; Well, I don't really have a long answer. Admittedly, I haven't tried any other Static Site Generators besides Pelican. But of course I don't want to pick up ruby(jekyll) just to run my blog. So, Pelican is the perfect fit. &lt;/p&gt;
+&lt;h3&gt;What do I need ?&lt;/h3&gt;
+&lt;p&gt;You'll need &lt;code&gt;python3&lt;/code&gt;, &lt;code&gt;virtualenv&lt;/code&gt;, &lt;code&gt;pip3&lt;/code&gt; and a little bit of patience.&lt;/p&gt;
+&lt;h3&gt;Setting up Virtualenv&lt;/h3&gt;
+&lt;p&gt;Install &lt;code&gt;python3&lt;/code&gt;, &lt;code&gt;virtualenv&lt;/code&gt; and &lt;code&gt;pip3&lt;/code&gt; on your system from your distribution if you haven't already. Then, go ahead and create a directory to keep the sources for your blog.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir /path/to/your/project
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; /path/to/your/project
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, create a python3 virtual environment on the this directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ virtualenv -p python3 ./
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This creates all the python setup you need in the directory. It's good idea to create a virtual env for your projects like this as it keeps them seperate and independent. So, when you want to delete the project you don't have to go around searching for installed dependencies of the project and delete them, you just nuke the folder and you're done! Besides, it also avoids version conflicts between projects. You can read more about virtual environments &lt;a href="https://realpython.com/python-virtual-environments-a-primer/"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Installing Pelican&lt;/h3&gt;
+&lt;p&gt;Once, you have the virtualenv ready, you need to activate it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next we install &lt;code&gt;Pelican&lt;/code&gt; with &lt;code&gt;pip&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will install &lt;code&gt;Pelican&lt;/code&gt; and pull all the dependencies.&lt;/p&gt;
+&lt;h3&gt;Create new Pelican project&lt;/h3&gt;
+&lt;p&gt;You can run &lt;code&gt;pelican-quickstart&lt;/code&gt; at this point. Create a new folder to host the sources for your blog.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir blog
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; blog
+$ pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You'll be prompted with options for necessary settings. Fill it up. It'll generate a &lt;code&gt;pelicanconf.py&lt;/code&gt; file in your &lt;code&gt;blog&lt;/code&gt; directory. Go ahead and make some edits if you want. You'll want to lookup documentation for the settings.&lt;/p&gt;
+&lt;h3&gt;Start Server&lt;/h3&gt;
+&lt;p&gt;You can just start the server to make sure everything is working upto this point:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;pwd&lt;/span&gt;
+/path/to/your/project/blog/
+$ make devserver
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;A http server will be run at port &lt;code&gt;8000&lt;/code&gt;. Point your browser at that port on your localhost and you should see a landing page for Pelican.&lt;/p&gt;
+&lt;h3&gt;Adding posts&lt;/h3&gt;
+&lt;p&gt;To keep your posts sources organized, create a directory &lt;code&gt;content&lt;/code&gt; inside &lt;code&gt;blog&lt;/code&gt; directory. Write your articles in &lt;code&gt;.md&lt;/code&gt; or &lt;code&gt;.rst&lt;/code&gt; files inside this directory, one for each post. Pelican supports &lt;em&gt;markdown&lt;/em&gt; or &lt;em&gt;ReStructuredText&lt;/em&gt; out of the box. You can pick the one you prefer. You can also write posts in plain html if you so desire.&lt;/p&gt;
+&lt;h3&gt;Further...&lt;/h3&gt;
+&lt;p&gt;You can pick one among several themes available for pelican from this &lt;a href="https://github.com/getpelican/pelican-themes"&gt;repo&lt;/a&gt;. Another awesome thing about Static site is that you can host it for free using github &lt;a href="https://pages.github.com/"&gt;pages&lt;/a&gt;, &lt;a href="https://www.netlify.com/"&gt;netlify&lt;/a&gt; etc.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;</content><category term="Tutorial"></category><category term="ssg"></category><category term="python"></category><category term="blog"></category><category term="website"></category><category term="tech"></category></entry></feed>

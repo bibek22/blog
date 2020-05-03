@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Tech</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/tech.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2019-04-04T19:56:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Getting Started with Manim [VirtualEnv]</title><link href="http://127.0.0.1:8000/getting-started-with-manim.html" rel="alternate"></link><published>2019-04-04T19:56:00+05:45</published><updated>2019-04-04T19:56:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-04-04:/getting-started-with-manim.html</id><summary type="html">&lt;p&gt;Get up and running with &lt;code&gt;Manim&lt;/code&gt;, a maths animation python library written by Grant Sanderson of &lt;a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw"&gt;3Blue1Brown&lt;/a&gt;.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Make a directory that will host virtual environment as well as the &lt;code&gt;manim&lt;/code&gt; source files at a
+location of your choosing:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ mkdir manimProject
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Create a folder for python virtual environment within the directory created and create a virtual environment in that directory:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; manimProject
+$ mkdir venv
+$ virtualenv -p python3 venv/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Next, activate the virtual environment:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;source&lt;/span&gt; venv/bin/activate
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now, clone the &lt;code&gt;manim&lt;/code&gt; git &lt;a href="https://github.com/3b1b/manim"&gt;repository&lt;/a&gt; :&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ git clone https://github.com/3b1b/manim
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Change into the &lt;code&gt;manim&lt;/code&gt; directory and install dependencies:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; manim
+$ python3 -m pip install -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will install all package dependencies you'll need.&lt;/p&gt;
+&lt;p&gt;Just to check, do the following and see it runs without error:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ python -m manim example_scenes.py -pl
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And pick any scene just to see if it renders and play. It should.&lt;/p&gt;</content><category term="Tech"></category><category term="programming"></category><category term="animation"></category><category term="python"></category></entry></feed>

@@ -1,0 +1,1770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - physics</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/physics.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2020-04-12T08:34:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>gab is not an inverse of gab</title><link href="http://127.0.0.1:8000/metric-tensor.html" rel="alternate"></link><published>2020-04-12T08:34:00+05:45</published><updated>2020-04-12T08:34:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2020-04-12:/metric-tensor.html</id><summary type="html">&lt;p&gt;Brief note on metric tensors&lt;/p&gt;</summary><content type="html">&lt;p&gt;We would like to have a notion of length in our smooth manifolds. Maybe we'd
+like to have a notion of angles between vectors in &lt;span class="math"&gt;\(T_pM\)&lt;/span&gt;. In a smooth manifold
+with connection &lt;span class="math"&gt;\((M, \mathcal O, \mathcal A, \mathrm \nabla)\)&lt;/span&gt;, we don't have enough structure to talk about those things.
+We could introduce norm to define lengths of vectors. Similarly, we could introduce
+inner product to talk about angles. But we need a metric to talk about length
+in position space. Metric is an extra structure we provide, on top of a smooth
+manifold, in order to be able to talk about these things.&lt;/p&gt;
+&lt;p&gt;A Metric tensor g on a smooth manifold is a (0, 2) tensor field ie.&lt;/p&gt;
+&lt;div class="math"&gt;$${g_{ab}}:{\Gamma (TM) \times \Gamma (TM)}\rightarrow{\mathbb R}$$&lt;/div&gt;
+&lt;p&gt;satisfying:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Symmetry
+&lt;div class="math"&gt;$$g(X, Y) = g(Y, X) \qquad \forall X, Y \in TM$$&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Non-degeneracy&lt;br&gt;
+What this says, in essence, is that an 'inverse' exists. But as the title
+suggests, we are going to find out why it doesn't make sense to call it an inverse.
+From linear algebra, we know a matrix should be non-singular for it to have an
+inverse. That implies, diagonal entries should all be non-zero in the matrix
+obtained after diagonalization. Equivalently, all the eigenvalues should be
+non-zero.  Also equivalently one could say the rank of the matrix is equal to
+its dimension.
+In manifold way of speaking, one could also say that so called musical map
+exists. But that isn't any more insightful.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The inverse of &lt;span class="math"&gt;\(g_{ab}\)&lt;/span&gt; obtained in the way of matrix inversion denoted by
+&lt;span class="math"&gt;\(g^{ab}\)&lt;/span&gt; is a (2,0) tensor which we know is a multilinear map as such&lt;/p&gt;
+&lt;div class="math"&gt;$${g^{ab}}:{\Gamma (T^*M) \times \Gamma (T^*M)}\rightarrow{\mathbb R}$$&lt;/div&gt;
+&lt;p&gt;But we expect the inverse of a map to be defined from co-domain to domain of the
+map itself. So, as we see a (2,0) tensor, &lt;span class="math"&gt;\(g^{ab}\)&lt;/span&gt; is an example of which, fails to
+comply to that definition.&lt;/p&gt;
+&lt;h4&gt;Eigenvalues and Signature&lt;/h4&gt;
+&lt;p&gt;We've seen eigenvalues of matrix in linear algebra. Since a metric tensor can
+also be represented in a matrix form, do we also have eigenvalues for metric
+tensor? That's a curious question to ask.&lt;/p&gt;
+&lt;p&gt;Let's investigate.&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(A^i_j\)&lt;/span&gt; be a (1,1) tensor ie.&lt;/p&gt;
+&lt;div class="math"&gt;$${A^i_j}:{\Gamma (T^*M) \times \Gamma (TM)}\rightarrow{\mathbb R}$$&lt;/div&gt;
+&lt;p&gt;But, we could still feed it a single vector: &lt;span class="math"&gt;\(A^i_j v^j\)&lt;/span&gt; which we expect to be a
+vector.&lt;/p&gt;
+&lt;p&gt;So, it makes sense to try and solve the eigenvalue equation:&lt;/p&gt;
+&lt;div class="math"&gt;$$ A^i_j v^j  = \lambda v^i $$&lt;/div&gt;
+&lt;p&gt;But what about a (0,2) tensor?&lt;/p&gt;
+&lt;p&gt;We could feed a vector to a (0,2) tensor, lets take &lt;span class="math"&gt;\(g_{ij}\)&lt;/span&gt; for example. But
+&lt;span class="math"&gt;\(g_{ij} v^j\)&lt;/span&gt; would be a co-vector.&lt;/p&gt;
+&lt;div class="math"&gt;$$ g_{ij} v^j  = \lambda v^i (?) $$&lt;/div&gt;
+&lt;p&gt;So, we can't really talk about eigenvalues of metric tensor.&lt;/p&gt;
+&lt;p&gt;However, there's nothing stopping us from diagonalizing the matrix
+representation by going to the right basis where let's say we get the diagonal
+entries &lt;span class="math"&gt;\(\lambda_1, \lambda_2, \cdots, \lambda_n\)&lt;/span&gt;. These could be any real
+value at a point &lt;span class="math"&gt;\(p \in M\)&lt;/span&gt;. But, there's a nice theorem which allows you to
+rescale the parameter of curves in the manifold without worrying about the
+lengths of the curve. So, the nice thing is that we can scale away these
+&lt;span class="math"&gt;\(\lambda\)&lt;/span&gt;'s upto their signs. Therefore, the diagonal entries could be reduced
+to 1's, -1's and 0s.&lt;/p&gt;
+&lt;p&gt;If &lt;span class="math"&gt;\(p\)&lt;/span&gt; and &lt;span class="math"&gt;\(q\)&lt;/span&gt; are the number of 1's and -1's in the diagonal entries, &lt;span class="math"&gt;\((p,q)\)&lt;/span&gt; is
+defined as the signature of the metric at that point. And the statement is that
+this signature is well-defined with respect to the choice of charts.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="physics"></category><category term="physics"></category><category term="differential geometry"></category><category term="GTR"></category></entry><entry><title>Randomness and Chaos</title><link href="http://127.0.0.1:8000/chaos-randomness-and-quantum-mechanics.html" rel="alternate"></link><published>2020-02-27T12:34:00+05:45</published><updated>2020-02-27T12:34:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2020-02-27:/chaos-randomness-and-quantum-mechanics.html</id><summary type="html">&lt;p&gt;talks about about Bernouli map&lt;/p&gt;</summary><content type="html">&lt;style type="text/css"&gt;/*!
+*
+* IPython notebook
+*
+*/
+/* CSS font colors for translated ANSI escape sequences */
+/* The color values are a mix of
+   http://www.xcolors.net/dl/baskerville-ivorylight and
+   http://www.xcolors.net/dl/euphrasia */
+.ansi-black-fg {
+  color: #3E424D;
+}
+.ansi-black-bg {
+  background-color: #3E424D;
+}
+.ansi-black-intense-fg {
+  color: #282C36;
+}
+.ansi-black-intense-bg {
+  background-color: #282C36;
+}
+.ansi-red-fg {
+  color: #E75C58;
+}
+.ansi-red-bg {
+  background-color: #E75C58;
+}
+.ansi-red-intense-fg {
+  color: #B22B31;
+}
+.ansi-red-intense-bg {
+  background-color: #B22B31;
+}
+.ansi-green-fg {
+  color: #00A250;
+}
+.ansi-green-bg {
+  background-color: #00A250;
+}
+.ansi-green-intense-fg {
+  color: #007427;
+}
+.ansi-green-intense-bg {
+  background-color: #007427;
+}
+.ansi-yellow-fg {
+  color: #DDB62B;
+}
+.ansi-yellow-bg {
+  background-color: #DDB62B;
+}
+.ansi-yellow-intense-fg {
+  color: #B27D12;
+}
+.ansi-yellow-intense-bg {
+  background-color: #B27D12;
+}
+.ansi-blue-fg {
+  color: #208FFB;
+}
+.ansi-blue-bg {
+  background-color: #208FFB;
+}
+.ansi-blue-intense-fg {
+  color: #0065CA;
+}
+.ansi-blue-intense-bg {
+  background-color: #0065CA;
+}
+.ansi-magenta-fg {
+  color: #D160C4;
+}
+.ansi-magenta-bg {
+  background-color: #D160C4;
+}
+.ansi-magenta-intense-fg {
+  color: #A03196;
+}
+.ansi-magenta-intense-bg {
+  background-color: #A03196;
+}
+.ansi-cyan-fg {
+  color: #60C6C8;
+}
+.ansi-cyan-bg {
+  background-color: #60C6C8;
+}
+.ansi-cyan-intense-fg {
+  color: #258F8F;
+}
+.ansi-cyan-intense-bg {
+  background-color: #258F8F;
+}
+.ansi-white-fg {
+  color: #C5C1B4;
+}
+.ansi-white-bg {
+  background-color: #C5C1B4;
+}
+.ansi-white-intense-fg {
+  color: #A1A6B2;
+}
+.ansi-white-intense-bg {
+  background-color: #A1A6B2;
+}
+.ansi-default-inverse-fg {
+  color: #FFFFFF;
+}
+.ansi-default-inverse-bg {
+  background-color: #000000;
+}
+.ansi-bold {
+  font-weight: bold;
+}
+.ansi-underline {
+  text-decoration: underline;
+}
+/* The following styles are deprecated an will be removed in a future version */
+.ansibold {
+  font-weight: bold;
+}
+.ansi-inverse {
+  outline: 0.5px dotted;
+}
+/* use dark versions for foreground, to improve visibility */
+.ansiblack {
+  color: black;
+}
+.ansired {
+  color: darkred;
+}
+.ansigreen {
+  color: darkgreen;
+}
+.ansiyellow {
+  color: #c4a000;
+}
+.ansiblue {
+  color: darkblue;
+}
+.ansipurple {
+  color: darkviolet;
+}
+.ansicyan {
+  color: steelblue;
+}
+.ansigray {
+  color: gray;
+}
+/* and light for background, for the same reason */
+.ansibgblack {
+  background-color: black;
+}
+.ansibgred {
+  background-color: red;
+}
+.ansibggreen {
+  background-color: green;
+}
+.ansibgyellow {
+  background-color: yellow;
+}
+.ansibgblue {
+  background-color: blue;
+}
+.ansibgpurple {
+  background-color: magenta;
+}
+.ansibgcyan {
+  background-color: cyan;
+}
+.ansibggray {
+  background-color: gray;
+}
+div.cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  width: 100%;
+  padding: 5px;
+  /* This acts as a spacer between cells, that is outside the border */
+  margin: 0px;
+  outline: none;
+  position: relative;
+  overflow: visible;
+}
+div.cell:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: transparent;
+}
+div.cell.jupyter-soft-selected {
+  border-left-color: #E3F2FD;
+  border-left-width: 1px;
+  padding-left: 5px;
+  border-right-color: #E3F2FD;
+  border-right-width: 1px;
+  background: #E3F2FD;
+}
+@media print {
+  div.cell.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+div.cell.selected,
+div.cell.selected.jupyter-soft-selected {
+  border-color: #ababab;
+}
+div.cell.selected:before,
+div.cell.selected.jupyter-soft-selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #42A5F5;
+}
+@media print {
+  div.cell.selected,
+  div.cell.selected.jupyter-soft-selected {
+    border-color: transparent;
+  }
+}
+.edit_mode div.cell.selected {
+  border-color: #66BB6A;
+}
+.edit_mode div.cell.selected:before {
+  position: absolute;
+  display: block;
+  top: -1px;
+  left: -1px;
+  width: 5px;
+  height: calc(100% +  2px);
+  content: '';
+  background: #66BB6A;
+}
+@media print {
+  .edit_mode div.cell.selected {
+    border-color: transparent;
+  }
+}
+.prompt {
+  /* This needs to be wide enough for 3 digit prompt numbers: In[100]: */
+  min-width: 14ex;
+  /* This padding is tuned to match the padding on the CodeMirror editor. */
+  padding: 0.4em;
+  margin: 0px;
+  font-family: monospace;
+  text-align: right;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+  /* Don't highlight prompt number selection */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Use default cursor */
+  cursor: default;
+}
+@media (max-width: 540px) {
+  .prompt {
+    text-align: left;
+  }
+}
+div.inner_cell {
+  min-width: 0;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_area {
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+  background: #f7f7f7;
+  line-height: 1.21429em;
+}
+/* This is needed so that empty prompt areas can collapse to zero height when there
+   is no content in the output_subarea and the prompt. The main purpose of this is
+   to make sure that empty JavaScript output_subareas have no height. */
+div.prompt:empty {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+div.unrecognized_cell {
+  padding: 5px 5px 5px 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.unrecognized_cell .inner_cell {
+  border-radius: 2px;
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+  border: 1px solid #cfcfcf;
+  background: #eaeaea;
+}
+div.unrecognized_cell .inner_cell a {
+  color: inherit;
+  text-decoration: none;
+}
+div.unrecognized_cell .inner_cell a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+@media (max-width: 540px) {
+  div.unrecognized_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.code_cell {
+  /* avoid page breaking on code cells when printing */
+}
+@media print {
+  div.code_cell {
+    page-break-inside: avoid;
+  }
+}
+/* any special styling for code cells that are currently running goes here */
+div.input {
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.input {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/* input_area and input_prompt must match in top border and margin for alignment */
+div.input_prompt {
+  color: #303F9F;
+  border-top: 1px solid transparent;
+}
+div.input_area &gt; div.highlight {
+  margin: 0.4em;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+div.input_area &gt; div.highlight &gt; pre {
+  margin: 0px;
+  border: none;
+  padding: 0px;
+  background-color: transparent;
+}
+/* The following gets added to the &lt;head&gt; if it is detected that the user has a
+ * monospace font with inconsistent normal/bold/italic height.  See
+ * notebookmain.js.  Such fonts will have keywords vertically offset with
+ * respect to the rest of the text.  The user should select a better font.
+ * See: https://github.com/ipython/ipython/issues/1503
+ *
+ * .CodeMirror span {
+ *      vertical-align: bottom;
+ * }
+ */
+.CodeMirror {
+  line-height: 1.21429em;
+  /* Changed from 1em to our global default */
+  font-size: 14px;
+  height: auto;
+  /* Changed to auto to autogrow */
+  background: none;
+  /* Changed from white to allow our bg to show through */
+}
+.CodeMirror-scroll {
+  /*  The CodeMirror docs are a bit fuzzy on if overflow-y should be hidden or visible.*/
+  /*  We have found that if it is visible, vertical scrollbars appear with font size changes.*/
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.CodeMirror-lines {
+  /* In CM2, this used to be 0.4em, but in CM3 it went to 4px. We need the em value because */
+  /* we have set a different line-height and want this to scale with that. */
+  /* Note that this should set vertical padding only, since CodeMirror assumes
+       that horizontal padding will be set on CodeMirror pre */
+  padding: 0.4em 0;
+}
+.CodeMirror-linenumber {
+  padding: 0 8px 0 4px;
+}
+.CodeMirror-gutters {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+}
+.CodeMirror pre {
+  /* In CM3 this went to 4px from 0 in CM2. This sets horizontal padding only,
+    use .CodeMirror-lines for vertical */
+  padding: 0 0.4em;
+  border: 0;
+  border-radius: 0;
+}
+.CodeMirror-cursor {
+  border-left: 1.4px solid black;
+}
+@media screen and (min-width: 2138px) and (max-width: 4319px) {
+  .CodeMirror-cursor {
+    border-left: 2px solid black;
+  }
+}
+@media screen and (min-width: 4320px) {
+  .CodeMirror-cursor {
+    border-left: 4px solid black;
+  }
+}
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev &lt;Maniac@SoftwareManiacs.Org&gt;
+Adapted from GitHub theme
+
+*/
+.highlight-base {
+  color: #000;
+}
+.highlight-variable {
+  color: #000;
+}
+.highlight-variable-2 {
+  color: #1a1a1a;
+}
+.highlight-variable-3 {
+  color: #333333;
+}
+.highlight-string {
+  color: #BA2121;
+}
+.highlight-comment {
+  color: #408080;
+  font-style: italic;
+}
+.highlight-number {
+  color: #080;
+}
+.highlight-atom {
+  color: #88F;
+}
+.highlight-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.highlight-builtin {
+  color: #008000;
+}
+.highlight-error {
+  color: #f00;
+}
+.highlight-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.highlight-meta {
+  color: #AA22FF;
+}
+/* previously not defined, copying from default codemirror */
+.highlight-def {
+  color: #00f;
+}
+.highlight-string-2 {
+  color: #f50;
+}
+.highlight-qualifier {
+  color: #555;
+}
+.highlight-bracket {
+  color: #997;
+}
+.highlight-tag {
+  color: #170;
+}
+.highlight-attribute {
+  color: #00c;
+}
+.highlight-header {
+  color: blue;
+}
+.highlight-quote {
+  color: #090;
+}
+.highlight-link {
+  color: #00c;
+}
+/* apply the same style to codemirror */
+.cm-s-ipython span.cm-keyword {
+  color: #008000;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-atom {
+  color: #88F;
+}
+.cm-s-ipython span.cm-number {
+  color: #080;
+}
+.cm-s-ipython span.cm-def {
+  color: #00f;
+}
+.cm-s-ipython span.cm-variable {
+  color: #000;
+}
+.cm-s-ipython span.cm-operator {
+  color: #AA22FF;
+  font-weight: bold;
+}
+.cm-s-ipython span.cm-variable-2 {
+  color: #1a1a1a;
+}
+.cm-s-ipython span.cm-variable-3 {
+  color: #333333;
+}
+.cm-s-ipython span.cm-comment {
+  color: #408080;
+  font-style: italic;
+}
+.cm-s-ipython span.cm-string {
+  color: #BA2121;
+}
+.cm-s-ipython span.cm-string-2 {
+  color: #f50;
+}
+.cm-s-ipython span.cm-meta {
+  color: #AA22FF;
+}
+.cm-s-ipython span.cm-qualifier {
+  color: #555;
+}
+.cm-s-ipython span.cm-builtin {
+  color: #008000;
+}
+.cm-s-ipython span.cm-bracket {
+  color: #997;
+}
+.cm-s-ipython span.cm-tag {
+  color: #170;
+}
+.cm-s-ipython span.cm-attribute {
+  color: #00c;
+}
+.cm-s-ipython span.cm-header {
+  color: blue;
+}
+.cm-s-ipython span.cm-quote {
+  color: #090;
+}
+.cm-s-ipython span.cm-link {
+  color: #00c;
+}
+.cm-s-ipython span.cm-error {
+  color: #f00;
+}
+.cm-s-ipython span.cm-tab {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);
+  background-position: right;
+  background-repeat: no-repeat;
+}
+div.output_wrapper {
+  /* this position must be relative to enable descendents to be absolute within it */
+  position: relative;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+}
+/* class for the output area when it should be height-limited */
+div.output_scroll {
+  /* ideally, this would be max-height, but FF barfs all over that */
+  height: 24em;
+  /* FF needs this *and the wrapper* to specify full width, or it will shrinkwrap */
+  width: 100%;
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  display: block;
+}
+/* output div while it is collapsed */
+div.output_collapsed {
+  margin: 0px;
+  padding: 0px;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+div.out_prompt_overlay {
+  height: 100%;
+  padding: 0px 0.4em;
+  position: absolute;
+  border-radius: 2px;
+}
+div.out_prompt_overlay:hover {
+  /* use inner shadow to get border that is computed the same on WebKit/FF */
+  -webkit-box-shadow: inset 0 0 1px #000;
+  box-shadow: inset 0 0 1px #000;
+  background: rgba(240, 240, 240, 0.5);
+}
+div.output_prompt {
+  color: #D84315;
+}
+/* This class is the outer container of all output sections. */
+div.output_area {
+  padding: 0px;
+  page-break-inside: avoid;
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+div.output_area .MathJax_Display {
+  text-align: left !important;
+}
+div.output_area 
+div.output_area 
+div.output_area img,
+div.output_area svg {
+  max-width: 100%;
+  height: auto;
+}
+div.output_area img.unconfined,
+div.output_area svg.unconfined {
+  max-width: none;
+}
+div.output_area .mglyph &gt; img {
+  max-width: none;
+}
+/* This is needed to protect the pre formating from global settings such
+   as that of bootstrap */
+.output {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.output_area {
+    /* Old browsers */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    display: -moz-box;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    display: box;
+    box-orient: vertical;
+    box-align: stretch;
+    /* Modern browsers */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+div.output_area pre {
+  margin: 0;
+  padding: 1px 0 1px 0;
+  border: 0;
+  vertical-align: baseline;
+  color: black;
+  background-color: transparent;
+  border-radius: 0;
+}
+/* This class is for the output subarea inside the output_area and after
+   the prompt div. */
+div.output_subarea {
+  overflow-x: auto;
+  padding: 0.4em;
+  /* Old browsers */
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  /* Modern browsers */
+  flex: 1;
+  max-width: calc(100% - 14ex);
+}
+div.output_scroll div.output_subarea {
+  overflow-x: visible;
+}
+/* The rest of the output_* classes are for special styling of the different
+   output types */
+/* all text output has this class: */
+div.output_text {
+  text-align: left;
+  color: #000;
+  /* This has to match that of the the CodeMirror class line-height below */
+  line-height: 1.21429em;
+}
+/* stdout/stderr are 'text' as well as 'stream', but execute_result/error are *not* streams */
+div.output_stderr {
+  background: #fdd;
+  /* very light red background for stderr */
+}
+div.output_latex {
+  text-align: left;
+}
+/* Empty output_javascript divs should have no height */
+div.output_javascript:empty {
+  padding: 0;
+}
+.js-error {
+  color: darkred;
+}
+/* raw_input styles */
+div.raw_input_container {
+  line-height: 1.21429em;
+  padding-top: 5px;
+}
+pre.raw_input_prompt {
+  /* nothing needed here. */
+}
+input.raw_input {
+  font-family: monospace;
+  font-size: inherit;
+  color: inherit;
+  width: auto;
+  /* make sure input baseline aligns with prompt */
+  vertical-align: baseline;
+  /* padding + margin = 0.5em between prompt and cursor */
+  padding: 0em 0.25em;
+  margin: 0em 0.25em;
+}
+input.raw_input:focus {
+  box-shadow: none;
+}
+p.p-space {
+  margin-bottom: 10px;
+}
+div.output_unrecognized {
+  padding: 5px;
+  font-weight: bold;
+  color: red;
+}
+div.output_unrecognized a {
+  color: inherit;
+  text-decoration: none;
+}
+div.output_unrecognized a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+.rendered_html {
+  color: #000;
+  /* any extras will just be numbers: */
+}
+
+
+
+.rendered_html :link {
+  text-decoration: underline;
+}
+.rendered_html :visited {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+.rendered_html h1:first-child {
+  margin-top: 0.538em;
+}
+.rendered_html h2:first-child {
+  margin-top: 0.636em;
+}
+.rendered_html h3:first-child {
+  margin-top: 0.777em;
+}
+.rendered_html h4:first-child {
+  margin-top: 1em;
+}
+.rendered_html h5:first-child {
+  margin-top: 1em;
+}
+.rendered_html h6:first-child {
+  margin-top: 1em;
+}
+.rendered_html ul:not(.list-inline),
+.rendered_html ol:not(.list-inline) {
+  padding-left: 2em;
+}
+
+
+
+
+
+
+
+
+.rendered_html * + ul {
+  margin-top: 1em;
+}
+.rendered_html * + ol {
+  margin-top: 1em;
+}
+
+
+
+
+
+.rendered_html pre,
+
+
+
+
+.rendered_html tr,
+.rendered_html th,
+
+
+.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+.rendered_html * + table {
+  margin-top: 1em;
+}
+
+.rendered_html * + p {
+  margin-top: 1em;
+}
+
+.rendered_html * + img {
+  margin-top: 1em;
+}
+.rendered_html img,
+
+.rendered_html img.unconfined,
+
+
+.rendered_html * + .alert {
+  margin-top: 1em;
+}
+[dir="rtl"] 
+div.text_cell {
+  /* Old browsers */
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  /* Modern browsers */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+@media (max-width: 540px) {
+  div.text_cell &gt; div.prompt {
+    display: none;
+  }
+}
+div.text_cell_render {
+  /*font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;*/
+  outline: none;
+  resize: none;
+  width: inherit;
+  border-style: none;
+  padding: 0.5em 0.5em 0.5em 0.4em;
+  color: #000;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+a.anchor-link:link {
+  text-decoration: none;
+  padding: 0px 20px;
+  visibility: hidden;
+}
+h1:hover .anchor-link,
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link,
+h5:hover .anchor-link,
+h6:hover .anchor-link {
+  visibility: visible;
+}
+.text_cell.rendered .input_area {
+  display: none;
+}
+.text_cell.rendered 
+.text_cell.rendered .rendered_html tr,
+.text_cell.rendered .rendered_html th,
+.text_cell.rendered 
+.text_cell.unrendered .text_cell_render {
+  display: none;
+}
+.text_cell .dropzone .input_area {
+  border: 2px dashed #bababa;
+  margin: -1px;
+}
+.cm-header-1,
+.cm-header-2,
+.cm-header-3,
+.cm-header-4,
+.cm-header-5,
+.cm-header-6 {
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cm-header-1 {
+  font-size: 185.7%;
+}
+.cm-header-2 {
+  font-size: 157.1%;
+}
+.cm-header-3 {
+  font-size: 128.6%;
+}
+.cm-header-4 {
+  font-size: 110%;
+}
+.cm-header-5 {
+  font-size: 100%;
+  font-style: italic;
+}
+.cm-header-6 {
+  font-size: 100%;
+  font-style: italic;
+}
+&lt;/style&gt;
+&lt;style type="text/css"&gt;.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #f8f8f8; }
+.highlight .c { color: #408080; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #FF0000 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666666 } /* Operator */
+.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
+.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #7D9029 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.highlight .no { color: #880000 } /* Name.Constant */
+.highlight .nd { color: #AA22FF } /* Name.Decorator */
+.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0000FF } /* Name.Function */
+.highlight .nl { color: #A0A000 } /* Name.Label */
+.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #666666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666666 } /* Literal.Number.Float */
+.highlight .mh { color: #666666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */&lt;/style&gt;
+&lt;style type="text/css"&gt;
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+&lt;/style&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;A system is said to be chaotic if it is highly sensitive to initial condition.
+Double pendulum is a classical example. Very little uncertainty or error in the
+initial condition gets amplified exponentially to be as large as the system
+size itself. A dynamical variable which is governed by such chaotic non linear
+dynamics looks very 'random'. We are going to explore more on this in this post.&lt;/p&gt;
+&lt;p&gt;Let's suppose we have a variable x and a prescribed rule of evolution of this
+variable which goes as follows&lt;/p&gt;
+$$ x_1 =  f(x_0) = 2x\textrm{ mod }1 \qquad x \in [0, 1]$$&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Unlike differential dynamics, where system evolves in continuous time, what we
+have above is a descrete time dynamics, also known as maps. System maps from
+one state to another in descrete time steps as $x_0 \rightarrow x_1 \rightarrow x_2 \rightarrow \ldots$
+and so on. The example above is called the &lt;strong&gt;Bernoulli Map&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You can plug in a few numbers and see that the range of the map is $[0,1]$ and
+the map itself is discontinuous at 0.5 above which mod 1 trims off the integer portion.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bernoulli-map.png" width='200' class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;Now, suppose we are only interested in which of the two halves the new point
+lands and not in the number itself. So, let's denote the the first half as $H$
+and the other as $T$.
+&lt;img src="/images/bernoulli-map1.png" width='150' class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;As an example, let's start with $x_0 = 0.4$ and let's see how the system evolves
+keeping track of only $H$ and $T$'s as it lands on a new point.
+We begin with $x_0 = 0.4$ which would be $H$ and the first few strings in this
+series would be as follows:&lt;/p&gt;
+$$x_1 = 2\cdot x_0 \mod 1 = 0.8 \rightarrow T$$$$x_2 = 1.6 \mod 1 = 0.6 \rightarrow T$$$$x_3 = 1.2 \mod 1 = 0.2 \rightarrow H$$$$x_4 = 0.4 \mod 1 = 0.4 \rightarrow H$$$$x_5 = 0.8 \mod 1 = 0.8 \rightarrow T$$$$\vdots$$&lt;p&gt;In this way, we can see the system evolves as $HTTHHTTHH$ and so on. In this
+example, the system retraces itself once it hits $x_4=0.4$. 
+Let's check a few random numbers. In fact, let's get a little python script to do this for us.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[1]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;bernouli&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;H&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;T&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;end&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[2]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bernouli&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;THHTTHHTTHHTTHH&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[3]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bernouli&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.40&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;TTHHTTHHTTHHTTH&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing code_cell rendered"&gt;
+&lt;div class="input"&gt;
+&lt;div class="prompt input_prompt"&gt;In&amp;nbsp;[4]:&lt;/div&gt;
+&lt;div class="inner_cell"&gt;
+    &lt;div class="input_area"&gt;
+&lt;div class=" highlight hl-ipython3"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;bernouli&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mf"&gt;0.15&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="output_wrapper"&gt;
+&lt;div class="output"&gt;
+
+
+&lt;div class="output_area"&gt;
+
+    &lt;div class="prompt"&gt;&lt;/div&gt;
+
+
+&lt;div class="output_subarea output_stream output_stdout output_text"&gt;
+&lt;pre&gt;HTHHTTHHTTHHTTH&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;div class="cell border-box-sizing text_cell rendered"&gt;&lt;div class="prompt input_prompt"&gt;
+&lt;/div&gt;&lt;div class="inner_cell"&gt;
+&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
+&lt;p&gt;One can prove that if the initial point is a rational number, the system
+eventually goes into a periodic orbit.&lt;/p&gt;
+&lt;p&gt;But if $x_0$ is irrational, the system never visits the same point again which implies
+the pattern of H and T never repeats itself.&lt;/p&gt;
+&lt;p&gt;It is obvious that Bernouli map describes a deterministic system. Given the initial 
+condition, you can figure out the state of the system at any point in the future(after
+descrete time evolution) with certainty. This is unlike any stochastic system.&lt;/p&gt;
+&lt;p&gt;But, as you might have noticed this is remenescent of a stochastic system in some way.&lt;/p&gt;
+&lt;p&gt;The non-repeating of the pattern in case of irational numbers combined with the fact that
+the irrational numbers densely pack real numbers (more densely, in fact, than rational numbers)
+, it is possible to find a initial point in the domain $(0,1)$ such that the system evolves to give
+a pattern of H and T identical to the result of any sequence of random bernouli trails.&lt;/p&gt;
+&lt;p&gt;Let's flip a coin N times. Let N = 4 just for the example. And let's say we get the following outcome:
+$HTTH$
+Now, the question is: could we taylor an initial point such that it produces this exact sequence in its
+first four steps. The thing to realize to convince yourself of this is that for each letter added in the sequence, you half the size of possible initial conditions in the domain.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/bernoulli-map2.png" width='150' class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;In the diagram above, only the gray shaded portion of the domain maps to H in the next step. And if you require either H or T in the steps after that, the initial choice halves again.&lt;/p&gt;
+&lt;p&gt;So, measure of possible initial choice given a string of N characters is 
+$$\Big(\frac{1}{2}\Big)^N$$&lt;/p&gt;
+&lt;p&gt;This implies, there exist points in the domain that can reproduce any result of a sequence of Bernouli trails.&lt;/p&gt;
+&lt;p&gt;And another important thing here is that this system is sensitive to initial condition. Any error in specifying the initial condition grows exponentially. This is characteristic of a chaotic system. In particular it doubles on each step. Hence, the lyapunov exponent for Bernouli map is $\ln(2)$.&lt;/p&gt;
+&lt;p&gt;This convinces me that it's very difficult to tell apart a &lt;em&gt;stochastic&lt;/em&gt; system from a system governed by chaotic non-linear but importantly &lt;em&gt;deterministic&lt;/em&gt; laws.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        " linebreaks: { automatic: true, width: '95% container' }, " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="physics"></category><category term="physics"></category><category term="chaos"></category><category term="quantum mechanics"></category><category term="non-linear dynamics"></category></entry><entry><title>Laplace Equation</title><link href="http://127.0.0.1:8000/laplace-equation.html" rel="alternate"></link><published>2019-05-18T12:58:00+05:45</published><updated>2019-05-18T12:58:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-05-18:/laplace-equation.html</id><summary type="html">&lt;p&gt;Talks about Laplace equation with some physical applications...&lt;/p&gt;</summary><content type="html">&lt;p&gt;The Laplace equation is:&lt;/p&gt;
+&lt;div class="math"&gt;$$\Delta^2 \psi  = 0 $$&lt;/div&gt;
+&lt;p&gt;Some physical applications where laplace equation arises naturally are:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Steady state temperature distribution in the region with no source or sink&lt;/li&gt;
+&lt;li&gt;Electrostatic potential in a region with no charge density&lt;/li&gt;
+&lt;li&gt;Gravitational potential in a region with no mass&lt;/li&gt;
+&lt;li&gt;Velocity potential in a region of fluid with no source or sink&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Do you see some pattern here ? Of course you do!&lt;/p&gt;
+&lt;p&gt;But, before talking about any specific cases of these applications, let's talk about the equation itself.
+Let's see what kind of functions satisfy the Laplace equation.&lt;/p&gt;
+&lt;p&gt;Let's first look at one dimensional example. Laplace equation in one dimension is:&lt;/p&gt;
+&lt;div class="math"&gt;$$ \frac{d^2 \psi}{d x^2} = 0 $$&lt;/div&gt;
+&lt;p&gt;We can solve the equation:&lt;/p&gt;
+&lt;div class="math"&gt;$$ d^2 \psi = 0 $$&lt;/div&gt;
+&lt;p&gt;Integrate twice to get:
+&lt;/p&gt;
+&lt;div class="math"&gt;$$ d \psi = a $$&lt;/div&gt;
+&lt;div class="math"&gt;$$ \psi(x) = ax + b $$&lt;/div&gt;
+&lt;p&gt;which is an equation of a straight line, a and b being constants.&lt;/p&gt;
+&lt;p&gt;Before we look at higher dimension, let me assert some properties of this soultion:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;the value of the function at a point is the average of the value at points around it.&lt;br&gt;
+  &lt;img src="/images/st-line-average.png" width='350' class='center'/&gt;&lt;br&gt;
+   Take two points at equal distance on either side of any point &lt;span class="math"&gt;\(x\)&lt;/span&gt;, the following relation holds:
+  &lt;div class="math"&gt;$$ \psi(x) = \frac{1}{2} \left[ \psi (x + d) + \psi (x - d) \right] $$&lt;/div&gt;
+&lt;br&gt;
+  where, d is any distance.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The solution has no local maxima or minima and the global minima and maxima always lie on the
+   end points i.e. on the boundary.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;These properties are easy to verify on a straight line. But they also apply to higher dimensions.&lt;/p&gt;
+&lt;p&gt;Now let's look at 2D case. Laplace equation in two dimension is:&lt;/p&gt;
+&lt;div class="math"&gt;$$ \frac{\partial^2 \psi}{\partial x^2} + \frac{\partial^2 \psi}{\partial y^2} = 0 $$&lt;/div&gt;
+&lt;p&gt;This is no longer an ordinary differential equation. It is impossible to write a complete general
+solution (in closed form) to this second order partial differential equation.&lt;/p&gt;
+&lt;p&gt;But we can get some idea about the nature of the solution.&lt;/p&gt;
+&lt;p&gt;Again, the value at any point should be the average of the value of the function at neighboring
+points i.e. in case of 2D, points at a circle of radius R around the point. And therefore,&lt;/p&gt;
+&lt;div class="math"&gt;$$ \psi(x,y) = \frac{ 1 }{ 2\pi R } \underset{circle}{\oint} \psi\ dl$$&lt;/div&gt;
+&lt;p&gt;And the function which is a 2 dimensional surface on a 3D space (x and y as input space and z as
+the output) would have no local minima or local maxima.&lt;/p&gt;
+&lt;p&gt;Why? Well, you can see from the equation itself that second derivative with respect to x and y
+should have opposite signs. That means if the surface is concave downward in x direction at some
+point, it has to be concave upward along y direction at that point. That implies the point can't be
+a local minima &lt;em&gt;or&lt;/em&gt; a local maxima.&lt;/p&gt;
+&lt;p&gt;To solidify this understanding, imagine a hollow pipe like this:&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/cylinder.png" width='200' class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;Now, chip away at the upper end of the cylinder creating a topography however you like. You're deciding
+on the boundary conditions. Now imagine covering this undulating end of the pipe with stretchable
+rubber sheet tightly such that the sheet touches the cylinder at every point on the boundary.&lt;/p&gt;
+&lt;p&gt;The surface of the rubber gives you a solution of the Laplace equation with the boundary condition
+&lt;em&gt;you&lt;/em&gt; specified. Realize that such rubber surface would have no peaks or valley &lt;em&gt;inside&lt;/em&gt; the boundary.&lt;/p&gt;
+&lt;h5&gt;Does this make sense ?&lt;/h5&gt;
+&lt;p&gt;As physicist, our job is to ask ourselves if this property we highlighted makes sense for all the
+physical application where Laplace equation comes about.&lt;/p&gt;
+&lt;p&gt;We can be sure that it does by using symmetry argument.&lt;/p&gt;
+&lt;p&gt;Consider a metal rod of finite length &lt;span class="math"&gt;\(l\)&lt;/span&gt; with ends kept at 0 &amp;deg;C and 100 &amp;deg;C as in figure
+below. We are interested in the steady state temperature i.e. the temperature distribution in the rod
+after a long time such that it doesn't change further as time evolves.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/images/rod.png" width='400' class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;Take any point along the rod, what the property #1 tells us is that the temperature at this point is
+the average of the temperature immediately next to it. Which is reasonable, right ?&lt;/p&gt;
+&lt;!img src="/images/temp-grad.png" align=centerwidth='150' height='20'/!&gt;
+
+&lt;p&gt;Because, part of the rod on one side is trying to cool the point and part of the rod on other side is
+trying to heat it up and the point eventually has to "make peace" with the both sides, and settle on
+the average temperature which doesn't change further.&lt;/p&gt;
+&lt;p&gt;This is true for every point in the rod except, of course, the end points.&lt;/p&gt;
+&lt;p&gt;The second point was that there are no local minima/maxima on the inside of the rod.&lt;/p&gt;
+&lt;p&gt;Suppose there is a local minima at a point within the rod somewhere. That implies the temperature of the
+rod on both sides is higher that the temperature at this point. We know for sure this can't happen. Why?
+Because If this were the case, the point would start to be heated from both sides and the temperature would
+start to change. But this can't happen since we're already talking about steady state temperature. All the temperature needs to happen, has already happened before arriving at the steady state.&lt;/p&gt;
+&lt;p&gt;You can argue similarly for local maxima.&lt;/p&gt;
+&lt;p&gt;Velocity potential, electrostatic and gravitational potential can be understood similarly.&lt;/p&gt;
+&lt;p&gt;If the fluid velocity potential distribution in the region wasn't like we characterized above, then
+there would be net force across the region to cancel out these irregularities and the system would
+reach this 'smoothness' asymptotically.&lt;/p&gt;
+&lt;p&gt;Note that the condition would be entirely different, if there were sources or sinks within the rod.
+Sources would heat up the rod on both sides and thus create maxima and sinks would create
+minima. In fact, Laplace equation doesn't hold such cases. There would be non zero source/sink term
+on the RHS to account for these sources/sinks. This equation is called Poission's equation.&lt;/p&gt;
+&lt;div class="math"&gt;$$\Delta^2 \psi  = f(x,y,z) $$&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(f(x,y,z)\)&lt;/span&gt; characterizes the sources/sinks in the space. This could be charge density in
+electrostatics, mass density in gravitation.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Physics"></category><category term="Laplace equation"></category><category term="PDE"></category><category term="Heat Flow"></category><category term="Electrostatics"></category></entry><entry><title>Simulating double pendulum</title><link href="http://127.0.0.1:8000/double%20pendulum.html" rel="alternate"></link><published>2019-05-05T12:28:00+05:45</published><updated>2019-05-05T12:28:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-05-05:/double pendulum.html</id><summary type="html">&lt;p&gt;Chaotic system with double pendulum...&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you attach a single pendulum to another with it's fixed point being at the
+mass of the later, you get a double pendulum. The strings are massless as usual.
+Point mass &lt;span class="math"&gt;\(m1\)&lt;/span&gt; and &lt;span class="math"&gt;\(m2\)&lt;/span&gt; are hooked at the ends of the two pendulum. I've taken
+&lt;span class="math"&gt;\(m_1 = 10\ Kg\)&lt;/span&gt; and &lt;span class="math"&gt;\(m_2 = 5\ Kg\)&lt;/span&gt; for all the examples below.
+&lt;div id='trailer' class='sketchContainer'&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h4&gt;Chaos&lt;/h4&gt;
+&lt;p&gt;This is a simple, maybe even contrived example of a chaotic system. If even a slight difference is
+introduced in two otherwise identical systems, the time evolution happens to be
+drastically different for these systems. Play the demonstration below, watch
+till the differences start to seem apparent and notice how wildly they diverge
+from each other.&lt;/p&gt;
+&lt;p&gt;&lt;span id='slight_1' class='sketchContainer'&gt;&lt;/span&gt; &lt;span id='slight_2' class='sketchContainer'&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button id='playS'onclick='simPlay()'&gt;play/pause&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\dagger\)&lt;/span&gt; &lt;em&gt;there's a problem with two penduli above. If you've noticed it,
+great! I'll try to fix this later.&lt;/em&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Physics"></category><category term="physics"></category><category term="simulation"></category><category term="maths"></category></entry><entry><title>Calculating Pi</title><link href="http://127.0.0.1:8000/calculate-pi-with-block-collisions.html" rel="alternate"></link><published>2019-04-27T22:28:00+05:45</published><updated>2019-04-27T22:28:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-04-27:/calculate-pi-with-block-collisions.html</id><summary type="html">&lt;p&gt;An extremely computationally inefficient way to calculate pi. Inspired from a 3Blue1Brown &lt;a href='https://www.youtube.com/watch?v=HEfHFsfGXjs'&gt;video&lt;/a&gt;...&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're unsure what this is about, watch this awesome &lt;a href="https://www.youtube.com/watch?v=jsYwFizhncE"&gt;video&lt;/a&gt; that explains everything. You can find the code for this simulation on &lt;a href="https://github.com/bibek22/blog"&gt;github&lt;/a&gt;.  &lt;/p&gt;
+&lt;p&gt;But let me explain the setup here anyway. So, you have two blocks on a frictionless surface free to
+move in one direction.  &lt;/p&gt;
+&lt;p&gt;The small block has &lt;span class="math"&gt;\(1\)&lt;/span&gt; unit mass. The bigger block has mass of some power &lt;span class="math"&gt;\(n\)&lt;/span&gt; of &lt;span class="math"&gt;\(100\)&lt;/span&gt; units. And for
+the reason that is very well explained in the above linked video, the number of total collisions
+that happen before both the mass slide towards infinity never to interact again - that number comes
+out to be a whole number with first &lt;span class="math"&gt;\(n\)&lt;/span&gt; digits of &lt;span class="math"&gt;\(\pi\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;Small mass: &lt;data id="small"&gt;1&lt;/data&gt; Kg&lt;br&gt;
+Big mass: &lt;data id="big"&gt;100&lt;/data&gt; Kg&lt;br&gt;
+&lt;input class="slider" type="range" id="digits" min="0" max="7" step="1" value="1"&gt;
+&lt;div id='simulation'&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;&lt;h4 color="#550000"&gt;Collisions: &lt;data id="counter"&gt;0&lt;/data&gt;&lt;/h4&gt;&lt;/b&gt;
+&lt;button id="play"&gt;play/pause&lt;/button&gt;
+&lt;button id="restart"&gt;restart&lt;/button&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h3&gt;On conservation of Energy&lt;/h3&gt;
+&lt;p&gt;&lt;span id='phasespace'&gt;&lt;/span&gt;  &lt;/p&gt;
+&lt;p&gt;It's clear that the total kinetic energy in the system is conserved. To put that in equations:&lt;/p&gt;
+&lt;div class="math"&gt;$$\frac{1}{2}m_1v_2^2 + \frac{1}{2}m_2v_2^2 = E$$&lt;/div&gt;
+&lt;p&gt;where, the symbols have the usual meaning. &lt;span class="math"&gt;\(E\)&lt;/span&gt; is constant and its exact value isn't relevant for our
+problem since the result (i.e. total number of collisions) is the same irrespective of the initial velocity of the bigger block.&lt;/p&gt;
+&lt;p&gt;Since, only &lt;span class="math"&gt;\(v_1\)&lt;/span&gt; and &lt;span class="math"&gt;\(v_2\)&lt;/span&gt; are changing in the above equation, it makes sense to try to plot the
+equations with those as the coordinates.&lt;/p&gt;
+&lt;p&gt;You can immediately see that the equation is an ellipse. We can transform it to a circle if we
+scale the coordinate axes by right amount - in particular if we take &lt;span class="math"&gt;\(x = \sqrt{m_1}v_1\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(y = \sqrt{m_2}v_2\)&lt;/span&gt; as the coordinates.&lt;/p&gt;
+&lt;p&gt;That is what we've  done in the diagram above. State of the system on this phase diagram, which is
+represented by black dots, changes on each collision. But it always remains &lt;em&gt;on&lt;/em&gt; the
+circle. And we know that conservation of the energy is the reason why!&lt;/p&gt;
+&lt;p&gt;Make sure you're working with &lt;span class="math"&gt;\(2\)&lt;/span&gt; digits to see the plot on phase space. Anything more than that
+would just cover up the entire circle because there are too many collisions. I've excluded those cases.&lt;/p&gt;
+&lt;!
+#### Why is the value of E irrelevant?
+Before answering that question, notice that on each collision between the blocks, the momentum of bigger block is increasing in positive x - direction.
+The velocity of the bigger mass after elastic collision with the small mass is:
+!&gt;
+
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Physics"></category><category term="maths"></category></entry></feed>

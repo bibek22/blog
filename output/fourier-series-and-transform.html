@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- for custom stylesheets and js -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#333333" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="http://192.168.10.64:8000/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/pygments/friendly.min.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://192.168.10.64:8000/static/custom.css" rel="stylesheet">
+
+    <link href="http://192.168.10.64:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bibek Gautam - Blog Atom">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Bibek Gautam" />
+<meta name="description" content="On how Fourier series and Fourier transform relate to each other" />
+<meta name="keywords" content="Fourier, series, transform, physics, maths">
+
+<meta property="og:site_name" content="Bibek Gautam - Blog"/>
+<meta property="og:title" content="Fourier Series and Transform"/>
+<meta property="og:description" content="On how Fourier series and Fourier transform relate to each other"/>
+<meta property="og:locale" content="en_US.utf8"/>
+<meta property="og:url" content="http://192.168.10.64:8000/fourier-series-and-transform.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-08-18 10:28:00+05:45"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://192.168.10.64:8000/author/bibek-gautam.html">
+<meta property="article:section" content="Physics"/>
+<meta property="article:tag" content="Fourier"/>
+<meta property="article:tag" content="series"/>
+<meta property="article:tag" content="transform"/>
+<meta property="article:tag" content="physics"/>
+<meta property="article:tag" content="maths"/>
+<meta property="og:image" content="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120">
+
+  <title>Bibek Gautam - Blog &ndash; Fourier Series and Transform</title>
+
+</head>
+<body>
+<!-- for inbody javascript -->
+<!--  -->
+  <aside>
+    <div>
+      <a href="http://192.168.10.64:8000">
+        <img src="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120" alt="Bibek Gautam" title="Bibek Gautam">
+      </a>
+      <h1><a href="http://192.168.10.64:8000">Bibek Gautam</a></h1>
+
+<p>Aspiring Physicist and Programmer</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://192.168.10.64:8000/pages/about.html#about">About</a></li>
+          <li><a href="http://192.168.10.64:8000/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/bibek22" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/truelostdreamer" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-envelope" href="mailto:forgot.bg@gmail.com" target="_blank">
+            <i class="fas fa-envelope">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-instagram" href="https://instagram.com/masterprocastinator" target="_blank">
+            <i class="fab fa-instagram">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://192.168.10.64:8000">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://192.168.10.64:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="fourier-series-and-transform">Fourier Series and Transform</h1>
+    <p>
+      Posted on August 18, 2019 in <a href="http://192.168.10.64:8000/category/physics.html">Physics</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+
+<p>If you're familiar with Fourier series, you already know that given that a periodic function <span class="math">\(f(x)\)</span>
+satisfies a certain <a href="https://en.wikipedia.org/wiki/Dirichlet_conditions">conditions</a>, it can be
+written as an infinite sum of sines and cosines as follow:
+<div class='math-equation'>
+</p>
+<div class="math">\begin{equation}
+ f(x) = a_0 + \sum_{n=1}^\infty{a_n \cos nx} + \sum_{n=1}^\infty{b_n \sin nx}
+\label{eq:fseries}
+\end{equation}</div>
+<p>
+</div></p>
+<p>Euler gave this wonderful formula that relates sines and cosines to complex exponentials:</p>
+<div class="math">$$ e ^{ix} = \cos x + i \sin x $$</div>
+<p>You can verify that using this formula, we can write sin and cos as follow:</p>
+<div class="math">$$ \sin x =  \frac{e ^{ix} - e^{-ix}}{2} $$</div>
+<div class="math">$$ \cos x =  \frac{e ^{ix} + e^{-ix}}{2} $$</div>
+<p>In light of these relations, lets rewrite the Fourier series in terms of complex exponentials:</p>
+<div class='math-equation'>
+$$ f(x) = a_0 + \sum_{n=1}^\infty{a_n \frac{e ^{inx} + e^{-inx}}{2}} + \sum_{n=1}^\infty{b_n \frac{e ^{inx} - e^{-inx}}{2} } $$
+</div>
+
+<p>Let's accumulate like terms and rewrite as:</p>
+<div class='math-equation'>
+$$ f(x) = a_0 + \sum_{n=1}^\infty{\left(\frac{a_n + b_n}{2}\right) e^{inx}} + \sum_{n=1}^\infty{\left(\frac{a_n - b_n}{2}\right) e^{-inx}} $$
+</div>
+
+<p>Now, let's clean up some notations. Let's redefine those constants in brackets as <span class="math">\(c_n\)</span> and <span class="math">\(c_{-n}\)</span>. So, we have:
+</p>
+<div class="math">$$ f(x) = a_0 + \sum_{n=1}^\infty{c_n e^{inx}} + \sum_{n=1}^\infty{c_{-n} e^{-inx}} $$</div>
+<p>Let's also rename <span class="math">\(a_0\)</span> as <span class="math">\(c_0\)</span> and combine all the terms in one big summation as the following:</p>
+<div class="math">$$ f(x) = \sum_{n=-\infty}^\infty{c_n e^{inx}} $$</div>
+<p>Make sure you get exactly the same terms as above when you expand this new expression.</p>
+<p>This is equivalent to the more familiar Fourier series formula\eqref{eq:fseries} that we started with.</p>
+<p>Now if the function has a period other than <span class="math">\(2\pi\)</span>, you can go through this same process with the
+Fourier series in such cases and arrive at a formula that looks like this:</p>
+<div class='math-equation'>
+\begin{equation}
+f(x) = \sum_{n=-\infty}^\infty{c_n e^{\frac{in\pi x}{L}}}
+\end{equation}
+</div>
+
+<p>The coefficients can be determined by the following formula:</p>
+<div class='math-equation'>
+\begin{equation}
+ c_n = \frac{1}{2L}\int_{-\infty}^\infty{f(x) e^{\frac{-i n\pi x}{L}}} dx 
+\end{equation}
+</div>
+
+<p>Substitute <span class="math">\(f(x)\)</span> from <span class="math">\((2)\)</span> in <span class="math">\((3)\)</span> to see that above formula is indeed valid.</p>
+<p>Now, what if the function is not periodic? How can we extend this Fourier relation to non periodic function.</p>
+<p>To say that a function is not periodic is equivalent to saying that its period is <span class="math">\(\infty\)</span></p>
+<p>So, maybe there is a way to safely let <span class="math">\(L\)</span> tend to <span class="math">\(\infty\)</span></p>
+<h4>Fourier Transform</h4>
+<p>Indeed that is what we do when we get to Fourier transform. Instead of trying to present a textbook derivation leading to the Fourier transform, I've decided to just assert that such derivation is possible and instead talk about the physical intuition relating the transform. </p>
+<p>When you let <span class="math">\(L\)</span> approach <span class="math">\(\infty\)</span> as mentioned above and change the summation involved into an integral in the process, you get to the following relation.</p>
+<div class='math-equation'>
+\begin{equation}
+f(x) = \frac{1}{2\pi} \int_{- \infty}^{\infty} e^{ikx} dk \int_{- \infty}^{\infty} f(u) e^{-iku} du
+\end{equation}
+</div>
+
+<p>Then, we just <em>define</em>
+</p>
+<div class="math">$$ g(k) := \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{-ikx} dx} $$</div>
+<p>
+And from the above relation:
+</p>
+<div class="math">$$ f(x) = \frac{1}{\sqrt{2 \pi}}\int_{-\infty}^{\infty}{f(x)e^{ikx} dk} $$</div>
+<p><span class="math">\(g(k)\)</span> and <span class="math">\(f(x)\)</span> are called the Fourier transforms of each other.</p>
+<p>The function <span class="math">\(g(k)\)</span> here is a continuous analogue of <span class="math">\(c_n\)</span> that we had in Fourier Series, which you'll remember are just the coefficients of the particular frequency component n present in the function <span class="math">\(f(x)\)</span>.</p>
+<p>What equation (4) is basically trying to say is the following:</p>
+<ol>
+<li>Start with a function <span class="math">\(f(x)\)</span></li>
+<li>For every all real values of k (all possible frequencies), compute the coefficient, <span class="math">\(g(k)\)</span>, for that particular frequency component k,</li>
+<li>Take <span class="math">\(g(k)\)</span> "amount" of the pure frequency k for all values of </li>
+</ol>
+<p><em><span class="math">\(\dagger\)</span> subject to Dirichlet Conditions</em></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://192.168.10.64:8000/tag/fourier.html">Fourier</a>
+      <a href="http://192.168.10.64:8000/tag/series.html">series</a>
+      <a href="http://192.168.10.64:8000/tag/transform.html">transform</a>
+      <a href="http://192.168.10.64:8000/tag/physics.html">physics</a>
+      <a href="http://192.168.10.64:8000/tag/maths.html">maths</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; Bibek Gautam 2019 - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>
+</p>
+<p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Bibek Gautam - Blog ",
+  "url" : "http://192.168.10.64:8000",
+  "image": "https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120",
+  "description": "Bibek Gautam's Thoughts and Writings"
+}
+</script>
+
+</body>
+</html>

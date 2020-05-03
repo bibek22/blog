@@ -1,0 +1,1482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- for custom stylesheets and js -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#333333" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="http://192.168.10.64:8000/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/pygments/friendly.min.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.10.64:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://192.168.10.64:8000/static/custom.css" rel="stylesheet">
+
+    <link href="http://192.168.10.64:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bibek Gautam - Blog Atom">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Bibek Gautam" />
+<meta name="description" content="A quick reference for TU MATH 301 computer programming" />
+<meta name="keywords" content="C, programming, TU">
+
+<meta property="og:site_name" content="Bibek Gautam - Blog"/>
+<meta property="og:title" content="Computer Programming - TU"/>
+<meta property="og:description" content="A quick reference for TU MATH 301 computer programming"/>
+<meta property="og:locale" content="en_US.utf8"/>
+<meta property="og:url" content="http://192.168.10.64:8000/computer-programming-third-year.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-04-05 08:21:00+05:45"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://192.168.10.64:8000/author/bibek-gautam.html">
+<meta property="article:section" content="programming"/>
+<meta property="article:tag" content="C"/>
+<meta property="article:tag" content="programming"/>
+<meta property="article:tag" content="TU"/>
+<meta property="og:image" content="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120">
+
+  <title>Bibek Gautam - Blog &ndash; Computer Programming - TU</title>
+
+</head>
+<body>
+<!-- for inbody javascript -->
+    <script src="/js/scrollup.js" type="text/javascript"></script>
+<!--  -->
+  <aside>
+    <div>
+      <a href="http://192.168.10.64:8000">
+        <img src="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120" alt="Bibek Gautam" title="Bibek Gautam">
+      </a>
+      <h1><a href="http://192.168.10.64:8000">Bibek Gautam</a></h1>
+
+<p>Aspiring Physicist and Programmer</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://192.168.10.64:8000/pages/about.html#about">About</a></li>
+          <li><a href="http://192.168.10.64:8000/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/bibek22" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/truelostdreamer" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-envelope" href="mailto:forgot.bg@gmail.com" target="_blank">
+            <i class="fas fa-envelope">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-instagram" href="https://instagram.com/masterprocastinator" target="_blank">
+            <i class="fab fa-instagram">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://192.168.10.64:8000">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://192.168.10.64:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="computer-programming-third-year">Computer Programming - TU</h1>
+    <p>
+      Posted on April 05, 2019 in <a href="http://192.168.10.64:8000/category/programming.html">programming</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><strong>Table Of Contents</strong></p>
+<ul>
+<li><a href="#ch1">Ch - 1: Introduction to computer systems</a><ul>
+<li><a href="#cpu">Central Processing Unit</a></li>
+<li><a href="#memory-systems">Memory Systems</a><ul>
+<li><a href="#primary-memory">Primary Memory</a></li>
+<li><a href="#secondary-memory">Secondary Memory</a></li>
+</ul>
+</li>
+<li><a href="#input-devices">Input Devices</a></li>
+<li><a href="#output-devices">Output Devices</a></li>
+<li><a href="#computer-software">Computer Software</a></li>
+<li><a href="#operating-systems">Operating Systems (OS)</a></li>
+<li><a href="#generations-of-computer">Generations of Computer</a></li>
+<li><a href="#applications-of-computer">Applications of Computer</a></li>
+</ul>
+</li>
+<li><a href="#ch2">Ch - 2: Introduction to Programming Languages</a><ul>
+<li><a href="#programming-language">Programming Language</a></li>
+<li><a href="#evolution-of-programming-languages">Evolution of Programming Languages</a></li>
+<li><a href="#compilation-process">Compilation Process</a></li>
+</ul>
+</li>
+<li><a href="#ch3">Ch - 3: Fundamentals of C Programming</a><ul>
+<li><a href="#keywords">Keywords</a></li>
+<li><a href="#identifier">Identifier</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#constant">Constant</a></li>
+<li><a href="#expression">Expression</a></li>
+<li><a href="#statement">Statement</a></li>
+</ul>
+</li>
+<li><a href="#ch4">Ch - 4&amp;10: Input and Output &amp; File Handling</a><ul>
+<li><a href="#stdin">Standard Input/Output</a></li>
+<li><a href="#files">Files</a></li>
+<li><a href="#getwputw">Read/Write Integers: getw, putw</a></li>
+<li><a href="#fprintf">Formatted Read/Write: fprintf, fscanf</a></li>
+<li><a href="#read-write-in-block">Read/Write in Block: fread, fwrite</a></li>
+</ul>
+</li>
+<li><a href="#ch5">Ch - 5: Operator and Expressions</a><ul>
+<li><a href="#operators">Operators</a></li>
+<li><a href="#expressions">Expressions</a></li>
+<li><a href="#type-conversion">Type Conversion</a></li>
+</ul>
+</li>
+<li><a href="#ch8">Ch - 8: Pointers</a><ul>
+<li><a href="#pointers">Pointers</a></li>
+<li><a href="#dma">Dynamic Memory Allocation</a><ul>
+<li><a href="#malloc">malloc()</a></li>
+<li><a href="#free">free()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ch9">Ch - 9: Structures and Unions</a><ul>
+<li><a href="#structures">Structures</a></li>
+<li><a href="#self-referential-structure">Self Referential Structure</a></li>
+<li><a href="#union">Union</a></li>
+<li><a href="#structure-pointer">Structure Pointer</a></li>
+</ul>
+</li>
+</ul>
+<p><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button> </p>
+<p><a name="ch1"></a></p>
+<h2>Ch - 1: Introduction to computer systems</h2>
+<p><strong> Q. What is a computer ? </strong></p>
+<p>Computer is an advanced electronic device that takes raw data as input from the user and processes
+these using a set of instructions (called program) to produce the result (called output) and also
+saves the output for future use. It can process both numerical and non-numerical (arithmetic and logical)
+calculations. The term computer is derived from the Latin term <em>computare</em>, which means to calculate.</p>
+<p><strong> Q. Write about computer architecture. </strong></p>
+<p>Computer Architecture is all about the structure and behaviour of the computer as seen by the
+user. A computer has various components. The study of how these components fit and work together to
+perform the desired computation is known as computer architecture.</p>
+<p>The main components in a typical computer system are the processor, memory, input/output devices,
+and the communication channels that connect them.</p>
+<p><img alt="computer architecture diagram" src="/images/architecture.webp"></p>
+<p><strong>Processor</strong></p>
+<p>The processor is the workhorse of the system. It is the component that executes a program by performing
+arithmetic and logical operations on data. It is the only component that creates new information by
+combining or modifying current information. In a typical system there will be only one processor, known
+at the central processing unit, or CPU. Modern high performance systems, often have more than one
+processor aka parallel processors or vector processors. Systems with only one processor are serial
+processors or also known as scalar processors.</p>
+<p><strong>Memory</strong></p>
+<p>Memory is a passive component that simply stores information until it is requested by another part of
+the system. During normal operations it feeds instructions and data to the processor, and at other
+times it is the source or destination of data transferred by I/O devices. Information in a memory is
+accessed by its address. Memory can be thought of as a one-dimensional array M. A processor's request to
+the memory might be:  </p>
+<p><em>send the instruction at location M[1000]</em> <br>
+<em>store the following block of data in locations M[0] to M[255]</em>  </p>
+<p>and so on.</p>
+<p><strong>I/O Devices</strong></p>
+<p>Input/output (I/O) devices transfer information without altering it to and from the user space and one
+or more internal components. These are also called Man machine interfaces. I/O devices can be secondary
+memories, for example <strong>disks</strong> and <strong>tapes</strong>,
+or devices used to communicate directly with users, such as <strong>displays</strong>, <strong>keyboards</strong>, <strong>joystick</strong>,
+and <strong>mouse</strong>, etc.  </p>
+<p><strong>Link components</strong></p>
+<p>The components that link the system together could be simple links that connect two devices or more
+complex switches that interconnect several components and allow any two of them to communicate at a
+given point in time. When a switch is configured to allow two devices to exchange information, all other
+devices that rely on the switch are blocked, i.e. they must wait until the switch can be reconfigured.  </p>
+<p><a name="cpu"></a></p>
+<h4>Central Processing Unit</h4>
+<p><em><strong>Q. What is the use of CPU in a computer system? How does it work?</strong></em></p>
+<p>CPU is short for central processing unit. It is sometimes referred to as the central processor, but more
+commonly as processor. The CPU is the brains of the computer where most calculations take place. In
+terms of computing power, the CPU is the most important element of a computer system.</p>
+<p>Major functions of CPU are listed below:</p>
+<ol>
+<li>Perform all basic arithmetic operations</li>
+<li>Perform logical operations i.e. decision making tasks</li>
+<li>Facilitate reading and writing to and from memory devices</li>
+<li>Connect all the input/output devices together and interpret signals</li>
+</ol>
+<p>CPU has two distinct components:</p>
+<ol>
+<li>
+<p><strong>Arithmetic and Logical Unit (ALU)</strong><br>
+  ALU is a digital electronic circuit that performs arithmetic and logical operations. It is the
+  fundamental building block of CPU. Transistors are combined together to make basic arithmetic
+  units like adder, substractor, etc and also logic gates such as <em>AND</em>, <em>OR</em>, <em>NOT</em>, <em>XOR</em>, etc.
+  These work together to perform all arithmetic, floating point and bitwise operations. Logic gates
+  helps in decision making and switch case operations.</p>
+</li>
+<li>
+<p><strong>Control Unit (CU)</strong><br>
+  A control unit is also made up of transistor circuits.
+  A CU component is considered the processor brain because it issues orders to just about
+  everything and ensures correct instruction execution. Some of it works are as follows:</p>
+<ul>
+<li>handles all processor control/interrupt signals.</li>
+<li>directs all input and output flow</li>
+<li>fetches code for sequential instructions from programs into memory</li>
+<li>directs other units by providing control and timing signals.</li>
+<li>handles multi taksing</li>
+</ul>
+</li>
+</ol>
+<p><a name="memory-systems"></a></p>
+<h3>Memory Systems</h3>
+<p>Memory system consists of memory devices, means to access, read and write data and link components
+to the cpu. The main purpose of memory system is to store and access data. Depending on the type of
+the data, they are split into two types which are:</p>
+<ul>
+<li>Primary Memory</li>
+<li>Secondary Memory</li>
+</ul>
+<p><a name="primary-memory"></a></p>
+<h5>Primary Memory</h5>
+<p>Primary Memory or main memory is the area in a computer which stores data and information for fast
+access. It’s a
+memory which is used to store frequently used programs which can be directly accessed by the processing
+unit for further processing. This is where the currently executing set of instructions resides.  </p>
+<p>It is also called  <em>volatile memory</em> because the data is stored temporarily and is liable to change or
+loss in case of power failure or shutdown. So, the data is only intact as long as the computer is
+running. Because of their need for fast access time, they are made up of semiconductor chips.</p>
+<p>Every program is loaded into main memory before execution.</p>
+<p>Primary memory are of two types:  </p>
+<ul>
+<li>
+<p><strong>RAM:</strong> Random Access Memory is what is what we mean when we say main memory. It is a memory to load
+  the program before execution. They are still divided as:</p>
+<ul>
+<li>
+<p><strong>Static RAM (SRAM)</strong>: They are more expensive, consume less power and have higher speed
+  (20-40 ns) than DRAM. These are used in cache or as main memory in high end computers.</p>
+</li>
+<li>
+<p><strong>Dynamic RAM (DRAM)</strong>: They are cheaper, have moderate speed (60-100 ns) and need more power. They
+  are used in main memory. This is comparitively denser memory.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ROM:</strong> Read only memory can only be read as the name suggests. They are written at the time of
+  manufacture by the manufacturer themselves. ROM is non-volatile memory. These generally host very
+  essential program(BIOS) that is loaded at the boot time and is required to load the operating system.
+  These also have some types which are:  </p>
+<ul>
+<li><strong>PROM</strong> (Programmable ROM): can only be written once.  </li>
+<li><strong>EROM</strong> (Erasable ROM): can be rewritten by erasing previous data. needs exposure to UV light for
+  erasing</li>
+<li><strong>EEROM</strong> (Electrically Erasable ROM): similar to EROM but erasing can be done electrically.</li>
+</ul>
+</li>
+</ul>
+<p><a name="secondary-memory"></a></p>
+<h5>Secondary Memory</h5>
+<p>Secondary memory on the other hand is the external memory of the computer which can be used to store data
+and information on a long-term basis. It’s a non-volatile memory which means data stays intact even if
+the computer is turned off. Data cannot be directly processed by the processing unit in secondary memory;
+in fact, it is first transferred into the main memory before processing.</p>
+<p>Secondary memory consists of all external storage devices that are capable of storing high volumes of data
+such as hard drives, floppy disks, magnetic tapes, USB flash drives, CDs, DVDs, etc. It’s generally slower
+than primary memory but can store much larger amount of data in the range of gigabytes to terabytes.</p>
+<p><a href="http://cdn.differencebetween.net/wp-content/uploads/2018/03/Primary-Memory-VERSUS-Secondary-Memory-.jpg">Here</a>
+is a table that shows the difference between secondary and main memory.</p>
+<p><a name="input-devices"></a></p>
+<h4>Input Devices</h4>
+<p>Devices used to feed any input signal into the computer are called input devices.
+Following are some of the important input devices:</p>
+<ul>
+<li>Keyboard</li>
+<li>Mouse</li>
+<li>Joy Stick</li>
+<li>Light pen</li>
+<li>Track Ball</li>
+<li>Scanner</li>
+<li>Graphic Tablet</li>
+<li>Microphone</li>
+<li>Magnetic Ink Card Reader(MICR)</li>
+<li>Optical Character Reader(OCR)</li>
+<li>Bar Code Reader</li>
+<li>Optical Mark Reader(OMR)</li>
+</ul>
+<p>This <a href="https://www.tutorialspoint.com/computer_fundamentals/computer_input_devices.htm">page</a> has the
+description for each devices.</p>
+<p><a name="output-devices"></a></p>
+<h3>Output Devices</h3>
+<p>These are the devices where the output of the program or data stored in the memory devices can be
+seen by the user.</p>
+<p>Following are some of the important output devices:</p>
+<ul>
+<li>Monitors</li>
+<li>Graphic Plotter</li>
+<li>Printer</li>
+</ul>
+<p><a name="computer-software"></a></p>
+<h3>Computer Software</h3>
+<p>Software is a set of programs, which is designed to perform a specific and well-defined task. A program 
+is a sequence of instructions written to solve a particular problem.</p>
+<p>There are two types of software:</p>
+<ul>
+<li>
+<p><strong>System Software</strong><br>
+  System software is software designed to provide a platform for other software. It is an interface
+  between application softwares and the hardware. Operating system is an example of system software.
+  Some others are:</p>
+<ul>
+<li><strong>BIOS</strong>: (basic input/output system) gets the computer system started after you turn it on and
+manages the data flow between the operating system and attached devices such as the hard disk, video
+adapter, keyboard, mouse and printer.</li>
+<li><strong>Boot</strong>: Boot program loads the operating system into the computer's main memory or random access
+memory (RAM).</li>
+<li><strong>Assembler</strong>: It takes basic computer instructions and converts them into a pattern of binary
+digits that the processor understands.</li>
+<li><strong>Device Driver</strong>: A device driver controls a particular type of device that is attached to your
+computer, such as a keyboard or a mouse. The driver program converts the more general input/output
+instructions of the operating system to messages that the device can understand. Eg. Keyboard
+driver, display driver, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Application Software</strong><br>
+Application software are the program that are of specific utility to the users. Application software
+can be a single program like MS Notepad with a single utility function. It can also be a collection
+of programs called software package which perform more broad and related tasks. For ex. MS Office
+Suite which includes MS Word, MS Powerpoint, MS Excel, and so on.<br>
+The characteristics(differences) of application software compared to System software are as follows:</p>
+<ul>
+<li>Close to the user</li>
+<li>Easy to design</li>
+<li>More interactive</li>
+<li>Slow in speed</li>
+<li>Generally written in high-level language</li>
+<li>Easy to understand</li>
+<li>Easy to manipulate and use</li>
+<li>Bigger in size and requires large storage space</li>
+</ul>
+</li>
+</ul>
+<p><a name="operating-systems"></a></p>
+<h3>Operating Systems (OS)</h3>
+<p>Operating system is a system software which provides platform for other user applications to run on
+a computer. Operating system maintains an ecosystem of input and output devices working with each
+other in harmony.  </p>
+<p>Besides I/O devices, OS also manages otehr hardware resources such as network
+devices which includes modem, routers etc.</p>
+<p>An operating system has three distinct components:</p>
+<ul>
+<li><strong>Kernel</strong><br>
+  This is a software that provides basic level control over all the hardware devices. Its main roles
+  include reading/writing data to and from memory, dealing with data received from input devices like
+  keyboard, mouse and data to be sent to output devices like monitor and also dealing with incoming
+  and outgoing data via networks.  </li>
+<li><strong>User Interface</strong><br>
+  This is the part of the OS which facilitates the user to interact with the computer. So, this
+  includes, graphical window, icons, desktop, command line etc.  </li>
+<li><strong>Application Programming Interface(API)</strong><br>
+  Presence of API in the OS allows the programmers to write application softwares more easily. API
+  provides an interface for the programmer to manipulate the underlying hardware using high level
+  languages.</li>
+</ul>
+<p>Examples of operating systems are Microsoft Windows, Mac OS X, Android, iOS, Linux, etc.</p>
+<p><a name="generations-of-computer"></a></p>
+<h3>Generations of Computer</h3>
+<p>Generations of computer indicate a major shift in the technology involved in computing.</p>
+<ul>
+<li>
+<p><strong>First Generation Computers</strong><br>
+First generation computers used vacuum tubes for circuitry and magnetic drums for memory. They were large 
+enough to take up entire room. They consumed a lot of power and generated significant amount of heat which
+had to be regulated using cooling system so as to prevent damage to the system due to overheating. This made 
+them expensive to operate. They were instructed with machine code had very limited computing power.
+The UNIVAC, EDVAC, and ENIAC computers are the examples of first gen. computers.</p>
+</li>
+<li>
+<p><strong>Second Generation Computers (1956-63)</strong><br>
+Vacuum tubes were replaced by transistors in second generation computers. Transistors are semiconductor based
+switches. They significantly reduced space and power consumption compared to first gen computers. Transistors
+are also more reliable than vacuum tubes and hence less prone to failure. Heat regulation was much less of a 
+concern.
+They used punched cards for input and printouts for output. Assembly language was used in these computers which
+avoided the need to work with binary machine code.
+IBM 1620, IBM 7090, PDP-1 are few examples.</p>
+</li>
+<li>
+<p><strong>Third Generation Computers (1964-71)</strong><br>
+These computers used integrated circuit(IC) which is essentially a complex electronic circuit made up of a lot
+of miniaturized transistors, diodes, resistors etc. This reduced the size of the computer even further and
+significantly increased speed and efficiency.
+Keyboard, monitors and Operating system interfaces were introduced in these computers. These were the first computer
+capable to run multiple applications at once.
+Programming languages like COBOL, FORTRAN were commonly used.
+IBM 370, PDP-11, CDC 7600 etc are the examples.</p>
+</li>
+<li>
+<p><strong>Fourth Generation Computers (1971-Present)</strong><br>
+Thousands of integrated circuits are built onto a single piece of silicon to form a microprocessor. This brought
+down the size and cost of the computers. High speed networking of computers were developed that linked multiple 
+computers together. User friendly Operating systems and applications were developed as computers slowly became common 
+household items. 
+Semiconductor based memory devices were also introduced which are faster, smaller in size aster and
+have low failure rate. 
+Many high level programming languages were introduced and used extensively during this period.
+Apple Macintosh, Pentium computers etc the examples.</p>
+</li>
+</ul>
+<p><a name="applications-of-computer"></a></p>
+<h3>Applications of Computer</h3>
+<ul>
+<li>
+<p><strong>Business</strong></p>
+<ul>
+<li>Payroll calculations</li>
+<li>Budgeting</li>
+<li>Sales analysis</li>
+<li>Financial forecasting</li>
+<li>Managing employee database</li>
+</ul>
+</li>
+<li>
+<p><strong>Banking</strong></p>
+<ul>
+<li>ATM Machines</li>
+<li>Online banking and transactions</li>
+</ul>
+</li>
+<li>
+<p><strong>Education</strong></p>
+<ul>
+<li>Long distance education</li>
+<li>Online courses</li>
+<li>Keep Students database and performance analysis</li>
+</ul>
+</li>
+<li>
+<p><strong>Marketing</strong></p>
+<ul>
+<li>Advertising</li>
+<li>Online shopping</li>
+</ul>
+</li>
+<li>
+<p><strong>Health Care</strong></p>
+<ul>
+<li>Diagnostic System</li>
+<li>Patient monitoring systems</li>
+<li>Computer aided surgery</li>
+</ul>
+</li>
+<li>
+<p><strong>Government</strong></p>
+<ul>
+<li>Budgets</li>
+<li>Tax/Revenue department</li>
+<li>Census</li>
+<li>Computerization of voters lists</li>
+<li>Computerization of PAN card</li>
+<li>Weather forecasting</li>
+</ul>
+</li>
+<li>
+<p><strong>Communication</strong></p>
+<ul>
+<li>E-mail</li>
+<li>Chatting</li>
+<li>Usenet</li>
+<li>FTP</li>
+<li>Telnet</li>
+<li>Video-conferencing</li>
+</ul>
+</li>
+</ul>
+<p><a name="ch2"></a></p>
+<h2>Ch - 2: Introduction to Programming Languages</h2>
+<p><a name="programming-language"></a></p>
+<h3>Programming Language</h3>
+<p>Programming language is any language used to instruct a computer for performing specific tasks. It
+is a set of vocabulary and rules of grammar (syntax) like any other languages. Programming languages
+are low level and high level depending on how close to the hardware they deal with.</p>
+<p><a name="evolution-of-programming-languages"></a></p>
+<h3>Evolution of Programming Languages</h3>
+<ul>
+<li><strong>Machine Language</strong><br>
+It's the code that a computer actually understands. It is written in binary representation. 
+It's very difficult to code with machine language. Machine language is specific to the architecture of the
+processor. These are considered very close to the machine. Early computers were programmed solely using
+machine code.</li>
+<li><strong>Low Level Language</strong><br>
+Low level language are still close to the machine but they are written with characters instead of binary
+which make them more approachable. They provide very little or no abstraction of programming concepts. Assembly
+code is an example of low level language.</li>
+<li><strong>High Level Language</strong><br>
+These are programming languages with more rich programming abstraction, syntax, and structural constructs. It
+is much easier to work with high level languages. They save time of the programmer and increase productivity.
+Vast majority of the code written today are written in high level language. Depending on the level of abstraction, 
+some high level language can be considered low or close to the machine than others. For example C is considered
+closer to machine than python, ruby, etc.</li>
+</ul>
+<p><strong> Q. What is Structured Programming? </strong><br>
+It is a programming paradigm in which structured control flow constructs like choice(if, else,
+then), repetition(for, while), block structures (with curly braces), functions etc are used to
+improve the clarity, quality, and development time of the programs.</p>
+<p><a name="compilation-process"></a></p>
+<h3>Compilation Process</h3>
+<p><strong> Q. Describe the compilation process. </strong><br>
+Compilation is the process of translating the source code written by the programmer into a language
+that is understood by the target machine.  </p>
+<p>Compilation is a multi step process. It has four distinct process which are:</p>
+<ul>
+<li>
+<p><strong> Preprocessing</strong><br>
+This is the first step of the compilation. In this step, lines starting with a # character are
+interpreted by the preprocessor as preprocessor commands. Any macros or constant definitions made in
+those lines are used to substitute the occurance of the macros or constants in the rest of the
+source code.<br>
+The library files that are included in the header are also attached with the program in this step.</p>
+</li>
+<li>
+<p><strong>Compilation</strong><br>
+The second step is called the compilation. In this step, the preprocessed code is translated to assembly instructions specific to the target processor architecture. This is still human readable.</p>
+</li>
+<li>
+<p><strong>Assembly</strong><br>
+During this stage, an assembler is used to translate the assembly instructions to object code. The
+output is written in an object file with <code>.o</code> extension and contains the actual instructions that
+the target processor can run.<br>
+Since large program generally contain multiple source code file, more than one object files are
+generated in this step. They have to linked together to form the final program which is done in the
+next step.</p>
+</li>
+<li>
+<p><strong>Linking</strong><br>
+In the last step, the object files are linked together using a piece of software called linker to create
+a complete set of instructions that can be executed in the machine. An executable file is produced after
+this step which has the extension <code>.exe</code> in windows system. This file can now be run to perform the
+desired task.</p>
+</li>
+</ul>
+<p>Preprocessor, compiler, assembler, linker all are the part of C compiler. They don't need to be run
+seperately.</p>
+<p><strong>Q. What is Object code?</strong><br>
+Object code is a set of instruction codes that is understood by a computer at the lowest hardware level. Object code is produced by a compiler that reads some higher level computer language (like C) source code and translates them into equivalent machine language instructions. Object code is produced by assembler and they have <code>.o</code> extension.</p>
+<p><strong>Q. What do you mean by source code?</strong><br>
+It is the sequence of instructions written by the programmer. Source code is in plain
+text.</p>
+<p><strong>Q. Define Executable code.</strong><br>
+It's a piece of code that can be executed on the target machine. Executable code is produced in the
+last step of compilation process after linking all the object files together to form a complete set
+of instructions called program.</p>
+<p><strong>Q. What's Interpreter?</strong><br>
+Unlike C, some programming languages can directly be executed from the source code without
+going through the compilation process. The software that takes in the source code and directly executes
+them is known as interpreter. Interpreters avoid the neccesity to have a previously compiled executable
+program. Python interpreter is an example.</p>
+<p><strong>Q. What is a Loader? What does it do ?</strong><br>
+A loader is a part of the Operating System that is responsible for loading the programs into memory
+and preparing the execution of the program. Once the loader loads the program into memory, the OS
+passes control to the loaded program code for its execution.</p>
+<p><strong>Q. What do you understand by Algorithm?</strong><br>
+An algorithm is a detailed series of instructions for carrying out an operation or solving a problem.
+For example, Euclid algorithm is an algorithm to find the greatest common devider of two numbers.</p>
+<p><strong>Q. What do you mean by Flow Chart?</strong><br>
+A flowchart is a diagram that depicts a process, system or computer algorithm. Before writing the
+source code, it is helpful to draw a flow chart containing the algorithm that you intend to
+implement. Flow chart makes coding a little more easy especially when the program is large and
+complicated. It also helps in debugging.</p>
+<p>Here's a quick illustration for various elements used in a Flow chart</p>
+<p><img alt="Flow chart symbols" src="https://d3n817fwly711g.cloudfront.net/blog/wp-content/uploads/2011/09/All-you-Need-to-Know-about-Flowcharting.png"></p>
+<p>You'll mostly only need Data (i.e. input/output), process, decision, and start/end.</p>
+<p><a name="ch3"></a></p>
+<h2>Ch - 3: Fundamentals of C Programming</h2>
+<p>Some terms that could be asked for definition:
+<a name="keywords"></a></p>
+<ul>
+<li><strong>Keywords:</strong> Keywords are those words whose meaning is already defined by Compiler and cant be
+  used as an identifier by the user. Eg. while, main, do, for, if, else, typedef, struct, etc.</li>
+</ul>
+<p><a name="identifier"></a></p>
+<ul>
+<li><strong>Identifier:</strong> An identifier is a name that is assigned by the user to a program element such
+  as variable, type, class, function, etc.<br>
+  Rules for Identifier:  <ol>
+<li>The first character must be an alphabet or an underscore and can be followed only by any number alphabets, or digits or underscores.</li>
+<li>They must not begin with a digit.</li>
+<li>Identifiers should not be of length more than 31 characters.</li>
+<li>Uppercase and lowercase letters are distinct. That is, identifiers are case sensitive.</li>
+<li>Commas or blank spaces are not allowed within an identifier.</li>
+<li>Keywords cannot be used as an identifier.</li>
+</ol>
+</li>
+</ul>
+<p><a name="variables"></a></p>
+<ul>
+<li><strong>Variables</strong>: Variable is a name given to a location in a memory where a program can manipulate the data.
+A variable could be of any type like int, float, char, etc.<ul>
+<li>Types of variables:<ul>
+<li><strong>Static and Dynamic</strong>: This is a classification based on when the memory for the variable is allocated.
+Static variables are those variables whose memory space is allocated by the compiler at the compile time. On the
+other hand, dynamic variables are allocated memory space in the run-time by the program itself. See <a href="#dma">Dynamic memory allocation</a></li>
+<li><strong>Local and Global</strong>: This classification is based on the <strong>scope</strong> of a variable. If a variable is available 
+only within a function or a block in which it is defined, then such variable is said to be <strong>local</strong>  to that 
+function or block. But if the variable is available to the entire program, then it's called a <strong>global</strong> variable. </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="p">{</span>
+        <span class="cm">/*</span>
+<span class="cm">        variable a declared in this block is</span>
+<span class="cm">        completely different from variable</span>
+<span class="cm">        declared outside. Former is said to be</span>
+<span class="cm">        local within this block</span>
+<span class="cm">        */</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Inner a = %d</span><span class="se">\n</span><span class="s">Inner b = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Outer a = %d</span><span class="se">\n</span><span class="s">Outer b = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Everything within a pair of braces <code>{</code> <code>}</code> makes a block. Variables declared within the block are limited in scope to the block itself.
+Therefore, the expected output of the above program is:</p>
+<div class="highlight"><pre><span></span><span class="n">Inner</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">Inner</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">Outer</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">Outer</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+
+
+<p>Note that the variable <code>b</code> created outside does <em>pass</em> inside the braces-block but not the other way around. 
+This is also called <strong>Lexical scoping</strong> is programming languages.</p>
+<p><a name="comments"></a></p>
+<ul>
+<li><strong>Comments</strong>: Comments in programming, as the name suggests, are programmer-readable texts that are written
+in the source code to explain or comment on a portion of the code, statement, a function or an expression to help the
+reader understand the code fast and more easily.<br>
+Comments serve various purpose which are outlined below:  <ul>
+<li>To explain a piece of code.</li>
+<li>To write pseudo-code which will later be filled in with actual code.</li>
+<li>To explain why a certain algorithm was chosen instead of the other.</li>
+<li>Comments can be used to communicate when the project is large and multiple programmers are
+working on the same project at once.</li>
+<li>Comments can be used to generate documentation for an API or a program automatically.</li>
+<li>During debugging, any portion of the code can be commented for trail and error.</li>
+</ul>
+</li>
+</ul>
+<p>In C, any text between <code>/*</code> and <code>*/</code> are considered as comments. 
+For eg:  </p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">){</span>
+    <span class="cm">/*</span>
+<span class="cm">    Greatest common divider function.</span>
+<span class="cm">    Takes two integers n and m as input.</span>
+<span class="cm">    Returns a single integer.</span>
+<span class="cm">    */</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><a name="constant"></a></p>
+<ul>
+<li><strong>Constant</strong>: Constants refer to fixed values that the program may not alter during its execution. These fixed values are also called <strong>literal constants</strong>. And the name given to them are called <strong>symbolic constants</strong>.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="o">#</span><span class="n">DEFINE</span> <span class="n">PI</span> <span class="mi">3</span><span class="p">.</span><span class="mi">1415</span>
+</pre></div>
+
+
+<p>In above, <code>PI</code> is a symbolic constant, and <code>3.1415</code> is a literal constant.</p>
+<p><a name="expression"></a></p>
+<ul>
+<li><strong>Expression</strong>: an expression is any legal combination of symbols that represents a value. For
+  example: <code>x+5</code>, <code>"Programming"</code>, <code>4.023</code>, etc. Expression can have operators in them so long as
+  they are valid as + operator in previous example.</li>
+</ul>
+<!-- 
+<a name="statement"></a>
+* **Statement** : Statement is any combination of keywords, identifiers, and symbols that gives a meaningful
+action to be done by the machine. Statements are of three types:
+    * Expression statement: It's a simple statement 
+-->
+
+<p><a name="ch4"></a></p>
+<h2>Ch - 4, 10: Input and Output &amp; File Handling</h2>
+<p><a name="stdin"></a>
+Input can mainly be from two sources:</p>
+<ul>
+<li>From a <a href="#files">file</a></li>
+<li>And from the keyboard<br>
+<code>getchar()</code> reads from the keyboard one character at a time.  </li>
+</ul>
+<div class="highlight"><pre><span></span>  <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span><span class="p">){</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<p>There's also <code>getche()</code> which echoes back the character entered onto the display unlike <code>getchar()</code>.</p>
+<p>There's <code>scanf()</code> that allows you to take formatted input from keyboard.</p>
+<div class="highlight"><pre><span></span>  <span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">year</span><span class="p">;</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Enter your DOB (dd/mm/yyyy): &quot;</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d/%d/%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">day</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">month</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">year</span><span class="p">);</span>
+  <span class="cm">/* reads input in that specified format</span>
+<span class="cm">  of dd/mm/yy */</span>
+</pre></div>
+
+
+<p>And output can be into two targets:</p>
+<ul>
+<li>To a <a href="#files">file</a></li>
+<li>To the monitor</li>
+</ul>
+<p><code>putchar()</code> display one character at a time onto the display. <code>printf()</code> is for formatted display.</p>
+<div class="highlight"><pre><span></span>   <span class="kt">char</span> <span class="n">txt</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;This is a text&quot;</span><span class="p">;</span>
+   <span class="cm">/* print in specified format */</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">txt</span><span class="p">);</span>
+
+   <span class="cm">/* putchar outputs one character at a time */</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+       <span class="n">putchar</span><span class="p">(</span><span class="o">*</span><span class="n">txt</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+   <span class="p">}</span>
+</pre></div>
+
+
+<p>To input/output strings at once:</p>
+<p><code>gets()</code> reads string from the keyboard. <code>puts()</code> prints string onto the display.</p>
+<div class="highlight"><pre><span></span>   <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+
+   <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;Enter a value :&quot;</span><span class="p">);</span>
+   <span class="n">gets</span><span class="p">(</span> <span class="n">str</span> <span class="p">);</span>
+
+   <span class="n">printf</span><span class="p">(</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">You entered: &quot;</span><span class="p">);</span>
+   <span class="n">puts</span><span class="p">(</span> <span class="n">str</span> <span class="p">);</span>
+</pre></div>
+
+
+<p><a name="files"></a></p>
+<h4>Files</h4>
+<p>To work with a file, you have to create a file handle for it. File handle is nothing but a pointer
+to a FILE type. You create it as follows:</p>
+<div class="highlight"><pre><span></span>    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;File.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Above line creates a pointer named fpt to a FILE type variable in memory that is returned by <code>fopen()</code>
+function. It creates a handle for the file "File.txt" which is opened in readonly 'r' mode.</p>
+<p>Now to read from the file there's <code>fgetc()</code>. It reads one character at a time as the name suggests. 
+<code>getc()</code> is equivalent to <code>fgetc()</code>.</p>
+<div class="highlight"><pre><span></span>    <span class="k">while</span> <span class="p">((</span><span class="n">c</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">fpt</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">){</span>
+        <span class="n">putchar</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="p">}</span>
+</pre></div>
+
+
+<p><code>EOF</code> above indicates End Of File. So, the loop runs till it reaches the end of the file.</p>
+<p>You can read string at once ie. array of character at once with <code>fgets()</code>:</p>
+<div class="highlight"><pre><span></span>    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="n">fgets</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">fpt</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Above reads, 99 characters from the file pointer fpt and copies it into the variable text. The last
+element in a character array should always be <code>\0</code> which indicates the end of the string.</p>
+<p>There are <code>fputc()</code> and <code>fputs()</code> to write character and string into the file.</p>
+<p>But for that the file should be opened in write mode. </p>
+<p>To do that, first lets <strong>close</strong> the file opened above and reopen it in write mode.</p>
+<div class="highlight"><pre><span></span>    <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+
+    <span class="cm">/* Now open in write mode */</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;File.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Now, Let's read input from the keyboard with <code>getchar()</code> and write it onto the file.</p>
+<div class="highlight"><pre><span></span>  <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">c</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span><span class="p">){</span>
+      <span class="n">fputc</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">fpt</span><span class="p">);</span>
+  <span class="p">}</span>
+</pre></div>
+
+
+<p><code>putc()</code> is equivalent to <code>fputc()</code>.</p>
+<p>Remember the order of arguments. Character is the first and file pointer (buffer) is the second argument.</p>
+<p><a name="getwputw"></a></p>
+<h4>Read/Write Integers</h4>
+<p>There are <code>getw()</code> and <code>putw()</code> functions to read and write integer values to/from a file. An example is given below:</p>
+<div class="highlight"><pre><span></span>   <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">num</span><span class="p">;</span>
+   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fpt</span><span class="p">;</span>
+   <span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span><span class="s">&quot;w&quot;</span><span class="p">);</span>
+   <span class="n">putw</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">fpt</span><span class="p">);</span>
+   <span class="n">putw</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">fpt</span><span class="p">);</span>
+   <span class="n">putw</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">fpt</span><span class="p">);</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+
+   <span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="s">&quot;file.txt&quot;</span><span class="p">,</span><span class="s">&quot;r&quot;</span><span class="p">);</span>
+
+   <span class="k">while</span><span class="p">(</span><span class="n">getw</span><span class="p">(</span><span class="n">fpt</span><span class="p">)</span><span class="o">!=</span><span class="n">EOF</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">num</span><span class="o">=</span> <span class="n">getw</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+</pre></div>
+
+
+<p>The output is:</p>
+<div class="highlight"><pre><span></span><span class="go">    1</span>
+<span class="go">    2</span>
+<span class="go">    3</span>
+</pre></div>
+
+
+<p><a name="fprintf"></a></p>
+<h4>Formatted read/write</h4>
+<p>You know how <code>scanf()</code> and <code>printf()</code> read and print formatted texts from keyboard and to the display.</p>
+<p>There are <code>fprintf()</code> and <code>fscanf()</code> that do essentially the same thing but with files.
+Here's an example:</p>
+<div class="highlight"><pre><span></span>   <span class="kt">FILE</span> <span class="o">*</span><span class="n">fpt</span><span class="p">;</span>
+
+   <span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span> <span class="p">(</span><span class="s">&quot;File.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w+&quot;</span><span class="p">);</span>
+   <span class="n">fptrintf</span><span class="p">(</span><span class="n">fpt</span><span class="p">,</span> <span class="s">&quot;My fav. number is %d.&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+   <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+</pre></div>
+
+
+<p>That writes <code>My fav. number is 7.</code> to the file <code>File.txt</code>.</p>
+<p>And similarly for <code>fscanf()</code>.</p>
+<p><a name="read-write-in-block"></a></p>
+<h4>Read/Write in Block</h4>
+<p>We've seen how to read/write string and characters. We might want to write more complicated, custom
+defined data type - for ex. a struct with 3 integers for day, month and year that constitute DOB.</p>
+<p>In such cases, it is better to read/write in block. We can read/write in binary data of any size we
+want instead of individual data type.</p>
+<p>Let's create a struct and define a new type for date of birth to illustrate:</p>
+<div class="highlight"><pre><span></span>    <span class="k">struct</span> <span class="n">DOB</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">day</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">DOB</span> <span class="n">dob</span><span class="p">;</span>
+</pre></div>
+
+
+<p>stuct DOB is now defined as dob data type.</p>
+<p>Now, let's create a variable of type dob. We want to write it to a file.</p>
+<div class="highlight"><pre><span></span>    <span class="n">dob</span> <span class="n">myBDay</span><span class="p">;</span>
+    <span class="n">myBday</span><span class="p">.</span><span class="n">day</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">myBday</span><span class="p">.</span><span class="n">month</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">myBday</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1987</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Now, we'll write it to the file at once.</p>
+<p>But before we do, there's one important thing. We opened the file in write mode which is only good
+for writing strings and characters.  </p>
+<p>If we want to write in binary format, we have to open it in binary write mode i.e. "wb" instead of "w". Let's do that now.</p>
+<div class="highlight"><pre><span></span>    <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fpt</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;File.txt&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Now we can write myBday into the file.</p>
+<div class="highlight"><pre><span></span>    <span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">myBday</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fpt</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fpt</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Above line tells <code>fwrite()</code> to treat <code>12</code> bytes (= 3 integers) of data as one block and write <code>1</code> such
+block reading from <code>&amp;myBday</code> location in memory into the file stream <code>fpt</code>.</p>
+<p>Another important thing to note is that when you open in write mode everything that was in the file
+previously gets erased and new data is written. </p>
+<p>If you don't want to erase everything, you need open it in append mode with "a" argument.</p>
+<p>All the modes are shown in table below:</p>
+<table border="2">
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Mode</th>
+<th scope="col" class="org-left">Permission</th>
+<th scope="col" class="org-left">Mode</th>
+<th scope="col" class="org-left">Permission</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">"r"</td>
+<td class="org-left">read only</td>
+<td class="org-left">"r+"</td>
+<td class="org-left">read and write</td>
+</tr>
+
+<tr>
+<td class="org-left">"w"</td>
+<td class="org-left">write only</td>
+<td class="org-left">"w+"</td>
+<td class="org-left">read and write</td>
+</tr>
+
+<tr>
+<td class="org-left">"a"</td>
+<td class="org-left">append only</td>
+<td class="org-left">"a+"</td>
+<td class="org-left">append and read</td>
+</tr>
+</tbody>
+</table>
+
+<p>Add "b" to each one of the above to read/write/append in binary mode. For ex. "wb+", "ab+**, etc.</p>
+<p><a name="getcputc"></a>
+<strong>Q. Write a program to read a character and display it using getc and putc</strong></p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+
+    <span class="n">c</span> <span class="o">=</span> <span class="n">getc</span><span class="p">(</span><span class="n">stdin</span><span class="p">);</span>
+    <span class="n">putc</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">stdout</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><code>getc()</code> and <code>putc()</code> are normally used to read and write from a file. But the question wants us to read it and display it to the monitor.</p>
+<p>There are files streams (FILE <em>) associated with keyboard input and monitor output. They are defined in <code>stdio.h</code> as <code>stdin</code> and `stdout</em>*.</p>
+<p>So, we pass them as the file stream instead of a handler of an actual file.</p>
+<p><a name="ch5"></a></p>
+<h2>Ch - 5: Operators and Expressions</h2>
+<p><a name="operators"></a></p>
+<h3>Operators</h3>
+<p><strong>Operators</strong> are symbols that tells the compiler to do specific mathematical or logical operations. The values or variables
+that the operators acts upon are called <strong>operands.</strong></p>
+<p>Operators with their generic name are given in the descending order of <strong>precedence</strong>:</p>
+<table cellspacing="6" cellpadding="6" border="2">
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Category</th>
+<th scope="col" class="org-left">Operators</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Parenthesis and so on</td>
+<td class="org-left">( ) [ ] -&gt; . ++ --</td>
+</tr>
+
+<tr>
+<td class="org-left">Unary</td>
+<td class="org-left">+ - ! ~ ++ - - (type)* &amp; sizeof</td>
+</tr>
+
+<tr>
+<td class="org-left">Multiplicative</td>
+<td class="org-left">* / %</td>
+</tr>
+
+<tr>
+<td class="org-left">Additive</td>
+<td class="org-left">+ -</td>
+</tr>
+
+<tr>
+<td class="org-left">Bitwise Shift</td>
+<td class="org-left">&lt;&lt;  &gt;&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Relational</td>
+<td class="org-left">&lt; &lt;= &gt; &gt;=</td>
+</tr>
+
+<tr>
+<td class="org-left">Equality</td>
+<td class="org-left">= !</td>
+</tr>
+
+<tr>
+<td class="org-left">Bitwise(AND XOR OR)</td>
+<td class="org-left">&amp;&amp; || </td>
+</tr>
+
+<tr>
+<td class="org-left">Conditional</td>
+<td class="org-left">?:</td>
+</tr>
+
+<tr>
+<td class="org-left">Assignment</td>
+<td class="org-left">= += -= *= /=</td>
+</tr>
+
+<tr>
+<td class="org-left">Comma</td>
+<td class="org-left">,</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="expressions"></a></p>
+<h3>Expressions</h3>
+<p>Expression in programming languages is any legal combination of symbols that evaluates
+to a value. For eg. <code>5 + 6 * (1 + 3)</code> is an expression and so is <code>4 * x</code> where x is a variable of valid type.</p>
+<p><a name="type-conversion"></a></p>
+<h3>Type Conversion</h3>
+<p>Type casting or conversion is the process of converting a data from one type to another.
+This is done in two modes:</p>
+<ul>
+<li><strong>Implicit</strong></li>
+</ul>
+<p>Compiler automatically converts data types whenever it makes sense. For example:</p>
+<div class="highlight"><pre><span></span>  <span class="p">...</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="kt">double</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">40000</span><span class="p">;</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+  <span class="p">...</span>
+</pre></div>
+
+
+<p><code>+</code> can only operate on data of same type. But, it makes sense to add two numbers: int and double.
+So, compiler itself converts value of x into a double before evaluating the expression.</p>
+<ul>
+<li><strong>Explicit</strong></li>
+</ul>
+<p>We may want to explicitly change the type of the variable sometimes. For ex.</p>
+<div class="highlight"><pre><span></span>  <span class="p">...</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">12.0</span><span class="p">;</span>
+
+  <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">z</span><span class="o">/</span><span class="n">x</span><span class="p">;</span>
+  <span class="p">...</span>
+</pre></div>
+
+
+<p>Here, z is implicitly converted to float first and the expression <code>z/x</code> is evaluated. But since the
+variable <code>y</code> is an integer variable, we want to assign an integer to y. </p>
+<p>In the last line, <code>(int)</code> explicitly tells
+the compiler to convert the result of the expression to an integer before assigning to <code>y</code>. 
+Digits after decimal are truncated and only the integer part is assigned i.e. It is always rounded down.</p>
+<p><a name="ch8"></a></p>
+<h2>Ch - 8: Pointers</h2>
+<p><a name="pointers"></a></p>
+<h4>Pointers</h4>
+<p>Every variable is assigned a space in memory that it can use to store value.</p>
+<p>An <code>int</code> variable takes 4 (2 in some machines) bytes, <code>char</code> takes a single byte and so on.</p>
+<p>Sometimes it is useful to have an actual address in memory device where the space is reserved
+for a specific variable.</p>
+<p>This is one of the reason why some languages are called low level. They provide you with ability to 
+get close to the machine and manipulate things.</p>
+<p>You use ampersand (&amp;) to get the address of a variable. For example: if you have an integer variable
+named <code>n</code>, <code>&amp;n</code> would give you the address of n i.e. its location in memory. </p>
+<p>An address is a number. It is normally written in hexadecimal digits. But they are basically just integers.
+So, a pointer is just a variable whose value is some integer that represents some location in memory.</p>
+<div class="highlight"><pre><span></span>    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">pt</span><span class="p">;</span>
+
+    <span class="n">pt</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">;</span>
+</pre></div>
+
+
+<p>In Above, we have an integer variable <code>num</code> and an integer pointer <code>pt</code>. In the last line <code>pt</code> is assigned a
+value which is the address of <code>num</code> i.e. <code>&amp;n</code>. So now, <code>pt</code> holds the address of some memory location, and <code>num</code>
+holds the data/value stored at that location. </p>
+<p>Now, once you have the location, what could you do with it ? </p>
+<p>For one thing, you could go to the address and see what is stored at that location. This is called <strong>dereferencing</strong>
+as we are going from a reference(a pointer) to the thing it is referring(the value).</p>
+<p>You can do that with an asterisk(*):</p>
+<div class="highlight"><pre><span></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">pt</span><span class="p">);</span>
+    <span class="cm">/* prints 5 */</span>
+</pre></div>
+
+
+<p>Now, another thing you can do with the address is do arithmetic on the address itself. What does that mean?</p>
+<p>Say you have an array <code>char a[10]</code>. We know that <code>a</code> actually stores the address of the first element of the
+array - that is the location of <code>a[0]</code>.</p>
+<p>We also know that an array has a chunk of memory allocated all at one place. So, for example if <code>&amp;a[0]</code>, the address of
+the first element of <code>a</code>, were 2740004 then <code>&amp;a[10]</code> would be 2740013 and every other elements would lie in between.</p>
+<p>So, we can do maths on the address itself and dereference it to loop through an array. Like so:</p>
+<div class="highlight"><pre><span></span>    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;C Programming Language.&quot;</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">pt</span> <span class="o">=</span> <span class="n">text</span><span class="p">;</span>
+    <span class="cm">/* equivalent to doing</span>
+<span class="cm">    char *pt = &amp;text[0];</span>
+<span class="cm">    */</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="cm">/* deferencing an address</span>
+<span class="cm">        to get the char value */</span>
+        <span class="n">putchar</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">pt</span><span class="o">+</span><span class="n">i</span><span class="p">));</span>
+    <span class="p">}</span> 
+</pre></div>
+
+
+<p>Unsurprisingly, above prints <code>C Programming Language.</code></p>
+<p><strong>Little Syntax</strong></p>
+<p>Declaring functions with pointer arguments:</p>
+<div class="highlight"><pre><span></span><span class="cm">/* function with return type int */</span>
+<span class="kt">int</span> <span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="cm">/* function with return type int */</span>
+<span class="kt">int</span> <span class="o">*</span><span class="nf">function</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">){</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Passing pointer arguments:</p>
+<div class="highlight"><pre><span></span>    <span class="kt">int</span> <span class="o">*</span><span class="n">num</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">c</span><span class="p">;</span>
+
+    <span class="n">function</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</pre></div>
+
+
+<p><a name="dma"></a></p>
+<h4>Dynamic Memory Allocation</h4>
+<p><em>Note: Recommend reading <a href="#self-referential-structure">this</a> first</em></p>
+<p>Memory allocation is essentially the process of reserving memory for a variable. It's
+mostly done in the compile time. Compiler looks at the code to figure out how many variables
+there are and how much space do each one of them need. This is called <strong>static allocation</strong>.</p>
+<p>Sometimes, the compiler doesn't know how much memory the program needs. For eg. we could keep
+adding more and more node to a Linked list (or other self referential data type) when the program
+is being run as per need.</p>
+<p>So, we need to be able to allocate memory at the runtime. This is called <strong>dynamic memory allocation</strong>.</p>
+<p>There are two important function to learn for dynamic memory allocation: <code>malloc()</code> and <code>free</code>. These
+are part of the standard input/output library. So, <code>stdio.h</code> includes this.</p>
+<p><a name="malloc"></a></p>
+<ul>
+<li><strong>malloc()</strong></li>
+</ul>
+<p>This function is used to ask for a space in memory. </p>
+<p><code>malloc(int size)</code> allocates <code>size</code>(in bytes) amount of memory and returns the address from which that chunk of memory starts.</p>
+<p>Let's see an example.</p>
+<div class="highlight"><pre><span></span>    <span class="cm">/* Declare a char pointer */</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">text</span><span class="p">[];</span>
+    <span class="cm">/* text is a pointer but</span>
+<span class="cm">    doesn&#39;t have an address</span>
+<span class="cm">    assigned to it yet */</span>
+
+    <span class="n">text</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="cm">/* malloc returns an address</span>
+<span class="cm">    which is assigned to text */</span>
+
+    <span class="cm">/* fill the array with an</span>
+<span class="cm">    string &quot;hi&quot; */</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">=</span> <span class="sc">&#39;h&#39;</span><span class="p">;</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="sc">&#39;i&#39;</span><span class="p">;</span>
+    <span class="o">*</span><span class="p">(</span><span class="n">text</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<p><a name="free"></a></p>
+<ul>
+<li><strong>free()</strong></li>
+</ul>
+<p>When you malloc a chunk of memory, it's reserved. You could run out of RAM if you keep malloc'ing memory.
+You should always "free" a memory that was reserved using malloc if you are done using it.</p>
+<p><code>free()</code> takes in the address of the first block of memory that was malloc'ed and frees it for use.</p>
+<p>So, continuing above example, after you're done with the array <code>text</code>, you should free it as:</p>
+<div class="highlight"><pre><span></span>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">);</span>
+
+    <span class="cm">/* if &#39;text&#39; is no longer needed</span>
+<span class="cm">    in the program */</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+</pre></div>
+
+
+<p>At this stage, the memory that was allocated, whose address was stored in <code>text</code> is free. But the variable
+<code>text</code> still remains. It still has the address as its value. But it can't be dereferenced any longer. Because <code>text</code>
+no longer has the permission to access that block of memory. </p>
+<p>But we can always use <code>malloc()</code> to reserve some memory and store the address into `text** if we so need.</p>
+<p><em>Note: Also see <a href="structure-pointer">struct pointers</a></em></p>
+<h4>Array of Pointers</h4>
+<p>Array of pointers is just like a character array but with pointer variables instead of <code>char</code>.</p>
+<div class="highlight"><pre><span></span>    <span class="cm">/* character array */</span>
+    <span class="kt">char</span> <span class="n">text</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+
+    <span class="cm">/* array of int pointers */</span>
+    <span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">ptrs</span><span class="p">)[</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
+
+
+<p><code>ptrs</code> is an array of 10 int pointers.</p>
+<p><a name="ch9"></a></p>
+<h2>Ch - 9: Structures and Unions</h2>
+<p><a name="structures"></a></p>
+<h4>Structures</h4>
+<p>Structures are essentially means to custom (compound) data types in C programming language.</p>
+<p>Two keywords are relevant when it comes to structures - <code>struct</code> and <code>typedef</code>.</p>
+<p>Struct is used to group together basic data types to make more complex data types as follows:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">DOB</span><span class="p">{</span>
+        <span class="kt">int</span> <span class="n">day</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">struct</span> <span class="n">DOB</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This defines a structure with name <code>struct DOB</code>. You can declare a variable that looks like struct
+DOB as we defined. But it's tedious to have to use two words to refer to a data type. So, there is <code>typedef</code>
+that allows you to define a new type and give it a name once and for all. For ex:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">struct</span> <span class="n">DOB</span><span class="p">{</span>
+        <span class="kt">int</span> <span class="n">day</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">month</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">DOB</span> <span class="n">dob</span><span class="p">;</span>
+
+    <span class="n">dob</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This defines a new data type <code>dob</code> for us and we can do <code>dob x;</code> to create a variable named x of 'dob' type just as we'd do
+<code>int x;</code> for integers.</p>
+<p>The <code>dob</code> type as defined above takes 12 bytes in memory because it is made of 3 integers and each integer takes 4 bytes.
+Once declared values can be written in the variable as:</p>
+<div class="highlight"><pre><span></span>    <span class="n">dob</span> <span class="n">x</span><span class="p">;</span>
+
+    <span class="n">dob</span><span class="p">.</span><span class="n">day</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">dob</span><span class="p">.</span><span class="n">month</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">dob</span><span class="p">.</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1999</span><span class="p">;</span>
+</pre></div>
+
+
+<p><a name="self-referential-structure"></a></p>
+<h4>Self Referential Structure</h4>
+<p>We saw above that custom data types use predefined primitive data types (for eg. int, floats, etc) to create something
+more complex. </p>
+<p>Self referential datatype is custom datatype that use itself as a building block. How does that work ! Let's see an example:</p>
+<div class="highlight"><pre><span></span>    <span class="k">struct</span> <span class="n">item</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+        <span class="k">struct</span> <span class="n">item</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">typedef</span> <span class="k">struct</span> <span class="n">item</span> <span class="n">llist</span><span class="p">;</span>
+</pre></div>
+
+
+<p>We defined a struct named <code>item</code>. It has an integer named data and a pointer to a <code>struct item</code>. </p>
+<p>That is every instance of <code>struct item</code> has a reference (pointer) to another instance of <code>struct item</code> itself.</p>
+<p>Hence the name self-referential.</p>
+<p>What is the use of doing this? Well, these are just like arrays but unlike array, you don't have to
+know how many items there are going to be in the array at the time of declaration. You can keep
+adding at the end of the data as you go.</p>
+<p>These are known as <strong>linked list</strong>. And each item is commonly known as a node.</p>
+<p>So, a linked list is a chain of nodes onto which you can always attach more nodes.</p>
+<p>To show it visually, it looks something like this:
+<img alt="Linked list in graphics" src="https://www.geeksforgeeks.org/wp-content/uploads/gq/2013/03/Linkedlist.png"></p>
+<p><a name="union"></a></p>
+<h4>Union</h4>
+<p>Union is similar to struct - only difference is that only one of the member of a union can have a value stored
+at a time. While all of the members of a struct eg. day, month, year in dob type above can and do
+usually have values assigned to them, union on the other hand only has only one of its elements assigned with value.</p>
+<div class="highlight"><pre><span></span>    <span class="k">union</span> <span class="n">Data</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+        <span class="kt">float</span> <span class="n">f</span><span class="p">;</span>
+        <span class="kt">char</span> <span class="n">c</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="p">};</span>
+
+    <span class="k">typedef</span> <span class="k">union</span> <span class="n">Data</span> <span class="n">data</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Everything above is similar to struct, except for the keyword union.</p>
+<p>This defines a type named <code>data</code> which is a <code>union</code> and can store either an integer, a float, or a
+character array of length 5 - only one of them at any given time !</p>
+<p>The size reserved in memory for <code>data</code> type is then 5 bytes because int and float both take 4 bytes
+and char array above is specified to take 5 bytes. So, The largest of the members decides the memory
+allocation size for the union.</p>
+<p>Passing structure, union, or structure pointer and union pointer work similarly as the native data
+types.</p>
+<p><a name="Arrays within structure"></a></p>
+<h4>Arrays within Structure</h4>
+<p>Let's define a datatype to store simple data of a student.</p>
+<div class="highlight"><pre><span></span>    <span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">50</span><span class="p">];</span>
+        <span class="kt">int</span> <span class="n">roll</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">class</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">student</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Now lets create an instance and add values.</p>
+<div class="highlight"><pre><span></span>    <span class="n">student</span> <span class="n">rohan</span><span class="p">;</span>
+
+    <span class="n">rohan</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;Rohan Sharma&quot;</span><span class="p">;</span>
+    <span class="n">rohan</span><span class="p">.</span><span class="n">roll</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">rohan</span><span class="p">.</span><span class="n">class</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</pre></div>
+
+
+<p><a name="structure-pointer"></a></p>
+<h4>Structure Pointer</h4>
+<p><em>Note: read <a href="#malloc">malloc()</a> first if you haven't already.</em></p>
+<p>These are just like any other pointers. This is how you declare them:</p>
+<div class="highlight"><pre><span></span>    <span class="p">...</span>
+    <span class="k">struct</span> <span class="n">dob</span> <span class="o">*</span><span class="n">myBday</span><span class="p">;</span>
+</pre></div>
+
+
+<p><code>myBday</code> is now a pointer that points to a <code>struct dob</code> type of data.</p>
+<p>Dereferencing struct pointer is a little different. Instead of period (.) to
+access elements of a struct, you use arrow (-&gt;).</p>
+<p>But before we do, first we need to create a space in memory for our variable
+and assign the address of that memory to <code>myBday</code>. We use malloc:</p>
+<div class="highlight"><pre><span></span>    <span class="n">myBday</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">dob</span><span class="p">));</span>
+</pre></div>
+
+
+<p><code>sizeof()</code> returns the size that the struct dob data requires in bytes which is
+given as argument to <code>malloc()</code>. The addresss
+returned is assigned to myBday.</p>
+<p>Now, let's assign values to the struct itself.</p>
+<div class="highlight"><pre><span></span>    <span class="p">...</span>
+    <span class="n">myBday</span><span class="o">-&gt;</span><span class="n">day</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+    <span class="n">myBday</span><span class="o">-&gt;</span><span class="n">month</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">myBday</span><span class="o">-&gt;</span><span class="n">year</span> <span class="o">=</span> <span class="mi">1992</span><span class="p">;</span>
+    <span class="p">...</span>
+</pre></div>
+
+
+<p>And once you are done with myBday, it's good idea to free the memory using <code>free(myBday);</code></p>
+<p>Union pointers are done similarly.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://192.168.10.64:8000/tag/c.html">C</a>
+      <a href="http://192.168.10.64:8000/tag/programming.html">programming</a>
+      <a href="http://192.168.10.64:8000/tag/tu.html">TU</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>
+  &copy; Bibek Gautam 2019 - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>
+</p>
+<p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Bibek Gautam - Blog ",
+  "url" : "http://192.168.10.64:8000",
+  "image": "https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120",
+  "description": "Bibek Gautam's Thoughts and Writings"
+}
+</script>
+
+</body>
+</html>

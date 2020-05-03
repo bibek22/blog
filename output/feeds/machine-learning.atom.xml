@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Machine Learning</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/machine-learning.atom.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2019-04-09T15:36:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Logistic regression and Non Linear functions</title><link href="http://localhost:8000/logistic-regression-and-non-linear-functions.html" rel="alternate"></link><published>2019-04-09T15:36:00+05:45</published><updated>2019-04-09T15:36:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:localhost,2019-04-09:/logistic-regression-and-non-linear-functions.html</id><summary type="html">&lt;p&gt;Here I talk about logistic regression and various non linear functions that are used and relate it to Neural Networks&lt;/p&gt;</summary><content type="html">&lt;p&gt;Logistic regression &lt;/p&gt;
+&lt;p&gt;Logistic regression is a model for approaching the problems with binary dependent outcome. What does that mean?&lt;/p&gt;
+&lt;p&gt;Say, you're trying to classify email as either SPAM or NOT-SPAM. That's a binary outcome problem. You may be dealing with
+medical images of various human tissues and you want to figure out if a certain tissue growth is MALIGNANT (cancerous) or NOT.&lt;/p&gt;
+&lt;p&gt;In either case, you're trying to label each input with one of two labels. Logistic regression is a statistical technique for
+approaching these kinds of problems.&lt;/p&gt;
+&lt;p&gt;Let's take an example of email classification. For simplicity, let's consider two features of an email that might be indicative of 
+whether the email is spam. Along horizontal axis, we put length of the email. And along vertical axis, we put the total count of
+usage of the suspicious words like &lt;em&gt;buy, free, discount, offer&lt;/em&gt; etc.&lt;/p&gt;
+&lt;p&gt;We plot some known examples in the graph as shown below.&lt;/p&gt;
+&lt;p&gt;&lt;img width=300 src="/images/classification-example.png" alt="Classification Example"&gt;&lt;/p&gt;
+&lt;p&gt;The red points indicate spam emails and green dots indicate non spam ones. Of course, the real examples wouldn't look this distinct,
+but this helps to illustrate.&lt;/p&gt;
+&lt;p&gt;Clearly, there is a line to be drawn in between two cluster of points which serves as a boundary for spam vs. non-spam emails.&lt;/p&gt;</content><category term="machine learning"></category><category term="functions"></category><category term="graphs"></category><category term="neural network"></category></entry></feed>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - mathematics</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/mathematics.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2020-04-16T07:20:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>On trying to model spacetime</title><link href="http://127.0.0.1:8000/quick-take-on-differential-geometry.html" rel="alternate"></link><published>2020-04-16T07:20:00+05:45</published><updated>2020-04-16T07:20:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2020-04-16:/quick-take-on-differential-geometry.html</id><summary type="html">&lt;p&gt;a very quick survey of ideas in differential geometry&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;I've committed all sorts of mathematical sins with this post. This is just
+supposed to be a very very quick rundown of mathematical preliminaries that
+forms the basis of spacetime in the general theory of relativity.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Lengths, area, volume, curvature, rate of change etc are some of the things that
+we are interested to study in geometry. We have a good handle on those when the
+underlying space is nice and flat Euclidean. We are interested to extend this
+ability to spaces that are not Euclidean. As a physicist, we are interested to
+model spacetime mathematically. And if we are Einstein, we might be looking to
+allow it a curvature and hope it somehow encodes gravitation.  Differential
+geometry is our attempt to model such physical reality in all mathematical
+rigour without being too restrictive.&lt;/p&gt;
+&lt;p&gt;At the coarsest level, spacetime is a set. It's a set of points. Let's call this
+set &lt;span class="math"&gt;\(M\)&lt;/span&gt;. Does a set so defined have enough complexity to model spacetime? Of
+course not. In fact, let's see what we have. A set is just an unordered
+collection of elements.&lt;/p&gt;
+&lt;p&gt;Imagine a sheet of paper to be some kind of two dimensional spacetime. Now,
+shred this sheet into pieces. That's not enough, collect all the pieces and
+grind them into fine powder, finest you can imagine. Finally, give it a good
+shuffle and that's what we have so far as a mathematical model of this paper
+sheet spacetime. We can see that the immediate next thing we want to have is
+some notion of locality or neighborhood meaning we want to be able to capture
+the idea that some points are "close" to each other.&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/paper2powder.png" class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;So, we introduce a new set and give it a fancy name &lt;strong&gt;topology&lt;/strong&gt;. A topology on
+a set is just a set which contains a whole bunch of sets as its elements, each
+of which defines a "locality". So, for each point &lt;span class="math"&gt;\(p \in M\)&lt;/span&gt;, there could be an
+entry in this set, denoted by &lt;span class="math"&gt;\(\mathcal O\)&lt;/span&gt;, which contains all the neighbour
+points of &lt;span class="math"&gt;\(p\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/topology.png" class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;This gives us a way to put the powder together and give it a structure in some
+sense. But there are a lot of ways we could do it. In fact, it turns out the
+kind of topology that one can form given the restrictions we have so far are so
+many that most of them resemble the spacetime as we know it too little, whatever
+that means.&lt;/p&gt;
+&lt;p&gt;We look at a special kind of them called topological manifolds.  &lt;strong&gt;Topological
+manifolds&lt;/strong&gt; are topological space that can be charted similar to how surface of
+earth can be charted to a map on a plane sheet of paper. So, we require a
+condition that our model of spacetime be mapped &lt;em&gt;continuously&lt;/em&gt; to subset of
+&lt;span class="math"&gt;\(\mathbb R^n\)&lt;/span&gt;. This essentially requires that there exist neighborhood to every
+point &lt;span class="math"&gt;\(p \in M\)&lt;/span&gt; and for every neighborhood that its image can have in the chart.
+&lt;figure&gt;
+&lt;img src="images/chartmap.png" class='center' width="400"/&gt;
+&lt;figcaption class='center'&gt;fig. Chart map from &lt;span class="math"&gt;\(\mathcal U\)&lt;/span&gt; to &lt;span class="math"&gt;\(\mathcal{x(U)}\)&lt;/span&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;So, we now add one more information to our collection namely an &lt;strong&gt;Atlas&lt;/strong&gt;
+denoted by &lt;span class="math"&gt;\(\mathcal A\)&lt;/span&gt; which is a collection of charts &lt;span class="math"&gt;\((\mathcal U, \mathcal
+x)\)&lt;/span&gt; where &lt;span class="math"&gt;\(\mathcal U \subseteq M\)&lt;/span&gt; is a portion of the manifold that is covered
+in this particular chart and &lt;span class="math"&gt;\(x\)&lt;/span&gt; is the map that takes &lt;span class="math"&gt;\(\mathcal U\)&lt;/span&gt; to a portion
+&lt;span class="math"&gt;\(\mathcal{x(U)} \subseteq \mathbb R^n\)&lt;/span&gt;. We have a whole bunch of charts in the
+atlas because a single might not cover the entire manifold. So, we now consider
+only those spaces that are locally Euclidean. &lt;/p&gt;
+&lt;p&gt;A paper spacetime as a topological manifold, is closer to what we want compared
+to the powder that we had earlier.  But you can still take the paper, crumple it
+with your hand and give it wrinkles and creases. You can even stretch, twist and
+turn and do all sorts of crazy thing with it.  You could stretch it along one
+side and make a wire out of it. It doesn't care. It's still the same in our
+model.&lt;/p&gt;
+&lt;p&gt;You might say, stretching and squeezing is a property that we want to have in
+our model, afterall that's what we want to model gravitation with and you're
+right. We dont get rid of this flexibility. But we should be able to distinguish
+between two configurations. We want a notion of curvature. From Euclidean
+geometry, we know that curvature can be defined by employing second derivatives.
+We don't know how to do differentiation in a manifold yet.&lt;/p&gt;
+&lt;p&gt;The idea here is to do calculus in charts, where we have all nice results and
+theorems from analysis. But, immediately a question arises: will the results we
+get in charts will be well-defined? Because, one could just as easily go and
+look at another chart. The condition that holds in a chart that lead us to
+ascribe certain property on our manifold may not hold in another chart. This is
+very serious. We don't want the velocity of a particle, curvature of a
+trajectory and so on to depend on the choice of our coordinates (which is what
+charts really are).&lt;/p&gt;
+&lt;p&gt;So, let's think this through. Let's say we want to establish whether a certain
+curve on a manifold (this could be a particle trajectory) is continuous. We can
+go to a chart &lt;span class="math"&gt;\((\mathcal U, \mathcal x)\)&lt;/span&gt; and check for the continuity of the
+chart representative of the curve. But the problem is when we have another chart
+&lt;span class="math"&gt;\((\mathcal V, \mathcal y)\)&lt;/span&gt; and the two charts have some overlap. Now, in this
+overlap, the chart representatives of the curve better agree on their
+continuity.&lt;/p&gt;
+&lt;p&gt;&lt;img src="images/chart transitions.png" height="200" class='center'/&gt;&lt;/p&gt;
+&lt;p&gt;Now, there are 3 maps of interest here namely &lt;span class="math"&gt;\(x\)&lt;/span&gt;, &lt;span class="math"&gt;\(y\)&lt;/span&gt;, and &lt;span class="math"&gt;\(x\circ y^{-1}\)&lt;/span&gt;. We
+know from analysis, that a continuous curve in &lt;span class="math"&gt;\(\mathbb R^n\)&lt;/span&gt; to remain
+continuous after a map, it suffices that the map be continuous. Therefore, we
+know that we need &lt;span class="math"&gt;\(x\circ y^{-1}\)&lt;/span&gt; to be continuous. But, we also know that
+composition of two continuous functions is continuous. So, the continuity of
+chart maps and their inverses come to rescue and our definition of continuity
+that involves going to a chart remains well defined.&lt;/p&gt;
+&lt;p&gt;That was lucky. But what about differentiability? Can we define
+differentiability of curves and functions in the same way - by going to charts?
+Well, you cant make the same arguments about differentiability(chart maps are
+merely continuous and continuous maps may not be differentiable). So, the answer
+is no. We can't define differentiability without some further restrictions on
+our atlas.&lt;/p&gt;
+&lt;p&gt;And believe it or not, what we do is restrict our atlas such that chart
+transition map between any pair of overlapping charts is infinitely
+differentiable or in other word smooth. With that restriction, we now have a
+smooth manifold &lt;span class="math"&gt;\((M, \mathcal{O, A})\)&lt;/span&gt; where we can do calculus without running
+into ill definition.&lt;/p&gt;
+&lt;p&gt;There is more to it, of course. For example, we haven't defined a metric yet.
+So, we can't talk about lengths and angles like we always had on flat Euclidean
+space. It's not clear how one could define derivatives and so
+on without a notion of length. We'll stumble upon a major hurdle in defining
+derivatives of tensor fields. I will talk about these in upcoming posts if I
+get the clarity and a way to avoid too much maths.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="mathematics"></category><category term="GTR"></category><category term="differential geometry"></category><category term="physics"></category></entry></feed>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Linux</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/linux.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2019-04-07T13:25:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Awk Tutorial and Introduction</title><link href="http://127.0.0.1:8000/awk-tutorial.html" rel="alternate"></link><published>2019-04-07T13:25:00+05:45</published><updated>2019-04-07T13:25:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-04-07:/awk-tutorial.html</id><summary type="html">&lt;p&gt;If you deal with a large data files with multiple rows and columns and you would like to make some quick edits, selection or manipulation right from the terminal, awk is the tool to look for.&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Awk&lt;/h3&gt;
+&lt;p&gt;Awk is a full fledged, &lt;a href="https://simple.wikipedia.org/wiki/Turing_complete"&gt;turing complete&lt;/a&gt; programming language
+on its own but it was designed specifically to deal with text data.  &lt;/p&gt;
+&lt;p&gt;Say, you have the following kind of data:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;PRN&lt;/span&gt;   &lt;span class="n"&gt;Az&lt;/span&gt;     &lt;span class="n"&gt;Ele&lt;/span&gt;     &lt;span class="n"&gt;Lat&lt;/span&gt;     &lt;span class="n"&gt;Lon&lt;/span&gt;     &lt;span class="n"&gt;Stec&lt;/span&gt;    &lt;span class="n"&gt;Vtec&lt;/span&gt;    &lt;span class="n"&gt;S4&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;   &lt;span class="mi"&gt;155&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;41&lt;/span&gt;  &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;82&lt;/span&gt;    &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;74&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;78&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;   &lt;span class="mi"&gt;155&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;25&lt;/span&gt;  &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;95&lt;/span&gt;    &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;84&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;38&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;86&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;   &lt;span class="mi"&gt;155&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;09&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;08&lt;/span&gt;    &lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;94&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;26&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;84&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;   &lt;span class="mi"&gt;154&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;94&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;    &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;03&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;22&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;84&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;   &lt;span class="mi"&gt;154&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;78&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;33&lt;/span&gt;    &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;13&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;16&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;84&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;   &lt;span class="mi"&gt;154&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;62&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;46&lt;/span&gt;    &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;23&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;29&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;01&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;81&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;   &lt;span class="mi"&gt;154&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;46&lt;/span&gt;  &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;59&lt;/span&gt;    &lt;span class="mi"&gt;16&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;   &lt;span class="mi"&gt;90&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;21&lt;/span&gt;   &lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;98&lt;/span&gt;   &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;82&lt;/span&gt;   &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;000&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Say you are interested in only some of the columns. And you want to seperate out the data by PRN
+value which runs from &lt;span class="math"&gt;\(1\)&lt;/span&gt; to &lt;span class="math"&gt;\(3\)&lt;/span&gt;. You might also want to delete those rows which have a negative
+value i.e. &lt;code&gt;-99.00&lt;/code&gt; which you know implies an error or missing data. You could do all these things and
+more using &lt;code&gt;awk&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Basic syntax&lt;/h3&gt;
+&lt;p&gt;One thing you should note before we begin is that &lt;code&gt;awk&lt;/code&gt; is a line editor. It processes one line at
+a time. So, no matter how many lines of input you have, awk runs the same code on all of it. It's
+basic structure is the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;END&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;...&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It has three blocks as you can see. Sometimes you need to do
+something before you even begin editing lines, for eg. write the header, or initialize some variables
+etc. That is what goes inside the &lt;code&gt;BEGIN{}&lt;/code&gt; block.  &lt;/p&gt;
+&lt;p&gt;Similary, you have &lt;code&gt;END{}&lt;/code&gt; block which runs after
+the lines are finished processing. This may be used to write footer, for example.  &lt;/p&gt;
+&lt;p&gt;The code that runs
+for each line of input is on the middle, also called the main block.&lt;/p&gt;
+&lt;h3&gt;Running the script&lt;/h3&gt;
+&lt;p&gt;Let me show you how to run the awk script. First of all, create a script file using your text
+editor, eg. &lt;code&gt;gedit&lt;/code&gt;, &lt;code&gt;vim&lt;/code&gt;, etc.  &lt;/p&gt;
+&lt;p&gt;I recommend creating a new directory to save the file so that it is
+cleaner. Put the following into the file and name it &lt;code&gt;script.awk&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;###First Line###&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;END&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;###Last Line###&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Also create another  file which will be the file that we want to edit/manipulate using awk. So,
+create a file named &lt;code&gt;list.txt&lt;/code&gt; with the following content:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Apples&lt;/span&gt;
+&lt;span class="n"&gt;Potato&lt;/span&gt;
+&lt;span class="n"&gt;Onion&lt;/span&gt;
+&lt;span class="n"&gt;Garlic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then open the terminal and &lt;code&gt;cd&lt;/code&gt; into the directory where you saved
+your files. Then, enter the following command to run the script. The syntax is &lt;code&gt;awk -f &amp;lt;script-file&amp;gt;
+&amp;lt;input file&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gp"&gt;$&lt;/span&gt; awk -f script.awk list.txt
+&lt;span class="gp"&gt;#&lt;/span&gt;&lt;span class="c1"&gt;##First Line###&lt;/span&gt;
+&lt;span class="go"&gt;Apples&lt;/span&gt;
+&lt;span class="go"&gt;Potato&lt;/span&gt;
+&lt;span class="go"&gt;Onion&lt;/span&gt;
+&lt;span class="go"&gt;Garlic&lt;/span&gt;
+&lt;span class="gp"&gt;#&lt;/span&gt;&lt;span class="c1"&gt;##Last Line###&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you get the output that looks like above, everything is working correctly. Now let's talk about
+what the program did.  &lt;/p&gt;
+&lt;p&gt;&lt;code&gt;BEGIN&lt;/code&gt; block has a line that says &lt;code&gt;print "###First Line###"&lt;/code&gt;. Since this block runs before dealing
+with any line in the file &lt;code&gt;list.txt&lt;/code&gt; itself, we see the line in the first line of the output.
+You also see that &lt;code&gt;print&lt;/code&gt; is the command to write something to the screen/file.  &lt;/p&gt;
+&lt;p&gt;Similarly, the &lt;code&gt;END&lt;/code&gt; block writes to the last line i.e. after every line in the given file is
+evaluated. The line in the main block is a little different. It just says &lt;code&gt;print&lt;/code&gt;. When the argument
+to print is missing, it just prints the line in the input file as it is as we see above.  &lt;/p&gt;
+&lt;p&gt;It's only interesting when you start to manipulate the lines given. But before we do, let's see how
+to save the output to a new file.&lt;/p&gt;
+&lt;h3&gt;Saving output to a file&lt;/h3&gt;
+&lt;p&gt;Unix/Linux has this concept of pipe/redirection, which basically is a way to link output of one
+program to the input of some other program or to a file, etc.  &lt;/p&gt;
+&lt;p&gt;Pipe symbols &lt;code&gt;|&lt;/code&gt; are used to pipe data
+between two programs and &lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;&amp;gt;&lt;/code&gt; for redirection to/from a file. As such:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gp"&gt;$&lt;/span&gt; awk -f script.awk list.txt &amp;gt; output.txt
+&lt;span class="gp"&gt;$&lt;/span&gt; ls
+&lt;span class="go"&gt;list.txt  output.txt  script.awk&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You see a new file &lt;code&gt;output.txt&lt;/code&gt; has been created. You can &lt;code&gt;cat output.txt&lt;/code&gt; to check that the output
+has indeed been written to that file.&lt;/p&gt;
+&lt;h3&gt;Selecting columns&lt;/h3&gt;
+&lt;p&gt;A column in awk is represented by &amp;dollar;n where n is &lt;span class="math"&gt;\(1\)&lt;/span&gt; for first column, and &lt;span class="math"&gt;\(8\)&lt;/span&gt; for eighth
+column. So, $3 would be the third column.   &lt;/p&gt;
+&lt;p&gt;For example purpose, copy the following into the &lt;code&gt;list.txt&lt;/code&gt; file we created earlier.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Apples&lt;/span&gt;  &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;
+&lt;span class="n"&gt;Potato&lt;/span&gt;  &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;
+&lt;span class="n"&gt;Onion&lt;/span&gt;   &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;
+&lt;span class="n"&gt;Garlic&lt;/span&gt;  &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And create a script &lt;code&gt;itemOnly.awk&lt;/code&gt; with the following code:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;END&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And save and run the script against the file &lt;code&gt;list.txt&lt;/code&gt; like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="gp"&gt;$&lt;/span&gt; awk -f itemOnly.awk list.txt
+&lt;span class="go"&gt;Apples&lt;/span&gt;
+&lt;span class="go"&gt;Potato&lt;/span&gt;
+&lt;span class="go"&gt;Onion&lt;/span&gt;
+&lt;span class="go"&gt;Garlic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note that we didn't write anything in &lt;code&gt;BEGIN&lt;/code&gt; and &lt;code&gt;END&lt;/code&gt; block. That's allowed. If you wanted to
+write a header for example that says "Items" at the top, you could do &lt;code&gt;print "Item"&lt;/code&gt; in your &lt;code&gt;BEGIN&lt;/code&gt;
+block.  &lt;/p&gt;
+&lt;p&gt;You can also very simply change the order of the columns:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Qty.&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Items&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;END&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Save and run just like above, you'll get something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;Qty&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;    &lt;span class="n"&gt;Items&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Apples&lt;/span&gt;
+&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Potato&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Onion&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;    &lt;span class="n"&gt;Garlic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So, you see the order has been reversed and the heading has been added.  &lt;/p&gt;
+&lt;p&gt;And, you can change the order
+of columns into anything you like just by specifying them in the main block as we did above.   &lt;/p&gt;
+&lt;p&gt;Also note that the &lt;code&gt;\t&lt;/code&gt; is a tab character which puts a tabspace in between two columns. You could
+also put space or comma &lt;code&gt;,&lt;/code&gt;(for csv files for example) or semicolon &lt;code&gt;;&lt;/code&gt; or any other column seperator you like.&lt;/p&gt;
+&lt;h3&gt;Variables&lt;/h3&gt;
+&lt;p&gt;Variables are easy to declare and use. If you are familiar with C, the syntax is similar. Let's add
+a new column &lt;code&gt;S.N&lt;/code&gt; for serial number into our list above. Since we want &lt;code&gt;awk&lt;/code&gt; to put the value
+&lt;span class="math"&gt;\(1,2,3\)&lt;/span&gt; and so on automatically, we need a variable that counts the line and writes the value of
+&lt;code&gt;S.N&lt;/code&gt; for each row.  &lt;/p&gt;
+&lt;p&gt;Let me show you what I mean:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;BEGIN&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;S.N.&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Qty.&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Items&amp;quot;&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="nb"&gt;END&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now if you save and run the program, you'll get the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;    &lt;span class="n"&gt;Qty&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;    &lt;span class="n"&gt;Items&lt;/span&gt;
+&lt;span class="mi"&gt;1&lt;/span&gt;       &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Apples&lt;/span&gt;
+&lt;span class="mi"&gt;2&lt;/span&gt;       &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Potato&lt;/span&gt;
+&lt;span class="mi"&gt;3&lt;/span&gt;       &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;     &lt;span class="n"&gt;Onion&lt;/span&gt;
+&lt;span class="mi"&gt;4&lt;/span&gt;       &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;Kg&lt;/span&gt;    &lt;span class="n"&gt;Garlic&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So, we made a variable called 'i' which has a value &lt;span class="math"&gt;\(1\)&lt;/span&gt; to start. Note that since we only make a variable
+once, we do this in &lt;code&gt;BEGIN&lt;/code&gt; block. Then, we print the value of &lt;code&gt;i&lt;/code&gt; in the main block, which is
+executed once for every line of input, so it writes Serial Number for each line in the file given.  &lt;/p&gt;
+&lt;p&gt;Also note that we increase the value of &lt;code&gt;i&lt;/code&gt; by 1 in the main block which means when evaluating each line
+of the input file &lt;code&gt;i&lt;/code&gt; increases by &lt;span class="math"&gt;\(1\)&lt;/span&gt; so that next line is given a new serial number.&lt;/p&gt;
+&lt;h3&gt;Conditionals&lt;/h3&gt;
+&lt;p&gt;Suppose I don't have much money and I only intend to buy first two items from our shopping list. We
+want to reduce the list to just two items. In other words we want only those columns which have &lt;code&gt;S.N&lt;/code&gt; &lt;span class="math"&gt;\(1\)&lt;/span&gt; and &lt;span class="math"&gt;\(2\)&lt;/span&gt;. Another way to say the same thing is serial number less than &lt;span class="math"&gt;\(3\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;This is where we need conditionals.
+So, we update the main block of our last script putting in the conditional as follows:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;){&lt;/span&gt;
+        &lt;span class="kr"&gt;print&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;\t&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;$&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We added an &lt;code&gt;if&lt;/code&gt; conditional in the main block. Therefore, the &lt;code&gt;print&lt;/code&gt; line only gets evaluated if
+the conditional is true namely if the value of &lt;code&gt;i&lt;/code&gt; is less than &lt;span class="math"&gt;\(3\)&lt;/span&gt;.  &lt;/p&gt;
+&lt;p&gt;Save and run the script with
+&lt;code&gt;list.txt&lt;/code&gt; as input and verity that it runs as expected.&lt;/p&gt;
+&lt;p&gt;All of the following relational operators can be used in a conditional:&lt;/p&gt;
+&lt;table border=2&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;th&gt;Operator&lt;/th&gt;&lt;th&gt;Meaning&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;==&lt;/td&gt;&lt;td&gt;Is equal&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;!=&lt;/td&gt;&lt;td&gt;Is not equal to&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;gt;&lt;/td&gt;&lt;td&gt;Is greater than&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;gt;=&lt;/td&gt;&lt;td&gt;Is greater than or equal to&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;lt;&lt;/td&gt;&lt;td&gt;Is less than&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;&amp;lt;=&lt;/td&gt;&lt;td&gt;Is less than or equal to&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h5&gt;Regular expression&lt;/h5&gt;
+&lt;p&gt;If you're familiar with regular expressions, you can use &lt;code&gt;~&lt;/code&gt; to mean matches a certain pattern
+and &lt;code&gt;!~&lt;/code&gt; to mean doesn't match. If you're unfamiliar with RegEx, comment
+below and I will write another short intro about them.  &lt;/p&gt;
+&lt;p&gt;Besides, you also have boolean operators 'and' &lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt; and 'or' &lt;code&gt;||&lt;/code&gt; if you want to combine two or more
+conditions.&lt;/p&gt;
+&lt;h3&gt;Loops&lt;/h3&gt;
+&lt;p&gt;To be continued...&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="Linux"></category><category term="linux"></category><category term="programming"></category></entry><entry><title>Handling terminal signals in bash scripts</title><link href="http://127.0.0.1:8000/handling-terminal-signals-in-bash-scripts.html" rel="alternate"></link><published>2019-03-30T08:46:00+05:45</published><updated>2019-03-30T08:46:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-03-30:/handling-terminal-signals-in-bash-scripts.html</id><summary type="html">&lt;p&gt;If you want to run a few commands after the user has pressed &lt;code&gt;Ctrl+C&lt;/code&gt; to clean up or other, this is the way...&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;code&gt;trap&lt;/code&gt; is the command that we are interested in. It listens for a interrupt signal and runs the command/function that has been specified.&lt;/p&gt;
+&lt;p&gt;Let's first define a function that we want to run before exiting:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;user_interrupt&lt;span class="o"&gt;(){&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Received Keyboard Interrupt from User&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Exiting...&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now you tell &lt;code&gt;trap&lt;/code&gt; to listen for interrupts and run this function in case of such events:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;trap&lt;/span&gt; user_interrupt SIGINT
+&lt;span class="nb"&gt;trap&lt;/span&gt; user_interrupt SIGSTOP
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;With something like this at the beginning of your script, &lt;code&gt;user_interrupt&lt;/code&gt; function is run if &lt;code&gt;SIGINT&lt;/code&gt; or &lt;code&gt;SIGSTOP&lt;/code&gt; signal is received.  &lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;</content><category term="Linux"></category><category term="linux"></category><category term="bash"></category><category term="command-line"></category></entry><entry><title>Xargs - piping the STDOUT to the argument of a command</title><link href="http://127.0.0.1:8000/short-introduction-to-xargs.html" rel="alternate"></link><published>2019-03-30T07:41:00+05:45</published><updated>2019-03-30T07:41:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-03-30:/short-introduction-to-xargs.html</id><summary type="html">&lt;p&gt;Xargs allows you to take the output of a program and pass it as an argument of some other program easily. Read on to learn more...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Coming across these little unix tools that do small but particular things and do them well and as expected is a joy. This adds for me a sense of reverence to all the unix developers of early days. And this feels like a welcome gift.&lt;/p&gt;
+&lt;p&gt;I'm going to talk about a practical use case of xargs while introducing it.&lt;/p&gt;
+&lt;p&gt;Your screenshot folder probably has a lot of images. Say you want to find the last screenshot you took. You could do that with &lt;code&gt;ls&lt;/code&gt; sorting by time. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ls -t
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This lists the files in reverse chronological order. But, I like to see the most recent one at the buttom as the first line always gets scrolled up from the screen. You put an extra &lt;code&gt;-r&lt;/code&gt; flag for reversing the order.&lt;/p&gt;
+&lt;p&gt;Since you only want the most recent one, you can select that by using &lt;code&gt;tail&lt;/code&gt; command. As such:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ls -tr &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="m"&gt;1&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;-n 1&lt;/code&gt; specifies that I only want one line from the buttom. Now this prints the last file that was created which is what we want. Awesome! &lt;/p&gt;
+&lt;p&gt;Now, say you want to move this file to some other location. This is where &lt;code&gt;xargs&lt;/code&gt; comes in. &lt;/p&gt;
+&lt;p&gt;You have the name of the file you want as standard output of a program. And you want to use it as an argument to second command namely &lt;code&gt;mv&lt;/code&gt;.  &lt;/p&gt;
+&lt;p&gt;Say the name of the file was &lt;code&gt;screenshot.png&lt;/code&gt;, this is how &lt;code&gt;xarg&lt;/code&gt; works:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ls -tr &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="p"&gt;|&lt;/span&gt; xargs &lt;span class="nb"&gt;echo&lt;/span&gt; fileName: 
+fileName: screenshot.png
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;So, as you see, xargs took the standard input and put it as the argument to &lt;code&gt;echo&lt;/code&gt; command.
+Now, by default, xargs adds as the last argument. But, like when you want to move, you want the file name to be the first argument.&lt;/p&gt;
+&lt;p&gt;You can do that like so: &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ ls -tr &lt;span class="p"&gt;|&lt;/span&gt; tail -n &lt;span class="p"&gt;|&lt;/span&gt; xargs -I &lt;span class="s1"&gt;&amp;#39;file&amp;#39;&lt;/span&gt; mv &lt;span class="s1"&gt;&amp;#39;file&amp;#39;&lt;/span&gt; /path/to/dest/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And that quietly moves your file &lt;code&gt;screenshot.png&lt;/code&gt; to the &lt;code&gt;dest&lt;/code&gt; directory.&lt;/p&gt;
+&lt;p&gt;The End.&lt;/p&gt;</content><category term="Linux"></category><category term="xargs"></category><category term="linux"></category><category term="command-line"></category></entry></feed>

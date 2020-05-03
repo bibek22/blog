@@ -1,0 +1,1455 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- for custom stylesheets and js -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <link rel="stylesheet/less" type="text/css" href="http://192.168.1.65:8000/theme/stylesheet/style.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.65:8000/theme/pygments/friendly.min.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.65:8000/theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.65:8000/theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="http://192.168.1.65:8000/theme/font-awesome/css/solid.css">
+
+    <link href="http://192.168.1.65:8000/static/custom.css" rel="stylesheet">
+
+    <link href="http://192.168.1.65:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Bibek Gautam - Blog Atom">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#333333">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#333333">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Microsoft EDGE -->
+    <meta name="msapplication-TileColor" content="#333333">
+
+<meta name="author" content="Bibek Gautam" />
+<meta name="description" content="[to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about python before and wondered what the fuss was about? Continue reading if you want to learn one of the most popular programming language right now from the very basics." />
+<meta name="keywords" content="tutorial, python, programming">
+
+<meta property="og:site_name" content="Bibek Gautam - Blog"/>
+<meta property="og:title" content="Python for beginners !"/>
+<meta property="og:description" content="[to be edited] Are you a beginner programmer or know nothing about programming but want to learn ? Have you heard about python before and wondered what the fuss was about? Continue reading if you want to learn one of the most popular programming language right now from the very basics."/>
+<meta property="og:locale" content="en_US.utf8"/>
+<meta property="og:url" content="http://192.168.1.65:8000/learn-python-for-beginners.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-03-28 00:00:00+05:45"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://192.168.1.65:8000/author/bibek-gautam.html">
+<meta property="article:section" content="Programming"/>
+<meta property="article:tag" content="tutorial"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="programming"/>
+<meta property="og:image" content="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120">
+
+  <title>Bibek Gautam - Blog &ndash; Python for beginners !</title>
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-1726541799255911",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+<body>
+<!-- for inbody javascript -->
+<!--  -->
+  <aside>
+    <div>
+      <a href="http://192.168.1.65:8000">
+        <img src="https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120" alt="Bibek Gautam" title="Bibek Gautam">
+      </a>
+      <h1><a href="http://192.168.1.65:8000">Bibek Gautam</a></h1>
+
+<p>Aspiring Physicist and Programmer</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://192.168.1.65:8000/pages/about.html#about">About</a></li>
+          <li><a href="http://192.168.1.65:8000/pages/contact.html#contact">Contact</a></li>
+
+          <li><a href="portfolio.html" target="_blank">Portfolio</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+          <li>
+            <a  class="sc-github" href="https://github.com/bibek22" target="_blank">
+            <i class="fab fa-github">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-twitter" href="https://twitter.com/truelostdreamer" target="_blank">
+            <i class="fab fa-twitter">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-envelope" href="mailto:forgot.bg@gmail.com" target="_blank">
+            <i class="fas fa-envelope">
+            </i>
+          </a></li>
+          <li>
+            <a  class="sc-instagram" href="https://instagram.com/masterprocastinator" target="_blank">
+            <i class="fab fa-instagram">
+            </i>
+          </a></li>
+      </ul>
+    </div>
+
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle ads-aside"
+           data-ad-client="ca-pub-1726541799255911"
+           data-ad-slot="2376242243"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href="http://192.168.1.65:8000">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="http://192.168.1.65:8000/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="learn-python-for-beginners">Python <wbr>for beginners !</h1>
+    <p>
+      Posted on March 28, 2019 in <a href="http://192.168.1.65:8000/category/programming.html">Programming</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><em>Note: This is a direct export of jupyter notebook I made for a one day workshop on python I did. This needs editing. I might come back to it at some point in the future.</em></p>
+<h1>Introduction to Programming in Python</h1>
+<p>Let's skip the part where I talk about what programming is and why it is important. Python is a right programming language to pick as a beginner for a lot of reasons which you will understand for yourselves a bit later.</p>
+<h3>Python</h3>
+<p>Programming languages are of two kinds: interpreted and compiled.  </p>
+<ul>
+<li>
+<p><strong>Compiled languages:</strong><br>
+For compilled languages, you write the program, also known as <em>source code</em>, run the compiler against it, and finally run the executable program produced by the compiler. Compiler, here, means a piece of software that you install when you 'install' a programming language like <em>C</em> or <em>Fortran</em>, etc. to your computer.  </p>
+</li>
+<li>
+<p><strong>Interpreted languages:</strong> <br>
+Using interpreted languages is more straightforward. You install a software called <em>interpreter</em>, for eg. <em>python</em> interpreter, when you install the program. You type the code directly on to this interpreter and it executes your code one line at a time.  </p>
+</li>
+</ul>
+<p>Python is an interpreted language. I am going to assume you have access to a <em>python interpreter</em> which is also called <em>python console</em>. And make sure the version of python you are using is python 3. You can check by running <code>python -V</code> at your terminal.</p>
+<h3>Numbers</h3>
+<p>Programming, especially in science, is used for manipulation of data in some ways. Therefore, it is necessary that the language that we use have some ways of representing different types of  data that we might want to work with eg. integers, real numbers, complex numbers etc.  </p>
+<p>Python understands numbers automatically.</p>
+<ul>
+<li><strong>Integers</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1
+</pre></div>
+
+
+<p>When I type <code>1</code> into the interpreter, it returns 1. Note that <code>&gt;&gt;&gt;</code> is the python prompt. This is where you Enter your line of code. I might avoid showing the prompt a bit later. But you know it's there.</p>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span>     <span class="c1"># simple integer</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>10
+</pre></div>
+
+
+<p>Note that: Everything after <code>#</code>  is considered as <em>comment</em> in python.  </p>
+<p><em>Comments</em> are little notes you write in your source code to explain what it does to someone else or yourself for when you come back to it days later.</p>
+<ul>
+<li><strong>Real numbers</strong> 
+Real numbers are called floating points, or just <code>floats</code> in programming term.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mf">1.23e-3</span>  <span class="c1"># floating points in scientific notation</span>
+<span class="mf">0.00123</span>
+</pre></div>
+
+
+<ul>
+<li><strong>Complex Numbers</strong>
+Python also has a way to represent complex numbers by default.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+
+
+<h4>Basic Arithmetic with numbers</h4>
+<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">25</span><span class="o">/</span><span class="mi">5</span>
+<span class="mf">9.0</span>
+</pre></div>
+
+
+<p>As you can see, python is a built-in calculator. It does all the number arithmetic out of the box. Try it for yourself. All the basic operations are supported:
+<table border=2>
+<tbody><tr>
+<th style="text-align:center;width:10%">Operator</th>
+<th style="text-align:center;width:45%">Description</th>
+<th style="text-align:center;">Example</th>
+</tr>
+<tr>
+<td >+ </td>
+<td>Aditions</td>
+<td >5 + 15 = 30</td>
+</tr>
+<tr>
+<td >- </td>
+<td>Subtraction </td>
+<td >5 – 15 = -10</td>
+</tr>
+<tr>
+<td >* </td>
+<td>Multiplication</td>
+<td >5 * 15 = 75</td>
+</tr>
+<tr>
+<td >/ </td>
+<td>Division</td>
+<td >15 / 5 = 3</td>
+</tr>
+<tr>
+<td >% </td>
+<td>Modulus Operator</td>
+<td >9 % 5 = 4</td>
+</tr>
+<tr>
+<td >** </td>
+<td>Exponential (power) operator</td>
+<td >10**20 = <span class="math">\(10^{20}\)</span></td>
+</tr>
+<tr>
+<td >//</td>
+<td>Integer Division</td>
+<td >7//2 = 3</td>
+</tr>
+</tbody></table></p>
+<h3>Variables</h3>
+<p>Variables is something that can refer to the data that you store in memory. 
+1. implicitly declared.
+2. dynamically typed.</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># variable declaration and assignment</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">2e-1</span>  
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>5.2
+</pre></div>
+
+
+<p>As you can see, you can do arithmetic with variables just fine. In above, <code>a</code> is a <code>integer</code> variable, and <code>b</code> is a <code>float</code>. The sum of these two, <code>c</code> is a <code>float</code> as you'd expect. 
+Let me show you a way to check the type of a variable: </p>
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>int
+</pre></div>
+
+
+<p>It confirms that <code>a</code> is indeed an <code>int</code>. Now, try for <code>b</code> and <code>c</code> yourself.</p>
+<h4>Functions</h4>
+<p>What we just used above to check the type of a variable is a <code>function</code>. 
+Functions in computer programs are like those in mathematics.
+A function takes some inputs, do something to them and (usually) 
+return some output.<br>
+<code>type()</code> function as we saw took one input, i.e. name of the variable and returned it's type. You'll see
+functions that take many more inputs and return multiple or complex kind of data as you learn more.</p>
+<p>The line of code we saw above is called a <strong>function call</strong><br>
+but you can also think of it as running a machine that performs
+a specific task.
+Inputs to a functions are called <code>arguments</code>. This is the way to call any function:  </p>
+<p><code>functionName(argument1, argument2, ..)</code>  </p>
+<p>And the result is called <code>return value</code> which again if you want to save into a variable, you can do so:</p>
+<p><code>returnVal = functionName(argument1, argument2, ..)</code>  </p>
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;hi everyone!&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>str
+</pre></div>
+
+
+<h5>What's str ??</h5>
+<p>What we generally call "text" in normal talk is called <code>string</code> 
+in programming. </p>
+<div class="highlight"><pre><span></span><span class="n">college</span> <span class="o">=</span> <span class="s2">&quot;St. Xavier&#39;s College&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span> <span class="mi">1</span><span class="n">stName</span> <span class="o">=</span> <span class="s2">&quot;bibek&quot;</span>   <span class="c1"># no digits allowed as the first character</span>
+<span class="c1"># name_1st is okay!</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-10-092931d47764&gt;&quot;, line 1
+    1stName = &quot;bibek&quot;   # no digits allowed as the first character
+          ^
+SyntaxError: invalid syntax
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="err">= &quot;</span><span class="nc">BSC</span><span class="o">-</span><span class="n">III</span><span class="s2">&quot;   # keywords are reserved</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-11-86ebb738ef0a&gt;&quot;, line 1
+    class = &quot;BSC-III&quot;   # keywords are reserved
+          ^
+SyntaxError: invalid syntax
+</pre></div>
+
+
+<p>few more <strong>keywords</strong> are :<br>
+<strong>def, True, False, if, else, while, for, not, in</strong>,  etc..</p>
+<h4>Strings in python are first class citizens !</h4>
+<div class="highlight"><pre><span></span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;Nepal&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="s2">&quot;I love &quot;</span> <span class="o">+</span> <span class="n">country</span> <span class="o">+</span> <span class="s2">&quot;.&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;I love Nepal.&#39;
+</pre></div>
+
+
+<p>^^    This is called concatenation ! Adding strings together.</p>
+<p>You were talking about functions !!</p>
+<p>Okay, here's one more!</p>
+<div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter some text: &quot;</span><span class="p">)</span>
+<span class="c1"># a function to take inputs from keyboard</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>Enter some text:
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;i&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;i&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>  File &quot;&lt;ipython-input-17-c293c3f42586&gt;&quot;, line 1
+    text.count(&quot;i&quot;
+                  ^
+SyntaxError: unexpected EOF while parsing
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[&#39;&#39;]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>False
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">text</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+
+
+<h4>Whoa ! What just happened??</h4>
+<h3>Splicing</h3>
+<p><code>string[start:end:step]</code></p>
+<div class="highlight"><pre><span></span><span class="n">statement</span> <span class="o">=</span> <span class="s2">&quot;PythonIsAwesome!&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;PythonIsAwesome!PythonIsAwesome!&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="o">*</span><span class="mf">5.0</span>  <span class="c1"># not allowed</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-23-98c3f2dda63f&gt; in &lt;module&gt;
+----&gt; 1 statement*5.0  # not allowed
+
+
+TypeError: can&#39;t multiply sequence by non-int of type &#39;float&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="o">*</span><span class="n">statement</span>   <span class="c1"># not allowed</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-24-51b047b3f69f&gt; in &lt;module&gt;
+----&gt; 1 statement*statement   # not allowed
+
+
+TypeError: can&#39;t multiply sequence by non-int of type &#39;str&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;yosem&#39;
+</pre></div>
+
+
+<p>So, index starts at 0.</p>
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="p">[:</span><span class="mi">16</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># omiting value means 0 for start and -1 for end</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;PhIwo!&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="p">[:]</span> <span class="c1"># step can be omitted and it defaults to 1.</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;PythonIsAwesome!&#39;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">statement</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># that should explain it.</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&#39;!emosewAsInohtyP&#39;
+</pre></div>
+
+
+<h4>Exercises about string and inputs</h4>
+<h3>Importing Modules</h3>
+<p>Tell me more about functions:</p>
+<h4>To get more functions !</h4>
+<p>you can import them. <br>
+We import functions from what are called modules (C would call it library and header file.)<br>
+<code>import math
+import numpy</code></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>3.141592653589793
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">e</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2.718281828459045
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1.4142135623730951
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> 
+<span class="c1"># not exactly zero because pi is  </span>
+<span class="c1"># irrational and we&#39;ve used finite decimals</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1.2246467991473532e-16
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>0.0
+</pre></div>
+
+
+<h3>function definition and Flow of execution</h3>
+<p>Let's create a function which takes two <br>
+inputs - <strong>base and height</strong> of a right angled<br>
+triangle and outputs the <strong>hypotenuse</strong>.  </p>
+<p>Let's call the function <code>getHyp</code></p>
+<div class="highlight"><pre><span></span><span class="c1"># import math   &lt;- this already done above.</span>
+<span class="k">def</span> <span class="nf">getHyp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">getHyp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>5.0
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">getHyp</span><span class="p">(</span><span class="n">getHyp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="mi">12</span><span class="p">)</span>  <span class="c1"># Flow of execution</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>13.0
+</pre></div>
+
+
+<p>Let's create a function which takes one <br>
+input - <strong>some text</strong> (aka a string) and<br>
+outputs the <strong>number of occurance of letter e</strong>.  </p>
+<p>Let's call the function <code>countE</code></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">countE</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">total</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span>  <span class="o">=</span> <span class="s2">&quot;My name is Bibek and I&#39;m not a terorist.&quot;</span>
+<span class="n">countE</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+
+<p>Ex. Count e by taking input from keyboard</p>
+<p>Ex. Count some letter by taking string and<br>
+the letter <strong>both</strong> from keyboard.</p>
+<h3>Namescope</h3>
+<h4>Lets talk about one more data type:</h4>
+<p>Boolean type:<br>
+As the name suggests, it stores binary values: </p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>False
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>True
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="kc">False</span> <span class="o">==</span> <span class="kc">False</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>True
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="kc">False</span> <span class="o">!=</span> <span class="kc">True</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>True
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">32</span>
+<span class="mi">4</span> <span class="o">&lt;=</span> <span class="mi">5</span>
+<span class="s2">&quot;me&quot;</span> <span class="o">!=</span> <span class="s2">&quot;you&quot;</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>True
+</pre></div>
+
+
+<p>Yo sab ta thik xa I want more functions! Functions are cool!</p>
+<h2>Some more functions!</h2>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">absolute</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>    <span class="c1"># could put the conditional in parenthesis!</span>
+        <span class="k">return</span><span class="p">(</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Write a function that takes age of the user from<br>
+the <strong>keyboard</strong> and tells(<em>prints</em>) if the user is legally allowed<br>
+to have license. (allowed if age is <strong>at least 18</strong>)</p>
+<p>Some more functions!!</p>
+<p>Write a program that takes a number <strong>n</strong><br>
+as argument and computes n! (n factorial)<br>
+name the function <code>factorial</code></p>
+<h4>Above is called a recursive function.</h4>
+<p>a function that calls itself. </p>
+<p>Explain the recursion!</p>
+<p>Bonus Question:<br>
+   - Write a function <code>fibonacci(n)</code> that takes a<br>
+    integer <strong>n</strong> and returns <span class="math">\(n^{th}\)</span> number of fibonacci<br>
+    series: <span class="math">\(1, 1, 2, 3, 5, 8, 13,\)</span> etc... </p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>    <span class="c1"># random info </span>
+<span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="n">random</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># mu and sigma</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>-0.2294857773288854
+</pre></div>
+
+
+<p>Show the Thinking like a programmer slide<br>
+from slide (page 14) before repetition</p>
+<h3>Before we move on to repetition aspect; let's make a game !</h3>
+<p>It'll be a simple game. We can't make fortnite and PUBG yet.
+<strong>Game of Dice:</strong></p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="k">def</span> <span class="nf">rollDice</span><span class="p">():</span>
+    <span class="n">faceUp</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">faceUp</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">rollDice</span><span class="p">()</span>    <span class="c1"># now, if only we could run this on repeat !</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2
+</pre></div>
+
+
+<h3>Let me show you yet another function!</h3>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sumN</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">totalSum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">totalSum</span> <span class="o">=</span> <span class="n">totalSum</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">totalSum</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">sumN</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>5050
+</pre></div>
+
+
+<p>Let's dissect the program !</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>  <span class="c1"># explain for loop here !</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>  <span class="c1"># list comprehension !</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>  <span class="c1"># list comprehension !</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>  
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[0, 2, 4, 6, 8]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)]</span>  
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[0, 4, 16, 36, 64]
+</pre></div>
+
+
+<p><code>range(start, stop, step)</code> # doesn't include stop</p>
+<p>So, range(n) gives a list of numbers from 0 to n-1. </p>
+<p><strong>Ex.</strong> print the squares of first 10 natural numbers:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+</pre></div>
+
+
+<p><strong>Ex.</strong> print the first 5 odd integers:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+
+
+<h3>range() returns what are known as iterables.</h3>
+<p>We can put any interable in place of range() in for loop. 
+One example is good old string.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s2">&quot;hello World!&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>h
+e
+l
+l
+o
+
+W
+o
+r
+l
+d
+!
+</pre></div>
+
+
+<h4>Implement countE() function written above but without string.count() method.</h4>
+<p>using loops and conditionals</p>
+<div class="highlight"><pre><span></span><span class="n">six</span> <span class="o">=</span> <span class="s2">&quot;6&quot;</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">667</span><span class="p">):</span>
+    <span class="n">newValue</span> <span class="o">=</span> <span class="n">six</span><span class="o">*</span><span class="n">i</span>
+    <span class="n">newValue</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">newValue</span><span class="p">)</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">+</span> <span class="n">newValue</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740740296
+</pre></div>
+
+
+<h4>Write a program that lists all the numbers divisible by 7 but not a multiple of 5 between 1,000 and 3,000 (both included).</h4>
+<p>Let's do this with while loop </p>
+<div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1000</span>             <span class="c1"># think of i as saying &#39;index&#39; or just a</span>
+                    <span class="c1"># running variable that we are used to in Summation notation.</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">2000</span><span class="p">):</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">i</span><span class="o">%</span><span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="mi">1001</span> <span class="p">,</span> 
+<span class="mi">1008</span> <span class="p">,</span> 
+<span class="mi">1022</span> <span class="p">,</span> 
+<span class="mi">1029</span> <span class="p">,</span> 
+<span class="mi">1036</span> <span class="p">,</span> 
+<span class="mi">1043</span> <span class="p">,</span> 
+<span class="mi">1057</span> <span class="p">,</span> 
+<span class="mi">1064</span> <span class="p">,</span> 
+<span class="mi">1071</span> <span class="p">,</span> 
+<span class="mi">1078</span> <span class="p">,</span> 
+<span class="mi">1092</span> <span class="p">,</span> 
+<span class="mi">1099</span> <span class="p">,</span> 
+<span class="mi">1106</span> <span class="p">,</span> 
+<span class="mi">1113</span> <span class="p">,</span> 
+<span class="mi">1127</span> <span class="p">,</span> 
+<span class="mi">1134</span> <span class="p">,</span> 
+<span class="mi">1141</span> <span class="p">,</span> 
+<span class="mi">1148</span> <span class="p">,</span> 
+<span class="mi">1162</span> <span class="p">,</span> 
+<span class="mi">1169</span> <span class="p">,</span> 
+<span class="mi">1176</span> <span class="p">,</span> 
+<span class="mi">1183</span> <span class="p">,</span> 
+<span class="mi">1197</span> <span class="p">,</span> 
+<span class="mi">1204</span> <span class="p">,</span> 
+<span class="mi">1211</span> <span class="p">,</span> 
+<span class="mi">1218</span> <span class="p">,</span> 
+<span class="mi">1232</span> <span class="p">,</span> 
+<span class="mi">1239</span> <span class="p">,</span> 
+<span class="mi">1246</span> <span class="p">,</span> 
+<span class="mi">1253</span> <span class="p">,</span> 
+<span class="mi">1267</span> <span class="p">,</span> 
+<span class="mi">1274</span> <span class="p">,</span> 
+<span class="mi">1281</span> <span class="p">,</span> 
+<span class="mi">1288</span> <span class="p">,</span> 
+<span class="mi">1302</span> <span class="p">,</span> 
+<span class="mi">1309</span> <span class="p">,</span> 
+<span class="mi">1316</span> <span class="p">,</span> 
+<span class="mi">1323</span> <span class="p">,</span> 
+<span class="mi">1337</span> <span class="p">,</span> 
+<span class="mi">1344</span> <span class="p">,</span> 
+<span class="mi">1351</span> <span class="p">,</span> 
+<span class="mi">1358</span> <span class="p">,</span> 
+<span class="mi">1372</span> <span class="p">,</span> 
+<span class="mi">1379</span> <span class="p">,</span> 
+<span class="mi">1386</span> <span class="p">,</span> 
+<span class="mi">1393</span> <span class="p">,</span> 
+<span class="mi">1407</span> <span class="p">,</span> 
+<span class="mi">1414</span> <span class="p">,</span> 
+<span class="mi">1421</span> <span class="p">,</span> 
+<span class="mi">1428</span> <span class="p">,</span> 
+<span class="mi">1442</span> <span class="p">,</span> 
+<span class="mi">1449</span> <span class="p">,</span> 
+<span class="mi">1456</span> <span class="p">,</span> 
+<span class="mi">1463</span> <span class="p">,</span> 
+<span class="mi">1477</span> <span class="p">,</span> 
+<span class="mi">1484</span> <span class="p">,</span> 
+<span class="mi">1491</span> <span class="p">,</span> 
+<span class="mi">1498</span> <span class="p">,</span> 
+<span class="mi">1512</span> <span class="p">,</span> 
+<span class="mi">1519</span> <span class="p">,</span> 
+<span class="mi">1526</span> <span class="p">,</span> 
+<span class="mi">1533</span> <span class="p">,</span> 
+<span class="mi">1547</span> <span class="p">,</span> 
+<span class="mi">1554</span> <span class="p">,</span> 
+<span class="mi">1561</span> <span class="p">,</span> 
+<span class="mi">1568</span> <span class="p">,</span> 
+<span class="mi">1582</span> <span class="p">,</span> 
+<span class="mi">1589</span> <span class="p">,</span> 
+<span class="mi">1596</span> <span class="p">,</span> 
+<span class="mi">1603</span> <span class="p">,</span> 
+<span class="mi">1617</span> <span class="p">,</span> 
+<span class="mi">1624</span> <span class="p">,</span> 
+<span class="mi">1631</span> <span class="p">,</span> 
+<span class="mi">1638</span> <span class="p">,</span> 
+<span class="mi">1652</span> <span class="p">,</span> 
+<span class="mi">1659</span> <span class="p">,</span> 
+<span class="mi">1666</span> <span class="p">,</span> 
+<span class="mi">1673</span> <span class="p">,</span> 
+<span class="mi">1687</span> <span class="p">,</span> 
+<span class="mi">1694</span> <span class="p">,</span> 
+<span class="mi">1701</span> <span class="p">,</span> 
+<span class="mi">1708</span> <span class="p">,</span> 
+<span class="mi">1722</span> <span class="p">,</span> 
+<span class="mi">1729</span> <span class="p">,</span> 
+<span class="mi">1736</span> <span class="p">,</span> 
+<span class="mi">1743</span> <span class="p">,</span> 
+<span class="mi">1757</span> <span class="p">,</span> 
+<span class="mi">1764</span> <span class="p">,</span> 
+<span class="mi">1771</span> <span class="p">,</span> 
+<span class="mi">1778</span> <span class="p">,</span> 
+<span class="mi">1792</span> <span class="p">,</span> 
+<span class="mi">1799</span> <span class="p">,</span> 
+<span class="mi">1806</span> <span class="p">,</span> 
+<span class="mi">1813</span> <span class="p">,</span> 
+<span class="mi">1827</span> <span class="p">,</span> 
+<span class="mi">1834</span> <span class="p">,</span> 
+<span class="mi">1841</span> <span class="p">,</span> 
+<span class="mi">1848</span> <span class="p">,</span> 
+<span class="mi">1862</span> <span class="p">,</span> 
+<span class="mi">1869</span> <span class="p">,</span> 
+<span class="mi">1876</span> <span class="p">,</span> 
+<span class="mi">1883</span> <span class="p">,</span> 
+<span class="mi">1897</span> <span class="p">,</span> 
+<span class="mi">1904</span> <span class="p">,</span> 
+<span class="mi">1911</span> <span class="p">,</span> 
+<span class="mi">1918</span> <span class="p">,</span> 
+<span class="mi">1932</span> <span class="p">,</span> 
+<span class="mi">1939</span> <span class="p">,</span> 
+<span class="mi">1946</span> <span class="p">,</span> 
+<span class="mi">1953</span> <span class="p">,</span> 
+<span class="mi">1967</span> <span class="p">,</span> 
+<span class="mi">1974</span> <span class="p">,</span> 
+<span class="mi">1981</span> <span class="p">,</span> 
+<span class="mi">1988</span> <span class="p">,</span> 
+</pre></div>
+
+
+<p>This just prints the numbers and exits.<br>
+Wouldn't it be nice if there was a way<br>
+to put them in a list ?<br>
+That's what we are going to learn next:  List !</p>
+<h3>Data Type: Lists</h3>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>list
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>3
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>   <span class="c1"># list is also what is known as iterable</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>1
+2
+3
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>   <span class="c1"># how would you sort descending ? </span>
+<span class="c1"># also this sorts in place </span>
+<span class="c1"># can&#39;t recover original ordering</span>
+<span class="c1"># optional parameter reverse=False</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>   
+<span class="c1"># this takes input and gives output</span>
+<span class="c1"># which means it doesn&#39;t tamper with original list  !</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[1, 2, 3, 4]
+</pre></div>
+
+
+<p>Splicing a list works similar to splicing a string</p>
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[2, 3]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[2, 3, 4]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[1, 2]
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>[1, 3]
+</pre></div>
+
+
+<h4>Clear the list a and go back and put the above numbers in a !!</h4>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">The</span> <span class="n">Zen</span> <span class="k">of</span> <span class="n">Python</span><span class="p">,</span> <span class="n">by</span> <span class="n">Tim</span> <span class="n">Peters</span>
+
+<span class="n">Beautiful</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">ugly</span><span class="p">.</span>
+<span class="n">Explicit</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">implicit</span><span class="p">.</span>
+<span class="n">Simple</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">complex</span><span class="p">.</span>
+<span class="n">Complex</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">complicated</span><span class="p">.</span>
+<span class="n">Flat</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">nested</span><span class="p">.</span>
+<span class="n">Sparse</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">dense</span><span class="p">.</span>
+<span class="n">Readability</span> <span class="n">counts</span><span class="p">.</span>
+<span class="n">Special</span> <span class="n">cases</span> <span class="n">aren</span><span class="c">&#39;t special enough to break the rules.</span>
+<span class="n">Although</span> <span class="n">practicality</span> <span class="n">beats</span> <span class="n">purity</span><span class="p">.</span>
+<span class="n">Errors</span> <span class="n">should</span> <span class="n">never</span> <span class="n">pass</span> <span class="n">silently</span><span class="p">.</span>
+<span class="n">Unless</span> <span class="n">explicitly</span> <span class="n">silenced</span><span class="p">.</span>
+<span class="ow">In</span> <span class="n">the</span> <span class="n">face</span> <span class="k">of</span> <span class="n">ambiguity</span><span class="p">,</span> <span class="n">refuse</span> <span class="n">the</span> <span class="n">temptation</span> <span class="k">to</span> <span class="n">guess</span><span class="p">.</span>
+<span class="n">There</span> <span class="n">should</span> <span class="n">be</span> <span class="n">one</span><span class="o">--</span> <span class="ow">and</span> <span class="n">preferably</span> <span class="n">only</span> <span class="n">one</span> <span class="o">--</span><span class="n">obvious</span> <span class="n">way</span> <span class="k">to</span> <span class="k">do</span> <span class="n">it</span><span class="p">.</span>
+<span class="n">Although</span> <span class="n">that</span> <span class="n">way</span> <span class="n">may</span> <span class="k">not</span> <span class="n">be</span> <span class="n">obvious</span> <span class="n">at</span> <span class="n">first</span> <span class="n">unless</span> <span class="n">you</span><span class="c">&#39;re Dutch.</span>
+<span class="n">Now</span> <span class="ow">is</span> <span class="n">better</span> <span class="n">than</span> <span class="n">never</span><span class="p">.</span>
+<span class="n">Although</span> <span class="n">never</span> <span class="ow">is</span> <span class="n">often</span> <span class="n">better</span> <span class="n">than</span> <span class="o">*</span><span class="n">right</span><span class="o">*</span> <span class="n">now</span><span class="p">.</span>
+<span class="k">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="ow">is</span> <span class="n">hard</span> <span class="k">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span><span class="c">&#39;s a bad idea.</span>
+<span class="k">If</span> <span class="n">the</span> <span class="n">implementation</span> <span class="ow">is</span> <span class="n">easy</span> <span class="k">to</span> <span class="n">explain</span><span class="p">,</span> <span class="n">it</span> <span class="n">may</span> <span class="n">be</span> <span class="n">a</span> <span class="n">good</span> <span class="n">idea</span><span class="p">.</span>
+<span class="n">Namespaces</span> <span class="n">are</span> <span class="n">one</span> <span class="n">honking</span> <span class="n">great</span> <span class="n">idea</span> <span class="o">--</span> <span class="k">let</span><span class="c">&#39;s do more of those!</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">rc</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>   <span class="c1"># start, end, how many points to sample</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;^&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rc</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="n">usetex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Sine Wave&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\theta$ (rad)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Sine($\theta$)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="s2">&quot;sine&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;cyan&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&lt;Figure size 640x640 with 0 Axes&gt;
+</pre></div>
+
+
+<p><img alt="png" src="output_128_1.png"></p>
+<div class="highlight"><pre><span></span>&lt;Figure size 640x640 with 0 Axes&gt;
+</pre></div>
+
+
+<h3>Working with Files</h3>
+<div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;new.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;2,8</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;12,8</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;2,18</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;20,89&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;1,32</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;new.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>   <span class="c1"># file HANDLER</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>   <span class="c1"># Try without print</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>         <span class="c1"># This is required for safety.</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2,8
+12,8
+2,18
+20,891,32
+</pre></div>
+
+
+<p>There is also an append mode which just<br>
+adds to the file without replacing</p>
+<h4>Prime numbers [Optional]</h4>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="o">==</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">prime</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>False
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">prime</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>True
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">infiniteNumbers</span><span class="p">():</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">infiniteNumbers</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>&lt;generator object infiniteNumbers at 0x7f4a378f3570&gt;
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">infiniteNumbers</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">next</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>0
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">prime</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span><span class="mi">10000</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2
+3
+5
+.
+.
+.
+9967
+9973
+</pre></div>
+
+
+<h5>Put this ^^ on a file</h5>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span> 
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">today</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">today</span><span class="p">)</span>
+<span class="mi">2019</span><span class="o">-</span><span class="mi">03</span><span class="o">-</span><span class="mi">28</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">today</span><span class="o">.</span><span class="n">year</span>
+<span class="mi">2019</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">tomorow</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span> <span class="c1"># read date</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">tomorow</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">tomorow</span><span class="p">)</span>
+<span class="mi">2020</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">22</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">]</span>
+</pre></div>
+
+
+<h3>2D array [optional]</h3>
+<div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">matrix</span>
+<span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="n">matrix</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="mi">3</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2
+3
+3
+4
+</pre></div>
+
+
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">)):</span>  
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">row</span><span class="p">])):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">])</span>
+
+<span class="c1"># This is where the range not including the &lt;stop&gt; and beginning</span>
+<span class="c1"># from value 0 by default makes sense.</span>
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>2
+3
+3
+4
+</pre></div>
+
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://192.168.1.65:8000/tag/tutorial.html">tutorial</a>
+      <a href="http://192.168.1.65:8000/tag/python.html">python</a>
+      <a href="http://192.168.1.65:8000/tag/programming.html">programming</a>
+    </p>
+  </div>
+
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <ins class="adsbygoogle ads-responsive"
+         data-ad-client="ca-pub-1726541799255911"
+         data-ad-slot="2609134398"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</article>
+
+    <footer>
+<p>
+  &copy; Bibek Gautam 2019 - <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0</a>
+</p>
+<p>
+  <a rel="license"
+     href="http://creativecommons.org/licenses/by-sa/4.0/"
+     target="_blank">
+    <img alt="Creative Commons License"
+         title="Creative Commons License"
+         style="border-width:0"
+           src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+         width="80"
+         height="15"/>
+  </a>
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Bibek Gautam - Blog ",
+  "url" : "http://192.168.1.65:8000",
+  "image": "https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=120",
+  "description": "Bibek Gautam's Thoughts and Writings"
+}
+</script>
+
+</body>
+</html>

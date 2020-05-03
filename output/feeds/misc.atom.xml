@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - Misc</title><link href="http://127.0.0.1:8000/" rel="alternate"></link><link href="http://127.0.0.1:8000/feeds/misc.atom.xml" rel="self"></link><id>http://127.0.0.1:8000/</id><updated>2019-05-10T16:04:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Symmetric art</title><link href="http://127.0.0.1:8000/symmetric-art.html" rel="alternate"></link><published>2019-05-10T16:04:00+05:45</published><updated>2019-05-10T16:04:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:127.0.0.1,2019-05-10:/symmetric-art.html</id><summary type="html">&lt;p&gt;A symmetric canvas for your symmetric art pieces.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;This is a canvas to draw with radial symmetry.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Feature suggestions are very welcome.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Symmetry :&lt;/b&gt; &lt;input class="slider" type="range" id="symmetry" min="3" max="9" step="1" value="5"&gt;
+&lt;span id='symmetryVal'&gt;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Pencil Shade :&lt;/b&gt; &lt;input class="slider" type="range" id="shade" min="0" max="16" step="4" value="8"&gt;
+&lt;span id='shadeVal'&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+&lt;span id="canvas" style="touch-action: none;" class="noScroll" ontouchmove="noscroll"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button id="reset"&gt;reset&lt;/button&gt; &lt;button id="save"&gt;save&lt;/button&gt;&lt;/p&gt;</content><category term="Misc"></category><category term="art"></category><category term="programming"></category></entry></feed>

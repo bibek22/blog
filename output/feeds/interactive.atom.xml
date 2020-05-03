@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Bibek Gautam - Blog - interactive</title><link href="http://192.168.1.65:8000/" rel="alternate"></link><link href="http://192.168.1.65:8000/feeds/interactive.atom.xml" rel="self"></link><id>http://192.168.1.65:8000/</id><updated>2019-05-05T12:28:00+05:45</updated><subtitle>Aspiring Physicist and Programmer</subtitle><entry><title>Simulating double pendulum</title><link href="http://192.168.1.65:8000/double%20pendulum.html" rel="alternate"></link><published>2019-05-05T12:28:00+05:45</published><updated>2019-05-05T12:28:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:192.168.1.65,2019-05-05:/double pendulum.html</id><summary type="html">&lt;p&gt;Chaotic system with double pendulum...&lt;/p&gt;</summary><content type="html">&lt;p&gt;Double pendulum is just two simple pendulum attached on end. The strings are massless as usual. With
+point mass &lt;span class="math"&gt;\(m1\)&lt;/span&gt; and &lt;span class="math"&gt;\(m2\)&lt;/span&gt; being at the ends of the two pendulum.
+&lt;div id='trailer' class='sketchContainer'&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h4&gt;Chaos&lt;/h4&gt;
+&lt;p&gt;This is a simple, maybe even contrived example of a chaotic system. If even a slight difference is
+given in otherwise identical two systems, the time evolution is drastically different for these
+systems. As seen in this one below  &lt;/p&gt;
+&lt;p&gt;&lt;span id='slight_1' class='sketchContainer'&gt;&lt;/span&gt; &lt;span id='slight_2' class='sketchContainer'&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button id='playS'onclick='simPlay()'&gt;play&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, even though the initial configurations are identical as far as we can tell, as the
+time progresses, these systems have wildly different configurations.  &lt;/p&gt;
+&lt;p&gt;This is amazing!&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="maths"></category></entry><entry><title>Calculating Pi</title><link href="http://192.168.1.65:8000/calculate-pi-md.html" rel="alternate"></link><published>2019-04-27T22:28:00+05:45</published><updated>2019-04-27T22:28:00+05:45</updated><author><name>Bibek Gautam</name></author><id>tag:192.168.1.65,2019-04-27:/calculate-pi-md.html</id><summary type="html">&lt;p&gt;An extremely computationally inefficient pi. Inspired from a 3Blue1Brown &lt;a href='https://www.youtube.com/watch?v=HEfHFsfGXjs'&gt;video &lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;If you're unsure what this is about, watch this awesome &lt;a href="https://www.youtube.com/watch?v=jsYwFizhncE"&gt;video&lt;/a&gt; that explains everything. Code for this simulation is available on my github.  &lt;/p&gt;
+&lt;p&gt;Small mass: &lt;data id="small"&gt;1&lt;/data&gt; Kg&lt;br&gt;
+Big mass: &lt;data id="big"&gt;100&lt;/data&gt; Kg&lt;br&gt;
+&lt;input class="slider" type="range" id="digits" min="0" max="7" step="1" value="1"&gt;
+&lt;div id='simulation'&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;&lt;h4 color="#550000"&gt;Collisions: &lt;data id="counter"&gt;0&lt;/data&gt;&lt;/h4&gt;&lt;/b&gt;
+&lt;input type="button" id="play" value="play/pause"&gt;
+&lt;input type="button" id="restart" value="restart"&gt; &lt;br&gt;&lt;/p&gt;</content><category term="maths"></category></entry></feed>
