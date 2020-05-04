@@ -7,7 +7,8 @@ I'm [Bibek Gautam](https://www.bibekgautm.com.np) and I live in Kathmandu - Nepa
 
 ### What I do
 
-I study undergraduate physics at [St. Xavier's College](http://www.sxc.edu.np/) and do a bit of "research". I am also interested in programming.
+I study undergraduate physics at [St. Xavier's College](http://www.sxc.edu.np/).
+I'm interested in astrophysics and comsmology. I am also interested in programming.
 
 ### About this blog
 
