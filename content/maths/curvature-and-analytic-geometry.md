@@ -4,6 +4,7 @@ Title: Curvature and Second Derivative
 Category: Maths
 Tags: graphs, functions,analytic-geometry
 slug:xmodx-and-curvature
+Status: Draft
 Summary: This is like a mental anchor that makes function analysis a little easier. I found I wasn't thinking like this even though this is pretty elementary.
 
 You know the function $y = \mid x \mid$ does not have a derivative at $x = 0$.
