@@ -4,6 +4,7 @@ Title: Getting Started with Manim [VirtualEnv]
 Slug: getting-started-with-manim
 Category: Tech
 Tags: programming, animation, python
+Status: Draft
 Summary: Get up and running with `Manim`, a maths animation python library written by Grant Sanderson of [3Blue1Brown](https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw).
 
 
