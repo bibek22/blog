@@ -6,4 +6,4 @@
 	url = https://github.com/bibek22/Flex
 [submodule "plugins/ipynb"]
 	path = plugins/ipynb
-	url = git://github.com/danielfrg/pelican-ipynb.git
+	url = https://github.com/danielfrg/pelican-ipynb
