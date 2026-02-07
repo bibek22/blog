@@ -3,9 +3,9 @@
 
 AUTHOR = 'Bibek Gautam'
 SITEURL = 'http://127.0.0.1:8000'
-SITENAME = 'Bibek Gautam - Blog'
+SITENAME = 'Bibek Gautam - Personal Website'
 SITETITLE = AUTHOR
-SITESUBTITLE = 'Computational Astrophysicist Studying Stellar Collapse'
+SITESUBTITLE = 'Computational Astrophysicist\n Studying Stellar Collapse'
 SITEDESCRIPTION = AUTHOR + '\'s Thoughts and Writings'
 SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220'
 FAVICON = '/images/favicon.ico'
@@ -42,8 +42,7 @@ HOME_HIDE_TAGS = True
 LINKS = (('Portfolio', 'portfolio.html'),)
 
 SOCIAL = (('github', 'https://github.com/bibek22'),
-          ('twitter', 'https://twitter.com/bibekxyz'),
-          ('envelope', 'mailto:forgot.bg@gmail.com'),
+          ('envelope', 'mailto:bgautam2@ncsu.edu'),
           ('instagram', 'https://instagram.com/masterprocastinator'),
           ('linkedin', "https://www.linkedin.com/in/bibek-gautam-07495a190/"))
 
