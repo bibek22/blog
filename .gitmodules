@@ -4,6 +4,7 @@
 [submodule "Flex"]
 	path = Flex
 	url = https://github.com/bibek22/Flex
+    branch=gray
 [submodule "plugins/ipynb"]
 	path = plugins/ipynb
 	url = https://github.com/danielfrg/pelican-ipynb
