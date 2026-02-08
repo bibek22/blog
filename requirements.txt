@@ -6,7 +6,7 @@ python-dateutil==2.8.2
 feedgenerator==2.1.0
 blinker==1.6.2
 Unidecode==1.3.6
-docutils==0.20.1
+docutils
 Pygments==2.15.1
 
 # Jupyter stack
