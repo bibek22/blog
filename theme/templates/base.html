@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ SITEDESCRIPTION }}{% endblock %}">
+  <meta name="author" content="{{ AUTHOR }}">
+  <meta name="robots" content="{{ ROBOTS }}">
+  <meta property="og:site_name" content="{{ SITENAME }}">
+  <meta property="og:title" content="{{ self.title() | striptags | trim }}">
+  <meta property="og:description" content="{{ self.description() | striptags | trim }}">
+  <meta property="og:image" content="{{ SITELOGO }}">
+  <link rel="icon" href="{{ FAVICON }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/style.css">
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/pygments.css">
+  {% if CUSTOM_CSS %}<link rel="stylesheet" href="{{ SITEURL }}/{{ CUSTOM_CSS }}">{% endif %}
+  {% if FEED_ALL_ATOM %}<link rel="alternate" type="application/atom+xml" href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="{{ SITENAME }}">{% endif %}
+  {% if article %}
+    {% for stylesheet in article.stylesheets %}{{ stylesheet }}{% endfor %}
+    {% for javascript in article.javascripts %}{{ javascript }}{% endfor %}
+  {% endif %}
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="{{ SITEURL }}/">{{ AUTHOR }}</a>
+    <nav>
+      <a href="{{ SITEURL }}/notes/"{% if active == 'notes' %} aria-current="page"{% endif %}>Notes</a>
+      {% if CV_URL %}<a href="{{ SITEURL }}/{{ CV_URL }}">CV</a>{% endif %}
+      <a href="{{ SITEURL }}/pages/contact.html"{% if active == 'contact' %} aria-current="page"{% endif %}>Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; {{ COPYRIGHT_YEAR }} {{ COPYRIGHT_NAME }}.
+      Text licensed under <a rel="license" href="https://creativecommons.org/licenses/{{ CC_LICENSE['slug'] }}/{{ CC_LICENSE['version'] }}/">CC {{ CC_LICENSE['slug'] | upper }} {{ CC_LICENSE['version'] }}</a>.
+      {% if FEED_ALL_ATOM %}<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}">Feed</a>{% endif %}
+    </p>
+  </footer>
+
+  {% if article and article.inbodyjs %}
+    {% for javascript in article.inbodyjs.split(", ") %}
+  <script src="{{ javascript }}"></script>
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

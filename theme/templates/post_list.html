@@ -1,0 +1,11 @@
+{% for year, year_articles in articles | groupby('date.year') | reverse %}
+<h2 class="year">{{ year }}</h2>
+<ul class="post-list">
+  {% for article in year_articles | sort(attribute='date', reverse=True) %}
+  <li>
+    <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %d') }}</time>
+    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}

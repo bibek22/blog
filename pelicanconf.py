@@ -1,34 +1,29 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
+import os
+
 AUTHOR = 'Bibek Gautam'
 SITEURL = 'http://127.0.0.1:8000'
-SITENAME = 'Bibek Gautam - Personal Website'
-SITETITLE = AUTHOR
-SITESUBTITLE = 'Computational Astrophysicist\n Studying Stellar Collapse'
-SITEDESCRIPTION = AUTHOR + '\'s Thoughts and Writings'
-SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=220'
+SITENAME = 'Bibek Gautam'
+SITEROLE = 'PhD Candidate, NC State University · Computational Astrophysics'
+SITEDESCRIPTION = (AUTHOR + ' - computational astrophysics: gravitational waves from '
+                   'core-collapse supernovae and r-process nucleosynthesis in collapsars')
+SITELOGO = 'https://www.gravatar.com/avatar/030ebbd4ea952223d2693ce993b49a16?s=264'
 FAVICON = '/images/favicon.ico'
-BROWSER_COLOR = '#333333'
-PYGMENTS_STYLE = 'friendly'
 
 ROBOTS = 'index, follow'
 
-THEME = './Flex'
+THEME = './theme'
 PATH = 'content'
-TIMEZONE = 'Asia/Kathmandu'
+TIMEZONE = 'America/New_York'
 
-I18N_TEMPLATES_LANG = 'en'
 DEFAULT_LANG = 'en'
-OG_LOCALE = 'en_US.utf8'
 LOCALE = 'en_US.utf8'
 
 DATE_FORMATS = {
     'en': '%B %d, %Y',
 }
-
-# Max post preview
-SUMMARY_MAX_LENGTH = 50
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 TRANSLATION_FEED_ATOM = None
@@ -36,19 +31,17 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 USE_FOLDER_AS_CATEGORY = False
-MAIN_MENU = True
-HOME_HIDE_TAGS = True
 
-LINKS = (('Portfolio', 'portfolio.html'),)
+# shown on the home page, in this order
+SOCIAL = (('Google Scholar', 'https://scholar.google.com/citations?hl=en&user=ZbrYYuMAAAAJ'),
+          ('ORCID', 'https://orcid.org/0000-0002-3211-3427'),
+          ('GitHub', 'https://github.com/bibek22'),
+          ('Email', 'mailto:bgautam2@ncsu.edu'),
+          ('LinkedIn', 'https://www.linkedin.com/in/bibek-gautam-07495a190/'))
 
-SOCIAL = (('github', 'https://github.com/bibek22'),
-          ('envelope', 'mailto:bgautam2@ncsu.edu'),
-          ('instagram', 'https://instagram.com/masterprocastinator'),
-          ('linkedin', "https://www.linkedin.com/in/bibek-gautam-07495a190/"))
-
-MENUITEMS = (('Archives', '/archives.html'),
-             ('Categories', '/categories.html'),
-             ('Tags', '/tags.html'),)
+# the CV link appears once content/static/cv.pdf exists
+_HERE = os.path.dirname(os.path.abspath(__file__))
+CV_URL = 'static/cv.pdf' if os.path.exists(os.path.join(_HERE, 'content/static/cv.pdf')) else None
 
 CC_LICENSE = {
     'name': 'Creative Commons Attribution-ShareAlike',
@@ -56,17 +49,22 @@ CC_LICENSE = {
     'slug': 'by-sa'
 }
 
-COPYRIGHT_YEAR = 2019
+COPYRIGHT_YEAR = '2019-2026'
 COPYRIGHT_NAME = AUTHOR
 
-DEFAULT_PAGINATION = 5
-
+# about.md is the home page; the post list lives under /notes/
+DIRECT_TEMPLATES = ['index']
+INDEX_SAVE_AS = 'notes/index.html'
+DEFAULT_PAGINATION = False
+CATEGORY_URL = 'notes/{slug}/'
+CATEGORY_SAVE_AS = 'notes/{slug}/index.html'
+TAG_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
 
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
-PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'pelican.plugins.render_math']
+PLUGINS = ['sitemap', 'pelicanJs', 'pelican.plugins.render_math']
 
-JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -81,28 +79,10 @@ SITEMAP = {
     }
 }
 
-# DISQUS_SITENAME = "bibekg"
-# ADD_THIS_ID = 'ra-5c9aeaba42301cb9'
-
-STATIC_PATHS = ['images', 'extra', "static"]
+STATIC_PATHS = ['images', 'extra', 'static']
 
 EXTRA_PATH_METADATA = {
-    'extra/custom.css': {'path': 'static/custom.css'},
+    'extra/_redirects': {'path': '_redirects'},
 }
 
 CUSTOM_CSS = 'static/custom.css'
-
-USE_LESS = True
-
-# GOOGLE_ADSENSE = {
-#     'ca_id': 'ca-pub-1726541799255911',    # Your AdSense ID
-#     'page_level_ads': True,          # Allow Page Level Ads (mobile)
-#     'ads': {
-#         'aside': '2376242243',          # Side bar banner (all pages)
-#         'main_menu': '',      # Banner before main menu (all pages)
-#         'index_top': '2575197573',      # Banner after main menu (index only)
-#         'index_bottom': '',   # Banner before footer (index only)
-#         'article_top': '',    # Banner after article title (article only)
-#         'article_bottom': '2609134398', # Banner after article content (article only)
-#     }
-# }

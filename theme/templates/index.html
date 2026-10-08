@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% set active = 'notes' %}
+{% block title %}Notes · {{ SITENAME }}{% endblock %}
+{% block content %}
+<h1>Notes</h1>
+<p class="lede">Writing on physics, mathematics and computing, mostly from my undergraduate years.</p>
+<p class="categories">
+  {% for category, category_articles in categories %}<a href="{{ SITEURL }}/{{ category.url }}">{{ category }} <span>{{ category_articles | length }}</span></a>{% endfor %}
+</p>
+{% include "post_list.html" %}
+{% endblock %}

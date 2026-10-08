@@ -1,0 +1,13 @@
+# old Flex theme URLs
+/pages/about.html      /              301
+/archives.html         /notes/        301
+/categories.html       /notes/        301
+/tags.html             /notes/        301
+/authors.html          /              301
+/index2.html           /notes/        301
+/index3.html           /notes/        301
+/index4.html           /notes/        301
+/portfolio.html        /              301
+/category/*            /notes/        301
+/tag/*                 /notes/        301
+/author/*              /              301

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <img class="portrait" src="{{ SITELOGO }}" alt="{{ AUTHOR }}" width="132" height="132">
+  <div>
+    <h1>{{ AUTHOR }}</h1>
+    <p class="role">{{ SITEROLE }}</p>
+    <p class="links">
+      {% for name, link in SOCIAL %}<a href="{{ link }}">{{ name }}</a>{% endfor %}
+      {% if CV_URL %}<a href="{{ SITEURL }}/{{ CV_URL }}">CV</a>{% endif %}
+    </p>
+  </div>
+</section>
+
+<div class="prose">
+  {{ page.content }}
+</div>
+
+<section class="recent">
+  <h2>Recent notes</h2>
+  <ul class="post-list">
+    {% for article in articles[:5] %}
+    <li>
+      <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %Y') }}</time>
+      <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="more"><a href="{{ SITEURL }}/notes/">All notes &rarr;</a></p>
+</section>
+{% endblock %}
