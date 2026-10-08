@@ -1,15 +1,35 @@
 Title: About
 Date: 2019-03-27 13:27
+Slug: about
+Save_as: index.html
+URL:
+Template: home
 
-### Who I am
+I'm a PhD candidate in computational astrophysics at
+[NC State University](https://www.ncsu.edu/), working with
+Dr. Carla Fröhlich. I study the deaths of massive stars through large-scale
+numerical simulations.
 
-I'm [Bibek Gautam](https://www.bibekgautm.com.np) and I live in Kathmandu - Nepal.
+### Research
 
-### What I do
+**Gravitational waves from core-collapse supernovae.** I simulate core-collapse
+supernovae and study the gravitational-wave signals they produce, and what
+those signals could tell us about the physics of the source.
 
-I study undergraduate physics at [St. Xavier's College](http://www.sxc.edu.np/).
-I'm interested in astrophysics and comsmology. I am also interested in programming.
+**r-process nucleosynthesis in collapsars.** I model the accretion disks that
+form when a rapidly rotating massive star collapses to a black hole, and study
+how these disks could produce heavy elements through the rapid neutron-capture
+(r-) process.
 
-### About this blog
+### Methods
 
-I'll post about the things I'm interested in. This will serves as an archive for myself and hopefully at the same time be of some use to my friends and people on the internet. I intend to post about maths, physics, programming and tech that I find interesting.
+- **ELEPHANT**: 3D magnetohydrodynamics supernova code on a fixed Cartesian
+  grid, used for my core-collapse supernova simulations.
+- **νbhlight (nubhlight)**: 3D general-relativistic radiation
+  hydrodynamics with Monte Carlo neutrino transport, used for my collapsar
+  disk simulations.
+
+### About this site
+
+The notes here go back to my undergraduate years at St. Xavier's College in
+Kathmandu, and cover physics, mathematics and programming I found interesting.
