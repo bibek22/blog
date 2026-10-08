@@ -3,5 +3,6 @@ _site/
 .jekyll-metadata
 /.build
 /content/draft
-# output
+output/
 __pycache__
+.venv/
