@@ -13,8 +13,6 @@ var packagingS_2 = function(p){
     p.a2 = Math.PI/2 + 0.01;
     p.v1 = 0;
     p.v2 = 0;
-    p.ac1 = 0;
-    p.ac2 = 0;
 
     // radius and mass of penduli
     p.r1 = 70;
@@ -32,15 +30,7 @@ var packagingS_2 = function(p){
 
     p.draw = function(){
         p.clear();
-        p.v1 = p.v1 + p.ac1 * p.dt;
-        p.v2 = p.v2 + p.ac2 * p.dt;
-        p.a1 = p.a1 + p.v1 * p.dt + 0.5* p.ac1 * p.dt*p.dt;
-        p.a2 = p.a2 + p.v2 * p.dt + 0.5* p.ac2 * p.dt*p.dt;
-        p.a1_num = -p.g*(2*p.m1 + p.m2)*Math.sin( p.a1) - p.m2*p.g*Math.sin(p.a1 - 2*p.a2) - 2 *Math.sin(p.a1 - p.a2)*p.m2*(p.v2*p.v2* p.r2 + p.v1*p.v1* p.r1* Math.cos(p.a1 - p.a2));
-        denum = (2*p.m1 + p.m2 - p.m2*Math.cos(2*p.a1 - 2*p.a2));
-        p.ac1 = p.a1_num/(p.r1*denum);
-        p.a2_num=2*Math.sin(p.a1-p.a2)*(p.v1*p.v1* p.r1* (p.m1 + p.m2) + p.g*(p.m1 + p.m2)*Math.cos( p.a1) + p.v2*p.v2*p.r2*p.m2*Math.cos(p.a1 - p.a2)) ;
-        p.ac2 = p.a2_num/(p.r2*denum);
+        step(p);
 
 
         // horizontal bar at the top
@@ -81,8 +71,6 @@ var packagingS_1 = function(p){
     p.a2 = Math.PI/2;
     p.v1 = 0;
     p.v2 = 0;
-    p.ac1 = 0;
-    p.ac2 = 0;
 
     // radius and mass of penduli
     p.r1 = 70;
@@ -100,15 +88,7 @@ var packagingS_1 = function(p){
 
     p.draw = function(){
         p.clear();
-        p.v1 = p.v1 + p.ac1 * p.dt;
-        p.v2 = p.v2 + p.ac2 * p.dt;
-        p.a1 = p.a1 + p.v1 * p.dt + 0.5* p.ac1 * p.dt*p.dt;
-        p.a2 = p.a2 + p.v2 * p.dt + 0.5* p.ac2 * p.dt*p.dt;
-        p.a1_num = -p.g*(2*p.m1 + p.m2)*Math.sin( p.a1) - p.m2*p.g*Math.sin(p.a1 - 2*p.a2) - 2 *Math.sin(p.a1 - p.a2)*p.m2*(p.v2*p.v2* p.r2 + p.v1*p.v1* p.r1* Math.cos(p.a1 - p.a2));
-        denum = (2*p.m1 + p.m2 - p.m2*Math.cos(2*p.a1 - 2*p.a2));
-        p.ac1 = p.a1_num/(p.r1*denum);
-        p.a2_num=2*Math.sin(p.a1-p.a2)*(p.v1*p.v1* p.r1* (p.m1 + p.m2) + p.g*(p.m1 + p.m2)*Math.cos( p.a1) + p.v2*p.v2*p.r2*p.m2*Math.cos(p.a1 - p.a2)) ;
-        p.ac2 = p.a2_num/(p.r2*denum);
+        step(p);
 
 
         // horizontal bar at the top
@@ -149,8 +129,6 @@ var packaging = function(p){
     p.a2 = 20;
     p.v1 = 0;
     p.v2 = 0;
-    p.ac1 = 0;
-    p.ac2 = 0;
 
     // radius and mass of penduli
     p.r1 = 70;
@@ -167,15 +145,7 @@ var packaging = function(p){
 
     p.draw = function(){
         p.clear();
-        p.v1 = p.v1 + p.ac1 * p.dt;
-        p.v2 = p.v2 + p.ac2 * p.dt;
-        p.a1 = p.a1 + p.v1 * p.dt + 0.5* p.ac1 * p.dt*p.dt;
-        p.a2 = p.a2 + p.v2 * p.dt + 0.5* p.ac2 * p.dt*p.dt;
-        p.a1_num = -p.g*(2*p.m1 + p.m2)*Math.sin( p.a1) - p.m2*p.g*Math.sin(p.a1 - 2*p.a2) - 2 *Math.sin(p.a1 - p.a2)*p.m2*(p.v2*p.v2* p.r2 + p.v1*p.v1* p.r1* Math.cos(p.a1 - p.a2));
-        denum = (2*p.m1 + p.m2 - p.m2*Math.cos(2*p.a1 - 2*p.a2));
-        p.ac1 = p.a1_num/(p.r1*denum);
-        p.a2_num=2*Math.sin(p.a1-p.a2)*(p.v1*p.v1* p.r1* (p.m1 + p.m2) + p.g*(p.m1 + p.m2)*Math.cos( p.a1) + p.v2*p.v2*p.r2*p.m2*Math.cos(p.a1 - p.a2)) ;
-        p.ac2 = p.a2_num/(p.r2*denum);
+        step(p);
 
 
         // horizontal bar at the top
@@ -206,6 +176,35 @@ function gety(r, theta){
 
 function getx(r, theta){
     return(r*Math.sin(theta));
+}
+
+function deriv(p, s){
+    // time derivatives of [a1, a2, v1, v2]
+    var a1 = s[0], a2 = s[1], v1 = s[2], v2 = s[3];
+    var denum = (2*p.m1 + p.m2 - p.m2*Math.cos(2*a1 - 2*a2));
+    var a1_num = -p.g*(2*p.m1 + p.m2)*Math.sin(a1) - p.m2*p.g*Math.sin(a1 - 2*a2) - 2*Math.sin(a1 - a2)*p.m2*(v2*v2*p.r2 + v1*v1*p.r1*Math.cos(a1 - a2));
+    var a2_num = 2*Math.sin(a1 - a2)*(v1*v1*p.r1*(p.m1 + p.m2) + p.g*(p.m1 + p.m2)*Math.cos(a1) + v2*v2*p.r2*p.m2*Math.cos(a1 - a2));
+    return([v1, v2, a1_num/(p.r1*denum), a2_num/(p.r2*denum)]);
+}
+
+function shift(s, k, h){
+    return([s[0] + h*k[0], s[1] + h*k[1], s[2] + h*k[2], s[3] + h*k[3]]);
+}
+
+function step(p){
+    // 4th order runge-kutta, 4 sub-steps per frame
+    var h = p.dt/4;
+    for (var i = 0; i < 4; i++){
+        var s = [p.a1, p.a2, p.v1, p.v2];
+        var k1 = deriv(p, s);
+        var k2 = deriv(p, shift(s, k1, h/2));
+        var k3 = deriv(p, shift(s, k2, h/2));
+        var k4 = deriv(p, shift(s, k3, h));
+        p.a1 = p.a1 + h/6*(k1[0] + 2*k2[0] + 2*k3[0] + k4[0]);
+        p.a2 = p.a2 + h/6*(k1[1] + 2*k2[1] + 2*k3[1] + k4[1]);
+        p.v1 = p.v1 + h/6*(k1[2] + 2*k2[2] + 2*k3[2] + k4[2]);
+        p.v2 = p.v2 + h/6*(k1[3] + 2*k2[3] + 2*k3[3] + k4[3]);
+    }
 }
 
 // single pendulum demo

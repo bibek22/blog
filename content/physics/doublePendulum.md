@@ -25,8 +25,3 @@ from each other.
 <span id='slight_1' class='sketchContainer'></span> <span id='slight_2' class='sketchContainer'></span>
 
 <button id='playS'onclick='simPlay()'>play/pause</button>
-
-
-
-$\dagger$ *there's a problem with two penduli above. If you've noticed it,
-great! I'll try to fix this later.*
