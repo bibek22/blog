@@ -64,7 +64,7 @@ DEFAULT_PAGINATION = 5
 
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
-PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'render_math']
+PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'pelican.plugins.render_math']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
 SITEMAP = {
