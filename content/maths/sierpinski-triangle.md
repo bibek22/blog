@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-05-06 07:25
 Title: Sierpinski Triangle
 Slug: sierpinski-triangle
-Category: Maths
+Category: Mathematics
 Tags: physics, maths, fractals
 Stylesheets: style_sim.css
 inbodyjs: /js/sierpinski.js, /js/hexaloop.js

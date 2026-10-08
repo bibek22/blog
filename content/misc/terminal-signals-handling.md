@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-03-30 08:46
 Title: Handling terminal signals in bash scripts
 Slug: handling-terminal-signals-in-bash-scripts
-Category: Linux
+Category: Computing
 Tags: linux, bash, command-line
 Summary: If you want to run a few commands after the user has pressed `Ctrl+C` to clean up or other, this is the way...
 

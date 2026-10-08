@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-03-30 07:41
 Title: Xargs - piping the STDOUT to the argument of a command
 Slug: short-introduction-to-xargs
-Category: Linux
+Category: Computing
 Tags: xargs, linux, command-line
 Summary: Xargs allows you to take the output of a program and pass it as an argument of some other program easily. Read on to learn more...
 

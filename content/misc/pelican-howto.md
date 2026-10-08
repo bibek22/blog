@@ -1,6 +1,6 @@
 Title: Building a blog with Pelican
 Date: 2019-03-27
-Category: Tutorial
+Category: Computing
 Tags: ssg, python, blog, website, tech
 Slug: blog-with-pelican-a-ssg-in-python
 Summary: Here I talk about a static site generator called Pelican which is written in python.

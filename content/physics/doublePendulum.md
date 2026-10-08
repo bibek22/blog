@@ -1,7 +1,7 @@
 title: Simulating double pendulum
 tags: physics, simulation, maths
 date: 2019-05-05 12:28
-category: Physics
+Category: Physics
 slug: double pendulum
 authors: Bibek Gautam
 Stylesheets: style_sim.css

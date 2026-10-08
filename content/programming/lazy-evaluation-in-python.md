@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-04-05 07:51
 Title: Lazy Evaluation in Python
 Slug: lazy-evaluation-in-python
-Category: Programming
+Category: Computing
 Tags: python, programming
 Summary: I talk about lazy evaluation and use it to generate infinite list of primes.
 

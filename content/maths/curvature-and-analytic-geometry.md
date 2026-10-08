@@ -1,7 +1,7 @@
 Author: Bibek Gautam
 Date: 2019-03-29 21:07
 Title: Curvature and Second Derivative
-Category: Maths
+Category: Mathematics
 Tags: graphs, functions,analytic-geometry
 slug:xmodx-and-curvature
 Status: Draft

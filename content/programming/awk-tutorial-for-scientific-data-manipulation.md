@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-04-07 13:25
 Title: Awk Tutorial and Introduction
 Slug: awk-tutorial
-Category: Linux
+Category: Computing
 Tags: linux, programming
 Summary: If you deal with a large data files with multiple rows and columns and you would like to make some quick edits, selection or manipulation right from the terminal, awk is the tool to look for.
 

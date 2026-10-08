@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2020-04-12 08:34
 Title: g<sup>ab</sup> is not an inverse of g<sub>ab</sub>
 Slug: metric-tensor
-Category: physics
+Category: Physics
 Tags: physics, differential geometry, GTR
 Summary: Brief note on metric tensors
 

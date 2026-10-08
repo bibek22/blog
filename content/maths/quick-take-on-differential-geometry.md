@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2020-04-16 07:20
 Title: On trying to model spacetime
 Slug: quick-take-on-differential-geometry
-Category: mathematics
+Category: Mathematics
 Tags: GTR, differential geometry, physics
 Summary: a very quick survey of ideas in differential geometry
 

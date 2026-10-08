@@ -2,7 +2,7 @@ Author: Bibek Gautam
 Date: 2019-09-27 08:36
 Title: Bash Reference
 Slug: bash-reference
-Category: programing
+Category: Computing
 Status: Draft
 Tags: bash, linux, programming
 Summary: Reference for all your bash scripting needs
