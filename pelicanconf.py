@@ -62,16 +62,11 @@ COPYRIGHT_NAME = AUTHOR
 DEFAULT_PAGINATION = 5
 
 
-# for ipynb plugin thing from danielfrg/pelican-ipynb
 MARKUP = ('md',)
 PLUGIN_PATHS = ['./pelican-plugins', './plugins']
-PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'ipynb.liquid', 'render_math']
-# , "pelican-ipynb.markup"]
-
-# IGNORE_FILES = [".ipynb_checkpoints"]
+PLUGINS = ['sitemap', 'pelicanJs', 'i18n_subsites', 'render_math']
 
 JINJA_ENVIRONMENT = {'extensions': ['jinja2.ext.i18n']}
-# IPYNB_USE_METACELL = True
 SITEMAP = {
     'format': 'xml',
     'priorities': {
